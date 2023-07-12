@@ -6,8 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>관리자 페이지</title>
-    <link rel="shortcut icon" type="image/x-icon" href="image/small_logo.png">
-    <link rel="stylesheet" href="관리자페이지_관리자게시물작성.css">
+    <link rel="shortcut icon" type="image/x-icon" href="${contextPath}/resources/images/small_logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
@@ -19,7 +18,7 @@
             <section class="head">
                 <section id="logo">
                     <a href="${contextPath}">
-                        <img src="${contextPath}/resources/image/logo.png" width="100%">
+                        <img src="${contextPath}/resources/images/logo.png" width="100%">
                     </a>
                 </section>
 
