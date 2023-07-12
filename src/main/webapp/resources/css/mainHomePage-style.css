@@ -1,0 +1,349 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
+
+* { box-sizing: border-box; }
+/* section {border: 1px solid black;} */
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* section {
+    border: 1px solid black;
+} */
+
+
+main {
+    width: 1200px;
+    height: auto;
+    margin: auto;
+}
+
+header {
+    width: 100%;
+    height: 175px;
+}
+
+.head {
+    width: 100%;
+    height: 175px;
+    display: flex;
+}
+
+
+
+/* 로고 */
+#logo {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.head > section:nth-child(2) {
+    width: 30%;
+    height: 100%;
+}
+
+
+
+/* header - 검색창 */
+#search-area {
+    width: 35%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    padding-bottom: 30px;
+    padding-left: 120px;
+}
+
+#search-area fieldset {
+    width: 230px;
+    height: 40px;
+    border: 2px solid rgb(153, 216, 199);
+    border-radius: 10px;
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#query {
+    width: 230px;
+    font-size: 15px;
+    outline: 0;
+    border: none;
+}
+
+#search-area section {
+    width: 250px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    border: none;
+}
+
+#search-btn {
+    background-color: white;
+    font-size: 1.5em;
+    color: rgb(153, 216, 199);
+    cursor: pointer;
+    border: none;
+}
+
+
+
+/* header - 로그인/회원가입 버튼 */
+.login-area {
+    width: 15%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    padding-bottom: 30px;
+}
+
+.login-area > button {
+    width: 100px;
+    height: 40px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    /* background-color: rgba(153, 216, 199, 0.46); */
+    background-color: rgb(153, 216, 199);
+    font-weight: bold;
+    margin: 0 5px;
+}
+
+.login-area a {
+    color: white;
+    text-decoration: none;
+}
+
+
+/* navigation */
+nav {
+    width: 100%;
+    height: 50px;
+    background-color: rgb(153, 216, 199);
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0; 
+}
+
+#nav {
+    width: 80%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.nav-menu {
+    width: 25%;
+    height: 50px;
+    text-align: center;
+    padding: 11px;
+    border-radius: 15px;
+}
+
+.nav-menu > a {
+    color: white;
+    font-weight: bold;
+    font-size: 19px;
+    text-decoration: none;
+}
+
+/* 중간영역 */
+
+#middle {
+    height: 1600px;
+    display: flex;
+    justify-content: center;
+
+}
+.container{
+    height: 1600px;    
+    width: 90%;
+}
+
+
+img{
+    width: 100%;
+    height: 100%;
+}
+
+/* 메인 이미지 영역 */
+
+#photo > img{ 
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+    
+}
+
+/* 이달의 베스트 여행지 영역 */
+
+.flex-container1 strong{
+    margin-top: 6px;
+    display: block;
+    font-size: 16px;
+    line-height: 19px;
+    color: #000;
+    overflow: hidden;
+    letter-spacing: -0.5px;
+    word-break: keep-all;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-align: center;
+}
+
+.container0{
+    height: 35px;
+    
+
+}
+.container1{
+    cursor: pointer;
+    width: 1075px;
+    height: 500px;
+    overflow: hidden;
+}
+
+.container2{
+    height: 35px;
+    
+
+}
+
+.container3{
+    height: 2px;
+    text-align: center;
+
+}
+.container4{
+    height: 100px;
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+}
+.container5{
+    height: 320px;
+    border-bottom: 1px solid gray;
+}
+
+.container6{
+    height: 80px;
+    text-align: center;
+    font-size: 38px;
+    font-weight: bold;
+}
+
+.flex-container1{
+    height: auto;
+    width: 100%;
+    justify-content: space-evenly;
+    display: flex;
+}
+
+
+.item{
+    width: 200px;
+}
+
+
+.flex-container2{
+    height: 40px;
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+}
+.item1{
+    width: 20%;
+    text-align: center;
+    font-size: 25px;
+   
+}
+
+.item2{
+    width: 300px;
+    
+}
+
+/* 누르면 돌아가는 화살표 영역 */
+
+.nextSign{
+    height: 40px;
+}
+
+/* 테마 영역 */
+
+.flex-container3{
+    height: auto;
+    justify-content: space-evenly;
+    display: flex;
+    
+}
+
+/* 테마 글씨  */
+
+.flex-container3 strong{
+    
+    display: block;
+    margin: 12px 0 0;
+    font-size: 16px;
+    line-height: 19px;
+    color: #000;
+    overflow: hidden;
+    letter-spacing: -0.5px;
+    word-break: keep-all;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-align: center;
+}
+
+/* 테마 이미지 */
+
+#photo1 > img{
+    height: 300px;
+    border-radius: 20px;
+}
+
+
+
+
+
+
+
+
+/* footer */
+footer {
+    width: 100%;
+    height: 100px;
+    background-color: rgba(224, 224, 224, 0.18);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+footer > section:first-child {
+    width: 400px;
+    height: 100%;
+    line-height: 100px;
+    text-align: center;
+}
+
+.footer {
+    width: 150px;
+    height: 100%;
+    line-height: 100px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 17px;
+}
