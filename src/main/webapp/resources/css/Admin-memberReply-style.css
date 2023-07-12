@@ -87,7 +87,7 @@
     transition-duration: 1s;
 }
 
-/* 게시글 관리 내용 영역 */
+/* 댓글 관리 내용 영역 */
 .right-section > section:nth-of-type(3){
     height: 800px;
 
@@ -97,7 +97,7 @@
     justify-content: center;
 }
 
-.post-table{
+.reply-table{
     margin: 20px 0 20px;
     background-color: white;
     width: 860px;
@@ -113,7 +113,7 @@
     border: 1px solid #ddd;
 }
 
-.post-table th, td{
+.reply-table th, td{
     border-bottom: 1px solid #ddd;
 }
 
