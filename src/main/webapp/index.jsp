@@ -4,6 +4,7 @@
 <%-- 문자열 관련 함수(메소드) 제공 JSTL (EL 형식으로 작성) --%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
+    <link rel="stylesheet" href="${contextPath}/resources/css/main-style.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/mainHomePage-style.css">
 
 	<script src="https://unpkg.com/embla-carousel/embla-carousel.umd.js"></script>
