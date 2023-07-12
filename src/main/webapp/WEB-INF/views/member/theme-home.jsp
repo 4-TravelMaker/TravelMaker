@@ -220,6 +220,6 @@
     </main>
 
 
-    <script src="test.js"></script>
+    <script src="${contextPath}/resources/js/theme-home-style2.js"></script>
 </body>
 </html>

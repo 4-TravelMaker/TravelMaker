@@ -1,13 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-
 const slides = document.querySelector('.slides'); //전체 슬라이드 컨테이너
 const slideImg = document.querySelectorAll('.slides li'); //모든 슬라이드들
 let currentIdx = 0; //현재 슬라이드 index
@@ -42,6 +32,3 @@ next.addEventListener('click', function () {
     moveSlide(currentIdx + 1);
   }
 });
-
-</body>
-</html>
