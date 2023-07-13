@@ -5,13 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TravelMaker</title>
-    <link rel="shortcut icon" type="image/x-icon" href="${contextPath}/resources/images/small_logo.png">
-    <link rel="stylesheet" href="${contextPath}/resources/css/region3.css">
+    <link rel="shortcut icon" type="image/x-icon" href="image/small_logo.png">
+ 	<link rel="stylesheet" href="${contextPath}/resources/css/region1.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/ef988defcf.js" crossorigin="anonymous"></script>
-    
 </head>
 <body>
     <main>
@@ -66,43 +65,68 @@
         </nav>
 
         <section id="middle">
-            <section class = "title">
-                <p>헤이다이닝</p>
-                <p>울산 남구</p>
-                <mark>매콤한 먹물파스타가 맛있는 레스토랑</mark>
-                <hr>
-            </section>
-            <section class="like">
-                <p>좋아요</p>
-                <section>
-                     <img src="${contextPath}/resources/images/헤이다이닝.jpg" width="550px" height="370px">
+
+            <section id="middle1">
+                <section id="button">
+                    <button><</button>
                 </section>
-            </section>
-            <section class="article">
-                <p>상세정보</p>
-                <hr>
-                <p>울산 삼산동 업스퀘어 근처 맥도날드 뒤편에 있는 헤이다이닝은 깔끔하고 모던한 장소에서 식사를 즐길 수 있는 이탈리안 레스토랑이다. 대표 메뉴는 타이거 쉬림프 로제 파스타, 이베리코 온 더 리조또, 블랙앵거스 살치살 스테이크이고 그 외 스퀴드 잉크 파스타, 오징어먹물 아란치니, 자몽에이드 등 다양한 메뉴가 있다. 밤이 되면 조도로 분위기를 조절해서 연인들의 데이트 장소로 인기가 많다. 태화강변이 근처에 있어 함께 둘러보기 좋고, 서점과 미술관, 공원도 있다.</p>
-            </section>
-            <section class="map">
-                <section>지도</section>
-                <section class="map1-1">
+                <section id="middle1-1">
                     <section>
-                        <ul>
-                            <li>문의 및 안내</li>
-                            <li>주소</li>
-                            <li>주차</li>
-                            <li>취급메뉴</li>
-                        </ul>
+                        <section id="pic">
+                            <img src="${contextPath}/resources/images/여행이 있는 주말.jpg">
+                        </section>
+                        <section id="article">
+                            <p>여행이 있는 주말</p>
+                            <p>매월 마지막 주말은 일상에서 벗어나 여행을 떠나보세요!</p>
+                        </section>
                     </section>
                     <section>
-                        <ul>
-                            <li>홈페이지</li>
-                            <li>영업시간</li>
-                        </ul>
+                        <section id="pic">
+                            <img src="${contextPath}/resources/images/한국관광의별.jpg">
+                        </section>
+                        <section id="article">
+                            <p>한국 관광의 별</p>
+                            <p>한 해 동안 가장 빛난 별을 찾아 소개합니다!</p>
+                        </section>
+                    </section>
+                    <section>
+                        <section id="pic">
+                            <img src="${contextPath}/resources/images/반려동물 동반여행.jpg">
+                        </section>
+                        <section id="article">
+                            <p>반려동물 동반여행</p>
+                            <p>반려동물과 함께할 수 있는 여행을 소개합니다.</p>
+                        </section>
                     </section>
                 </section>
+                <section id="button">
+                    <button>></button>
+                </section>
             </section>
-    
+
+            <section id="middle2">
+                <section id="map">지도</section>
+                <section class="infobox">
+                    <section id="information">
+                        <div id="info2" >여행지정보</div>
+                    </section>
+                    <section class="photobox1">
+                        <section id="photo">
+                            <section>사진</section>
+                            <section>정보</section>
+                        </section>
+                        <section id="photo">
+                            <section>사진</section>
+                            <section>정보</section>
+                        </section>
+                        <section id="photo">
+                            <section>사진</section>
+                            <section>정보</section>
+                        </section>
+                    </section>
+              
+                </section>
+            </section>
 
 
         </section>

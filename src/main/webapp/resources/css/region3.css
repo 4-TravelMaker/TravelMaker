@@ -1,0 +1,304 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
+
+* { box-sizing: border-box; }
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+section {
+    /* border: 1px solid black; */
+}
+
+
+main {
+    width: 1200px;
+    height: auto;
+    margin: auto;
+}
+
+header {
+    width: 100%;
+    height: 175px;
+}
+
+.head {
+    width: 100%;
+    height: 175px;
+    display: flex;
+}
+
+
+
+/* 로고 */
+#logo {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.head > section:nth-child(2) {
+    width: 30%;
+    height: 100%;
+}
+
+
+
+/* header - 검색창 */
+#search-area {
+    width: 35%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    padding-bottom: 30px;
+    padding-left: 120px;
+}
+
+#search-area fieldset {
+    width: 230px;
+    height: 40px;
+    border: 2px solid rgb(153, 216, 199);
+    border-radius: 10px;
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#query {
+    width: 230px;
+    font-size: 15px;
+    outline: 0;
+    border: none;
+}
+
+#search-area section {
+    width: 250px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    border: none;
+}
+
+#search-btn {
+    background-color: white;
+    font-size: 1.5em;
+    color: rgb(153, 216, 199);
+    cursor: pointer;
+    border: none;
+}
+
+
+
+/* header - 로그인/회원가입 버튼 */
+.login-area {
+    width: 15%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    padding-bottom: 30px;
+}
+
+
+.login-area > button {
+    width: 100px;
+    height: 40px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    /* background-color: rgba(153, 216, 199, 0.46); */
+    background-color: rgb(153, 216, 199);
+    font-weight: bold;
+    margin: 0 5px;
+}
+
+.login-area a {
+    color: white;
+    text-decoration: none;
+}
+
+
+/* navigation */
+nav {
+    width: 100%;
+    height: 50px;
+    background-color: rgb(153, 216, 199);
+    display: flex;
+    justify-content: center;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+
+#nav {
+    width: 80%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.nav-menu {
+    width: 25%;
+    height: 50px;
+    text-align: center;
+    padding: 11px;
+    border-radius: 15px;
+}
+
+.nav-menu > a {
+    color: white;
+    font-weight: bold;
+    font-size: 19px;
+    text-decoration: none;
+}
+
+#middle {
+    height: 1450px;
+}
+
+
+.title{ /* 제목 영역 */
+    height: 170px;
+    text-align: center;
+}
+
+mark{
+    background-color: rgb(205, 231, 238);
+    font-weight: bold;
+}
+
+.title>p{
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+.title>p:nth-child(1){
+    font-size: 40px;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+.title>p:nth-child(2){
+    font-weight: bold;
+}
+
+.title>p:nth-child(3){
+    font-weight: bold;
+
+}
+
+.title>hr{
+    margin-left: 90px;
+    margin-right: 90px;
+}
+
+
+/* 좋아요/사진 영역 */
+.like{ 
+    height: 400px;
+    margin-left: 90px;
+    margin-right: 90px;
+}
+
+.like>p{ /* 좋아요 */
+    height: 30px;
+    margin: 0;
+}
+
+.like>section{ /* 사진 */
+    height: 370px;
+    display: flex;
+    justify-content: center;
+}
+
+
+/* 상세정보 / 기사글 영역*/
+.article{ 
+    height: 210px;
+    margin-left: 90px;
+    margin-right: 90px;
+}
+
+.article>p:nth-child(1){ /* 상세정보 */
+    font-size: 25px;
+    margin: 0;
+    margin-top: 30px;
+    font-weight: bold;
+}
+
+
+/* 지도/상세정보 영역 */
+.map{ /* 지도 */
+    height: 600px;
+    margin-left: 90px;
+    margin-right: 90px;
+}
+
+.map>section:nth-child(1){
+    height: 400px;
+
+
+}
+
+.map>section:nth-child(2){
+    height: 200px;
+
+
+}
+
+.map1-1{
+    display: flex;
+    justify-content: space-between;
+}
+
+.map1-1>section:nth-child(1){
+    width: 800px;
+}
+
+.map1-1>section:nth-child(2){
+    width: 600px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* footer */
+footer {
+    width: 100%;
+    height: 100px;
+    background-color: rgba(224, 224, 224, 0.18);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+footer > section:first-child {
+    width: 400px;
+    height: 100%;
+    line-height: 100px;
+    text-align: center;
+}
+
+.footer {
+    width: 150px;
+    height: 100%;
+    line-height: 100px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 17px;
+}

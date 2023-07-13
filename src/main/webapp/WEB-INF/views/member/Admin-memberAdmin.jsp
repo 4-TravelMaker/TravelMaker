@@ -7,8 +7,8 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
     <link rel="stylesheet" href="${contextPath}/resources/css/main-style.css">
-    <link rel="stylesheet" href="${contextPath}/resources/css/Admin-memberAdmin-style.css">
-    <link rel="stylesheet" href="${contextPath}/resources/css/Admin-sideBar-main-style.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/Admin/Admin-memberAdmin-style.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/Admin/Admin-sideBar-main-style.css">
 
 		<jsp:include page="/WEB-INF/views/common/header.jsp"/>
 
@@ -39,138 +39,37 @@
 
                 <section>
                     <table class="member-table">
-                        <tr class="table-bk">
-                            <th>구분</th>
-                            <th>아이디</th>
-                            <th>이름</th>
-                            <th>닉네임</th>
-                            <th>주소</th>
-                            <th>선호 테마</th>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>user01</td>
-                            <td>유저일</td>
-                            <td>일저유</td>
-                            <td>서울시 강동구</td>
-                            <td>자전거 여행</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>user02</td>
-                            <td>유저이</td>
-                            <td>이저유</td>
-                            <td>서울시 강서구</td>
-                            <td>캠핑</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>user03</td>
-                            <td>유저삼</td>
-                            <td>삼저유</td>
-                            <td>서울시 강남구</td>
-                            <td>차박</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>user04</td>
-                            <td>유저사</td>
-                            <td>사저유</td>
-                            <td>서울시 강북구</td>
-                            <td>애견 동반 여행</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>user01</td>
-                            <td>유저일</td>
-                            <td>일저유</td>
-                            <td>서울시 강동구</td>
-                            <td>자전거 여행</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>user02</td>
-                            <td>유저이</td>
-                            <td>이저유</td>
-                            <td>서울시 강서구</td>
-                            <td>캠핑</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>user03</td>
-                            <td>유저삼</td>
-                            <td>삼저유</td>
-                            <td>서울시 강남구</td>
-                            <td>차박</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>user04</td>
-                            <td>유저사</td>
-                            <td>사저유</td>
-                            <td>서울시 강북구</td>
-                            <td>애견 동반 여행</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>user01</td>
-                            <td>유저일</td>
-                            <td>일저유</td>
-                            <td>서울시 강동구</td>
-                            <td>자전거 여행</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>user02</td>
-                            <td>유저이</td>
-                            <td>이저유</td>
-                            <td>서울시 강서구</td>
-                            <td>캠핑</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>user03</td>
-                            <td>유저삼</td>
-                            <td>삼저유</td>
-                            <td>서울시 강남구</td>
-                            <td>차박</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>user04</td>
-                            <td>유저사</td>
-                            <td>사저유</td>
-                            <td>서울시 강북구</td>
-                            <td>애견 동반 여행</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>user01</td>
-                            <td>유저일</td>
-                            <td>일저유</td>
-                            <td>서울시 강동구</td>
-                            <td>자전거 여행</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>user02</td>
-                            <td>유저이</td>
-                            <td>이저유</td>
-                            <td>서울시 강서구</td>
-                            <td>캠핑</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>user03</td>
-                            <td>유저삼</td>
-                            <td>삼저유</td>
-                            <td>서울시 강남구</td>
-                            <td>차박</td>
-                        </tr>
+                        <thead>
+                            <tr class="table-bk">
+                                <th>구분</th>
+                                <th>회원 번호</th>
+                                <th>아이디</th>
+                                <th>이름</th>
+                                <th>닉네임</th>
+                                <th>주소</th>
+                                <th>선호 테마</th>
+                                <th>가입일</th>
+                                <th>탈퇴 여부</th>
+                            </tr>
+                        </thead>
 
+                        <tbody>
+                            <c:forEach var="member" items="${requestScope.list}">
+                                <tr>
+                                    <td><input type="checkbox"></td>
+                                    <td>${ member.memberId }</td>
+                                    <td>${ member.memberName }</td>
+                                    <td>${ member.memberNickname }</td>
+                                    <td>${ member.memberAddress }</td>
+                                    <td>${ member.memberTheme }</td>
+                                    <td>${ member.memberTheme }</td>
+                                    <td>${ member.memberTheme }</td>
+                                </tr>
+                            </c:forEach>
+                        </tbody>
                     </table>
-
                 </section>
+
                 <section class="page-btn">
                     <img src="${contextPath}/resources/images/Admin/page.png">
                 </section>
