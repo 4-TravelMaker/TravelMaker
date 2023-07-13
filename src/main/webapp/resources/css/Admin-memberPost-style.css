@@ -1,0 +1,123 @@
+/* 오른쪽 내용 화면 */
+.right-section{
+    width: 900px;
+}
+
+/* 관리자 페이지 상단 우측 제목 */
+.right-section > section:first-of-type{
+    display: flex;
+    height: 100px;
+}
+
+.title{
+    width: 96%;
+    padding: 30px 15px;
+    margin-left: 20px;
+    
+    font-size: 30px;
+    font-weight: bold;
+
+    border-bottom: 1px solid #ddd;
+}
+
+/* 회원 검색 및 수정, 삭제 버튼 영역 */
+.right-section > section:nth-of-type(2){
+    height: 50px;
+    
+    display: flex;
+    align-items: end;
+}
+
+.search-area{
+    display: flex;
+    padding: 0 20px;
+}
+
+#member-search{
+    height: 35px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.search-area > button{
+    margin-top: 2px;
+    margin-left: 7px;
+    height: 30px;
+    width: 50px;
+
+    border: none;
+    border-radius: 5px;
+
+    color: white;
+    background-color: #ddd;
+
+    cursor: pointer;
+}
+
+.search-area > button:hover{
+    color: white;
+    background-color: #000000;
+
+    transition-duration: 1s;
+}
+
+.modify-btn{
+    width: 85px;
+    height: 35px;
+    margin: 0 3px 0;
+
+    position: relative;
+    left: 430px;
+
+    border: 1px solid transparent;
+    border-radius: 10px;
+
+    font-size: 15px;
+
+    color: white;
+    background-color: #ddd;
+
+    cursor: pointer;
+}
+
+.modify-btn:hover{
+    color: white;
+    background-color: #000000;
+
+    transition-duration: 1s;
+}
+
+/* 게시글 관리 내용 영역 */
+.right-section > section:nth-of-type(3){
+    height: 800px;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: center;
+}
+
+.post-table{
+    margin: 20px 0 20px;
+    background-color: white;
+    width: 860px;
+    
+    border: 1px solid #ddd;
+    border-collapse: collapse;
+
+    text-align: center;
+}
+
+.table-bk{
+    background-color: #eeeeee;
+    border: 1px solid #ddd;
+}
+
+.post-table th, td{
+    border-bottom: 1px solid #ddd;
+}
+
+.page-btn{
+    text-align: center;
+    margin-top: 20px;
+}

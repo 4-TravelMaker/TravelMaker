@@ -1,27 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TravelMaker</title>
-    <script src="https://unpkg.com/embla-carousel/embla-carousel.umd.js"></script>
-    <script src="https://unpkg.com/embla-carousel-autoplay/embla-carousel-autoplay.umd.js"></script>
-    <link rel="shortcut icon" type="image/x-icon" href="image/small_logo.png">
-    <link rel="stylesheet" href="resources/css/main-style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/ef988defcf.js" crossorigin="anonymous"></script>
-</head>
-<body>
-    <main>
-        
-        <jsp:include page="/WEB-INF/views/common/header.jsp"/>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-        <section id="middle">
+<%-- 문자열 관련 함수(메소드) 제공 JSTL (EL 형식으로 작성) --%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
+    <link rel="stylesheet" href="${contextPath}/resources/css/main-style.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/mainHomePage-style.css">
+
+	<script src="https://unpkg.com/embla-carousel/embla-carousel.umd.js"></script>
+    <script src="https://unpkg.com/embla-carousel-autoplay/embla-carousel-autoplay.umd.js"></script>
+
+	<jsp:include page="/WEB-INF/views/common/header.jsp"/>
+		
+		<section id="middle">
            
             <section class="container">
+            
                 <section class="container0"></section>
                 
                 <section class="container1">
@@ -143,23 +137,24 @@
                             충북 영동 여행
                         </strong>
                     </a>
-                   
+
                 </section>
 
             </section>
-
+           
         </section>
-
-        <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
-        
+		
     </main>
 
-   	<script type="text/javascript">
+	<jsp:include page="/WEB-INF/views/common/footer.jsp"/>
+
+    <script type="text/javascript">
         var emblaNode = document.querySelector(".container1");
         var options = { loop: false };
         var plugins = [EmblaCarouselAutoplay()]; // Plugins
   
         var embla = EmblaCarousel(emblaNode, options, plugins);
     </script>
+
 </body>
 </html>
