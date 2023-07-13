@@ -7,8 +7,8 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
     <link rel="stylesheet" href="${contextPath}/resources/css/main-style.css">
-    <link rel="stylesheet" href="${contextPath}/resources/css/Admin-postWrite-style.css">
-    <link rel="stylesheet" href="${contextPath}/resources/css/Admin-sideBar-main-style.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/Admin/Admin-postWrite-style.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/Admin/Admin-sideBar-main-style.css">
 
 		<jsp:include page="/WEB-INF/views/common/header.jsp"/>
 
