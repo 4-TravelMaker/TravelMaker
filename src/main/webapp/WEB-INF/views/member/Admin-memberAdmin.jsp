@@ -28,7 +28,7 @@
                 <section>
                     <section class="search-area">
                         <input type="text" placeholder="아이디 입력" id="member-search">
-                        <button type="submit">검색</button>
+                        <button id="search-btn">검색</button>
                     </section>
                     <section>
                         <a href="#">
@@ -57,13 +57,14 @@
                             <c:forEach var="member" items="${requestScope.list}">
                                 <tr>
                                     <td><input type="checkbox"></td>
+                                    <td>${ member.memberNo }</td>
                                     <td>${ member.memberId }</td>
                                     <td>${ member.memberName }</td>
                                     <td>${ member.memberNickname }</td>
                                     <td>${ member.memberAddress }</td>
                                     <td>${ member.memberTheme }</td>
-                                    <td>${ member.memberTheme }</td>
-                                    <td>${ member.memberTheme }</td>
+                                    <td>${ member.enrollDate }</td>
+                                    <td>${ member.secessionFlag }</td>
                                 </tr>
                             </c:forEach>
                         </tbody>
@@ -81,6 +82,6 @@
 
 	<jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 
-    
+    <script src="../../../resources/js/Admin/Admin-memberAdmin.js"></script>
 </body>
 </html>
