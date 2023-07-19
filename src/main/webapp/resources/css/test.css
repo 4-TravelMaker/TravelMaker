@@ -1,0 +1,403 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
+
+* { box-sizing: border-box; }
+
+
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* section {
+    border: 1px solid black;
+} */
+
+
+main {
+    width: 1200px;
+    height: auto;
+    margin: auto;
+}
+
+header {
+    width: 100%;
+    height: 175px;
+}
+
+.head {
+    width: 100%;
+    height: 175px;
+    display: flex;
+}
+
+
+
+/* 로고 */
+#logo {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.head > section:nth-child(2) {
+    width: 30%;
+    height: 100%;
+}
+
+
+
+/* header - 검색창 */
+#search-area {
+    width: 35%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    padding-bottom: 30px;
+    padding-left: 120px;
+}
+
+#search-area fieldset {
+    width: 230px;
+    height: 40px;
+    border: 2px solid rgb(153, 216, 199);
+    border-radius: 10px;
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#query {
+    width: 230px;
+    font-size: 15px;
+    outline: 0;
+    border: none;
+}
+
+#search-area section {
+    width: 250px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    border: none;
+}
+
+#search-btn {
+    background-color: white;
+    font-size: 1.5em;
+    color: rgb(153, 216, 199);
+    cursor: pointer;
+    border: none;
+}
+
+
+
+/* header - 로그인/회원가입 버튼 */
+.login-area {
+    width: 15%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    padding-bottom: 30px;
+}
+
+.login-area > button {
+    width: 100px;
+    height: 40px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    /* background-color: rgba(153, 216, 199, 0.46); */
+    background-color: rgb(153, 216, 199);
+    font-weight: bold;
+    margin: 0 5px;
+}
+
+.login-area a {
+    color: white;
+    text-decoration: none;
+}
+
+
+/* navigation */
+nav {
+    width: 100%;
+    height: 50px;
+    background-color: rgb(153, 216, 199);
+    display: flex;
+    justify-content: center;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+#nav {
+    width: 80%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.nav-menu {
+    width: 25%;
+    height: 50px;
+    text-align: center;
+    padding: 11px;
+    border-radius: 15px;
+}
+
+.nav-menu > a {
+    color: white;
+    font-weight: bold;
+    font-size: 19px;
+    text-decoration: none;
+}
+
+#middle {
+    height: 1750px;
+    justify-content: center;
+    display: flex;
+}
+
+/* body */
+
+.container{
+    width: 90%;
+    height: 1750px;   
+    justify-content: center;
+}
+.container1{
+    width: 100%;
+    height: 90px;
+    text-align: center;
+    justify-content: center;
+    margin-top: 40px;
+    font-size: 25px;
+}
+.container2{
+    width: 100%;
+    height: 40px;
+    
+    justify-content: center;
+
+
+}
+.container2-1{
+    width: 100%;
+    height: 30px;
+}
+
+
+.container3{
+    width: 100%;
+    height: 250px;
+    
+    justify-content: center;
+}
+.flex_container1{
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: space-between;
+
+}
+.flex_container2{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+
+}
+.item{
+    width: 20%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.item > img {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+}
+
+
+
+.item2{
+    width: 20%;
+    height: 40px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    
+}
+
+.container4{
+    width: 100%;
+    height: 20px;
+    
+    justify-content: center;
+}.container5{
+    width: 100%;
+    height: 150px;    
+    justify-content: center;
+    text-align: center;
+
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 8px;
+    
+}.container6{
+    width: 100%;
+    height: 30px;
+    font-size: 25px;
+    font-weight: bold;
+    
+}
+.container7{
+    width: 100%;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+}
+
+.container7-1{
+    width: 80%;
+    height: 350px;
+}
+
+.container7-1 > img {
+    width: 100%;
+    height: 100%;
+}
+
+.container8{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+}
+.container8-1{
+    width: 80%;
+    height: 100px;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.container9{
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+}
+
+.container9-1{
+    width: 80%;
+    height: 150px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.item3{
+    width: 40%;
+}
+.item3 > img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    
+}
+
+.container10{
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+}
+.container10-1{
+    width: 80%;
+    height: 150px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.item4{
+    width: 40%;
+}
+.container11{
+    height: 270px;
+    text-align: center;
+    font-size: 38px;
+    font-weight: bold;
+    
+}
+
+.container11-1{
+    height: 100px;
+    text-align: center;
+    font-size: 38px;
+    font-weight: bold;
+}
+
+.flex_container11{
+    height: 100px;
+    display: flex;    
+    text-align: center;
+    justify-content: space-between;
+}
+
+.flex_container12{
+    height: 100px;
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+}
+
+.item5{
+    background-color: rgb(230,230,230);
+    border-radius: 30%;
+    font-size: 18px;
+    line-height: 45px;
+    color: rgb(131,131,131);
+    width: 12%;
+    height: 50px;
+    border-top-left-radius: 25px; 
+    border-top-right-radius: 25px; 
+    border-bottom-right-radius: 25px; 
+    border-bottom-left-radius: 25px; 
+}
+
+
+/* body */
+
+
+/* footer */
+footer {
+    width: 100%;
+    height: 100px;
+    background-color: rgba(224, 224, 224, 0.18);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+footer > section:first-child {
+    width: 400px;
+    height: 100%;
+    line-height: 100px;
+    text-align: center;
+}
+
+.footer {
+    width: 150px;
+    height: 100%;
+    line-height: 100px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 17px;
+}
