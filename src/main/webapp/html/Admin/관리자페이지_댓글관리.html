@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>관리자 페이지</title>
+    <link rel="shortcut icon" type="image/x-icon" href="image/small_logo.png">
+    <link rel="stylesheet" href="관리자페이지_댓글관리.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ef988defcf.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <main>
+        <header>
+            <section class="head">
+                <section id="logo">
+                    <a href="#">
+                        <img src="image/logo.png" width="100%">
+                    </a>
+                </section>
+
+                <section></section>
+
+                <section id="search-area">
+                    <form action="#" name="search-form">
+                        <fieldset>
+                            <section>
+                                <input type="search" id="query" name="query" autocomplete="off">
+                                <button type="submit" id="search-btn" class="fa-solid fa-magnifying-glass"></button>
+                            </section>
+                        </fieldset>
+                    </form>
+                </section>
+                <section></section>
+
+                <section class="login-area">
+                    <button class="btn-style">
+                        <a href="#">로그인</a>
+                    </button>
+                    <button class="btn-style">
+                        <a href="#">회원가입</a>
+                    </button>
+                </section>
+            </section>
+        </header>
+
+        <nav>
+            <section id="nav">
+                <section class="nav-menu">
+                    <a href="#">지역</a>
+                </section>
+                <section class="nav-menu">
+                    <a href="#">테마</a>
+                </section>
+                <section class="nav-menu">
+                    <a href="#">여행 계획하기</a>
+                </section>
+                <section class="nav-menu">
+                    <a href="#">여행 리뷰</a>
+                </section>
+            </section>
+        </nav>
+
+        <section id="middle">
+            <section class="left-section">
+                <section class="left-section-head">관리자 페이지</section>
+                <section class="left-section-image">
+                    <img src="image/관리자 프로필 사진.jpg" width="180px" height="auto" id="admin-profile"><br>
+                    관리자 님
+                </section>
+                <!-- 마이 페이지 왼쪽 메뉴 -->
+                <section>
+
+                    <section class="left-section-btn">
+                        <a href="#">
+                            <button>홈 화면 관리</button>
+                        </a>
+                    </section>
+
+                    <section class="left-section-btn">
+                        <a href="#">
+                            <button>회원 관리</button>
+                        </a>
+                    </section>
+
+                    <section class="left-section-btn">
+                        <a href="#">
+                            <button>게시글 관리</button>
+                        </a>
+                    </section>
+
+                    <section class="left-section-btn">
+                        <a href="#">
+                            <button>댓글 관리</button>
+                        </a>
+                    </section>
+
+                    <section class="left-section-btn">
+                        <a href="#">
+                            <button>공지사항 관리</button>
+                        </a>
+                    </section>
+
+                    <section class="left-section-btn">
+                        <a href="#">
+                            <button>1:1 문의</button>
+                        </a>
+                    </section>
+
+                    <section class="left-section-btn">
+                        <a href="#">
+                            <button>게시물 작성</button>
+                        </a>
+                    </section>
+                    
+                </section>
+            </section>
+
+            <section class="right-section">
+
+                <!-- 관리자 페이지 상단 우측 제목 -->
+                <section>
+                    <section class="title">
+                        <i class="fa-solid fa-comment-dots" style="color: #000000;"></i>
+                        &nbsp;댓글 관리
+                    </section>
+                </section>
+
+                <!-- 댓글 관리 내용 영역 -->
+                <section>
+                    <section class="search-area">
+                        <input type="text" placeholder="아이디 / 닉네임 입력" id="member-search">
+                        <button type="submit">검색</button>
+                    </section>
+                    <section>
+                        <a href="#">
+                            <button type="submit" class="modify-btn">수정</button>
+                        </a>
+                        <a href="#">
+                            <button type="submit" class="modify-btn">삭제</button>
+                        </a>
+                    </section>
+                </section>
+
+                <section>
+                    <table class="reply-table">
+                        <tr class="table-bk">
+                            <th>구분</th>
+                            <th>닉네임</th>
+                            <th>댓글 내용</th>
+                            <th>작성일</th>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>일저유</td>
+                            <td>안녕하세요</td>
+                            <td>2023.07.05</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>이저유</td>
+                            <td>반갑습니다</td>
+                            <td>2023.07.05</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>삼저유</td>
+                            <td>배고프네요</td>
+                            <td>2023.07.05</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>사저유</td>
+                            <td>졸려요</td>
+                            <td>2023.07.05</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>오저유</td>
+                            <td>친하게 지내용</td>
+                            <td>2023.07.05</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>일저유</td>
+                            <td>안녕하세요</td>
+                            <td>2023.07.05</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>이저유</td>
+                            <td>반갑습니다</td>
+                            <td>2023.07.05</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>삼저유</td>
+                            <td>배고프네요</td>
+                            <td>2023.07.05</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>사저유</td>
+                            <td>졸려요</td>
+                            <td>2023.07.05</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>오저유</td>
+                            <td>친하게 지내용</td>
+                            <td>2023.07.05</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>일저유</td>
+                            <td>안녕하세요</td>
+                            <td>2023.07.05</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>이저유</td>
+                            <td>반갑습니다</td>
+                            <td>2023.07.05</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>삼저유</td>
+                            <td>배고프네요</td>
+                            <td>2023.07.05</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>사저유</td>
+                            <td>졸려요</td>
+                            <td>2023.07.05</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>오저유</td>
+                            <td>친하게 지내용</td>
+                            <td>2023.07.05</td>
+                        </tr>
+
+                    </table>
+
+                </section>
+                <section class="page-btn">
+                    <img src="image/페이지 버튼.png">
+                </section>
+            </section>
+            
+        </section>
+
+        <footer>
+            <section>Copyright © TravelMaker Corp. All rights reserved.</section>
+            <section class="footer"> 　　이용약관　　 </section>
+            <section class="footer"> 　　운영정책　　 </section>
+            <section class="footer"> 　　1:1문의　　 </section>
+        </footer>
+
+    </main>
+</body>
+</html>

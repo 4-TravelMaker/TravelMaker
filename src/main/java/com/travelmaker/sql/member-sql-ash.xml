@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>member-sql-ash.xml</comment>
+
+	<!-- 회원 목록 조회 -->
+	<entry key="selectAll">
+		SELECT MEMBER_NO, MEMBER_ID, MEMBER_NM, MEMBER_NICK,
+				MEMBER_ADDR, MEMBER_THM, ENROLL_DT,SECESSION_FL
+		FROM MEMBER ORDER BY 1
+	</entry>
+	
+</properties>
