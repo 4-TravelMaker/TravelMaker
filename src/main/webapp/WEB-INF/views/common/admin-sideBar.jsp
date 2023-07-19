@@ -15,43 +15,43 @@
         <section>
 
             <section class="left-section-btn">
-                <a href="#">
+                <a href="/TravelMaker/admin/home">
                     <button>홈 화면 관리</button>
                 </a>
             </section>
 
             <section class="left-section-btn">
-                <a href="#">
+                <a href="/TravelMaker/admin/memberAdmin">
                     <button>회원 관리</button>
                 </a>
             </section>
 
             <section class="left-section-btn">
-                <a href="#">
+                <a href="/TravelMaker/admin/memberPost">
                     <button>게시글 관리</button>
                 </a>
             </section>
 
             <section class="left-section-btn">
-                <a href="#">
+                <a href="/TravelMaker/admin/memberReply">
                     <button>댓글 관리</button>
                 </a>
             </section>
 
             <section class="left-section-btn">
-                <a href="#">
+                <a href="/TravelMaker/admin/noticeAdmin">
                     <button>공지사항 관리</button>
                 </a>
             </section>
 
             <section class="left-section-btn">
-                <a href="#">
+                <a href="/TravelMaker/admin/OneOnOneInquiry">
                     <button>1:1 문의</button>
                 </a>
             </section>
 
             <section class="left-section-btn">
-                <a href="#">
+                <a href="/TravelMaker/admin/postWrite">
                     <button>게시물 작성</button>
                 </a>
             </section>
