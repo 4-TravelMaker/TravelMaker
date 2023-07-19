@@ -25,9 +25,9 @@ public class selectOneServlet extends HttpServlet {
 			
 			MemberService_ash service = new MemberService_ash();
 			
-			Member member = service.selectOne(memberId);
+			//Member member = service.selectOne(memberId);
 			
-			new Gson().toJson(member, resp.getWriter());
+			//new Gson().toJson(member, resp.getWriter());
 			
 		} catch (Exception e) {
 			e.printStackTrace();
