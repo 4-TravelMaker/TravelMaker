@@ -1,4 +1,4 @@
-package com.travelmaker.member.model.vo;
+package com.travelmaker.board.model.vo;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -14,7 +14,6 @@ import lombok.ToString;
 
 public class BoardImage {
 
-	
 	private int imageNo; // 이미지 번호
 	private String imageReName; // 이미지 저장 경로 + 변경명
 	private String imageOriginal; // 이미지 원본명

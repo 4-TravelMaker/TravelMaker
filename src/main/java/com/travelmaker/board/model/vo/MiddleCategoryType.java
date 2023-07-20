@@ -1,4 +1,4 @@
-package com.travelmaker.member.model.vo;
+package com.travelmaker.board.model.vo;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -13,7 +13,9 @@ import lombok.ToString;
 @AllArgsConstructor
 
 public class MiddleCategoryType {
-	private String middleCategoryCode;
-	private String middleCategoryName;
-	private String mainCategoryCode;
+	
+	private String middleCategoryCode; // 중분류 코드
+	private String middleCategoryName; // 중분류 이름
+	private String mainCategoryCode; // 대분류 코드
+	
 }
