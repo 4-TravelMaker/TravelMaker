@@ -257,17 +257,26 @@ nav {
     height: 800px;
 }
 
+#map{
+    display: flex;
+    justify-content: center;
+}
+
 #map > img{
     width: 400px;
     height: 600px;
+    align-items: center;
 }
-
 
 
 #information{
     height: 150px;
     font-size: 30px;
     font-weight: bold;
+}
+
+.infobox{
+    display: none;
 }
 
 
