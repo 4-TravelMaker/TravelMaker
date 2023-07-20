@@ -238,7 +238,7 @@ nav {
 /* 지도 & 여행지 정보 영역 */
 #middle2{
     display: flex;
-    height: 600px;
+    height: 800px;
 }
 
 #middle2 > section:nth-child(1){
@@ -257,12 +257,26 @@ nav {
     height: 800px;
 }
 
+#map{
+    display: flex;
+    justify-content: center;
+}
+
+#map > img{
+    width: 400px;
+    height: 600px;
+    align-items: center;
+}
 
 
 #information{
     height: 150px;
     font-size: 30px;
     font-weight: bold;
+}
+
+.infobox{
+    display: none;
 }
 
 
