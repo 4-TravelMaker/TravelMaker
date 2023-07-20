@@ -27,20 +27,5 @@ public class Member {
 	private String enrollDate; // 회원 가입일
 	private String secessionFlag; // 탈퇴 여부
 	
-	
-	// 회원 정보 조회용 매개변수 생성자
-	public Member(int memberNo, String memberId, String memberName, String memberNickname, String memberAddress,
-			String memberTheme, String enrollDate, String secessionFlag) {
-		super();
-		this.memberNo = memberNo;
-		this.memberId = memberId;
-		this.memberName = memberName;
-		this.memberNickname = memberNickname;
-		this.memberAddress = memberAddress;
-		this.memberTheme = memberTheme;
-		this.enrollDate = enrollDate;
-		this.secessionFlag = secessionFlag;
-	}
-	
 }
 

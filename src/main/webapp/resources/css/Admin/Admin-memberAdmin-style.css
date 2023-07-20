@@ -39,6 +39,23 @@
     border-radius: 5px;
 }
 
+#member-search:focus{
+    outline: none;
+}
+
+#search-btn{
+    background-color: rgb(153, 216, 199);
+    color: white;
+    font-size: 15px;
+}
+
+#search-btn:hover{
+    background-color: #ddd;
+    color: white;
+
+    transition-duration: 1s;
+}
+
 .search-area > button{
     margin-top: 2px;
     margin-left: 7px;
@@ -60,7 +77,6 @@
 
     transition-duration: 1s;
 }
-
 
 #secession-btn{
     width: 85px;

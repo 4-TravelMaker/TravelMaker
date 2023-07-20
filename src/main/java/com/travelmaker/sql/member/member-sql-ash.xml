@@ -10,4 +10,12 @@
 		FROM MEMBER ORDER BY 1
 	</entry>
 	
+	<!-- 회원 정보 조회 -->
+	<entry key="selectOne">
+		SELECT MEMBER_NO, MEMBER_ID, MEMBER_NM, MEMBER_NICK,
+				MEMBER_ADDR, MEMBER_THM, ENROLL_DT,SECESSION_FL
+		FROM MEMBER
+		WHERE MEMBER_ID = ?
+		AND SECESSION_FL = 'N'
+	</entry>
 </properties>
