@@ -1,4 +1,4 @@
-package com.travelmaker.member.model.vo;
+package com.travelmaker.board.model.vo;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

@@ -1,4 +1,4 @@
-package com.travelmaker.member.model.vo;
+package com.travelmaker.board.model.vo;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -17,6 +17,4 @@ public class BoardLike {
 	private int memberNo; // 회원번호
 	private int boardNo; // 게시글 번호
 	
-	
-
 }

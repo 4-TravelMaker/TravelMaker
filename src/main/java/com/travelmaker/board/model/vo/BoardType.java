@@ -1,4 +1,4 @@
-package com.travelmaker.member.model.vo;
+package com.travelmaker.board.model.vo;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -12,10 +12,8 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 
-
-public class MainCategoryType {
+public class BoardType {
 	
-	private String mainCategoryCode;  // 대분류 코드
-	private String mainCategoryName;  // 대분류 이름
-
+	private int boardCode; // 게시판 코드
+	private String boardName; // 게시판 이름
 }
