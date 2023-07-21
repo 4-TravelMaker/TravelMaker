@@ -80,3 +80,25 @@ console.log("test")
     });
 
 })
+
+// 회원 탈퇴 처리
+// 체크박스 선택 후 회원 탈퇴 버튼을 눌러 탈퇴 처리
+const secessionBtn = document.getElementById("secession-btn");
+const checkbox = document.getElementById("checkbox");
+
+secessionBtn.addEventListener("click", function(){
+    
+    // 체크박스가 체크 안 되어 있을 때
+    if(!checkbox.checked){
+        alert("탈퇴 처리할 회원을 선택해 주세요.");
+    }
+
+    if(checkbox.checked){
+        
+        if(confirm("정말 탈퇴시키겠습니까?")){
+
+        }
+
+    }
+
+})
