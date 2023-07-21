@@ -16,7 +16,7 @@
     <main>
       	<jsp:include page="/WEB-INF/views/common/header.jsp"/>
 
-             <section id="middle">
+            <section id="middle">
 
             <section id="middle1">
                 <section id="button">
