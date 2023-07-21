@@ -1,0 +1,522 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
+
+* { box-sizing: border-box; }
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* section {
+    border: 1px solid black;
+} */
+
+/* tr,td{
+    border: 1px solid black;
+} */
+
+main {
+    width: 1200px;
+    height: auto;
+    margin: auto;
+}
+
+header {
+    width: 100%;
+    height: 175px;
+}
+
+.head {
+    width: 100%;
+    height: 175px;
+    display: flex;
+}
+
+
+
+/* 로고 */
+#logo {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.head > section:nth-child(2) {
+    width: 30%;
+    height: 100%;
+}
+
+
+
+/* header - 검색창 */
+#search-area {
+    width: 35%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    padding-bottom: 30px;
+    padding-left: 120px;
+}
+
+#search-area fieldset {
+    width: 230px;
+    height: 40px;
+    border: 2px solid rgb(153, 216, 199);
+    border-radius: 10px;
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#query {
+    width: 230px;
+    font-size: 15px;
+    outline: 0;
+    border: none;
+}
+
+#search-area section {
+    width: 250px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    border: none;
+}
+
+#search-btn {
+    background-color: white;
+    font-size: 1.5em;
+    color: rgb(153, 216, 199);
+    cursor: pointer;
+    border: none;
+}
+
+
+
+/* header - 로그인/회원가입 버튼 */
+.login-area {
+    width: 15%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    padding-bottom: 30px;
+}
+
+.login-area > button {
+    width: 100px;
+    height: 40px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    /* background-color: rgba(153, 216, 199, 0.46); */
+    background-color: rgb(153, 216, 199);
+    font-weight: bold;
+    margin: 0 5px;
+}
+
+.login-area a {
+    color: white;
+    text-decoration: none;
+}
+
+
+/* navigation */
+nav {
+    width: 100%;
+    height: 50px;
+    background-color: rgb(153, 216, 199);
+    display: flex;
+    justify-content: center;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+#nav {
+    width: 80%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.nav-menu {
+    width: 25%;
+    height: 50px;
+    text-align: center;
+    padding: 11px;
+    border-radius: 15px;
+}
+
+.nav-menu > a {
+    color: white;
+    font-weight: bold;
+    font-size: 19px;
+    text-decoration: none;
+}
+
+/* middle */
+#middle {
+    height: 1200px;
+    display: flex;
+}
+
+/* 회원 가입 */
+.right-section {
+    width: 100%;
+    height: 930px;
+    padding: 30px 10px;
+}
+
+.right-section-head {
+
+    text-align: center;
+    width: 100%;
+    height: 100px;
+    
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.right-section-area {
+    width: 100%;
+    height: 800px;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.idcheck{
+   height: 1px;
+}
+
+tr {
+    height: 50px;
+}
+
+.idcheckArea{
+    font-size: 15px;
+    font-weight: bold;
+}
+
+td:first-child { /* 비밀번호, 비밀번호 입력.. 열 스타일 */
+    text-align: right;
+    font-weight: bold;
+    padding-right: 20px;
+}
+
+td > input[type="password"] {
+    padding: 10px;
+    width: 300px;
+    height: 30px;
+    border: 1px solid grey;
+    border-radius: 5px;
+}
+
+td > input[type="text"] { /* input(text 타입) 스타일 */
+    padding: 10px;
+    width: 300px;
+    height: 30px;
+    border: 1px solid grey;
+    border-radius: 5px;
+}
+
+/* 아이디 중복확인 버튼 */
+
+#id-check{
+    width: 79px;
+    height: 30px;
+    border: 1px solid transparent;
+    border-radius: 15px;
+    background-color: rgb(153, 216, 199);
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    right: 40px;
+    
+
+}
+
+input[type="checkbox"] { /* input(checkbox 타입) 스타일 */
+    position: relative;
+    width: 20px;
+    margin-left: 10px;
+}
+
+
+
+#pw-check-td {
+    position: absolute;
+    top: 480px;
+}
+
+#pw-check {
+    display: block;
+    width: 20px;
+    /* border: 1px solid black; */
+}
+
+#nickname-check { /* 닉네임 중복 확인 버튼 */
+    width: 79px;
+    height: 30px;
+    border: 1px solid transparent;
+    border-radius: 15px;
+    background-color: rgb(153, 216, 199);
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    right: 40px;
+    bottom: 1px;
+}
+
+#nickname-td {
+    position: relative;
+    padding-top: 20px;
+}
+
+/* 프로필 사진 */
+#profile-td {
+    position: relative;
+    bottom: 67px;
+}
+
+#profile-area {
+    display: flex;
+    justify-content: center;
+    height: 250px;
+}
+
+#image-preview {
+    width: 152px;
+    height: 152px;
+    margin-top: 20px;
+    margin-right: 60px;
+    border: 1px solid black;
+}
+
+#profile > input {
+    width: 95px;
+    height: 30px;
+    display: none;
+}
+
+#image-preview > img {
+    width: 100%;
+    height: 100%;
+}
+
+/* 프로필 사진 업로드 버튼*/
+#profile-btn {
+    width: 95px;
+    height: 30px;
+
+    border: 1px solid transparent;
+    border-radius: 15px;
+    background-color: rgb(153, 216, 199);
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+
+    text-align: center;
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+/* 주소 */
+#address-td {
+    position: relative;
+    bottom: 39px;
+}
+
+.address {
+    width: 300px;
+    height: 30px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    margin: 4px 0;
+}
+
+input[name="zipcode"] {
+    padding: 10px;
+    width: 150px;
+}
+
+#address-btn {
+    width: 79px;
+    height: 30px;
+    border: 1px solid transparent;
+    border-radius: 15px;
+    background-color: rgb(153, 216, 199);
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+
+    margin-left: 73px;
+    
+}
+
+/* 선호 테마 */
+input[value="theme1"], input[value="theme5"] {
+    margin-left: 0px;
+}
+
+td > label {
+    position: relative;
+    top: -1px;
+}
+
+/* 비밀번호 찾기 질문 */
+select{
+    padding-left: 8px;
+    width: 300px;
+    height: 32px;
+    border-radius: 5px;
+    font-size: 13px;
+}
+
+/* 체크박스 브이 */
+
+select {
+
+    -webkit-appearance:none; /* for chrome */
+ 
+    -moz-appearance:none; /*for firefox*/
+ 
+    appearance:none;
+ 
+ }
+ 
+ select::-ms-expand{
+ 
+    display:none;/*for IE10,11*/
+ 
+ }
+
+ select {
+
+    background:url(../test/image/sign.png) no-repeat 97% 50%/11px auto;
+ 
+ }
+
+
+/* submit */
+.submit {
+    display: flex;
+    justify-content: center;
+    margin: 50px 0;
+}
+
+.submit > button {
+    width: 120px;
+    height: 40px;
+
+    border: 1px solid transparent;
+    border-radius: 15px;
+    background-color: rgb(153, 216, 199);
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    right: 35px;
+
+    /* margin: 0 10px; */
+}
+
+/* 포커싱 라인  */
+
+#id:focus{
+    border-radius: 5px;
+    border: 3px solid rgb(153, 216, 199);
+    outline: none;
+}
+
+#memberName:focus{
+    border-radius: 5px;
+    border: 3px solid rgb(153, 216, 199);
+    outline: none;
+}
+
+#pw:focus{
+    border-radius: 5px;
+    border: 3px solid rgb(153, 216, 199);
+    outline: none;
+}
+
+#pw2:focus{
+    border-radius: 5px;
+    border: 3px solid rgb(153, 216, 199);
+    outline: none;
+}
+
+#nickname:focus{
+    border-radius: 5px;
+    border: 3px solid rgb(153, 216, 199);
+    outline: none;
+}
+
+.address:focus{
+    border-radius: 5px;
+    border: 3px solid rgb(153, 216, 199);
+    outline: none;
+}
+
+#pwQuestion:focus{
+    border-radius: 5px;
+    border: 3px solid rgb(153, 216, 199);
+    outline: none;
+}
+
+#pwAnswer:focus{
+    border-radius: 5px;
+    border: 3px solid rgb(153, 216, 199);
+    outline: none;
+}
+
+
+
+
+
+
+
+
+/* ---------------- */
+
+
+/* footer */
+footer {
+    width: 100%;
+    height: 100px;
+    background-color: rgba(224, 224, 224, 0.18);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+footer > section:first-child {
+    width: 400px;
+    height: 100%;
+    line-height: 100px;
+    text-align: center;
+}
+
+.footer {
+    width: 150px;
+    height: 100%;
+    line-height: 100px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 17px;
+}
