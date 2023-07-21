@@ -21,7 +21,7 @@
             </section>
 
             <section class="left-section-btn">
-                <a href="/TravelMaker/admin/memberAdmin">
+                <a href="/TravelMaker/admin/selectAll">
                     <button>회원 관리</button>
                 </a>
             </section>
