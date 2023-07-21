@@ -14,7 +14,7 @@ import lombok.ToString;
 
 public class BoardLike {
 	
-	private int memberNo; // 회원번호
+	private int memberNo; // 회원 번호
 	private int boardNo; // 게시글 번호
 	
 }

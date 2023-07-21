@@ -25,5 +25,6 @@ public class Board {
 	private String mainCategoryCode; // 대분류 코드(L:지역/T:테마/N:선택안함)
 	private String middleCategoryCode; // 중분류 코드(N:선택안함)
 	private String subCategoryCode; // 소분류 코드(N:선택안함)
+	private String boardState; // 게시글 삭제 여부(Y: 삭제, N:삭제 안함)
 	
 }
