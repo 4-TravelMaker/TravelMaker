@@ -16,6 +16,5 @@ public class MiddleCategoryType {
 	
 	private String middleCategoryCode; // 중분류 코드
 	private String middleCategoryName; // 중분류 이름
-	private String mainCategoryCode; // 대분류 코드
 	
 }
