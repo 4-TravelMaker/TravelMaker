@@ -200,7 +200,7 @@
                                     <div class="embla__slide1">
                                         <a href="#" style="text-decoration:none">
                                             <div class="photo item">
-                                                <img src="resources/images/mainHome/top10/haniranderpam.PNG" >
+                                                <img src="resources/images/mainHome/top10/haniranderpam.PNG">
                                                 <strong>
                                                     하늬라벤더팜
                                                 </strong>
