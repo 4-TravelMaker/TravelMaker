@@ -11,7 +11,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>관리자 - 회원 관리</title>
+    <title>관리자 페이지 - 회원 관리</title>
 
     <link rel="shortcut icon" type="image/x-icon" href="${contextPath}/resources/images/small_logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -55,7 +55,8 @@
                     </section>
                 </section>
 
-                <section>
+                <section id="search-container">
+
                     <table class="member-table">
                         <thead>
                             <tr class="table-bk">
@@ -74,7 +75,7 @@
                         <tbody id="memberList">
                             <c:forEach var="member" items="${requestScope.list}">
                                 <tr>
-                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox" id="checkbox"></td>
                                     <td>${ member.memberNo }</td>
                                     <td>${ member.memberId }</td>
                                     <td>${ member.memberName }</td>
@@ -87,11 +88,9 @@
                             </c:forEach>
                         </tbody>
                     </table>
+
                 </section>
 
-                <section class="page-btn">
-                    페이지네이션 추가
-                </section>
             </section>
             
         </section>
