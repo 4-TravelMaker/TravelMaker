@@ -1,0 +1,424 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
+
+* { box-sizing: border-box; }
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* section {
+    border: 1px solid black;
+} */
+
+/* div {
+    border: 1px solid black;
+} */
+
+main {
+    width: 1200px;
+    height: auto;
+    margin: auto;
+}
+
+header {
+    width: 100%;
+    height: 175px;
+}
+
+.head {
+    width: 100%;
+    height: 175px;
+    display: flex;
+}
+
+
+
+/* 로고 */
+#logo {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.head > section:nth-child(2) {
+    width: 30%;
+    height: 100%;
+}
+
+
+
+/* header - 검색창 */
+#search-area {
+    width: 35%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    padding-bottom: 30px;
+    padding-left: 120px;
+}
+
+#search-area fieldset {
+    width: 230px;
+    height: 40px;
+    border: 2px solid rgb(153, 216, 199);
+    border-radius: 10px;
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#query {
+    width: 230px;
+    font-size: 15px;
+    outline: 0;
+    border: none;
+}
+
+#search-area section {
+    width: 250px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    border: none;
+}
+
+#search-btn {
+    background-color: white;
+    font-size: 1.5em;
+    color: rgb(153, 216, 199);
+    cursor: pointer;
+    border: none;
+}
+
+
+
+/* header - 로그인/회원가입 버튼 */
+.login-area {
+    width: 15%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    padding-bottom: 30px;
+}
+
+.login-area > button {
+    width: 100px;
+    height: 40px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    /* background-color: rgba(153, 216, 199, 0.46); */
+    background-color: rgb(153, 216, 199);
+    font-weight: bold;
+    margin: 0 5px;
+}
+
+.login-area a {
+    color: white;
+    text-decoration: none;
+}
+
+
+/* navigation */
+nav {
+    width: 100%;
+    height: 50px;
+    background-color: rgb(153, 216, 199);
+    display: flex;
+    justify-content: center;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+#nav {
+    width: 80%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.nav-menu {
+    width: 25%;
+    height: 50px;
+    text-align: center;
+    padding: 11px;
+    border-radius: 15px;
+}
+
+.nav-menu > a {
+    color: white;
+    font-weight: bold;
+    font-size: 19px;
+    text-decoration: none;
+}
+
+/* 미들 영역 */
+
+#middle {
+    display: flex;
+    height: 900px;
+}
+
+/* 세로 3분할 */
+#middlearea1{ width: 17.5%;}
+#middlearea2{width: 65%;}
+#middlearea3{width: 17.5%;}
+
+/* 가운데 삼분할 */
+#middle1-1{
+    display: flex;
+    height: 20%;
+    border-bottom: 1px solid gray;
+}
+#middle1-2{height: 35%;}
+#middle1-3{
+    border-top: 1px solid gray;
+    height: 45%;}
+
+/* 아이디찾기 글씨 */
+#idtext {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    font-size: 20px;
+    padding-bottom: 8px;
+    font-weight: bold;
+    
+} 
+
+/* 이름/아이디찾기질문/아이디찾기답변 글씨 */
+.idText2{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.findIdArea1 {height: 13%;}
+.findIdArea2 {
+    display: flex;
+    height: 65%;}
+.findIdArea3 {
+    display: flex;
+    height: 23%;}
+
+#findIdArea1Text{
+    margin-top: 12px;
+}
+
+.textArea{
+    width: 25%;
+}
+
+/* 인풋 영역 */
+.inputArea{
+    width: 75%;
+}
+
+.inputAreaName{
+    height: 19%;
+}
+/* 이름창 인풋 */
+.inputName{
+    width: 38%;
+    height: 90%;
+    margin-top: 4px;
+    /* border-radius: 5px; */
+}
+
+/* 아이디 찾기 질문 창 */
+.questionSelect{
+    padding-left: 10px;
+    font-weight: bold;
+    font-size: 13px;
+    width: 53%;
+    height: 90%;
+    /* border-radius: 5px; */
+}
+
+/* 아이디 찾기 답변 창 */
+.answerInput{
+    width: 53%;
+    height: 90%;
+    margin-top: 4px;
+    /* border-radius: 5px; */
+}
+
+select {
+
+    -webkit-appearance:none; /* for chrome */
+ 
+    -moz-appearance:none; /*for firefox*/
+ 
+    appearance:none;
+ 
+ }
+ 
+ select::-ms-expand{
+ 
+    display:none;/*for IE10,11*/
+ 
+ }
+
+ select {
+
+    background:url(../../images/sign.png) no-repeat 97% 50%/18px auto;
+ 
+ }
+
+
+.findIdButtonArea1{
+    width: 25%;
+}
+.findIdButtonArea2{
+    display: flex;
+    width: 75%;
+}
+
+/* 아이디 찾기 버튼 */
+#findIdButton{
+
+    margin-left: 35px;
+    width: 100px;
+    height: 35px;
+    border-radius: 5px;
+    border: 1px solid white;
+    background-color: rgb(153, 216, 199);
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* 취소 버튼 */
+#cancelButton{
+    margin-left: 5px;
+    width: 90px;
+    height: 35px;
+    border-radius: 5px;
+    border: 1px solid white;
+    background-color: rgb(153, 216, 199);
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* 아이디찾기 취소 버튼 영역 */
+.a{
+    height: 110px;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+
+/* 찾은 회원 아이디 출력하는 공간 */
+.findIdArea4{
+    display: flex;
+    height: 35px;
+}
+
+/* 회원 아이디 텍스트 공간 */
+.findIdText{width: 25%;}
+
+/* 회원 아이디 텍스트 */
+.findIdText >div{
+    width: 70%;
+    font-weight: bold;
+    font-size: 20px;
+
+}
+
+/* 찾은 회원 아이디 나오게 하는 공간 */
+.findIdTextArea{
+    width: 75%;
+}
+
+/* 로그인하기 비밀번호 찾기 영역 */
+.loginArea{
+    display: flex;
+    height: 137px; 
+}
+
+.loginArea1{width: 25%;}
+.loginArea2{width: 75%;}
+
+/* 로그인 하기 버튼 */
+#logindButton{
+
+    margin-top: 40px;
+    margin-left: 35px;
+    width: 100px;
+    height: 35px;
+    border-radius: 5px;
+    border: 1px solid white;
+    background-color: rgb(153, 216, 199);
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+
+}
+/* 비밀번호 찾기 버튼 */
+#findPwButton{
+
+    margin-left: 5px;
+    width: 120px;
+    height: 35px;
+    border-radius: 5px;
+    border: 1px solid white;
+    background-color: rgb(153, 216, 199);
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* 인풋창 포커싱 */
+input:focus{
+    border-radius: 5px;
+    border: 3px solid rgb(153, 216, 199);
+    outline: none;
+}
+
+select:focus{
+    border-radius: 5px;
+    border: 3px solid rgb(153, 216, 199);
+    outline: none;
+}
+
+
+
+
+
+/* footer */
+footer {
+    width: 100%;
+    height: 100px;
+    background-color: rgba(224, 224, 224, 0.18);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+footer > section:first-child {
+    width: 400px;
+    height: 100%;
+    line-height: 100px;
+    text-align: center;
+}
+
+.footer {
+    width: 150px;
+    height: 100%;
+    line-height: 100px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 17px;
+}
