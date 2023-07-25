@@ -1,4 +1,4 @@
-package com.travelmaker.member.controller;
+package com.travelmaker.board.controller;
 
 import java.io.IOException;
 
@@ -9,28 +9,23 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/member/login")
-public class loginServlet extends HttpServlet{
-	
-
-	
-	
+@WebServlet("/Region/main")
+public class Region extends HttpServlet {
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		String path = "/WEB-INF/views/member/Login/login.jsp";
-		
-		req.getRequestDispatcher(path).forward(req, resp);
-		
-		dispatcher.forward(req, resp);
-	
-	}
-	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
-		
+		try {
+			String path = "/WEB-INF/views/member/Region/region1.jsp";
+			
+			RequestDispatcher dispatcher = req.getRequestDispatcher(path);
+			dispatcher.forward(req, resp);
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
 		
 		
 	}
+
 }

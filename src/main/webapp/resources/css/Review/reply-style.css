@@ -1,0 +1,66 @@
+.cmt{
+    font-size: 20px;
+}
+
+.cmt-1{
+    align-items: center;
+}
+
+.Writer-1{
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+    width: 100%;
+}
+
+.Writer-1 img{
+    width: 40px;
+    height: 40px;
+}
+
+#Writer-text{
+    padding: 0;
+}
+
+.reply-write-area{
+    display: flex;
+    justify-content: center;
+    min-height: 85px;
+    margin: 0;
+    width: 100%;
+}
+
+#replyContent{
+    resize: none;
+    margin-right: 10px;
+    flex-basis: 75%;
+}
+
+#addReply{
+    width: 5%;
+    font-weight: bold;
+    background-color: #999;
+    color: white;
+    border: 0;
+    cursor: pointer;
+}
+
+.comments-text{
+    display: flex;
+}
+
+#comments-text2{
+
+    padding-left: 50px;
+}
+
+#Writer-2{
+
+    padding-left: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+
+
+
