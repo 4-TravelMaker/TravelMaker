@@ -101,4 +101,129 @@ main {
     font-weight: bold;
 }
 
+#SEOUL{
+    display: inline-block;
+    position: absolute;
+    top : 800PX;
+    left: 650PX;
+    cursor: pointer;
+    color: rgb(219, 157, 75);
+}
+
+#SEOUL:hover{
+    color: white;
+}
+
+#kW{
+    display: inline-block;
+    position: absolute;
+    top : 750PX;
+    left: 750PX;
+    cursor: pointer;
+    color: rgb(202, 73, 95);
+}
+
+#kW:hover{
+    color: white;
+}
+
+#kB{
+    display: inline-block;
+    position: absolute;
+    top : 900PX;
+    left: 770PX;
+    cursor: pointer;
+    color: green;
+}
+
+#kB:hover{
+    color: white;
+}
+
+#kN{
+    display: inline-block;
+    position: absolute;
+    top : 1000PX;
+    left: 750PX;
+    cursor: pointer;
+    color: rgb(207, 80, 207);
+}
+
+#kN:hover{
+    color: white;
+}
+
+#CB{
+    display: inline-block;
+    position: absolute;
+    top : 840PX;
+    left: 690PX;
+    cursor: pointer;
+    color: rgb(87, 82, 82);
+}
+
+#CB:hover{
+    color: white;
+}
+
+#CN{
+    display: inline-block;
+    position: absolute;
+    top : 870PX;
+    left: 610PX;
+    cursor: pointer;
+    color: rgb(84, 154, 182);
+}
+
+#CN:hover{
+    color: white;
+}
+
+
+#JB{
+    display: inline-block;
+    position: absolute;
+    top : 960PX;
+    left: 640PX;
+    cursor: pointer;
+    color: rgb(136, 17, 136);
+}
+
+#JB:hover{
+    color: white;
+}
+
+#JN{
+    display: inline-block;
+    position: absolute;
+    top : 1070PX;
+    left: 610PX;
+    cursor: pointer;
+    color: #6d6565;
+}
+
+#JN:hover{
+    color: white;
+}
+
+#JJ{
+    display: inline-block;
+    position: absolute;
+    top : 1160PX;
+    left: 600PX;
+    cursor: pointer;
+    color: rgb(4, 48, 10);
+}
+
+#JJ:hover{
+    color: white;
+}
+
+.info-area{
+    visibility: hidden; 
+}
+
+
+
+
 

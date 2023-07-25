@@ -23,7 +23,6 @@
             <section class="middle1">
               <section class="photo">
                   <section id="button">
-                      <button><</button>
                   </section>
                   <section class="pic-area">
                     <section class="pic-area1">
@@ -55,7 +54,6 @@
                     </section>
               </section>
               <section id="button">
-                  <button>></button>
               </section>
               </section>
            </section>
@@ -65,13 +63,13 @@
             <section class="map-area">
                 <img src="${contextPath}/resources/images/Region/map2.PNG">
                 <span id="SEOUL" class="region">서울</span>
-                <span id="BS" class="region">부산</span>
-                <span id="IC" class="region">인천</span>
-                <span id="kk" class="region">경기</span>
-                <span id="kW" class="region">강원</span>
-                <span id="CNB" class="region">충남/충북</span>
-                <span id="JNB" class="region">전남/전북</span>
-                <span id="kNB" class="region">경남/경북</span>
+                <span id="kW" class="region">강원도</span>
+                <span id="JB" class="region">전라북도</span>
+                <span id="JN" class="region">전라남도</span>
+                <span id="CB" class="region">충청북도</span>
+                <span id="CN" class="region">충청남도</span>
+                <span id="kB" class="region">경상북도</span>
+                <span id="kN" class="region">경상남도</span>
                 <span id="JJ" class="region">제주</span>
             </section>
             <section class="info-area">
@@ -98,9 +96,11 @@
                 </section>
             </section>
         </section>   
-
-		<jsp:include page="/WEB-INF/views/common/footer.jsp"/>
-     
+        
     </main>
+    
+    <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
+
+    <script src="${contextPath}/resources/js/Region/region1.js"></script>
 </body>
 </html>
