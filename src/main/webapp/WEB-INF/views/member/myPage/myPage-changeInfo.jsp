@@ -26,11 +26,11 @@
     <section class="right-section">
         <section class="right-section-head">회원 정보 수정<hr></section>
         <section class="right-section-area">
-            <form action="#" onsubmit="return validate()">
+            <form action="changeInfo" method="POST" onsubmit="return validate()">
                 <table>
                     <tr>
                         <td>비밀번호</td>
-                        <td><input type="password" id="pw" name="pw" placeholder="비밀번호 입력(6~20글자)"></td>
+                        <td><input type="password" id="pw" name="inputPw" placeholder="비밀번호 입력(6~20글자)"></td>
                         <td id="pw-check-td"><span id="pw-check"></span></td>
                     </tr>
 
@@ -42,7 +42,7 @@
                     <tr>
                         <td>닉네임</td>
                         <td id="nickname-td">
-                            <input type="text" name="nickname" id="nickname" placeholder="닉네임 입력(한글 2~8글자)"><br>
+                            <input type="text" name="nickname" id="nickname" placeholder="닉네임 입력(한글 2~8글자)" value="${loginMember.memberNickname}"><br>
                             <span id="nickname-span">　</span>
                         </td>
                         <td><button type="button" id="nickname-check">중복 확인</button></td>
@@ -53,21 +53,34 @@
                         <td id="profile-area">
                             <section id="profile">
                                 <section id="image-preview">
-                                    <img src="${contextPath}/resources/images/myPageProfile/profile.png" id="basic-profile">
+                                    <c:if test="${empty loginMember.profileImage}">
+                                        <img src="${contextPath}/resources/images/myPageProfile/profile.png" id="profile-image">
+                                    </c:if>
+
+                                    <c:if test="${!empty loginMember.profileImage}">
+                                        <img src="${contextPath}${loginMember.profileImage}" id="profile-image">
+                                    </c:if>
+
+                                    <!-- 프로필 이미지 삭제 버튼 -->
+                                    <span id="delete-image">x</span>
                                 </section>
-                                <input id="real-upload" type="file" onchange="loadFile(this)" name="profile" accept="image/jpg, image/jpeg, image/png" />
-                                <button type="button" id="profile-btn">사진 업로드</button>
+                                <div id="profile-btn">
+                                    <label for="profile-upload" type="button">사진 업로드</label>
+                                    <input type="file" id="profile-upload" name="profile-upload" accept="image/*">
+                                </div>
+                                <input type="hidden" name="delete" id="delete" value="0">
                             </section>
                         </td>
                     </tr>
-
+                    
                     <tr>
+                        <c:set var="addr" value="${fn:split(loginMember.memberAddress, ',,')}"/>
                         <td id="address-td">주소</td>
                         <td>
-                            <input type="search" class="address" name="zipcode" placeholder="우편번호" readonly>
+                            <input type="search" id="zipcode" class="address" name="address" placeholder="우편번호" readonly value="${addr[0]}">
                             <button type="button" id="address-btn">주소 검색</button><br>
-                            <input type="text" class="address" name="address" placeholder="주소" readonly><br>
-                            <input type="text" class="address" name="detail" placeholder="상세 주소">
+                            <input type="text" id="address" class="address" name="address" placeholder="주소" readonly value="${addr[1]}"><br>
+                            <input type="text" id="detail" class="address" name="address" placeholder="상세 주소" value="${addr[2]}">
                         </td>
                         <td></td>
                     </tr>
@@ -75,18 +88,15 @@
                     <tr style="margin: 20px 0;">
                         <td style="position: relative;bottom: 13px;">선호 테마</td>
                         <td>
-                            <div>
-                                <label><input type="checkbox" name="theme" value="액티비티">액티비티</label>
-                                <label><input type="checkbox" name="theme" value="맛집" style="margin-left: 5px;">맛집</label>
-                                <label><input type="checkbox" name="theme" value="카페" style="margin-left: 35px;">카페</label>
-                                <label><input type="checkbox" name="theme" value="반려견동반여행" style="margin-left: 33px;">반려견 동반여행</label>
-                            </div>
-                            <div>
-                                <label><input type="checkbox" name="theme" value="캠핑">캠핑</label>
-                                <label><input type="checkbox" name="theme" value="커플여행" style="margin-left: 34px;">커플여행</label>
-                                <label><input type="checkbox" name="theme" value="기차여행" style="margin-left: 5px;">기차여행</label>
-                                <label><input type="checkbox" name="theme" value="가족여행" style="margin-left: 5px;">가족여행</label>
-                            </div>
+                            <c:set var="thm" value="${loginMember.memberTheme}"/>
+                            <label><input type="checkbox" name="theme" value="액티비티" <c:if test="${fn:contains(thm, '액티비티')}"> checked</c:if>>액티비티</label>
+                            <label><input type="checkbox" name="theme" value="맛집" style="margin-left: 5px;" <c:if test="${fn:contains(thm, '맛집')}"> checked</c:if>/>맛집</label>
+                            <label><input type="checkbox" name="theme" value="카페" style="margin-left: 35px;" <c:if test="${fn:contains(thm, '카페')}"> checked</c:if>>카페</label>
+                            <label><input type="checkbox" name="theme" value="반려견동반여행" style="margin-left: 33px;" <c:if test="${fn:contains(thm, '반려견동반여행')}"> checked</c:if>>반려견 동반여행</label><br>
+                            <label><input type="checkbox" name="theme" value="캠핑" <c:if test="${fn:contains(thm, '캠핑')}"> checked</c:if>>캠핑</label>
+                            <label><input type="checkbox" name="theme" value="커플여행" style="margin-left: 34px;" <c:if test="${fn:contains(thm, '커플여행')}"> checked</c:if>>커플여행</label>
+                            <label><input type="checkbox" name="theme" value="기차여행" style="margin-left: 5px;" <c:if test="${fn:contains(thm, '기차여행')}"> checked</c:if>>기차여행</label>
+                            <label><input type="checkbox" name="theme" value="가족여행" style="margin-left: 5px;" <c:if test="${fn:contains(thm, '가족여행')}"> checked</c:if>>가족여행</label>
                         </td>
                     </tr>
 
@@ -94,24 +104,25 @@
                         <td>비밀번호 찾기 질문</td>
                         <td>
                             <select name="pw-query">
-                                <option value="basic" selected>질문을 고르세요</option>
-                                <option value="1">기억에 남는 추억의 장소는?</option>
-                                <option value="2">자신의 인생 좌우명은?</option>
-                                <option value="3">가장 기억에 남는 선생님 성함은?</option>
-                                <option value="4">타인이 모르는 자신만의 신체비밀이 있다면?</option>
-                                <option value="5">유년시절 가장 생각나는 친구 이름은?</option>
-                                <option value="6">다시 태어나면 되고 싶은 것은?</option>
-                                <option value="7">인상 깊게 읽은 책 이름은?</option>
-                                <option value="8">자신의 별명이 있다면?</option>
-                                <option value="9">받았던 선물 중 기억에 남는 독특한 선물은?</option>
-                                <option value="10">자신의 보물 제 1호는?</option>
+                                <c:set var="questionCode" value="${loginMember.memberQuestionCode}"/>
+                                <option value="basic">질문을 고르세요</option>
+                                <option value="1" <c:if test="${fn:contains(questionCode, '1')}"> selected</c:if>>기억에 남는 추억의 장소는?</option>
+                                <option value="2" <c:if test="${fn:contains(questionCode, '2')}"> selected</c:if>>자신의 인생 좌우명은?</option>
+                                <option value="3" <c:if test="${fn:contains(questionCode, '3')}"> selected</c:if>>가장 기억에 남는 선생님 성함은?</option>
+                                <option value="4" <c:if test="${fn:contains(questionCode, '4')}"> selected</c:if>>타인이 모르는 자신만의 신체비밀이 있다면?</option>
+                                <option value="5" <c:if test="${fn:contains(questionCode, '5')}"> selected</c:if>>유년시절 가장 생각나는 친구 이름은?</option>
+                                <option value="6" <c:if test="${fn:contains(questionCode, '6')}"> selected</c:if>>다시 태어나면 되고 싶은 것은?</option>
+                                <option value="7" <c:if test="${fn:contains(questionCode, '7')}"> selected</c:if>>인상 깊게 읽은 책 이름은?</option>
+                                <option value="8" <c:if test="${fn:contains(questionCode, '8')}"> selected</c:if>>자신의 별명이 있다면?</option>
+                                <option value="9" <c:if test="${fn:contains(questionCode, '9')}"> selected</c:if>>받았던 선물 중 기억에 남는 독특한 선물은?</option>
+                                <option value="10" <c:if test="${fn:contains(questionCode, '10')}"> selected</c:if>>자신의 보물 제 1호는?</option>
                             </select>
                         </td>
                     </tr>
 
                     <tr>
                         <td>비밀번호 찾기 답변</td>
-                        <td><input type="text" name="pw-answer"></td>
+                        <td><input type="text" name="pw-answer" value="${loginMember.memberAnswer}"></td>
                     </tr>
 
                     <tr>
@@ -125,12 +136,16 @@
             </form>
         </section>
     </section>
-        </section>
     </main>
 
 	<!-- footer -->
     <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 
+    <script>
+        const contextPath = "${contextPath}";
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <script src="${contextPath}/resources/js/myPage/myPage-changeInfo.js"></script>
 </body>

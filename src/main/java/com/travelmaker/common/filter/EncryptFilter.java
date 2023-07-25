@@ -17,6 +17,7 @@ import com.travelmaker.common.wrapper.EncryptWrapper;
 @WebFilter(filterName = "encryptFilter",
 urlPatterns = {"/member/login",
 			   "/member/signUp",
+			   "/member/myPage/changeInfo",
 			   "/member/myPage/changePw",
 			   "/member/myPage/secession"
 			   })

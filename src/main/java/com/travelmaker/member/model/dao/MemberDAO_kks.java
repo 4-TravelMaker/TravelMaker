@@ -33,6 +33,12 @@ public class MemberDAO_kks {
 		}
 	}
 	
+	/** 오토 로그인(임시) DAO
+	 * @param conn
+	 * @param memberNo
+	 * @return loginMember
+	 * @throws Exception
+	 */
 	public Member autoLogin(Connection conn, int memberNo) throws Exception {
 		
 		Member loginMember = null;
@@ -70,6 +76,37 @@ public class MemberDAO_kks {
 		}
 		
 		return loginMember;
+	}
+
+	/** 닉네임 중복 검사 DAO
+	 * @param conn
+	 * @param memberNickname
+	 * @return result
+	 * @throws Exception
+	 */
+	public int nicknameDupCheck(Connection conn, String memberNickname) throws Exception {
+		
+		int result = 0;
+		
+		try {
+			
+			String sql = prop.getProperty("nicknameDupCheck");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, memberNickname);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				result = rs.getInt(1);
+			}
+			
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
 	}
 
 }

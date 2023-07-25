@@ -34,7 +34,6 @@ nickname.addEventListener("keyup", () => {
     
     
     if(regExp.test(nickname.value)) {
-        console.log(nickname);
         span.innerHTML = "유효한 닉네임 형식입니다.";
         span.style.color = "green";
         span.style.fontWeight = "bold";
@@ -52,35 +51,38 @@ nickname.addEventListener("keyup", () => {
 })
 
 
+/* 닉네임 중복 검사 클릭 이벤트 */
+nicknameCheck.addEventListener("click", function(){
 
-/* 프로필 사진 업로드 클릭 이벤트 */
-const realUpload = document.querySelector("#real-upload");
-const profileBtn = document.querySelector("#profile-btn");
-const imagePreview = document.querySelector('#image-preview');
+    const regExp = /^[가-힣]{2,8}$/;
 
-profileBtn.addEventListener("click", () => realUpload.click());
+    console.log(contextPath);
 
-function loadFile(input) {
-
-    let file = input.files[0];
-
-    /* 새로운 이미지 태그 추가 */
-    let newImage = document.createElement("img");
-    newImage.setAttribute("class", "img");
-
-    /* 이미지 source 가져오기 */
-    newImage.src = URL.createObjectURL(file);
-
-    newImage.style.width = "150px";
-    newImage.style.height = "150px";
-
-    // 이미지를 image-preview section에 추가
-    if(imagePreview.firstElementChild != null) { /* image-preview에 이미지가 있을 경우 */
-        imagePreview.firstElementChild.remove();
+    if(!regExp.test(nickname.value)) {
+        return print(nickname, "닉네임은 한글 2~8글자로 입력해주세요.");
     }
-    imagePreview.appendChild(newImage);
 
-}
+    $.ajax({
+
+        url : contextPath + "/member/nicknameCheck",
+        data : {"inputNickname" : nickname.value},
+        type : "GET",
+        success : function(result){
+            if(result == 0) {
+                alert("사용 가능한 닉네임입니다.");
+
+            } else {
+                alert("이미 사용 중인 닉네임입니다.");
+            }
+        },
+        error : function(req, status, error){
+            console.log("닉네임 중복 검사 실패");
+            console.log(req.responseText);
+        }
+
+    });
+
+})
 
 
 
@@ -110,26 +112,100 @@ addressBtn.addEventListener("click", function(){
                 fullAddr += (extraAddr !== '' ? ' (' + extraAddr + ')' : '');
             }
             
-            document.getElementsByName("address")[0].value = fullAddr;
-            document.getElementsByName("zipcode")[0].value = data.zonecode;
+            document.getElementById("address").value = fullAddr;
+            document.getElementById("zipcode").value = data.zonecode;
+            document.getElementById("detail").value = '';
         }
     }).open();
 })
 
+function print(el, msg) {
+    alert(msg);
+    el.focus();
+    return false;
+}
 
-
-/* form 제출 시 */
+/* form 제출 시 비밀번호 입력 체크 */
 function validate() {
 
     const pw = document.getElementById("pw");
     const pw2 = document.getElementById("pw2");
+    const regExp = /^[A-Za-z0-9`~!@#\$%\^&\*\(\)\{\}\[\]\-_=\+\\|;:'"<>,\./\?]{6,20}$/;
 
-    if(pw.value == pw2.value) {
-        return true;
+    if(pw.value.trim().length == 0) {
+        return print(pw, "비밀번호를 입력해주세요.");
+    }
 
-    } else {
-        alert("비밀번호가 일치하지 않습니다.");
+    if(pw2.value.trim().length == 0) {
+        return print(pw2, "비밀번호를 입력해주세요.");
+    }
+
+    if(pw.value != pw2.value) {
+        return print(pw, "비밀번호가 일치하지 않습니다.")
+    }
+
+    if(!regExp.test(pw.value)) {
+        return print(pw, "비밀번호는 6~20글자로 입력해주세요.");
+    }
+
+    
+}
+
+
+
+/* 프로필 이미지 변경 미리보기 */
+const profileUpload = document.getElementById("profile-upload");
+
+if(profileUpload != null) {
+    
+    profileUpload.addEventListener("change", function(){
+
+        if(this.files[0] != undefined) {
+
+            const reader = new FileReader();
+
+            reader.readAsDataURL(this.files[0]);
+
+            reader.onload = function(e){
+                const profileImage = document.getElementById("profile-image");
+
+                profileImage.setAttribute("src", e.target.result);
+
+                document.getElementById("delete").value = 0;
+            } 
+
+        }
+
+    });
+}
+
+
+function profileValidate(){
+
+    const inputImage = document.getElementById("input-image");
+
+    const del = document.getElementById("delete");
+
+    if(inputImage.value == '' && del.value == 0) {
+        
+        alert("이미지를 선택한 후 변경 버튼을 클릭해주세요.");
         return false;
     }
 
+    return true;
 }
+
+// 프로필 이미지 옆 x 버튼 클릭 시
+document.getElementById("delete-image").addEventListener("click", function(){
+
+    const del = document.getElementById("delete");
+
+    if(del.value == 0) {
+
+        document.getElementById("profile-image").setAttribute("src", contextPath + "/resources/images/myPageProfile/profile.png" );
+    
+        document.getElementById("input-image").value = "";
+
+        del.value = 1;
+    }
+})
