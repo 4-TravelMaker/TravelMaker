@@ -13,24 +13,19 @@ import javax.servlet.http.HttpServletResponse;
 public class loginServlet extends HttpServlet{
 	
 
-	
-	
-	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		String path = "/WEB-INF/views/member/Login/login.jsp";
-		
-		req.getRequestDispatcher(path).forward(req, resp);
+		String path = "/WEB-INF/views/member/SignUp/signUp.jsp";
+		RequestDispatcher dispatcher = req.getRequestDispatcher(path);
 		
 		dispatcher.forward(req, resp);
 	
 	}
+	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		
-		
-		
+	
 	}
 }

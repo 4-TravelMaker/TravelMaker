@@ -1,5 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<%-- 문자열 관련 함수(메소드) 제공 JSTL (EL 형식으로 작성) --%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TravelMaker</title>
     <link rel="shortcut icon" type="image/x-icon" href="image/small_logo.png">
-    <link rel="stylesheet" href="${contextPath}/resources/css/theme-2-style.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/ThemePlaceDRmarket.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
@@ -15,56 +18,8 @@
 </head>
 <body>
     <main>
-        <header>
-            <section class="head">
-                <section id="logo">
-                    <a href="#">
-                        <img src="${contextPath}/resources/images/logo.png" width="100%">
-                    </a>
-                </section>
-
-                <section></section>
-
-                <section id="search-area">
-                    <form action="#" name="search-form">
-                        <fieldset>
-                            <section>
-                                <input type="search" id="query" name="query" autocomplete="off">
-                                <button type="submit" id="search-btn" class="fa-solid fa-magnifying-glass"></button>
-                            </section>
-                        </fieldset>
-                    </form>
-                </section>
-                <section></section>
-
-                <section class="login-area">
-                    <button>
-                        <a href="#">로그인</a>
-                    </button>
-                    <button>
-                        <a href="#">회원가입</a>
-                    </button>
-                </section>
-            </section>
-        </header>
-
-        <nav>
-            <section id="nav">
-                <section class="nav-menu">
-                    <a href="#">지역</a>
-                </section>
-                <section class="nav-menu">
-                    <a href="#">테마</a>
-                </section>
-                <section class="nav-menu">
-                    <a href="#">여행 계획하기</a>
-                </section>
-                <section class="nav-menu">
-                    <a href="#">여행 리뷰</a>
-                </section>
-            </section>
-        </nav>
-
+        <jsp:include page="/WEB-INF/views/common/header.jsp"/>
+        
         <section id="middle">
            
             <section class="container">
@@ -87,7 +42,7 @@
                 <section class="container5">
                     <section class="container5-1"></section>
                     <div class="container5-2">
-                        <img src="${contextPath}/resources/images/ThemeBoard/theme2/2020-강화군-교동도-대룡시장2.jpg">
+                        <img src="${contextPath}/resources/images/ThemeBoard/theme2/DaeryrongMarket.jpg">
                     </div>
                     <section class="container5-1"></section>
 
@@ -144,12 +99,7 @@
 
         </section>
 
-        <footer>
-            <section>Copyright © TravelMaker Corp. All rights reserved.</section>
-            <section class="footer"> 　　이용약관　　 </section>
-            <section class="footer"> 　　운영정책　　 </section>
-            <section class="footer"> 　　1:1문의　　 </section>
-        </footer>
+        <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
     </main>
 </body>
 </html>

@@ -1,4 +1,4 @@
-package com.travelmaker.member.controller;
+package com.travelmaker.board.controller;
 
 import java.io.IOException;
 
@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/member/Theme")
+@WebServlet("/board/Theme")
 
 public class ThemeServlet extends HttpServlet{
 	
