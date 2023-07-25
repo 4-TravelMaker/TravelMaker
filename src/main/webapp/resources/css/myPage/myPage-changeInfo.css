@@ -272,7 +272,8 @@ input[type="checkbox"] { /* input(checkbox 타입) 스타일 */
 #pw-check {
     display: block;
     width: 205px;
-    /* border: 1px solid black; */
+    position: relative;
+    right: 66px;
 }
 
 #nickname-check { /* 닉네임 중복 확인 버튼 */
@@ -286,6 +287,8 @@ input[type="checkbox"] { /* input(checkbox 타입) 스타일 */
     font-size: 14px;
     font-weight: bold;
     cursor: pointer;
+    position: relative;
+    right: 66px;
 }
 
 #nickname-td {
@@ -301,8 +304,9 @@ input[type="checkbox"] { /* input(checkbox 타입) 스타일 */
 
 #profile-area {
     display: flex;
-    justify-content: center;
+    justify-content: start;
     height: 250px;
+    padding-left: 73px;
 }
 
 #image-preview {
@@ -376,7 +380,7 @@ input[name="zipcode"] {
 }
 
 /* 선호 테마 */
-input[value="theme1"], input[value="theme5"] {
+input[name="theme"] {
     margin-left: 0px;
 }
 
@@ -407,13 +411,6 @@ select {
  select {
     background:url(../../images/sign.png) no-repeat 97% 50%/11px auto;
  }
-
-/* submit */
-.submit {
-    display: flex;
-    justify-content: center;
-    margin: 50px 0;
-}
 
 /* submit */
 .submit {

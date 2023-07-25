@@ -2,4 +2,14 @@
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
 <comment>member-sql-kks.xml</comment>
+	<!-- (임시)로그인 -->
+	<entry key="login">
+		SELECT MEMBER_NO, MEMBER_ID, MEMBER_NM, MEMBER_NICK, PROFILE_IMG,
+		       MEMBER_ADDR, MEMBER_THM, MEMBER_Q_CT, MEMBER_A,
+		       TO_CHAR(ENROLL_DT, 'YYYY-MM-DD HH24:MI:SS') AS ENROLL_DT
+		FROM MEMBER
+		JOIN MEMBER_QUERY USING(MEMBER_Q_CD)
+		WHERE MEMBER_NO = ?
+		AND SECESSION_FL = 'N'
+	</entry>
 </properties>
