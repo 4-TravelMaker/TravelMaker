@@ -22,7 +22,7 @@ public class MemberDAO_lhk {
 		try {
 			prop = new Properties();
 			
-			String filePath = MemberDAO_ash.class.getResource("/com/travelmaker/sql/member/member-sql-lhk.xml").getPath(); 
+			String filePath = MemberDAO_lhk.class.getResource("/com/travelmaker/sql/member/member-sql-lhk.xml").getPath(); 
 			
 			prop.loadFromXML(new FileInputStream(filePath));
 			
@@ -58,13 +58,11 @@ public class MemberDAO_lhk {
 			pstmt.setString(4,mem.getMemberNickname());
 			pstmt.setString(5,mem.getProfileImage());
 			pstmt.setString(6,mem.getMemberAddress());
-			pstmt.setInt(7,mem.getMemberQuestion());
-			pstmt.setString(8,mem.getMemberAnswer());
+			pstmt.setString(7,mem.getMemberTheme());
+			pstmt.setInt(8,mem.getMemberQuestionCode());
+			pstmt.setString(9,mem.getMemberAnswer());
 			
 			result = pstmt.executeUpdate();
-			
-			
-			System.out.println(result);
 			
 		} finally {
 			
@@ -75,6 +73,88 @@ public class MemberDAO_lhk {
 		
 		
 		// 결과 반환
+		return result;
+	}
+
+
+
+
+
+
+	/** 아이디 중복 검사 DAO
+	 * @param conn
+	 * @param memberId
+	 * @return result
+	 * @throws Exception
+	 */
+	public int idDupcheck(Connection conn, String memberId) throws Exception {
+		int result = 0;
+		
+		try {
+			String sql = prop.getProperty("idDupcheck");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, memberId);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				
+				result = rs.getInt(1);
+			}
+			
+		} finally {
+			
+			close(rs);
+			close(pstmt);
+			
+		}
+		
+		
+		
+		return result;
+	}
+
+
+
+
+
+
+	/** 닉네임 중복검사 DAO
+	 * @param conn
+	 * @param memberNickname
+	 * @return result
+	 * @throws Exception
+	 */
+	public int nicknameDupcheck(Connection conn, String memberNickname) throws Exception {
+		int result = 0;
+		
+		try {
+			
+			String sql = prop.getProperty("nicknameDupcheck");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, memberNickname);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				
+				result = rs.getInt(1);
+			}
+			
+			
+			
+		} finally {
+			
+			close(rs);
+			close(pstmt);
+			
+		}
+		
+		
 		return result;
 	}
 

@@ -38,4 +38,36 @@ public class MemberService_lhk {
 		return result;
 	}
 
+	/** 아이디 중복 검사 Service
+	 * @param memberId
+	 * @return result
+	 * @throws Exception
+	 */
+	public int idDupcheck(String memberId) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		int result = dao.idDupcheck(conn,memberId);
+		
+		close(conn);
+		
+		return result;
+	}
+
+	/** 닉네임 중복 검사 Service
+	 * @param memberNickname
+	 * @return result
+	 * @throws Exception
+	 */
+	public int nicknameDupcheck(String memberNickname) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		int result = dao.nicknameDupcheck(conn , memberNickname);
+		
+		close(conn);
+		
+		return result;
+	}
+
 }

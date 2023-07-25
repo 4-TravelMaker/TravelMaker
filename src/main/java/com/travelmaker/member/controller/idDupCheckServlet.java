@@ -8,27 +8,30 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/member/login")
-public class loginServlet extends HttpServlet{
-	
+import com.travelmaker.member.model.service.MemberService_lhk;
 
-	
-	
+@WebServlet("/member/idDupcheck")
+public class idDupCheckServlet extends HttpServlet{
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		String path = "/WEB-INF/views/member/Login/login.jsp";
+		String memberId = req.getParameter("id");
 		
-		req.getRequestDispatcher(path).forward(req, resp);
+		MemberService_lhk service = new MemberService_lhk();
 		
+		try { 
+			
+			int result = service.idDupcheck(memberId);
+			
+			resp.getWriter().print(result);
+			
+		} catch (Exception e) {
+			
+			e.printStackTrace();
+		}
+	
 	
 	}
-	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
-		
-		
-		
-	}
+
 }
