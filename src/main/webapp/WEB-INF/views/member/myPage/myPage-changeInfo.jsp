@@ -1,11 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
-<%-- 문자열 관련 함수(메소드) 제공 JSTL (EL 형식으로 작성) --%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
-    <link rel="stylesheet" href="${contextPath}/resources/css/myPage-changeInfo.css">
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelMaker</title>
+    <link rel="shortcut icon" type="image/x-icon" href="${contextPath}/resources/images/Share/small_logo.png">
+    <link rel="stylesheet" href="${contextPath}/resources/css/myPage/myPage-changeInfo.css?after">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ef988defcf.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <main>
+    
 	<!-- header -->
     <jsp:include page="/WEB-INF/views/common/header.jsp"/>
     <!-- myPage-sideBar -->
@@ -41,7 +53,7 @@
                                 <td id="profile-area">
                                     <section id="profile">
                                         <section id="image-preview">
-                                            <img src="${contextPath}/resources/images/profile.png" id="basic-profile">
+                                            <img src="${contextPath}/resources/images/myPage/profile.png?after" id="basic-profile">
                                         </section>
                                         <input id="real-upload" type="file" onchange="loadFile(this)" name="profile" accept="image/jpg, image/jpeg, image/png" />
                                         <button type="button" id="profile-btn">사진 업로드</button>
@@ -63,14 +75,14 @@
                             <tr>
                                 <td style="position: relative;bottom: 13px;">선호 테마</td>
                                 <td style="padding: 20px 0;">
-                                    <input type="checkbox" name="theme" value="theme1"><label>테마1</label>
-                                    <input type="checkbox" name="theme" value="theme2"><label>테마2</label>
-                                    <input type="checkbox" name="theme" value="theme3"><label>테마3</label>
-                                    <input type="checkbox" name="theme" value="theme4"><label>테마4</label><br>
-                                    <input type="checkbox" name="theme" value="theme5"><label>테마5</label>
-                                    <input type="checkbox" name="theme" value="theme6"><label>테마6</label>
-                                    <input type="checkbox" name="theme" value="theme7"><label>테마7</label>
-                                    <input type="checkbox" name="theme" value="theme8"><label>테마8</label>
+                                    <label><input type="checkbox" name="theme" value="액티비티">액티비티</label>
+                                    <label><input type="checkbox" name="theme" value="맛집">맛집</label>
+                                    <label><input type="checkbox" name="theme" value="카페">카페</label>
+                                    <label><input type="checkbox" name="theme" value="반려견동반여행">반려견 동반여행</label><br>
+                                    <label><input type="checkbox" name="theme" value="캠핑">캠핑</label>
+                                    <label><input type="checkbox" name="theme" value="커플여행">커플여행</label>
+                                    <label><input type="checkbox" name="theme" value="기차여행">기차여행</label>
+                                    <label><input type="checkbox" name="theme" value="가족여행">가족여행</label>
                                 </td>
                             </tr>
 
