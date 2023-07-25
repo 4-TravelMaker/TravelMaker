@@ -42,5 +42,24 @@ public class MemberService_ash {
 		
 		return member;
 	}
+
+	/** 회원 탈퇴 처리 Service
+	 * @param memberNo
+	 * @return result
+	 * @throws Exception
+	 */
+	public int memberSecession(int memberNo) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		int result = dao.memberSecession(conn, memberNo);
+		
+		if(result > 0) commit(conn);
+		else		   rollback(conn);
+		
+		close(conn);
+		
+		return result;
+	}
 	
 }
