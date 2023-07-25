@@ -393,6 +393,27 @@ select, option {
     font-size: 14px;
 }
 
+/* 체크박스 브이 */
+select {
+    -webkit-appearance:none; /* for chrome */
+    -moz-appearance:none; /*for firefox*/
+    appearance:none;
+ }
+ 
+ select::-ms-expand{
+    display:none;/*for IE10,11*/
+ }
+
+ select {
+    background:url(../../images/sign.png) no-repeat 97% 50%/11px auto;
+ }
+
+/* submit */
+.submit {
+    display: flex;
+    justify-content: center;
+    margin: 50px 0;
+}
 
 /* submit */
 .submit {

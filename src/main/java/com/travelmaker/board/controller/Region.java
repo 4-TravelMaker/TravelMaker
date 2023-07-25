@@ -24,8 +24,5 @@ public class Region extends HttpServlet {
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
-		
-		
 	}
-
 }

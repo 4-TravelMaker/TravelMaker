@@ -239,7 +239,7 @@ td > input[type="text"] { /* input(text 타입) 스타일 */
     font-weight: bold;
     cursor: pointer;
     position: relative;
-    right: 40px;
+    right: 60px;
     
 
 }
@@ -274,8 +274,8 @@ input[type="checkbox"] { /* input(checkbox 타입) 스타일 */
     font-weight: bold;
     cursor: pointer;
     position: relative;
-    right: 40px;
-    bottom: 1px;
+    right: 60px;
+    bottom: 2px;
 }
 
 #nickname-td {
@@ -405,7 +405,7 @@ select {
 
  select {
 
-    background:url(../test/image/sign.png) no-repeat 97% 50%/11px auto;
+    background:url(../../images/sign.png) no-repeat 97% 50%/11px auto;
  
  }
 
