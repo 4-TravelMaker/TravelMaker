@@ -2,7 +2,6 @@ package com.travelmaker.member.controller;
 
 import java.io.IOException;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -23,7 +22,6 @@ public class loginServlet extends HttpServlet{
 		String path = "/WEB-INF/views/member/SignUp/signUp.jsp";
 		RequestDispatcher dispatcher = req.getRequestDispatcher(path);
 		
-		dispatcher.forward(req, resp);
 	
 	}
 	
@@ -61,7 +59,4 @@ public class loginServlet extends HttpServlet{
 		}
 	
 	}
-	
-	
-	
 }

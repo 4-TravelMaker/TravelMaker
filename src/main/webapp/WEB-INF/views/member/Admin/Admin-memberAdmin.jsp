@@ -49,8 +49,8 @@
                         <button class="search-btn" type="button">검색</button>
                     </section>
                     <section>
-                        <a href="#">
-                            <button type="submit" id="secession-btn">회원 탈퇴</button>
+                        <a href="selectAll">
+                            <button type="button" id="secession-btn">회원 탈퇴</button>
                         </a>
                     </section>
                 </section>
@@ -60,7 +60,6 @@
                     <table class="member-table">
                         <thead>
                             <tr class="table-bk">
-                                <th>구분</th>
                                 <th>회원 번호</th>
                                 <th>아이디</th>
                                 <th>이름</th>
@@ -75,8 +74,9 @@
                         <tbody id="memberList">
                             <c:forEach var="member" items="${requestScope.list}">
                                 <tr>
-                                    <td><input type="checkbox" id="checkbox"></td>
-                                    <td>${ member.memberNo }</td>
+                                    <td>
+                                        <input type="checkbox" name="memberNo" value="${ member.memberNo }">${ member.memberNo }
+                                    </td>
                                     <td>${ member.memberId }</td>
                                     <td>${ member.memberName }</td>
                                     <td>${ member.memberNickname }</td>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelMaker</title>
+    <link rel="shortcut icon" type="image/x-icon" href="image/small_logo.png">
+    <link rel="stylesheet" href="login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ef988defcf.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <main>
+        <header>
+            <section class="head">
+                <section id="logo">
+                    <a href="#">
+                        <img src="image/logo.png" width="100%">
+                    </a>
+                </section>
+
+                <section></section>
+
+                <section id="search-area">
+                    <form action="#" name="search-form">
+                        <fieldset>
+                            <section>
+                                <input type="search" id="query" name="query" autocomplete="off">
+                                <button type="submit" id="search-btn" class="fa-solid fa-magnifying-glass"></button>
+                            </section>
+                        </fieldset>
+                    </form>
+                </section>
+                <section></section>
+
+                <section class="login-area">
+                    <button>
+                        <a href="#">로그인</a>
+                    </button>
+                    <button>
+                        <a href="#">회원가입</a>
+                    </button>
+                </section>
+            </section>
+        </header>
+
+        <nav>
+            <section id="nav">
+                <section class="nav-menu">
+                    <a href="#">지역</a>
+                </section>
+                <section class="nav-menu">
+                    <a href="#">테마</a>
+                </section>
+                <section class="nav-menu">
+                    <a href="#">여행 계획하기</a>
+                </section>
+                <section class="nav-menu">
+                    <a href="#">여행 리뷰</a>
+                </section>
+            </section>
+        </nav>
+
+        <section id="middle">
+ 
+        <div id="middle1"></div>
+        <div id="middle2">
+            <div id="loginWriter">
+                <div id="loginWriterArea1"></div>
+                <div id="loginWriterArea2">
+                    <h1 id="loginText">로그인</h1>
+                </div>
+            </div>
+            <div id="loginInputArea">
+                <form action="#" name="login-form" onsubmit="return validate()">
+                    
+                    <div id="InputArea1">
+                        <div id="inputArea1-1">
+                            <label for="idInput"><img src="resources/images/Login/loginmark.png" id="image"></label>
+                            <div id="idArea">
+                                <input type="text" id="idInput" placeholder="아이디" autocomplete="off">
+                            </div>
+                            <label for="pwInput"><img src="resources/images/Login/passward.png" id="image"></label>
+                            <div id="pwArea">
+                                <input type="password" id="pwInput" placeholder="비밀번호">
+                            </div>
+                        </div>
+                    
+                        <div id="inputArea1-2">
+                            <button type="submit" id="loginbutton">로그인</button>
+                        </div>
+                    
+                    </div>
+                        <div id="InputArea2">
+                            <div id="loginArea">
+                                <div id="loginArea1"></div>
+                                <div id="loginArea2">
+                                    <a href="#">회원가입</a>
+                                    <span>|</span>
+                                    <a href="#">아이디찾기</a>
+                                    <span>|</span>
+                                    <a href="#">비밀번호찾기</a>
+                                </div>
+                                <div id="loginArea3"></div>
+                            </div>
+                
+                        </div>
+                    <div id="InputArea3" style="margin-top: 2px; margin-left: 18px;"  >
+                        <label for="cherckId"><input type="checkbox" id="cherckId">아이디 저장</label>
+                    </div>
+                </form>
+            </div>
+            <div id="ioginArea"></div>
+        </div>
+        <div id="middle3"></div>
+
+        </section>
+
+        <footer>
+            <section>Copyright © TravelMaker Corp. All rights reserved.</section>
+            <section class="footer"> 　　이용약관　　 </section>
+            <section class="footer"> 　　운영정책　　 </section>
+            <section class="footer"> 　　1:1문의　　 </section>
+        </footer>
+    </main>
+
+    <script>
+        function validate(){
+           const idInput = document.getElementById("idInput");
+           const pwInput = document.getElementById("pwInput");
+
+           if(idInput.value.trim().length == 0){
+            alert("아이디를 입력하세요");
+            idInput.focus();
+            return false;
+           }
+
+           if(pwInput.value.trim().length == 0){
+            alert("비밀번호를 입력하세요");
+            pwInput.focus();
+            return false;
+           }
+
+
+        }
+
+
+
+
+    </script>
+</body>
