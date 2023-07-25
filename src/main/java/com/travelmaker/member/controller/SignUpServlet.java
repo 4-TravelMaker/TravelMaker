@@ -32,8 +32,8 @@ public class SignUpServlet extends HttpServlet{
 		String memberId = req.getParameter("id");
 		String memberPw = req.getParameter("pw");
 		String memberName = req.getParameter("memberName");
-		String memberNickname = req.getParameter("nickname");
-		String profileImg = req.getParameter("profile");
+		String memberNickname = req.getParameter("memberNickname");
+		String profileImg = req.getParameter("profile") ;
 		
 		String[] address = req.getParameterValues("address");
 		
@@ -43,7 +43,13 @@ public class SignUpServlet extends HttpServlet{
 	    	memberAddress = String.join(",,", address);
     	}
     	
-    	String memberThema = req.getParameter("theme");
+    	String[] memberThema = req.getParameterValues("theme");
+    	
+    	String memberThemas = null;
+    	if(!memberThema[0].equals("") ) { 
+    		memberThemas = String.join(",", memberThema);
+    	}
+    	
     	int memberQ = Integer.parseInt(req.getParameter("pw-question"));
     	String memberA = req.getParameter("pw-answer");
     	
@@ -56,33 +62,33 @@ public class SignUpServlet extends HttpServlet{
 	    mem.setMemberNickname(memberNickname);
 	    mem.setProfileImage(profileImg);
 	    mem.setMemberAddress(memberAddress);
-	    mem.setMemberTheme(memberThema);
-	    mem.setMemberQuestion(memberQ);
+	    mem.setMemberTheme(memberThemas);
+	    mem.setMemberQuestionCode(memberQ);
 	    mem.setMemberAnswer(memberA);
 	    
 	    
 	    
 		try {
 					
-			    	MemberService_lhk service = new MemberService_lhk();
-			    	
-			    	
-				    int result = service.signUp(mem);
-				    
-				    HttpSession session = req.getSession();
-				    
-				    if(result > 0 ) { 
-				    	session.setAttribute("message","회원 가입 성공 !!");
-				    } else { 
-				    	session.setAttribute("message", "회원 가입 실패...");
-				    		
-				    }
-			    
-				    resp.sendRedirect(req.getContextPath());
-				    	
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
+	    	MemberService_lhk service = new MemberService_lhk();
+	    	
+	    	
+		    int result = service.signUp(mem);
+		    
+		    HttpSession session = req.getSession();
+		    
+		    if(result > 0 ) { 
+		    	session.setAttribute("message","회원 가입 성공 !!");
+		    } else { 
+		    	session.setAttribute("message", "회원 가입 실패...");
+		    		
+		    }
+	    
+		    resp.sendRedirect(req.getContextPath());
+		    	
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
     	
 		
 		

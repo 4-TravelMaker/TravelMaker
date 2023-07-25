@@ -59,6 +59,8 @@ const checkObj = {
 
         })
 
+        // 아이디 중복검사
+
         const idDupcheck = document.getElementById("id-check");
         
         idDupcheck.addEventListener("click", function(){
@@ -67,7 +69,7 @@ const checkObj = {
 
                 url : "idDupcheck",
 
-                data : { "memberId" : id.value },
+                data : { "id" : id.value },
 
                 type : "GET" ,
 
@@ -83,9 +85,19 @@ const checkObj = {
                 
                 } else { 
 
-                    alert("사용 가능한 아이디 입니다");
+                    if(id.value == ""){
+                        
+                        alert("아이디 입력을 해주세요");
+                        id.focus();
+                    } else{
 
-                    checkObj.id = true;
+                        alert("사용 가능한 아이디 입니다");
+    
+                        checkObj.id = true;
+
+
+                    }
+
 
                 }
 
@@ -100,18 +112,10 @@ const checkObj = {
                 }
 
 
+            });
 
 
-
-
-
-
-            })
-
-
-
-
-        })
+        });
 
 
 
@@ -190,7 +194,10 @@ const checkObj = {
         })
         
 
-
+        
+        
+        
+        
         /* 닉네임 유효성 검사 */
         const nicknameCheck = document.querySelector("#nickname-check");
         const nickname = document.querySelector("#nickname");
@@ -218,6 +225,64 @@ const checkObj = {
             }
 
         })
+
+
+        // 닉네임 중복검사
+
+        const memberNickname = document.getElementById("nickname-check");
+
+        memberNickname.addEventListener("click", function(){
+
+            $.ajax({
+
+                url : "nickDupcheck",
+
+                data : { "memberNickname" : nickname.value },
+
+                type : "GET" ,
+
+                success : function(result){
+
+                if(result == 1){
+
+
+                    alert("이미 사용중인 닉네임 입니다.");
+
+                    checkObj.nickname = false;
+
+
+                
+                } else { 
+
+                    if(nickname.value == ""){
+                        alert("닉네임을 입력해주세요");
+                    } else{
+
+                        alert("사용 가능한 닉네임 입니다");
+    
+                        checkObj.nickname = true;
+
+                    }
+
+                    
+
+                }
+
+                },
+
+                error : function(){
+
+
+                    console.log("에러발생");
+
+
+                }
+
+
+            });
+
+
+        });
 
        
 
@@ -279,8 +344,8 @@ const checkObj = {
                         fullAddr += (extraAddr !== '' ? ' (' + extraAddr + ')' : '');
                     }
                     
-                    document.getElementsByName("address")[0].value = fullAddr;
-                    document.getElementsByName("zipcode")[0].value = data.zonecode;
+                    document.getElementById("address").value = fullAddr;
+                    document.getElementById("zipcode").value = data.zonecode;
                 }
             }).open();
         })
@@ -402,12 +467,12 @@ const checkObj = {
                 return false;
             }
 
-            if(!regExp.test(nickname.value)){
-
-            alert("닉네임 형식이 올바르지 않습니다");
-            return false;
-            }
 
 
 
         }
+
+     
+      
+
+     
