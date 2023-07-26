@@ -46,13 +46,8 @@
                 <!-- 회원 검색 및 삭제 버튼 영역 -->
                 <section>
                     <section class="search-area">
-                        <input type="text" placeholder="닉네임 입력" id="member-search">
+                        <input type="text" placeholder="아이디 입력" id="member-search">
                         <button type="submit">검색</button>
-                    </section>
-                    <section>
-                        <a href="#">
-                            <button type="submit" class="modify-btn">삭제</button>
-                        </a>
                     </section>
                 </section>
 
@@ -61,9 +56,9 @@
                     <table class="post-table">
                         <thead>
                             <tr class="table-bk">
-                                <th>글번호</th>
+                                <th>글 번호</th>
                                 <th>제목</th>
-                                <th>작성자</th>
+                                <th>작성자 아이디</th>
                                 <th>작성일</th>
                                 <th>조회수</th>
                             </tr>
@@ -88,7 +83,7 @@
                                             <td>
                                                 <a href="detail?no=${board.boardNo}&cp=${pagination.currentPage}&type=${param.type}">${board.boardTitle}</a>
                                             </td>
-                                            <td>${board.memberNo}</td>
+                                            <td>${board.memberId}</td>
                                             <td>${board.createDate}</td>
                                             <td>${board.readCount}</td>
                                         </tr>
