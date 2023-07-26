@@ -12,23 +12,29 @@
 
     <div>
 
-        <!-- 프로필 이미지가 없는 경우 -->
-        <c:if test="${empty loginMember}">
+        <!-- 로그인 정보가 있을 경우 -->
+        <c:if test="${!empty loginMember}">
             <div class="Writer-1">
 
                 <div>
 
-                    <img src="${contextPath}/resources/images/Review/profile.png">
+                    <!-- 프로필 이미지가 없을 경우 -->
+                    <c:if test="${empty reply.profileImage}">
+                        <img src="${contextPath}/resources/images/Review/profile.png">
+                    </c:if>
                     
+                    <!-- 프로필 이미지가 있을 경우 -->
                     <c:if test="${!empty reply.profileImage}">
                         <img src="${contextPath}${reply.profileImage}">
                     </c:if>
                     
-                    <span id="Writer-text"></span>
+                    <!-- 로그인한 사람의 닉네임 -->
+                    <span id="Writer-text">${loginMember.memberNickname}</span>
                 </div>
                 
                 <p id="Writer-text"></p>
                 
+                <!-- 등록 버튼 -->
                 <div class="reply-write-area">
                     <textarea id="replyContent"></textarea>
                     <button id="addReply">입력</button>
