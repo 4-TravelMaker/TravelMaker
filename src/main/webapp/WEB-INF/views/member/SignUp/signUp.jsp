@@ -8,7 +8,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TravelMaker</title>
+    <title>회원가입</title>
     <link rel="shortcut icon" type="image/x-icon" href="${contextPath}/resources/images/Share/small_logo.png">
     <link rel="stylesheet" href="${contextPath}/resources/css/SignUp/SignUp.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -117,12 +117,12 @@
                                 <td style="padding: 20px 0;">
                                     <label><input type="checkbox" name="theme" value="액티비티">액티비티</label>
                                     <label><input type="checkbox" name="theme" value="맛집">맛집</label>
-                                    <label><input type="checkbox" name="theme" value="카페">카페</label>
+                                    <label><input type="checkbox" name="theme" value="카페">가족여행</label>
                                     <label><input type="checkbox" name="theme" value="반려견동반여행">반려견 동반여행</label><br>
-                                    <label><input type="checkbox" name="theme" value="캠핑">캠핑</label>
-                                    <label><input type="checkbox" name="theme" value="커플여행">커플여행</label>
+                                    <label><input type="checkbox" name="theme" value="캠핑">커플여행</label>
+                                    <label><input type="checkbox" name="theme" value="커플여행">캠핑</label>
                                     <label><input type="checkbox" name="theme" value="기차여행">기차여행</label>
-                                    <label><input type="checkbox" name="theme" value="가족여행">가족여행</label>
+                                    <label><input type="checkbox" name="theme" value="가족여행">카페</label>
                                 </td>
                             </tr>
 
