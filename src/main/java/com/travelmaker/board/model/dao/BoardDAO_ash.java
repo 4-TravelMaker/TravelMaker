@@ -25,7 +25,7 @@ public class BoardDAO_ash {
 		try {
 			prop = new Properties();
 			
-			String filePath = MemberDAO_ash.class.getResource("/com/travelmaker/sql/member/member-sql-ash.xml").getPath(); 
+			String filePath = MemberDAO_ash.class.getResource("/com/travelmaker/sql/board/board-sql-ash.xml").getPath(); 
 			
 			prop.loadFromXML(new FileInputStream(filePath));
 			
@@ -97,7 +97,7 @@ public class BoardDAO_ash {
 				
 				board.setBoardNo( rs.getInt("BOARD_NO") );
 				board.setBoardTitle( rs.getString("BOARD_TITLE") );
-				board.setMemberNo( rs.getInt("MEMBER_NO") );
+				board.setMemberId( rs.getString("MEMBER_ID") );
 				board.setCreateDate( rs.getString("CREATE_DT"));
 				board.setReadCount( rs.getInt("READ_COUNT"));
 				
