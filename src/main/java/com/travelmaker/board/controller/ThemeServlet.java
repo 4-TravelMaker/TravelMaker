@@ -17,9 +17,7 @@ public class ThemeServlet extends HttpServlet{
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	
 		String path = "/WEB-INF/views/member/Theme/ThemeMain.jsp";
-		RequestDispatcher dispactcher = req.getRequestDispatcher(path);
-		
-		dispactcher.forward(req,resp);
+		req.getRequestDispatcher(path).forward(req, resp);
 		
 		
 	
