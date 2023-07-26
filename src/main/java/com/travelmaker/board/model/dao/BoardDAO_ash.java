@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Properties;
 
 import com.travelmaker.board.model.vo.Board;
+import com.travelmaker.board.model.vo.BoardDetail;
 import com.travelmaker.board.model.vo.Pagination;
 import com.travelmaker.member.model.dao.MemberDAO_ash;
 
@@ -110,6 +111,29 @@ public class BoardDAO_ash {
 		}
 		
 		return boardList;
+	}
+
+	/** 일대일 문의 게시글 상세 조회 DAO
+	 * @param conn
+	 * @param boardNo
+	 * @return detail
+	 * @throws Exception
+	 */
+	public BoardDetail selectOneOnOneInquiryDetail(Connection conn, int boardNo) throws Exception {
+		
+		BoardDetail detail = null;
+		
+		try {
+			String sql = prop.getProperty("selectOneOnOneInquiryDetail");
+			
+			
+			
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return detail;
 	}
 
 }

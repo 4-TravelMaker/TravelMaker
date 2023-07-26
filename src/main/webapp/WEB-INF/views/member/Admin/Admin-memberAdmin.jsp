@@ -32,27 +32,27 @@
 
 		<jsp:include page="/WEB-INF/views/common/admin-sideBar.jsp"/>
 
-             <section class="right-section">
+            <section class="right-section">
 
                 <!-- 관리자 페이지 상단 우측 제목 -->
                 <section>
-                    <section class="title">
+                    <div class="title">
                         <i class="fa-solid fa-users-gear" style="color: #000000;"></i>
                         &nbsp;회원 관리
-                    </section>
+                    </div>
                 </section>
 
                 <!-- 회원 관리 내용 영역 -->
                 <section>
-                    <section class="search-area">
+                    <div class="search-area">
                         <input type="text" placeholder="아이디 입력" id="member-search">
                         <button class="search-btn" type="button">검색</button>
-                    </section>
-                    <section>
+                    </div>
+                    <div>
                         <a href="selectAll">
                             <button type="button" id="secession-btn">회원 탈퇴</button>
                         </a>
-                    </section>
+                    </div>
                 </section>
 
                 <section id="search-container">
