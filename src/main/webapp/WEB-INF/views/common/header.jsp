@@ -47,5 +47,8 @@
             <section class="nav-menu">
                 <a href="#">여행 리뷰</a>
             </section>
+            <section class="nav-menu">
+                <a href="${contextPath}/boardNotice/list?type=5">공지사항</a>
+            </section>
         </section>
     </nav>
