@@ -8,7 +8,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TravelMaker</title>
+    <title>회원가입</title>
     <link rel="shortcut icon" type="image/x-icon" href="${contextPath}/resources/images/Share/small_logo.png">
     <link rel="stylesheet" href="${contextPath}/resources/css/SignUp/SignUp.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -81,7 +81,7 @@
                             <tr>
                                 <td><label for="nickname">닉네임</label></td>
                                 <td id="nickname-td">
-                                    <input type="text" name="memberNikcname" id="nickname" placeholder="닉네임 입력(한글 2~8글자)" autocomplete='off'><br>
+                                    <input type="text" name="memberNickname" id="nickname" placeholder="닉네임 입력(한글 2~8글자)" autocomplete='off'><br>
                                     <span id="nickname-span">　</span>
                                 </td>
                                 <td><button type="button" id="nickname-check">중복 확인</button></td>
@@ -90,7 +90,7 @@
                             <tr>
                                 <td id="profile-td"><label for="profile-btn">프로필 사진</label></td>
                                 <td id="profile-area">
-                                    <section id="profile">
+                                    <section id="profile" style="margin-right: 35px;">
                                         <section id="image-preview">
                                             <img src="${contextPath}/resources/images/profile.png" id="basic-profile">
                                         </section>
@@ -103,10 +103,10 @@
                             <tr>
                                 <td id="address-td"><label for="address-btn">주소</label></td>
                                 <td>
-                                    <input type="search" class="address" name="zipcode" placeholder="우편번호" readonly>
+                                    <input type="search" class="address" name="address" id="zipcode" placeholder="우편번호" readonly>
                                     <button type="button" id="address-btn">주소 검색</button><br>
-                                    <input type="text" class="address" name="address" placeholder="주소" readonly><br>
-                                    <input type="text" class="address" name="detail" placeholder="상세 주소" autocomplete='off'>
+                                    <input type="text" class="address" name="address"  id="address" placeholder="주소" readonly><br>
+                                    <input type="text" class="address" name="address" placeholder="상세 주소" autocomplete='off'>
                                     
                                 </td>
                                 <td></td>
@@ -117,12 +117,12 @@
                                 <td style="padding: 20px 0;">
                                     <label><input type="checkbox" name="theme" value="액티비티">액티비티</label>
                                     <label><input type="checkbox" name="theme" value="맛집">맛집</label>
-                                    <label><input type="checkbox" name="theme" value="카페">카페</label>
+                                    <label><input type="checkbox" name="theme" value="카페">가족여행</label>
                                     <label><input type="checkbox" name="theme" value="반려견동반여행">반려견 동반여행</label><br>
-                                    <label><input type="checkbox" name="theme" value="캠핑">캠핑</label>
-                                    <label><input type="checkbox" name="theme" value="커플여행">커플여행</label>
+                                    <label><input type="checkbox" name="theme" value="캠핑">커플여행</label>
+                                    <label><input type="checkbox" name="theme" value="커플여행">캠핑</label>
                                     <label><input type="checkbox" name="theme" value="기차여행">기차여행</label>
-                                    <label><input type="checkbox" name="theme" value="가족여행">가족여행</label>
+                                    <label><input type="checkbox" name="theme" value="가족여행">카페</label>
                                 </td>
                             </tr>
 
@@ -168,8 +168,12 @@
       		<jsp:include page="/WEB-INF/views/common/footer.jsp"/>
     </main>
 
+	
 	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-	<script src="${contextPath}/resources/js/SignUp/SignUp.js"></script>
+	
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    
+    <script src="${contextPath}/resources/js/SignUp/SignUp.js"></script>
    
 
 

@@ -15,44 +15,26 @@
         <section>
 
             <section class="left-section-btn">
-                <a href="/TravelMaker/admin/homeAdmin">
-                    <button>홈 화면 관리</button>
-                </a>
-            </section>
-
-            <section class="left-section-btn">
-                <a href="/TravelMaker/admin/selectAll">
+                <a href="${contextPath}/admin/selectAll">
                     <button>회원 관리</button>
                 </a>
             </section>
 
             <section class="left-section-btn">
-                <a href="/TravelMaker/admin/selectPost">
+                <a href="${contextPath}/admin/selectPost">
                     <button>게시글 관리</button>
                 </a>
             </section>
 
             <section class="left-section-btn">
-                <a href="/TravelMaker/admin/selectReply">
-                    <button>댓글 관리</button>
-                </a>
-            </section>
-
-            <section class="left-section-btn">
-                <a href="/TravelMaker/admin/selectNotification">
+                <a href="${contextPath}/admin/selectNotification">
                     <button>공지사항 관리</button>
                 </a>
             </section>
 
             <section class="left-section-btn">
-                <a href="/TravelMaker/admin/selectOneOnOneInquiry">
+                <a href="${contextPath}/admin/OneOnOneInquiry/list?type=6">
                     <button>1:1 문의</button>
-                </a>
-            </section>
-
-            <section class="left-section-btn">
-                <a href="/TravelMaker/admin/writePost">
-                    <button>게시물 작성</button>
                 </a>
             </section>
             

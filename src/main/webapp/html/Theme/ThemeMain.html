@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TravelMaker</title>
     <link rel="shortcut icon" type="image/x-icon" href="image/small_logo.png">
-    <link rel="stylesheet" href="ThemeMain.css">
+    <link rel="stylesheet" href="../../resources/css/Theme/ThemeMain.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
@@ -13,201 +13,191 @@
 </head>
 <body>
     <main>
-        <header>
-            <section class="head">
-                <section id="logo">
-                    <a href="#">
-                        <img src="../앞화면/images/logo.png" width="100%">
-                    </a>
-                </section>
-
-                <section></section>
-
-                <section id="search-area">
-                    <form action="#" name="search-form">
-                        <fieldset>
-                            <section>
-                                <input type="search" id="query" name="query" autocomplete="off">
-                                <button type="submit" id="search-btn" class="fa-solid fa-magnifying-glass"></button>
-                            </section>
-                        </fieldset>
-                    </form>
-                </section>
-                <section></section>
-
-                <section class="login-area">
-                    <button>
-                        <a href="#">로그인</a>
-                    </button>
-                    <button>
-                        <a href="#">회원가입</a>
-                    </button>
-                </section>
+        
+        <section class="head">
+            <section id="logo">
+                <a href="#">
+                    <img src="../../resources/images/logo.png" width="100%">
+                </a>
             </section>
-        </header>
 
-        <nav>
-            <section id="nav">
-                <section class="nav-menu">
-                    <a href="#">지역</a>
-                </section>
-                <section class="nav-menu">
-                    <a href="#">테마</a>
-                </section>
-                <section class="nav-menu">
-                    <a href="#">여행 계획하기</a>
-                </section>
-                <section class="nav-menu">
-                    <a href="#">여행 리뷰</a>
-                </section>
+            <section></section>
+
+            <section id="search-area">
+                <form action="#" name="search-form">
+                    <fieldset>
+                        <section>
+                            <input type="search" id="query" name="query" autocomplete="off">
+                            <button type="submit" id="search-btn" class="fa-solid fa-magnifying-glass"></button>
+                        </section>
+                    </fieldset>
+                </form>
             </section>
-        </nav>
+            <section></section>
+
+            <section class="login-area">
+                <button>
+                    <a href="${contextPath}/member/login">로그인</a>
+                </button>
+                <button>
+                    <a href="#">회원가입</a>
+                </button>
+            </section>
+        </section>
+    </header>
+
+    <nav>
+        <section id="nav">
+            <section class="nav-menu">
+                <a href="#">지역</a>
+            </section>
+            <section class="nav-menu">
+                <a href="#">테마</a>
+            </section>
+            <section class="nav-menu">
+                <a href="#">여행 계획하기</a>
+            </section>
+            <section class="nav-menu">
+                <a href="#">여행 리뷰</a>
+            </section>
+        </section>
+    </nav>
 
         <section id="middle">
            
-            <section class="container">
-                <section class="container0"></section>
             
-                <section class="container1">
-                    <div id="slideShow">
-                        <ul class="slides">                    
-                           <a href="https://www.iei.or.kr/login/eval.kh" style="display:contents">
-                            <li><img src="/resources/images/ThemeBoard/main/ThemeTravelMain1.jpg" alt=""></li></a>
-                            <a href="https://www.naver.com/"><li><img src="../앞화면/images/테마여행 메인.jpg" alt=""></li></a>  
-                            <a href=""><li><img src="../앞화면/images/테마여행 메인1.png" alt=""></li></a>  
-                            <a href=""><li><img src="../앞화면/images/테마여행 메인3.png" alt=""></li></a>  
-                        </ul>
-                        <p class="controller">
-                            <span class="prev">&lang;</span>
-                            <span class="next">&rang;</span>
-                        </p>  
-                    </div>        
-                </section>
-            
-                <section class="container2"></section>
-                <section class="container3"><hr></section>
-                <br>
-                <section class="container4">
-                    <b>여진구의 테마 추천!</b>
-                </section>
-                <br><br>
-                <section class="container5">
-                    <section class="flex-container1">
-                        <section class="item" id="photo">
-                            <img src="/src/main/webapp/resources/images/ThemeBoard/main/autumnLOVE.jpg" >
-                        </section>
-                        <section class="item" id="photo">
-                            <img src="../앞화면/images/연인 여행.jpg">
-                        </section>
-                        <section class="item" id="photo">
-                            <img src="../앞화면/images/고궁.jpg">
-                        </section>
-                        <section class="item" id="photo">
-                            <img src="../앞화면/images/디즈니랜드.jpg">
-                        </section>
-                    </section>
-
-                    <section class="flex-container2">
-                        <section class="item1">
-                            <b>가을 타는 당신!</b>
+           
+                <section class="container">
+                    <section class="container0"></section>
+                
+                    <section class="container1">
+                        <div class="embla" id="slideShow">
                             
-                        </section>
-                        <section class="item1">
-                            <b>연인과 함께!</b>
-
-                        </section>
-                        <section class="item1">
-                            <b>역사.. 좋아하세요?</b>
-
-                        </section>
-                        <section class="item1">
-                            <b>5월은 가정의날!</b>
-                        </section>
+                                <div class="embla__container">
+                                    <div class="embla__slide">
+                                        <img src="../../resources/images/ThemeBoard/main/ThemeMain1.png" alt="Main1">                                    
+                                    </div>
+                                    <div class="embla__slide">
+                                        <img src="../../resources/images/ThemeBoard/main/ThemeMain2.png" alt="Main2">
+                                    </div>
+                                    <div class="embla__slide">
+                                        <img src="../../resources/images/ThemeBoard/main/ThemeMain3.png" alt="Main3">
+                                    </div>
+                                    <div class="embla__slide">
+                                        <img src="../../resources/images/ThemeBoard/main/ThemeMain4.png" alt="Main4">
+                                    </div>
+                                </div>
+                            
+                            <button class="embla__prev">Prev</button>
+                            <button class="embla__next">Next</button>
+                        </div>        
                     </section>
-
-                    <section class="flex-container3">
-                        <section class="item2">
-                            <b>여행지 이름</b>
-                            <br>
-                            <b>여행지 주소</b>
+                
+                    <section class="container2"></section>
+                    <section class="container3"><hr></section>
+                    <br>
+                    <section class="container4">
+                        <b>여진구의 테마 추천!</b>
+                    </section>
+                    <br><br>
+                    <section class="container5">
+                        <section class="flex-container1">
+                            <div class="item" id="photo">
+                                <img src="../../resources/images/ThemeBoard/main/autumnLOVE.jpg">
+                                    <strong><h2>가을 타는 당신!</h2></strong>
+                                    <br>
+                                    <b>여행지 이름</b>
+                                    <br>
+                                    <b>여행지 주소</b>
+                            </div>
+                            <div class="item" id="photo">
+                                <img src="../../resources/images/ThemeBoard/main/coupleTrip.jpg">
+                                    <strong><h2>연인과 함께!</h2></strong>
+                                    <br>
+                                    <b>여행지 이름</b>
+                                    <br>
+                                    <b>여행지 주소</b>
+                            </div>
+                            <div class="item" id="photo">
+                                <img src="../../resources/images/ThemeBoard/main/oldPalace.jpg">
+                                    <strong><h2>역사.. 좋아하세요?</h2></strong>
+                                    <br>
+                                    <b>여행지 이름</b>
+                                    <br>
+                                    <b>여행지 주소</b>
+                            </div>
+                            <div class="item" id="photo">
+                                <img src="../../resources/images/ThemeBoard/main/Disneyland.jpg">
+                                    <strong><h2>5월은 가정의날!</h2></strong>
+                                    <br>
+                                    <b>여행지 이름</b>
+                                    <br>
+                                    <b>여행지 주소</b>
+                            </div>
                         </section>
-                        <section class="item2">
-                            <b>여행지 이름</b>
-                            <br>
-                            <b>여행지 주소</b>
-                        </section>
-                        <section class="item2">
-                            <b>여행지 이름</b>
-                            <br>
-                            <b>여행지 주소</b>
-                        </section>
-                        <section class="item2">
-                            <b>여행지 이름</b>
-                            <br>
-                            <b>여행지 주소</b>
-                        </section>
+    
                         
                     </section>
+    
+                    <br><br><br>
+                    <section class="container6">
+                        <section class="container6-1">
+                            <b>키워드 & 해쉬태그</b>
+                        </section>
+                        <section class="flex-container4">
+                            <div class="item3" id="spring">
+                                #봄
+                            </div>
+                            <div class="item3" id="childday">
+                                #어린이날
+                            </div>
+                            <div class="item3" id="festival">
+                                #축제
+                            </div>
+                            <div class="item3" id="flower">
+                                #벚꽃
+                            </div>
+                            <div class="item3" id="bestfood">
+                                #맛집
+                            </div>
+                            <div class="item3" id="activity">
+                                #액티비티
+                            </div>
+                            <div class="item3" id="ocean">
+                                #바다
+                            </div>
+    
+                        </section>
+    
+    
+                        <section class="flex-container5">
+                            <div class="item3" id="mountain">
+                                #산
+                            </div>
+                            <div class="item3" id="couple">
+                                #커플
+                            </div>
+                            <div class="item3" id="single">
+                                #싱글
+                            </div>
+                            <div class="item3" id="bunggle">
+                                #벙글
+                            </div>
+                            <div class="item3" id="family">
+                                #가족
+                            </div>
+                            <div class="item3" id="rain">
+                                #비
+                            </div>
+                            <div class="item3" id="train">
+                                #기차
+                            </div>
+                        </section>
+                    </section>
                 </section>
-
-                <section class="container6">
-                    <section class="container6-1">
-                        <b>키워드 & 해쉬태그</b>
-                    </section>
-                    <section class="flex-container4">
-                        <section class="item3">
-                            #봄
-                        </section>
-                        <section class="item3">
-                            #어린이날
-                        </section>
-                        <section class="item3">
-                            #축제
-                        </section>
-                        <section class="item3">
-                            #벚꽃
-                        </section>
-                        <section class="item3">
-                            #맛집
-                        </section>
-                        <section class="item3">
-                            #액티비티
-                        </section>
-                        <section class="item3">
-                            #바다
-                        </section>
-
-                    </section>
-
-
-                    <section class="flex-container5">
-                        <section class="item3">
-                            #산
-                        </section>
-                        <section class="item3">
-                            #커플
-                        </section>
-                        <section class="item3">
-                            #싱글
-                        </section>
-                        <section class="item3">
-                            #벙글
-                        </section>
-                        <section class="item3">
-                            #가족
-                        </section>
-                        <section class="item3">
-                            #비
-                        </section>
-                        <section class="item3">
-                            #기차
-                        </section>
-                    </section>
-                </section>
-            </section>
-            
-
+                
         </section>
+           
 
         <footer>
             <section>Copyright © TravelMaker Corp. All rights reserved.</section>
@@ -218,6 +208,16 @@
     </main>
 
 
-    <script src="test.js"></script>
+    <script type="text/javascript">
+        var emblaNode = document.querySelector('.embla')
+        var options = { loop: false }
+        var plugins = [EmblaCarouselAutoplay()] // Plugins
+      
+        var embla = EmblaCarousel(emblaNode, options, plugins)
+        
+       
+
+    
+    </script>
 </body>
 </html>

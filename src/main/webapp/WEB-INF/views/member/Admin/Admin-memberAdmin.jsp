@@ -32,27 +32,27 @@
 
 		<jsp:include page="/WEB-INF/views/common/admin-sideBar.jsp"/>
 
-             <section class="right-section">
+            <section class="right-section">
 
                 <!-- 관리자 페이지 상단 우측 제목 -->
                 <section>
-                    <section class="title">
+                    <div class="title">
                         <i class="fa-solid fa-users-gear" style="color: #000000;"></i>
                         &nbsp;회원 관리
-                    </section>
+                    </div>
                 </section>
 
                 <!-- 회원 관리 내용 영역 -->
                 <section>
-                    <section class="search-area">
+                    <div class="search-area">
                         <input type="text" placeholder="아이디 입력" id="member-search">
                         <button class="search-btn" type="button">검색</button>
-                    </section>
-                    <section>
-                        <a href="#">
-                            <button type="submit" id="secession-btn">회원 탈퇴</button>
+                    </div>
+                    <div>
+                        <a href="selectAll">
+                            <button type="button" id="secession-btn">회원 탈퇴</button>
                         </a>
-                    </section>
+                    </div>
                 </section>
 
                 <section id="search-container">
@@ -60,7 +60,6 @@
                     <table class="member-table">
                         <thead>
                             <tr class="table-bk">
-                                <th>구분</th>
                                 <th>회원 번호</th>
                                 <th>아이디</th>
                                 <th>이름</th>
@@ -75,8 +74,9 @@
                         <tbody id="memberList">
                             <c:forEach var="member" items="${requestScope.list}">
                                 <tr>
-                                    <td><input type="checkbox" id="checkbox"></td>
-                                    <td>${ member.memberNo }</td>
+                                    <td>
+                                        <input type="checkbox" name="memberNo" value="${ member.memberNo }">${ member.memberNo }
+                                    </td>
                                     <td>${ member.memberId }</td>
                                     <td>${ member.memberName }</td>
                                     <td>${ member.memberNickname }</td>
