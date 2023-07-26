@@ -24,10 +24,10 @@
 
             <section class="login-area">
                 <button class="btn-style">
-                    <a href="">로그인</a>
+                    <a href="${contextPath}/member/login">로그인</a>
                 </button>
                 <button class="btn-style">
-                    <a href="#">회원가입</a>
+                    <a href="${contextPath}/member/signUp">회원가입</a>
                 </button>
             </section>
         </section>
