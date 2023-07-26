@@ -127,7 +127,6 @@ secessionBtn.addEventListener("click", function(){
 
             if(checkedMemberNo != null && result > 0){
                 alert("회원 탈퇴 처리가 완료되었습니다.");
-                
             } else{
                 alert("회원 탈퇴 처리 실패");
             }

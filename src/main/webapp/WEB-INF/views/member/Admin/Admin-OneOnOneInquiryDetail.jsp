@@ -17,7 +17,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="${contextPath}/resources/css/main-style.css">
-    <link rel="stylesheet" href="${contextPath}/resources/css/Admin/Admin-OneOnOneInquiryReply-style.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/Admin/Admin-OneOnOneInquiryDetail-style.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/Admin/Admin-sideBar-main-style.css">
     <script src="https://kit.fontawesome.com/ef988defcf.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
@@ -33,10 +33,10 @@
 
                 <!-- 관리자 페이지 상단 우측 제목 -->
                 <section>
-                    <section class="title">
+                    <div class="title">
                         <i class="fa-solid fa-circle-question" style="color: #000000;"></i>
                         &nbsp;1:1 문의
-                    </section>
+                    </div>
                 </section>
 
                 <!-- 일대일 문의 상세 조회 영역 -->
