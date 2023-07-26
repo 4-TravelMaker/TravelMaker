@@ -239,7 +239,7 @@ td > input[type="text"] { /* input(text 타입) 스타일 */
     font-weight: bold;
     cursor: pointer;
     position: relative;
-    right: 80px;
+    right: 90px;
 
 }
 
@@ -273,7 +273,7 @@ input[type="checkbox"] { /* input(checkbox 타입) 스타일 */
     font-weight: bold;
     cursor: pointer;
     position: relative;
-    right: 80px;
+    right: 90px;
     bottom: 2px;
 }
 
