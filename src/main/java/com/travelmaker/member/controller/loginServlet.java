@@ -48,6 +48,8 @@ public class loginServlet extends HttpServlet{
 			
 			HttpSession session = req.getSession();
 			
+			
+			
 			if(loginMember != null){
 				session.setAttribute("loginMember", loginMember);
 				

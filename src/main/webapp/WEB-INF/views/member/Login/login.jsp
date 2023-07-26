@@ -60,11 +60,11 @@
                             <div id="loginArea">
                                 <div id="loginArea1"></div>
                                 <div id="loginArea2">
-                                    <a href="#">회원가입</a>
+                                    <a href="${contextPath}/member/signUp">회원가입</a>
                                     <span>|</span>
-                                    <a href="#">아이디찾기</a>
+                                    <a href="${contextPath}/member/findId">아이디찾기</a>
                                     <span>|</span>
-                                    <a href="#">비밀번호찾기</a>
+                                    <a href="${contextPath}/member/findPw">비밀번호찾기</a>
                                 </div>
                                 <div id="loginArea3"></div>
                             </div>
