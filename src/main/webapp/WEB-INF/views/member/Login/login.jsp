@@ -37,22 +37,22 @@
                 </div>
             </div>
             <div id="loginInputArea">
-                <form action="#" name="login-form" onsubmit="return validate()">
+                <form action="${contextPath}/member/login" method="post" name="login-form" onsubmit="return validate()">
                     
                     <div id="InputArea1">
                         <div id="inputArea1-1">
                             <label for="idInput"><img src="${contextPath}/resources/images/Login/loginmark.png" id="image"></label>
                             <div id="idArea">
-                                <input type="text" id="idInput" placeholder="아이디" autocomplete="off">
+                                <input type="text" id="idInput" name="inputId" placeholder="아이디" autocomplete="off">
                             </div>
                             <label for="pwInput"><img src="${contextPath}/resources/images/Login/passward.png" id="image"></label>
                             <div id="pwArea">
-                                <input type="password" id="pwInput" placeholder="비밀번호">
+                                <input type="password" id="pwInput" name="inputPw" placeholder="비밀번호">
                             </div>
                         </div>
                     
                         <div id="inputArea1-2">
-                            <button type="submit" id="loginbutton">로그인</button>
+                            <button type="submit" id="loginbutton" >로그인</button>
                         </div>
                     
                     </div>
@@ -86,9 +86,10 @@
     </main>
 
 
+    
+      
 
-
-    <script src="${contextPath}/resources/js/Login/login.js"></script>
+    <!-- <script src="${contextPath}/resources/js/Login/login.js"></script> -->
 
 
 </body>
