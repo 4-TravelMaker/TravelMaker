@@ -4,7 +4,7 @@
 <comment>member-sql-ksw.xml</comment>
 
 <!-- 로그인 기능(전체 조회, 탈퇴여부) -->
-<entry key="Login">
+<entry key="login">
 	SELECT MEMBER_NO, MEMBER_ID, MEMBER_PW, MEMBER_NM,
 		   MEMBER_NICK, PROFILE_IMG, MEMBER_ADDR, MEMBER_THM,MEMBER_Q_CD,
            MEMBER_A,SECESSION_FL,ADMIN_FL,

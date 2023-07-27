@@ -105,51 +105,32 @@
                     </section>
                     <section class="flex-container4">
                         <div class="item3" id="spring">
-                            #봄
+                            <a href="">#액티비티</a>
                         </div>
                         <div class="item3" id="childday">
-                            #어린이날
+                            <a href="">#맛집</a>
                         </div>
                         <div class="item3" id="festival">
-                            #축제
+                            <a href="">#카페</a>
                         </div>
                         <div class="item3" id="flower">
-                            #벚꽃
-                        </div>
-                        <div class="item3" id="bestfood">
-                            #맛집
-                        </div>
-                        <div class="item3" id="activity">
-                            #액티비티
-                        </div>
-                        <div class="item3" id="ocean">
-                            #바다
-                        </div>
-
+                            <a href="">#커플여행</a>
+                        </div>                        
                     </section>
 
 
                     <section class="flex-container5">
                         <div class="item3" id="mountain">
-                            #산
+                            <a href="">#캠핑</a>
                         </div>
                         <div class="item3" id="couple">
-                            #커플
+                            <a href="">#반려견동반</a>
                         </div>
                         <div class="item3" id="single">
-                            #싱글
+                            <a href="">#기차여행</a>
                         </div>
                         <div class="item3" id="bunggle">
-                            #벙글
-                        </div>
-                        <div class="item3" id="family">
-                            #가족
-                        </div>
-                        <div class="item3" id="rain">
-                            #비
-                        </div>
-                        <div class="item3" id="train">
-                            #기차
+                            <a href="">#가족여행</a>
                         </div>
                     </section>
                 </section>

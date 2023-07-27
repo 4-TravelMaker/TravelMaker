@@ -305,10 +305,10 @@ img{
 .item3{
     background-color: rgb(230,230,230);
     border-radius: 30%;
-    font-size: 18px;
+    font-size: 25px;
     line-height: 45px;
     color: rgb(131,131,131);
-    width: 12%;
+    width: 20%;
     height: 50px;
     border-top-left-radius: 25px; 
     border-top-right-radius: 25px; 
@@ -316,6 +316,9 @@ img{
     border-bottom-left-radius: 25px; 
 }
 
+a:hover{
+    color: white;
+}
 
 
 
