@@ -33,6 +33,12 @@ public class MemberDAO_kks {
 		}
 	}
 	
+	/** 오토 로그인(임시) DAO
+	 * @param conn
+	 * @param memberNo
+	 * @return loginMember
+	 * @throws Exception
+	 */
 	public Member autoLogin(Connection conn, int memberNo) throws Exception {
 		
 		Member loginMember = null;
@@ -70,6 +76,40 @@ public class MemberDAO_kks {
 		}
 		
 		return loginMember;
+	}
+
+	/** 회원 정보 수정 DAO
+	 * @param conn
+	 * @param mem
+	 * @return result
+	 * @throws Exception
+	 */
+	public int changeMyInfo(Connection conn, Member mem) throws Exception {
+		
+		int result = 0;
+		
+		try {
+			
+			String sql = prop.getProperty("changeMyInfo");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, mem.getMemberPw());
+			pstmt.setString(2, mem.getMemberNickname());
+			pstmt.setString(3, mem.getMemberAddress());
+			pstmt.setString(4, mem.getMemberTheme());
+			pstmt.setInt(5, mem.getMemberQuestionCode());
+			pstmt.setString(6, mem.getMemberAnswer());
+			pstmt.setString(7, mem.getProfileImage());
+			pstmt.setInt(8, mem.getMemberNo());
+			
+			result = pstmt.executeUpdate();
+			
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
 	}
 
 }

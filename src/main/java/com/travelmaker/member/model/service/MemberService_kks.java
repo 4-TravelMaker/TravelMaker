@@ -11,6 +11,11 @@ public class MemberService_kks {
 
 	private MemberDAO_kks dao = new MemberDAO_kks(); 
 	
+	/** 오토 로그인(임시) Service
+	 * @param memberNo
+	 * @return loginMember
+	 * @throws Exception
+	 */
 	public Member autoLogin(int memberNo) throws Exception {
 		
 		Connection conn = getConnection();
@@ -20,6 +25,25 @@ public class MemberService_kks {
 		close(conn);
 		
 		return loginMember;
+	}
+
+	/** 회원 정보 수정 Service
+	 * @param mem
+	 * @return result
+	 * @throws Exception
+	 */
+	public int changeMyInfo(Member mem) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		int result = dao.changeMyInfo(conn, mem);
+		
+		if(result > 0)	commit(conn);
+		else			rollback(conn);
+		
+		close(conn);
+		
+		return result;
 	}
 
 }
