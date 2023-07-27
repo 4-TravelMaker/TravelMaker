@@ -27,12 +27,6 @@
             </section>
 
             <section class="left-section-btn">
-                <a href="${contextPath}/admin/selectNotification">
-                    <button>공지사항 관리</button>
-                </a>
-            </section>
-
-            <section class="left-section-btn">
                 <a href="${contextPath}/admin/OneOnOneInquiry/list?type=6">
                     <button>1:1 문의</button>
                 </a>

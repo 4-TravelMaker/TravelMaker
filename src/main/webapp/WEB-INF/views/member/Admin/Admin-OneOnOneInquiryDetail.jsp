@@ -1,5 +1,4 @@
 <!-- 관리자 페이지 - 일대일 문의 답변 -->
-
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -42,26 +41,50 @@
                 <!-- 일대일 문의 상세 조회 영역 -->
                 <section class="customer-inquiry">
                     <section>
-                        여행글 보고 여행 가고 싶어졌어요 책임지세요
+                        ${detail.boardTitle}
                     </section>
-                    <section>작성자 이름 : 유저일 &nbsp;| &nbsp;아이디 : user01 &nbsp;| &nbsp;작성일 : 2023.07.05</section>
+                    <section>게시글 번호 : ${detail.boardNo} &nbsp;| &nbsp;작성자 닉네임 : ${detail.memberNickname} &nbsp;| &nbsp;아이디 : ${detail.memberId} &nbsp;| &nbsp;작성일 : ${detail.createDate}</section>
                     <section>
-                        여행 글 보다가 여행이 너무 가고 싶어졌어요<br>
-                        여행비 빌려주세요
+                        ${detail.boardContent}
                     </section>
+                    <div class="reply-btn-area">
+                        <button type="button" id="go-to-list-btn" onclick="location.href='${header.referer}'">목록으로</button>
+                        <button type="button" id="reply-btn">답변하기</button>
+                    </div>
+                </section>
 
-                    <!-- 일대일 문의 답변 영역 -->
-                    <section>답변하기</section>
-                    <section>
-                        <input type="text" placeholder="답변 제목을 입력하세요" id="inquiry-title">
-                    </section>
-                    <section>
-                        <textarea placeholder="답변 내용을 입력하세요" id="inquiry-content"></textarea>
-                    </section>
-                    <section>
-                        <button class="post-btn">작성</button>
-                        <button class="post-btn">취소</button>
-                    </section>
+                
+                <!-- 일대일 문의 답변 조회 영역 -->
+                <section class="reply-select-area">
+                    <section> <i class="fa-brands fa-replyd" style="color: #000000;"></i> &nbsp; 답변</section>
+
+                    <c:if test="${empty reply}">
+                        <section id="inquiry-content-area2">
+                            작성된 답변이 없습니다.
+                        </section>
+                    </c:if>
+
+                    <c:if test="${!empty reply}">
+                        <section id="inquiry-content-area2">
+                            ${reply.replyContent}
+                        </section>
+                    </c:if>
+                    
+                </section>
+
+
+                <!-- 일대일 문의 답변 영역 -->
+                <section class="customer-inquiry admin-reply">
+                    <section> <i class="fa-brands fa-replyd" style="color: #000000;"></i> &nbsp; 답변하기</section>
+                    <form action="insert" method="POST">
+                        <section id="inquiry-content-area">
+                            <textarea placeholder="답변 내용을 입력하세요" id="inquiry-content"></textarea>
+                        </section>
+                        <section id="post-btn-area">
+                            <button class="post-btn" id="insert-btn">작성</button>
+                            <button type="button" class="post-btn" id="cancel-btn">취소</button>
+                        </section>
+                    </form>
                 </section>
 
             </section>
@@ -70,6 +93,7 @@
 
 	<jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 
+    <script src="${contextPath}/resources/js/Admin/Admin-OneOnOneInquiryDetail.js"></script>
     
 </body>
 </html>

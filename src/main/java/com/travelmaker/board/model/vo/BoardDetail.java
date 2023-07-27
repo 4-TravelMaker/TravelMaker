@@ -20,6 +20,7 @@ public class BoardDetail {
    private int readCount;
    private int likeCount;
    private String memberNickname;
+   private String memberId;
    private String profileImage;
    private int memberNo;
    private String boardName;
