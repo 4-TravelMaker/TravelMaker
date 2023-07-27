@@ -82,18 +82,18 @@
                     
                 </table>
             </div>
-
+${pagination}
             <div id="last">
-
+                
                 <div class="pagination-area">
-
+                    
                     <!-- 페이지네이션 a태그에 사용될 공통 주소를 저장한 변수 선언 -->
                     <c:set var="url" value="list?type=${param.type}$cp="/>
-
+                    
                     <ul class="pagination">
                         <!-- 첫 페이지로 이동 -->
                         <li><a href="${url}1">&lt;&lt;</a></li>
-
+                        
                         <!-- 이전 목록 마지막 번호로 이동 -->
                         <li><a href="${url}${pagination.prevPage}">&lt;</a></li>
 
@@ -108,6 +108,7 @@
 
                             <c:otherwise>
                                 <li><a href="${url}${i}">${i}</a></li>
+                                
                             </c:otherwise>
                         </c:choose>
 

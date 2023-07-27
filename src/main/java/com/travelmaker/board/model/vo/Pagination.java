@@ -22,7 +22,7 @@ public class Pagination {
 		this.currentPage = currentPage;
 		this.listCount = listCount;
 		
-		
+		calculatePagination();
 	}
 
 
@@ -33,6 +33,8 @@ public class Pagination {
 
 	public void setCurrentPage(int currentPage) {
 		this.currentPage = currentPage;
+		
+		calculatePagination();
 	}
 
 
@@ -43,6 +45,8 @@ public class Pagination {
 
 	public void setListCount(int listCount) {
 		this.listCount = listCount;
+		
+		calculatePagination();
 	}
 
 
@@ -53,6 +57,8 @@ public class Pagination {
 
 	public void setLimit(int limit) {
 		this.limit = limit;
+		
+		calculatePagination();
 	}
 
 
