@@ -12,6 +12,7 @@ import java.util.Properties;
 import com.travelmaker.board.model.vo.Board;
 import com.travelmaker.board.model.vo.BoardDetail;
 import com.travelmaker.board.model.vo.Pagination;
+import com.travelmaker.board.model.vo.Reply;
 import com.travelmaker.member.model.dao.MemberDAO_ash;
 
 import static com.travelmaker.common.JDBCTemplate.*;
@@ -74,13 +75,13 @@ public class BoardDAO_ash {
 	 * @return boardList
 	 * @throws Exception
 	 */
-	public List<Board> selectBoardList(Connection conn, Pagination pagination, int type) throws Exception {
+	public List<Board> selectOneOnOneInquiryList(Connection conn, Pagination pagination, int type) throws Exception {
 		
 		List<Board> boardList = new ArrayList<>();
 		
 		try {
 			
-			String sql = prop.getProperty("selectBoardList");
+			String sql = prop.getProperty("selectOneOnOneInquiryList");
 			
 			int start = ( pagination.getCurrentPage() - 1 ) * pagination.getLimit() + 1;
 			int end = start + pagination.getLimit() - 1;
@@ -126,7 +127,21 @@ public class BoardDAO_ash {
 		try {
 			String sql = prop.getProperty("selectOneOnOneInquiryDetail");
 			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, boardNo);
 			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				detail = new BoardDetail();
+				
+				detail.setBoardNo( rs.getInt("BOARD_NO") );
+				detail.setBoardTitle( rs.getString("BOARD_TITLE") );
+				detail.setBoardContent( rs.getString("BOARD_CONTENT") );
+				detail.setCreateDate( rs.getString("CREATE_DT") );
+				detail.setMemberNickname( rs.getString("MEMBER_NICK") );
+				detail.setMemberId( rs.getString("MEMBER_ID") );
+			}
 			
 		} finally {
 			close(rs);
@@ -134,6 +149,55 @@ public class BoardDAO_ash {
 		}
 		
 		return detail;
+	}
+
+	/** 일대일 문의 답변 작성 DAO
+	 * @param conn
+	 * @param reply
+	 * @return result
+	 * @throws Exception
+	 */
+	public int insertOneOnOneInquiryReply(Connection conn, Reply reply) throws Exception {
+		
+		int result = 0;
+		
+		try {
+			String sql = prop.getProperty("insertOneOnOneInquiryReply");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, reply.getReplyContent());
+			pstmt.setInt(2, reply.getBoardNo());
+			pstmt.setInt(3, reply.getMemberNo());
+			
+			result = pstmt.executeUpdate();
+			
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
+	/** 일대일 문의 답변 목록 조회 DAO
+	 * @param conn
+	 * @param boardNo
+	 * @return rList
+	 * @throws Exception
+	 */
+	public List<Reply> selectReplyList(Connection conn, int boardNo) throws Exception {
+		
+		List<Reply> rList = new ArrayList<>();
+		
+		try {
+			String sql = prop.getProperty("selectReplyList");
+			
+			
+		} finally {
+			
+		}
+		
+		return rList;
 	}
 
 }

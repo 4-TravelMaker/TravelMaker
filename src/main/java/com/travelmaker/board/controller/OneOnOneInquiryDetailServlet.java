@@ -18,13 +18,15 @@ public class OneOnOneInquiryDetailServlet extends HttpServlet{
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 		try {
-			
+
 			int boardNo = Integer.parseInt(req.getParameter("no"));
 			
 			BoardService_ash service = new BoardService_ash();
 			
 			// 게시글 상세 조회
 			BoardDetail detail = service.selectOneOnOneInquiryDetail(boardNo);
+			
+			req.setAttribute("detail", detail);
 			
 			String path = "/WEB-INF/views/member/Admin/Admin-OneOnOneInquiryDetail.jsp";
 			
