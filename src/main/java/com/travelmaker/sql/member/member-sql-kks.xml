@@ -5,10 +5,24 @@
 	<!-- (임시)로그인 -->
 	<entry key="login">
 		SELECT MEMBER_NO, MEMBER_ID, MEMBER_NM, MEMBER_NICK, PROFILE_IMG,
-		       MEMBER_ADDR, MEMBER_THM, MEMBER_Q_CT, MEMBER_A,
+		       MEMBER_ADDR, MEMBER_THM, MEMBER_Q_CD, MEMBER_A,
 		       TO_CHAR(ENROLL_DT, 'YYYY-MM-DD HH24:MI:SS') AS ENROLL_DT
 		FROM MEMBER
 		JOIN MEMBER_QUERY USING(MEMBER_Q_CD)
+		WHERE MEMBER_NO = ?
+		AND SECESSION_FL = 'N'
+	</entry>
+	
+	<!-- 회원 정보 수정 -->
+	<entry key="changeMyInfo">
+		UPDATE MEMBER SET
+		MEMBER_PW = ?,
+		MEMBER_NICK = ?,
+		MEMBER_ADDR = ?,
+		MEMBER_THM = ?,
+		MEMBER_Q_CD = ?,
+		MEMBER_A = ?,
+		PROFILE_IMG = ?
 		WHERE MEMBER_NO = ?
 		AND SECESSION_FL = 'N'
 	</entry>

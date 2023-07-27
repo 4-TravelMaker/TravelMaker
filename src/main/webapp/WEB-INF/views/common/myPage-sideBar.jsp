@@ -8,8 +8,14 @@
 	<section class="left-section">
 		<section class="left-section-head">마이 페이지</section>
         <section class="left-section-profile">
-            <img src="${contextPath}/resources/images/profile.png" style="height: 170px;">
-            <section>홍길동 님</section>
+            <c:if test="${empty loginMember.profileImage}">
+                <img src="${contextPath}/resources/images/myPageProfile/profile.png" id="real-profile-image">
+            </c:if>
+
+            <c:if test="${!empty loginMember.profileImage}">
+                <img src="${contextPath}${loginMember.profileImage}" id="real-profile-image">
+            </c:if>
+            <section>${loginMember.memberNickname}</section>
         </section>
         
         <section class="left-section-btn-area">
