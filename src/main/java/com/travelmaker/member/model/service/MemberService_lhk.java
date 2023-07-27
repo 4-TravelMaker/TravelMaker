@@ -71,4 +71,20 @@ public class MemberService_lhk {
 		return result;
 	}
 
+	/** 아이디찾기 Service
+	 * @param mem
+	 * @return checkId
+	 * @throws Exception
+	 */
+	public String selectCheckId(Member mem) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		String checkId = dao.selectCheckId(conn,mem);
+		
+		close(conn);
+		
+		return checkId;
+	}
+
 }

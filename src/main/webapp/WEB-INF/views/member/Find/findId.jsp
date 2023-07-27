@@ -93,7 +93,7 @@
                                 <div class="findIdButtonArea1"></div>
                                 <div class="findIdButtonArea2">
                                     <div class="a">
-                                        <button type="submit" id="findIdButton" name="findId" onclick = "location.href = '#'">아이디 찾기</button>
+                                        <button type="button" id="findIdButton" name="findId">아이디 찾기</button>
                                         <button type="submit" id="cancelButton" name ="cancel" onclick = "location.href = '#'">취소</button>
                                     </div>
                                 </div>
@@ -101,7 +101,7 @@
                         </div>
                     </form>    
                 <div id="middle1-3">
-                    <form>
+                   
                         <div style="height: 45px;"></div>
                         <div class="findIdArea4">
                             <div class="findIdText">
@@ -109,17 +109,17 @@
                             </div>
                             <!-- 찾은 회원 아이디 나오게 하는 공간 -->
                             <div id="findIdTextArea">
-                                <span>회원 아이디는 ~ 입니다</span>
+                                <span id="spanId"></span>
                             </div>
                         </div>
                         <div class="loginArea">
                             <div class="loginArea1"></div>
                             <div class="loginArea2">
-                                <button id="logindButton"  onclick = "location.href = '#'">로그인 하기</button>
-                                <button id="findPwButton"  onclick = "location.href = '#'">비밀번호 찾기</button>
+                                <button id="logindButton"  onclick = "location.href='${contextPath}/member/login'">로그인 하기</button>
+                                <button id="findPwButton"  onclick = "location.href='${contextPath}/member/findPw'">비밀번호 찾기</button>
                             </div>
                         </div>
-                    </form>    
+                    
                 </div>
                 
                 
@@ -130,5 +130,9 @@
 
         <jsp:include page="/WEB-INF/views/common/footer.jsp"/>   
     </main>
+
+<script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+
+<script src="${contextPath}/resources/js/Find/findId.js"></script>
 </body>
 </html>

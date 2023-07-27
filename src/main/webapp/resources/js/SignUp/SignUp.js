@@ -502,20 +502,20 @@ const checkObj = {
 
             // 주소 입력
 
-            const address = document.getElementsByClassName("address");
+            // const address = document.getElementsByClassName("address");
             
-            if(address[0].value == 0 | address[1] == 0){
-                alert("주소검색 버튼을 눌러 주소를 입력하세요");
-                return false;
+            // if(address[0].value == 0 | address[1] == 0){
+            //     alert("주소검색 버튼을 눌러 주소를 입력하세요");
+            //     return false;
 
-            }
+            // }
 
-            if(address[2].value == 0){
+            // if(address[2].value == 0){
 
-                alert("상세 주소를 입력해주세요");
-                address[2].focus();
-                return false;
-            }
+            //     alert("상세 주소를 입력해주세요");
+            //     address[2].focus();
+            //     return false;
+            // }
 
             // 비밀번호 찾기 질문 선택 안했을시 강요
 
