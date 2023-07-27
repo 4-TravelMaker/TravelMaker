@@ -8,6 +8,8 @@ const checkObj = {
     };
 
 
+                     
+
 
 
         /* 아이디 유효성 검사 */
@@ -130,6 +132,16 @@ const checkObj = {
             const regExp = /^[가-힣]{2,6}$/
             const span = document.querySelector(".nameText");
 
+            if(memberName.value.trim().length == 0){
+                
+                span.innerHTML = "이름을 입력해주세요."
+                
+                checkObj.memberName = false;
+                
+                return;
+                
+            }
+
             if(regExp.test(memberName.value)) {
                 span.innerHTML = "적합한 이름 입니다."
                 span.style.color = "green";
@@ -181,7 +193,20 @@ const checkObj = {
         pw.addEventListener("input", () => {
             const regExp = /^[A-Za-z0-9`~!@#\$%\^&\*\(\)\{\}\[\]\-_=\+\\|;:'"<>,\./\?]{6,20}$/;
             const span = document.querySelector("#pw-check");
-            console.log(pw.value);
+
+
+            if(pw.value.trim().length == 0){
+                
+                span.innerHTML = "비밀번호를 입력해주세요."
+                
+                checkObj.pw = false;
+                
+                return;
+                
+            }
+
+
+
 
             if(regExp.test(pw.value)) {
                 pwcheck.innerHTML = "적합한 비밀번호입니다."
@@ -244,6 +269,7 @@ const checkObj = {
             
             if(nickname.value == "") {
                 span.innerHTML = "　";
+                checkObj.nickname = false;
             }
 
         })
@@ -291,13 +317,6 @@ const checkObj = {
                     checkObj.nickname = true;
                 }
 
-
-
-                    
-
-                    
-
-                
 
                 },
 
@@ -386,7 +405,43 @@ const checkObj = {
         /* form 제출 시 */
         function validate() {
 
-            
+            // let str;
+
+
+            // for(let key in checkObj){
+
+
+
+            //     if(!checkObj[key]){
+    
+            //         switch(key){
+    
+            //         case "id"         : str="아이디가"; break;                    
+            //         case "memberName" : str="이름이"; break;            
+            //         case "pw"         : str="비밀번호가"; break;                    
+            //         case "nickname"   : str="닉네임이";  break;              
+            //         case "pw2"        : str="전화번호가"; break;
+    
+            //         }
+    
+            //         str += "유효하지 않습니다";
+    
+            //         alert(atr);
+    
+            //         document.getElementById(key).focus();
+    
+            //         return false;
+    
+            //     }
+
+
+            // }
+
+            // return true;
+
+
+
+
 
             //아이디 체크
 
@@ -494,11 +549,11 @@ const checkObj = {
                 return true;
 
             } else {
-                alert("비밀번호가 일치하지 않습니다.");
+                alert("비밀번호가 서로 일치하지 않습니다.");
                 return false;
             }
 
-
+            
 
 
         }
