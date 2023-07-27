@@ -16,9 +16,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="${contextPath}/resources/css/main-style.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/Admin/Admin-memberReply-style.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/Admin/Admin-sideBar-main-style.css">
+
     <script src="https://kit.fontawesome.com/ef988defcf.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 </head>
@@ -39,125 +41,50 @@
                     </section>
                 </section>
 
-                <!-- 댓글 관리 내용 영역 -->
+                <!-- 댓글 검색/삭제 영역 -->
                 <section>
                     <section class="search-area">
-                        <input type="text" placeholder="아이디 / 닉네임 입력" id="member-search">
-                        <button type="submit">검색</button>
+                        <input type="text" placeholder="아이디 / 닉네임 입력" id="search">
+                        <button type="submit" id="search-btn1">검색</button>
                     </section>
                     <section>
-                        <a href="#">
-                            <button type="submit" class="modify-btn">수정</button>
-                        </a>
                         <a href="#">
                             <button type="submit" class="modify-btn">삭제</button>
                         </a>
                     </section>
                 </section>
 
-                <section>
-                    <table class="reply-table">
-                        <tr class="table-bk">
-                            <th>구분</th>
-                            <th>닉네임</th>
-                            <th>댓글 내용</th>
-                            <th>작성일</th>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>일저유</td>
-                            <td>안녕하세요</td>
-                            <td>2023.07.05</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>이저유</td>
-                            <td>반갑습니다</td>
-                            <td>2023.07.05</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>삼저유</td>
-                            <td>배고프네요</td>
-                            <td>2023.07.05</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>사저유</td>
-                            <td>졸려요</td>
-                            <td>2023.07.05</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>오저유</td>
-                            <td>친하게 지내용</td>
-                            <td>2023.07.05</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>일저유</td>
-                            <td>안녕하세요</td>
-                            <td>2023.07.05</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>이저유</td>
-                            <td>반갑습니다</td>
-                            <td>2023.07.05</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>삼저유</td>
-                            <td>배고프네요</td>
-                            <td>2023.07.05</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>사저유</td>
-                            <td>졸려요</td>
-                            <td>2023.07.05</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>오저유</td>
-                            <td>친하게 지내용</td>
-                            <td>2023.07.05</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>일저유</td>
-                            <td>안녕하세요</td>
-                            <td>2023.07.05</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>이저유</td>
-                            <td>반갑습니다</td>
-                            <td>2023.07.05</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>삼저유</td>
-                            <td>배고프네요</td>
-                            <td>2023.07.05</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>사저유</td>
-                            <td>졸려요</td>
-                            <td>2023.07.05</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>오저유</td>
-                            <td>친하게 지내용</td>
-                            <td>2023.07.05</td>
-                        </tr>
+                <!-- 댓글 리스트 영역 -->
+                <section class="reply-list">
 
-                    </table>
+                        <table class="reply-table">
+                            <thead>
+                                <tr>
+                                    <th>구분</th>
+                                    <th>글번호</th>
+                                    <th>닉네임</th>
+                                    <th>댓글 내용</th>
+                                    <th>작성일</th>
+                                </tr>
+                            </thead>
+    
+                            <tbody>
+                                <c:forEach var="reply" items="${reply}">
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>${reply.replyNo}</td>
+                                        <td>${reply.memberId}</td>
+                                        <th>${reply.replyContent}</th>
+                                        <th>${reply.replyCreateDate}</th>
+                                    </tr>
+                                </c:forEach>
+                            </tbody>
 
+                        </table>
+                    </div>
                 </section>
-                <section class="page-btn">
+
+                <section class="page-btn"> <!-- 페이지네이션 -->
                     <img src="${contextPath}/resources/images/Admin/page.png">
                 </section>
             </section>
@@ -168,6 +95,6 @@
 
 	<jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 
-    
+    <script src="${contextPath}/resources/js/Admin/Admin-reply.js"></script>
 </body>
 </html>

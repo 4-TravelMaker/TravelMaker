@@ -13,7 +13,7 @@ const checkObj = {
         /* 아이디 유효성 검사 */
         const id = document.getElementById("id");
         const span = document.querySelector(".idcheckArea");
-
+         const regExp = /^[a-z][a-z0-9]{5,19}$/;
         
         id.addEventListener("input", function() {
             
@@ -27,7 +27,7 @@ const checkObj = {
                 
             }
             
-            const regExp = /^[a-z][a-z0-9]{5,19}$/;
+            
             
             
             if(regExp.test(id.value)) {
@@ -59,6 +59,8 @@ const checkObj = {
 
         })
 
+        // 아이디 중복검사
+
         const idDupcheck = document.getElementById("id-check");
         
         idDupcheck.addEventListener("click", function(){
@@ -67,7 +69,7 @@ const checkObj = {
 
                 url : "idDupcheck",
 
-                data : { "memberId" : id.value },
+                data : { "id" : id.value },
 
                 type : "GET" ,
 
@@ -76,18 +78,29 @@ const checkObj = {
                 if(result == 1){
 
                     alert("이미 사용중인 아이디 입니다.");
-
                     checkObj.id = false;
 
 
                 
-                } else { 
+                } else if(id.value == "") { 
+
+                    alert("아이디 입력을 해주세요");
+                    id.focus();
+                    checkObj.id = false;
+                 } else if(!regExp.test(id.value)){
+
+                    alert("적합하지 않은 아이디 입니다")
+                    checkObj.id = false;
+                 }
+                 else{
 
                     alert("사용 가능한 아이디 입니다");
 
                     checkObj.id = true;
 
-                }
+
+                    }
+
 
                 },
 
@@ -100,18 +113,10 @@ const checkObj = {
                 }
 
 
+            });
 
 
-
-
-
-
-            })
-
-
-
-
-        })
+        });
 
 
 
@@ -129,16 +134,22 @@ const checkObj = {
                 span.innerHTML = "적합한 이름 입니다."
                 span.style.color = "green";
                 span.style.fontWeight = "bold";
+                
+                checkObj.memberName = true;
 
             } else {
                 span.innerHTML = "적합하지 않은 이름입니다."
                 span.style.color = "red";
                 span.style.fontWeight = "bold";
+                
+                checkObj.memberName = false;
             }
 
             if(memberName.value.length ==1){
                 span.innerHTML = "이름은 1글자 이상 입력하세요"
                 span.style.color = "red";
+
+                checkObj.memberName = false;
             }
 
             if(memberName.value.length == 0){
@@ -147,6 +158,8 @@ const checkObj = {
             } else if(memberName.value.length > 6){
                 span.innerHTML = "이름은 6자이내로 입력하세요"
                 span.style.color = "red";
+
+                checkObj.memberName = false;
 
             } 
             
@@ -165,7 +178,7 @@ const checkObj = {
         const pw2 = document.getElementById("pw2");
         const pwcheck = document.getElementById("pwcheckarea");
 
-        pw.addEventListener("keyup", () => {
+        pw.addEventListener("input", () => {
             const regExp = /^[A-Za-z0-9`~!@#\$%\^&\*\(\)\{\}\[\]\-_=\+\\|;:'"<>,\./\?]{6,20}$/;
             const span = document.querySelector("#pw-check");
             console.log(pw.value);
@@ -175,41 +188,57 @@ const checkObj = {
                 pwcheck.style.color = "green";
                 pwcheck.style.fontWeight = "bold";
 
+                checkObj.pw = true;
+
             } else {
                 pwcheck.innerHTML = "적합하지 않은 비밀번호입니다."
                 pwcheck.style.color = "red";
                 pwcheck.style.fontWeight = "bold";
+
+                checkObj.pw = false;
             }
 
             
 
             if(pw.value == "") {
                 pwcheck.innerHTML = "　";
+
+                checkObj.pw = false;
             }
 
         })
         
 
-
+        
+        
+        
+        
         /* 닉네임 유효성 검사 */
         const nicknameCheck = document.querySelector("#nickname-check");
         const nickname = document.querySelector("#nickname");
+         
         
-        nickname.addEventListener("keyup", () => {
-            const regExp = /^[가-힣]{2,8}$/;
+        nickname.addEventListener("input", () => {
+           
             const span = document.querySelector("#nickname-span");
             
-            
+            const regExp = /^[가-힣]{2,8}$/;
+
+
             if(regExp.test(nickname.value)) {
                 console.log(nickname);
                 span.innerHTML = "유효한 닉네임 형식입니다.";
                 span.style.color = "green";
                 span.style.fontWeight = "bold";
+
+                checkObj.nickname = true;
                 
             } else {
                 span.innerHTML = "닉네임 형식이 유효하지 않습니다.";
                 span.style.color = "red";
                 span.style.fontWeight = "bold";
+
+                checkObj.nickname = false;
                 
             }
             
@@ -218,6 +247,73 @@ const checkObj = {
             }
 
         })
+
+
+
+
+        // 닉네임 중복검사
+
+        const memberNickname = document.getElementById("nickname-check");
+
+        const regExp6 = /^[가-힣]{2,8}$/;
+
+        memberNickname.addEventListener("click", function(){
+
+            $.ajax({
+
+                url : "nickNameDupcheck",
+
+                data : { "memberNickname" : nickname.value },
+
+                type : "GET" ,
+
+                success : function(result){
+
+                if(result == 1){
+
+                    alert("이미 사용중인 닉네임 입니다.");
+                    checkObj.nickname = false;
+
+                } else if(nickname.value == ""){ 
+                    
+                    alert("닉네임을 입력해주세요");
+                    nickname.focus();
+                    checkObj.nickname = false;
+                }
+                else if(!regExp6.test(nickname.value)){
+
+                    alert("알맞은 닉네임 형식이 아닙니다")
+                    checkObj.nickname = false;
+
+                } else{
+
+                    alert("사용 가능한 닉네임 입니다");
+                    checkObj.nickname = true;
+                }
+
+
+
+                    
+
+                    
+
+                
+
+                },
+
+                error : function(){
+
+
+                    console.log("에러발생");
+
+
+                }
+
+
+            });
+
+
+        });
 
        
 
@@ -279,8 +375,8 @@ const checkObj = {
                         fullAddr += (extraAddr !== '' ? ' (' + extraAddr + ')' : '');
                     }
                     
-                    document.getElementsByName("address")[0].value = fullAddr;
-                    document.getElementsByName("zipcode")[0].value = data.zonecode;
+                    document.getElementById("address").value = fullAddr;
+                    document.getElementById("zipcode").value = data.zonecode;
                 }
             }).open();
         })
@@ -402,12 +498,15 @@ const checkObj = {
                 return false;
             }
 
-            if(!regExp.test(nickname.value)){
-
-            alert("닉네임 형식이 올바르지 않습니다");
-            return false;
-            }
 
 
 
         }
+
+
+        
+
+     
+      
+
+     

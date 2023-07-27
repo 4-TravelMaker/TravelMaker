@@ -143,10 +143,14 @@ public final class header_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("            <section class=\"login-area\">\r\n");
       out.write("                <button class=\"btn-style\">\r\n");
-      out.write("                    <a href=\"#\">로그인</a>\r\n");
+      out.write("                    <a href=\"");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${contextPath}", java.lang.String.class, (javax.servlet.jsp.PageContext)_jspx_page_context, null));
+      out.write("/member/login\">로그인</a>\r\n");
       out.write("                </button>\r\n");
       out.write("                <button class=\"btn-style\">\r\n");
-      out.write("                    <a href=\"#\">회원가입</a>\r\n");
+      out.write("                    <a href=\"");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${contextPath}", java.lang.String.class, (javax.servlet.jsp.PageContext)_jspx_page_context, null));
+      out.write("/member/signUp\">회원가입</a>\r\n");
       out.write("                </button>\r\n");
       out.write("            </section>\r\n");
       out.write("        </section>\r\n");

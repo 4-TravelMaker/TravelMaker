@@ -20,4 +20,5 @@ public class Reply {
 	private int boardNo; // 게시글 번호(어떤 게시글의 댓글인지 확인)
 	private int memberNo; // 회원 번호(댓글 작성자)
 	private String replyState; // 댓글 삭제 여부(Y:삭제, N:삭제 안함)
+	private String memberNickName; // 회원 닉네임
 }

@@ -1,5 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<%-- 문자열 관련 함수(메소드) 제공 JSTL (EL 형식으로 작성) --%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TravelMaker</title>
     <link rel="shortcut icon" type="image/x-icon" href="image/small_logo.png">
-    <link rel="stylesheet" href="${contextPath}/resources/css/theme-1-style.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/ThemePlaceNodeul.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
@@ -15,55 +18,7 @@
 </head>
 <body>
     <main>
-        <header>
-            <section class="head">
-                <section id="logo">
-                    <a href="#">
-                        <img src="${contextPath}/resources/images/logo.png" width="100%">
-                    </a>
-                </section>
-
-                <section></section>
-
-                <section id="search-area">
-                    <form action="#" name="search-form">
-                        <fieldset>
-                            <section>
-                                <input type="search" id="query" name="query" autocomplete="off">
-                                <button type="submit" id="search-btn" class="fa-solid fa-magnifying-glass"></button>
-                            </section>
-                        </fieldset>
-                    </form>
-                </section>
-                <section></section>
-
-                <section class="login-area">
-                    <button>
-                        <a href="#">로그인</a>
-                    </button>
-                    <button>
-                        <a href="#">회원가입</a>
-                    </button>
-                </section>
-            </section>
-        </header>
-
-        <nav>
-            <section id="nav">
-                <section class="nav-menu">
-                    <a href="#">지역</a>
-                </section>
-                <section class="nav-menu">
-                    <a href="#">테마</a>
-                </section>
-                <section class="nav-menu">
-                    <a href="#">여행 계획하기</a>
-                </section>
-                <section class="nav-menu">
-                    <a href="#">여행 리뷰</a>
-                </section>
-            </section>
-        </nav>
+        <jsp:include page="/WEB-INF/views/common/header.jsp"/>
 
         <section id="middle">
 
@@ -82,36 +37,25 @@
                 <section class="container3">
                     
                     <section class="flex_container1">
-                        <section class="item">
-                            <img src="${contextPath}/resources/images/ThemeBoard/theme1/노들섬.png">
-                        </section>
-                        <section class="item">
-                            <img src="${contextPath}/resources/images/ThemeBoard/theme1/남한산성.jpg">
-                        </section>
-                        <section class="item">
-                            <img src="${contextPath}/resources/images/ThemeBoard/theme1/반포 한강공원.jpg">
-                        </section>
-                        <section class="item">
-                            <img src="${contextPath}/resources/images/ThemeBoard/theme1/아차산.jpg">
-                        </section>
-                    </section>
-
-                    <section class="flex_container2">
-                        <section class="item2">
-                            <b>노들섬</b>
-                        </section>
-                        <section class="item2">
-                            <b>남한산성</b>
-                        </section>
-                        <section class="item2">
-                            <b>반포한강공원</b>
-                        </section>
-                        <section class="item2">
-                            <b>아차산</b>
-                        </section>
-
-                    </section>
-                   
+                        
+                        <div class="item">
+                            <img src="${contextPath}/resources/images/ThemeBoard/theme1/NodeulIslandmain.png">
+                            <strong><h2>노들섬</h2></strong>
+                                
+                        </div>
+                        <div class="item">
+                            <img src="${contextPath}/resources/images/ThemeBoard/theme1/NamhanFortress.jpg">
+                            <strong><h2>남한산성</h2></strong>
+                        </div>
+                        <div class="item">
+                            <img src="${contextPath}/resources/images/ThemeBoard/theme1/BanpoHangangPark.jpg">
+                            <strong><h2>반포한강공원</h2></strong>
+                        </div>
+                        <div class="item">
+                            <img src="${contextPath}/resources/images/ThemeBoard/theme1/AchasanMountain.jpg">
+                            <strong><h2>아차산</h2></strong>
+                        </div>
+                    </section>  
 
                 </section>
                 <section class="container4">
@@ -132,7 +76,7 @@
 
                 <section class="container7">
                     <section class="container7-1">
-                        <img src="${contextPath}/resources/images/ThemeBoard/theme1/노들섬 서브 메인.jpg" alt="">
+                        <img src="${contextPath}/resources/images/ThemeBoard/theme1/NodeulIslandSubmain.jpg" alt="">
                     </section>
                 </section>
 
@@ -157,10 +101,10 @@
                 <section class="container9">
                     <section class="container9-1">
                         <section class="item3">
-                            <img src="${contextPath}/resources/images/ThemeBoard/theme1/노들 소스 1.jpg">
+                            <img src="${contextPath}/resources/images/ThemeBoard/theme1/NodeulIsland.jpg">
                         </section>
                         <section class="item3">
-                            <img src="${contextPath}/resources/images/ThemeBoard/theme1/노들 소스2.jpg">
+                            <img src="${contextPath}/resources/images/ThemeBoard/theme1/NodeulIslands.jpg">
                         </section>
 
                     </section>
@@ -257,12 +201,7 @@
            
         </section>
 
-        <footer>
-            <section>Copyright © TravelMaker Corp. All rights reserved.</section>
-            <section class="footer"> 　　이용약관　　 </section>
-            <section class="footer"> 　　운영정책　　 </section>
-            <section class="footer"> 　　1:1문의　　 </section>
-        </footer>
+        <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
     </main>
 </body>
 </html>

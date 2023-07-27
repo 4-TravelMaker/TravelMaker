@@ -13,9 +13,17 @@
 	<!-- 회원 정보 조회 -->
 	<entry key="selectOne">
 		SELECT MEMBER_NO, MEMBER_ID, MEMBER_NM, MEMBER_NICK,
-				MEMBER_ADDR, MEMBER_THM, ENROLL_DT,SECESSION_FL
+				MEMBER_ADDR, MEMBER_THM, ENROLL_DT, SECESSION_FL
 		FROM MEMBER
 		WHERE MEMBER_ID = ?
 		AND SECESSION_FL = 'N'
 	</entry>
+	
+	<!-- 회원 탈퇴 처리 -->
+	<entry key="memberSecession">
+		UPDATE MEMBER SET
+		SECESSION_FL = 'Y'
+		WHERE MEMBER_NO = ?
+	</entry>
+
 </properties>

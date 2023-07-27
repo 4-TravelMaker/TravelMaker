@@ -2,4 +2,13 @@
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
 <comment>board-sql-phj.xml</comment>
+
+	<!-- 카테고리 조회 -->
+	<entry key="selectCategory">
+		SELECT CTGR_NO, CTGR_NM, PARENT_CTGR_NO
+		FROM CATEGORY
+		WHERE PARENT_CTGR_NO = ?
+	</entry>
+
+
 </properties>

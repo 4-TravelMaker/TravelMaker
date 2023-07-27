@@ -6,6 +6,10 @@
 <%-- 문자열 관련 함수(메소드) 제공 JSTL (EL 형식으로 작성) --%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
+<!-- map에 저장된 값 변수에 저장 -->
+<c:set var="pagination" value="${map.pagination}"/>
+<c:set var="boardList" value="${map.boardList}"/>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,122 +46,93 @@
                 <!-- 회원 검색 및 삭제 버튼 영역 -->
                 <section>
                     <section class="search-area">
-                        <input type="text" placeholder="닉네임 입력" id="member-search">
+                        <input type="text" placeholder="아이디 입력" id="member-search">
                         <button type="submit">검색</button>
-                    </section>
-                    <section>
-                        <a href="#">
-                            <button type="submit" class="modify-btn">삭제</button>
-                        </a>
                     </section>
                 </section>
 
                 <!-- 일대일 문의 조회 목록 영역 -->
                 <section>
                     <table class="post-table">
-                        <tr class="table-bk">
-                            <th>구분</th>
-                            <th>닉네임</th>
-                            <th>제목</th>
-                            <th>작성일</th>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>일저유</td>
-                            <td>안녕하세요</td>
-                            <td>2023.07.05</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>이저유</td>
-                            <td>반갑습니다</td>
-                            <td>2023.07.05</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>삼저유</td>
-                            <td>배고프네요</td>
-                            <td>2023.07.05</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>사저유</td>
-                            <td>졸려요</td>
-                            <td>2023.07.05</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>오저유</td>
-                            <td>친하게 지내용</td>
-                            <td>2023.07.05</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>일저유</td>
-                            <td>안녕하세요</td>
-                            <td>2023.07.05</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>이저유</td>
-                            <td>반갑습니다</td>
-                            <td>2023.07.05</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>삼저유</td>
-                            <td>배고프네요</td>
-                            <td>2023.07.05</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>사저유</td>
-                            <td>졸려요</td>
-                            <td>2023.07.05</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>오저유</td>
-                            <td>친하게 지내용</td>
-                            <td>2023.07.05</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>일저유</td>
-                            <td>안녕하세요</td>
-                            <td>2023.07.05</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>이저유</td>
-                            <td>반갑습니다</td>
-                            <td>2023.07.05</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>삼저유</td>
-                            <td>배고프네요</td>
-                            <td>2023.07.05</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>사저유</td>
-                            <td>졸려요</td>
-                            <td>2023.07.05</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>오저유</td>
-                            <td>친하게 지내용</td>
-                            <td>2023.07.05</td>
-                        </tr>
+                        <thead>
+                            <tr class="table-bk">
+                                <th>글 번호</th>
+                                <th>제목</th>
+                                <th>작성자 아이디</th>
+                                <th>작성일</th>
+                                <th>조회수</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <c:choose>
+
+                                <c:when test="${empty boardList}">
+                                    <!-- 게시글 조회 결과가 없을 경우 -->
+                                    <tr>
+                                        <td colspan="5">게시글이 존재하지 않습니다.</td>
+                                    </tr>
+                                </c:when>
+
+                                <c:otherwise>
+                                    <!-- 게시글 조회 결과가 있을 경우 -->
+                                    <c:forEach var="board" items="${boardList}">
+                                        <tr>
+                                            <td>${board.boardNo}</td>
+                                            <td>
+                                                <a href="detail?no=${board.boardNo}&cp=${pagination.currentPage}&type=${param.type}">${board.boardTitle}</a>
+                                            </td>
+                                            <td>${board.memberId}</td>
+                                            <td>${board.createDate}</td>
+                                            <td>${board.readCount}</td>
+                                        </tr>
+                                    </c:forEach>
+
+                                </c:otherwise>
+
+                            </c:choose>
+
+                        </tbody>
 
                     </table>
+                </section>
 
+                <section class="pagination-area">
+
+                    <c:set var="url" value="list?type=${param.type}&cp="/>
+
+                    <ul class="pagination">
+                        <!-- 첫 페이지로 이동 -->
+                        <li><a hef="${url}1">&lt;&lt;</a></li>
+
+                        <!-- 이전 목록 마지막 번호로 이동 -->
+                        <li><a href="${url}${pagination.prevPage}">&lt;</a></li>
+
+                        <!-- 범위가 정해진 일반 for문을 사용 -->
+                        <c:forEach var="i" begin="${pagination.startPage}" end="${pagination.endPage}" step="1">
+
+                            <c:choose>
+                                <c:when test="${i == pagination.currentPage}">
+                                    <li><a class="current">${i}</a></li>
+                                </c:when>
+
+                                <c:otherwise>
+                                    <li><a href="${url}${i}">${i}</a></li>
+                                </c:otherwise>
+                            </c:choose>
+
+                        </c:forEach>
+
+                        <!-- 다음 목록 시작 번호로 이동 -->
+                        <li><a href="${url}${pagination.nextPage}">&gt;</a></li>
+                        
+                        <!-- 끝 페이지로 이동 -->
+                        <li><a href="${url}${pagination.maxPage}">&gt;&gt;</a></li>
+                    </ul>
+                
                 </section>
-                <section class="page-btn">
-                    <img src="${contextPath}/resources/images/Admin/page.png">
-                </section>
+
             </section>
             
         </section>

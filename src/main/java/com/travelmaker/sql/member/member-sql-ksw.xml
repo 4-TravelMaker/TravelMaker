@@ -2,4 +2,20 @@
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
 <comment>member-sql-ksw.xml</comment>
+
+<!-- 로그인 기능(전체 조회, 탈퇴여부) -->
+<entry key="Login">
+	SELECT MEMBER_NO, MEMBER_ID, MEMBER_PW, MEMBER_NM,
+		   MEMBER_NICK, PROFILE_IMG, MEMBER_ADDR, MEMBER_THM,MEMBER_Q_CD,
+           MEMBER_A,SECESSION_FL,ADMIN_FL,
+           TO_CHAR(ENROLL_DT, 'YYYY-MM-DD HH24:MI:SS') AS ENROLL_DT
+		FROM MEMBER
+		WHERE MEMBER_ID = ?
+		AND MEMBER_PW = ?
+		AND SECESSION_FL = 'N'
+</entry>
+
+
+
+
 </properties>

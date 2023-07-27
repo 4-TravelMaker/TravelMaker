@@ -8,7 +8,7 @@ body {
 }
 
 section {
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
 
@@ -18,7 +18,7 @@ main {
     margin: auto;
 }
 
-#middle {
+#middle1 {
     height: 1450px;
 }
 

@@ -11,6 +11,9 @@ section {
     border: 1px solid black;
 }
 
+.main-area{ /* 제일 큰 영역 (middle1+middle2) */
+    height: 1000px;
+}
 
 main {
     width: 1200px;
@@ -18,26 +21,37 @@ main {
     margin: auto;
 }
 
+.middle1{ /* 첫번재 행 ( 포토 영역) */
+    height: 400px;
+}
 
-/* 사진 & 버튼 영역 */
-#middle1{
+.photo{ 
     display: flex;
     height: 400px;
 }
 
-#middle1 > section:nth-child(1){
+.photo>section:nth-child(1){ /* < 버튼 영역 */
     width: 10%;
 }
 
-#middle1 > section:nth-child(2){
+.photo>section:nth-child(2){ /* 중간 사진+기사 영역 */
     width: 80%;
-    display: flex;
-    justify-content: space-around;
 }
 
-#middle1-1 > section{
-    width: 280px;
+.photo>section:nth-child(3){ /* > 버튼 영역 */
+    width: 10%;
 }
+
+.pic-area{ /* 중간 영역 (사진+기사글) */
+    display: flex;
+    justify-content: space-around;
+
+}
+
+#pic{ /* 사진 영역(이미지) */
+    /* height: 300px; */
+}
+
 
 #pic{
     height: 80%;
@@ -52,94 +66,209 @@ main {
     margin-top: 10px;
 }
 
-#article{
-    height: 20%;
+#article{ /* 기사글 */
+    height: 100px;
+}
+
+#article > p:nth-child(1){ /* 기사글 안에 p태그 제목 */
+    font-weight: bold;
+    font-size: 23px;
+    margin: 0%;
+    margin-bottom: 10px;
+
     text-align: center;
 }
 
-
-
-#article > p:nth-child(1){
+#article > p:nth-child(2){ /* 기사글 안에 p태그 밑에 내용 */
     font-weight: bold;
-    font-size: 20px;
+    font-size: 14px;
     margin: 0%;
 
+    text-align: center;
 }
 
-
-#article > p:nth-child(2){
-    font-size: 16px;
-    margin: 0%;
-}
-
-
-#middle1 > section:nth-child(3){
-    width: 10%;
-}
-
-
-/* 지도 & 여행지 정보 영역 */
-#middle2{
+.middle2{ /* 두번째 행 (지도+여행지 정보)*/
+    height: 600px;
     display: flex;
-    height: 800px;
 }
 
-#middle2 > section:nth-child(1){
-    width: 50%;
-}
-
-#middle2 > section:nth-child(2){
-    width: 50%;
-}
-
-#middle2 > section:nth-child(2) > section{
-    height: 150px;
-}
-
-.photobox1{
-    height: 800px;
-}
-
-#map{
+.middle2>section:nth-child(1){  /* map-area */
+    width: 60%;
     display: flex;
     justify-content: center;
 }
 
-#map > img{
+.map-area > img{ /* 지도 이미지 */
     width: 400px;
     height: 600px;
-    align-items: center;
+   
 }
 
+.middle2>section:nth-child(2){  /* info-area */
+    width: 40%;
+}
 
-#information{
-    height: 150px;
-    font-size: 30px;
+.info-area>section:nth-child(1){ /* 여행지 정보 */
+    height: 100px;
+}
+
+.region{
     font-weight: bold;
 }
 
-.infobox{
-    display: none;
+#SEOUL{
+    display: inline-block;
+    position: absolute;
+    top : 800PX;
+    left: 650PX;
+    cursor: pointer;
+    color: rgb(219, 157, 75);
+}
+
+#SEOUL:hover{
+    color: white;
+}
+
+#kW{
+    display: inline-block;
+    position: absolute;
+    top : 750PX;
+    left: 750PX;
+    cursor: pointer;
+    color: rgb(202, 73, 95);
+}
+
+#kW:hover{
+    color: white;
+}
+
+#kB{
+    display: inline-block;
+    position: absolute;
+    top : 900PX;
+    left: 770PX;
+    cursor: pointer;
+    color: green;
+}
+
+#kB:hover{
+    color: white;
+}
+
+#kN{
+    display: inline-block;
+    position: absolute;
+    top : 1000PX;
+    left: 750PX;
+    cursor: pointer;
+    color: rgb(207, 80, 207);
+}
+
+#kN:hover{
+    color: white;
+}
+
+#CB{
+    display: inline-block;
+    position: absolute;
+    top : 840PX;
+    left: 690PX;
+    cursor: pointer;
+    color: rgb(87, 82, 82);
+}
+
+#CB:hover{
+    color: white;
+}
+
+#CN{
+    display: inline-block;
+    position: absolute;
+    top : 870PX;
+    left: 610PX;
+    cursor: pointer;
+    color: rgb(84, 154, 182);
+}
+
+#CN:hover{
+    color: white;
 }
 
 
+#JB{
+    display: inline-block;
+    position: absolute;
+    top : 960PX;
+    left: 640PX;
+    cursor: pointer;
+    color: rgb(136, 17, 136);
+}
 
+#JB:hover{
+    color: white;
+}
 
+#JN{
+    display: inline-block;
+    position: absolute;
+    top : 1070PX;
+    left: 610PX;
+    cursor: pointer;
+    color: #6d6565;
+}
 
-#photo{
+#JN:hover{
+    color: white;
+}
+
+#JJ{
+    display: inline-block;
+    position: absolute;
+    top : 1160PX;
+    left: 600PX;
+    cursor: pointer;
+    color: rgb(4, 48, 10);
+}
+
+#JJ:hover{
+    color: white;
+}
+
+#info-area{
+    /* visibility: hidden;  */
+}
+
+#information{
+    height: 30%;
+}
+
+.detail-area{
+    height: 70%;
+}
+
+.detail{
+    border: 1px solid black;
+    width: 50px;
+    height: 30px;
+    border-radius: 50%;
+    text-align: center;
+
+    cursor: pointer;
+}
+
+#detail-area2{
     display: flex;
-    height: 100px;
- 
-}
-
-#photo > section:nth-child(1){
-    width: 30%;
-}
-
-#photo > section:nth-child(2){
-    width: 70%;
+    justify-content: space-around;
+    text-decoration: none;
 }
 
 #info2{
-    margin-top: 30px;
+    font-size: 50px;
+    line-height: 250px;
+    font-weight: bold;
 }
+
+
+
+
+
