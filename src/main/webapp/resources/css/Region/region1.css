@@ -59,7 +59,7 @@ main {
     justify-content: center;
 }
 
-#pic>img{
+#pic img{
     height: 300px;
     width: 270px;
     border-radius: 100px 100px 0px 0px;
