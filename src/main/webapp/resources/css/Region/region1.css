@@ -49,16 +49,39 @@ main {
 }
 
 #pic{ /* 사진 영역(이미지) */
+    /* height: 300px; */
+}
+
+
+#pic{
+    height: 80%;
+    display: flex;
+    justify-content: center;
+}
+
+#pic img{
     height: 300px;
+    width: 270px;
+    border-radius: 100px 100px 0px 0px;
+    margin-top: 10px;
 }
 
 #article{ /* 기사글 */
     height: 100px;
 }
 
-#article > p{ /* 기사글 안에 p태그 */
+#article > p:nth-child(1){ /* 기사글 안에 p태그 제목 */
     font-weight: bold;
-    font-size: 20px;
+    font-size: 23px;
+    margin: 0%;
+    margin-bottom: 10px;
+
+    text-align: center;
+}
+
+#article > p:nth-child(2){ /* 기사글 안에 p태그 밑에 내용 */
+    font-weight: bold;
+    font-size: 14px;
     margin: 0%;
 
     text-align: center;
@@ -86,14 +109,6 @@ main {
 }
 
 .info-area>section:nth-child(1){ /* 여행지 정보 */
-    height: 100px;
-}
-
-.photobox1{ /* 사진 + 정보 */
-    height: 500px;
-}
-
-.photo{ /* 사진 + 정보 한 행  */
     height: 100px;
 }
 
@@ -219,8 +234,38 @@ main {
     color: white;
 }
 
-.info-area{
-    visibility: hidden; 
+#info-area{
+    /* visibility: hidden;  */
+}
+
+#information{
+    height: 30%;
+}
+
+.detail-area{
+    height: 70%;
+}
+
+.detail{
+    border: 1px solid black;
+    width: 50px;
+    height: 30px;
+    border-radius: 50%;
+    text-align: center;
+
+    cursor: pointer;
+}
+
+#detail-area2{
+    display: flex;
+    justify-content: space-around;
+    text-decoration: none;
+}
+
+#info2{
+    font-size: 50px;
+    line-height: 250px;
+    font-weight: bold;
 }
 
 

@@ -65,6 +65,7 @@ public class MemberService_lhk {
 		
 		int result = dao.nicknameDupcheck(conn , memberNickname);
 		
+		
 		close(conn);
 		
 		return result;

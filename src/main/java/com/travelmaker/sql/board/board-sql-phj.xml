@@ -3,12 +3,11 @@
 <properties>
 <comment>board-sql-phj.xml</comment>
 
-	<!-- 댓글 목록 조회 -->
-	<entry key="selectReplyList">
-		SELECT MEMBER_ID, REPLY_CONTENT, CREATE_DT
-		FROM MEMBER
-		JOIN REPLY USING (MEMBER_NO)
-		WHERE MEMBER_ID = ?
+	<!-- 카테고리 조회 -->
+	<entry key="selectCategory">
+		SELECT CTGR_NO, CTGR_NM, PARENT_CTGR_NO
+		FROM CATEGORY
+		WHERE PARENT_CTGR_NO = ?
 	</entry>
 
 
