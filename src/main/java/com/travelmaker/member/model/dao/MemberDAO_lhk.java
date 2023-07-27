@@ -158,4 +158,45 @@ public class MemberDAO_lhk {
 		return result;
 	}
 
+
+
+
+
+
+	/** 아이디 찾기 DAO
+	 * @param conn
+	 * @param mem
+	 * @return checkId
+	 * @throws Exception
+	 */
+	public String selectCheckId(Connection conn, Member mem) throws Exception {
+		
+		String checkId = null;
+		
+		try {
+			String sql = prop.getProperty("selectCheckId");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, mem.getMemberName());
+			pstmt.setInt(2, mem.getMemberQuestionCode());
+			pstmt.setString(3, mem.getMemberAnswer());
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				
+				checkId = rs.getString(1);
+			}
+			
+		} finally {
+			
+			close(rs);
+			close(pstmt);
+		}
+		
+		
+		return checkId;
+	}
+
 }

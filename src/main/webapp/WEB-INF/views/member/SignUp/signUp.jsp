@@ -28,7 +28,7 @@
             <section class="right-section">
                 <section class="right-section-head">회원가입<hr></section>
                 <section class="right-section-area">
-                    <form action="signUp" method="POST"  onsubmit="return validate()">
+                    <form action="signUp" method="POST"  onsubmit="return validate()" enctype="multipart/form-data">
                         <table>
 
                             

@@ -193,6 +193,10 @@ nav {
     
 } 
 
+#spanId{
+    font-size: 20px;
+}
+
 /* 이름/아이디찾기질문/아이디찾기답변 글씨 */
 .idText2{
     font-weight: bold;

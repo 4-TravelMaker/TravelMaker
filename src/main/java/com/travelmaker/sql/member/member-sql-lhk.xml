@@ -25,5 +25,16 @@
 	
 	</entry>
 	
+	<!-- 아이디 찾기 -->
+
+	<entry key="selectCheckId">
+		SELECT MEMBER_ID
+		FROM MEMBER
+		WHERE MEMBER_NM = ?
+		AND MEMBER_Q_CD = ?
+		AND MEMBER_A = ?
+		AND SECESSION_FL = 'N' 
+	</entry>
+	
 	
 </properties>
