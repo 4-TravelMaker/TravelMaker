@@ -29,11 +29,12 @@ public class loginServlet extends HttpServlet{
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		String path = "";
-		RequestDispatcher dispatcher = req.getRequestDispatcher(path);
-		
+				
 		String inputId = req.getParameter("inputId");
 		String inputPw = req.getParameter("inputPw");
+		
+//		System.out.println("inputId : "  +inputId);
+//		System.out.println("inputPw : "  +inputPw);
 		
 
 		Member mem = new Member();
@@ -48,11 +49,17 @@ public class loginServlet extends HttpServlet{
 			
 			HttpSession session = req.getSession();
 			
+			
+			
 			if(loginMember != null){
 				session.setAttribute("loginMember", loginMember);
 				
-				session.setMaxInactiveInterval(3600);
+				//session.setMaxInactiveInterval(3600);
+			}else {
+				session.setAttribute("message", "아이디 또는 비밀번호가 일치하지 않습니다.");
 			}
+			
+			resp.sendRedirect( req.getContextPath() );
 			
 		}catch(Exception e){
 			e.printStackTrace();

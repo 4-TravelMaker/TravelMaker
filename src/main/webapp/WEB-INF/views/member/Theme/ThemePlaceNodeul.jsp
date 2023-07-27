@@ -141,61 +141,7 @@
 
                 </section>
 
-                <section class="container11">
-                    <section class="container11-1">
-                        <b>키워드 & 해쉬태그</b>
-                    </section>
-                    <section class="flex_container11">
-                        <section class="item5">
-                            #봄
-                        </section>
-                        <section class="item5">
-                            #어린이날
-                        </section>
-                        <section class="item5">
-                            #축제
-                        </section>
-                        <section class="item5">
-                            #벚꽃
-                        </section>
-                        <section class="item5">
-                            #맛집
-                        </section>
-                        <section class="item5">
-                            #액티비티
-                        </section>
-                        <section class="item5">
-                            #바다
-                        </section>
-
-                    </section>
-
-                    <section class="flex_container12">
-                        <section class="item5">
-                            #산
-                        </section>
-                        <section class="item5">
-                            #커플
-                        </section>
-                        <section class="item5">
-                            #싱글
-                        </section>
-                        <section class="item5">
-                            #벙글
-                        </section>
-                        <section class="item5">
-                            #가족
-                        </section>
-                        <section class="item5">
-                            #비
-                        </section>
-                        <section class="item5">
-                            #기차
-                        </section>
-                        
-                    </section>
-                    
-                </section>
+               
                
             </section>    
            
