@@ -38,7 +38,7 @@
 
                 <div id="middle1-2">
 
-                    <form action="#">
+                    <form action="findPw" method="post">
 
                         <div class="findIdArea1">
                             <div id="findIdArea1Text">회원가입 시 등록한 질문에 대한 답변이 같아야, 비밀번호 찾기가 가능합니다.</div>
@@ -72,7 +72,7 @@
                                 <div style="height: 60px;"></div>
 
                                 <div class="inputAreaName">
-                                    <input type="text" id="idInput" name="id" class="inputId" autocomplete='off'>
+                                    <input type="text" id="idInput" name="id" class="inputId" autocomplete='off'>  
                                 </div>
 
                                 <div style="height: 23px;"></div>
@@ -110,12 +110,12 @@
                                 <div style="height: 50px;">
                                     <!-- 비밀번호 일치하면 일치 문구 출력 영역 -->
 
-                                    <div id="pwCheckingArea">답변이 일치합니다</div>
+                                    <div id="pwCheckingArea"></div>
                                     
                                 </div>
                                     <!-- 확인 취소 버튼 영역 -->
                                 <div class="findButtonArea3">
-                                    <button  type="submit" id="findIdButton" onclick = "location.href = '#'">확인</button>
+                                    <button  type="submit" id="findIdButton">확인</button>
                                     <button id="cancelButton" onclick = "location.href = '#'">취소</button>
                                 </div>
 
@@ -194,6 +194,8 @@
         </section>
         
         <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
+
+        <script src="${contextPath}/resources/js/myPage/findPw.js"></script>
 
         
     </main>

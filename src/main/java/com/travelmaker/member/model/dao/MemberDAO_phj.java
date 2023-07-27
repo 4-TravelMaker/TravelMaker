@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Properties;
 
 import com.travelmaker.board.model.vo.Reply;
+import com.travelmaker.member.model.vo.Member;
 
 public class MemberDAO_phj {
 	
@@ -38,4 +39,37 @@ public class MemberDAO_phj {
 	}
 
 
+	/** 비밀번호 조회 DAO 
+	 * @param conn
+	 * @param mem
+	 * @return member
+	 * @throws Exception
+	 */
+	public Member selectPw(Connection conn, Member mem) throws Exception {
+		
+		Member member  = null; 
+		
+		try {
+			String sql = prop.getProperty("selectPw");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, mem.getMemberId());
+			pstmt.setInt(2, mem.getMemberQuestionCode());
+			pstmt.setString(3, mem.getMemberAnswer());
+			
+			rs=pstmt.executeQuery();
+			
+			member = new Member();
+			
+			member.setMemberPw( rs.getString(1) );
+			
+		}finally {
+			
+			close(rs);
+			close(pstmt);
+		}
+		
+		return member;
+	}
 }

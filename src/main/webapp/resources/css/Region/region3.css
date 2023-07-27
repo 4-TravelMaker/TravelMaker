@@ -102,9 +102,9 @@ mark{
 
 .map>section:nth-child(1){
     height: 400px;
-
-
 }
+
+
 
 .map>section:nth-child(2){
     height: 200px;
@@ -115,6 +115,7 @@ mark{
 .map1-1{
     display: flex;
     justify-content: space-between;
+    margin-top: 20px;
 }
 
 .map1-1>section:nth-child(1){
