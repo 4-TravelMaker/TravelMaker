@@ -30,7 +30,7 @@ insertBtn.addEventListener("click", function(){ // 작성 버튼이 클릭되었
                 "memberNo" : loginMemberNo,
                 "boardNo" : boardNo},
 
-        type : "get",
+        type : "POST",
 
         success : function(result){
             alert("답변이 작성되었습니다.")
