@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TravelMaker</title>
     <link rel="shortcut icon" type="image/x-icon" href="image/small_logo.png">
-    <link rel="stylesheet" href="${contextPath }/resources/css/Review/TravelReviewBoardDetail.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/Review/TravelReviewBoardDetail.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/Review/reply-style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,7 +36,7 @@
 
                         <div class="title">
                             <div id="name">
-                                <img src="${contextPath}/resources/images/Review/profile.png" width="30px" height="30px">
+                                <img src="${contextPath}/resources/images/profile.png" width="30px" height="30px">
                                 <span>작성자</span>
                             </div>
 

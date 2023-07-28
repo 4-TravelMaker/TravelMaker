@@ -36,7 +36,7 @@
                 </div>
 
                 <div class="content">
-                    ${imageList.BoardImage}
+                    
                     <c:choose>
                         <c:when test="${empty boardList}">
                             <span>게시글이 존재하지 않습니다.</span>
@@ -44,15 +44,15 @@
                         
                         <c:otherwise>
                             <c:forEach var="board" items="${boardList}" varStatus="status">
-                                
+
                                 <div class="board-area">
                                     <div class="member-box">
                                         <img src="${contextPath}/resources/images/myPageProfile/profile.png" class="profileImage">
                                         <span class="memberNickname">${board.memberId}</span>
                                     </div>
             
-                                    <a href="#">
-                                        <img src="${contextPath}/resources/images/Review/review_test2.png" class="thumbnail-size">
+                                    <a href="detail?type=${param.type}&cp=${param.cp}">
+                                        <img src="${contextPath}<c:if test="${!empty imageList[status.index].imageReName}">${imageList[status.index].imageReName}</c:if><c:if test="${empty imageList[status.index].imageReName}">/resources/images/Review/logo.png</c:if>"class="thumbnail-size">
                                     </a>
             
                                     <div class="icon-box">
@@ -67,7 +67,7 @@
                                         </div>
                                     </div>
             
-                                    <h1 class="boardTitle"><a href="#" class="boardTitle">${board.boardTitle}</a></h1>
+                                    <h1 class="boardTitle"><a href="detail?type=${param.type}&cp=${param.cp}" class="boardTitle">${board.boardTitle}</a></h1>
                                 </div>
                             </c:forEach>
                         </c:otherwise>
