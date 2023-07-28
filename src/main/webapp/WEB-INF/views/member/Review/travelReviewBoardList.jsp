@@ -36,14 +36,15 @@
                 </div>
 
                 <div class="content">
-
+                    ${imageList.BoardImage}
                     <c:choose>
                         <c:when test="${empty boardList}">
                             <span>게시글이 존재하지 않습니다.</span>
                         </c:when>
-
+                        
                         <c:otherwise>
-                            <c:forEach var="board" items="${boardList}">
+                            <c:forEach var="board" items="${boardList}" varStatus="status">
+                                
                                 <div class="board-area">
                                     <div class="member-box">
                                         <img src="${contextPath}/resources/images/myPageProfile/profile.png" class="profileImage">
