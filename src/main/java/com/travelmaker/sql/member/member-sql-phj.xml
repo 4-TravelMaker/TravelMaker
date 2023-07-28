@@ -2,4 +2,13 @@
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
 <comment>member-sql-phj.xml</comment>
+
+	<!-- 비밀번호 조회 -->
+	<entry key="selectPw">
+		SELECT MEMBER_PW, MEMBER_Q_CD, MEMBER_A
+		FROM MEMBER
+		WHERE MEMBER_ID = ?
+	</entry>
+
+
 </properties>

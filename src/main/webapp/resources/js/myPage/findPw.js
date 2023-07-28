@@ -7,36 +7,24 @@ const pwCheckingArea = document.getElementById("pwCheckingArea"); // 비밀번�
 
 
 findButton.addEventListener("click", function(){
-
     $.ajax({
-
         url : "findPw",
-        data : {"inputId" : inputID.value,
-                "inpuutAnswer" : inpuutAnswer.value,
-                "idQuestion" : idQuestion.value},
-        type : "post",
-        
+        data : {"inputId" : inputID.value},
+        type : "POST",
+        dataType : "JSON",
+
         success : function(member){
+            alert("성공><");
 
-            alert("성공...");
-
-        
-
+            if(member){
+                pwCheckingArea.innerHTML = "비밀번호가 일치하지 않습니다."
+            } else {
+                pwCheckingArea.innerHTML = "비밀번호가 일치합니다.." 
+            }
         },
-        error : function(){
-            alert("실패...");
+        error : function(req, status, error){
+            console.log("에러발생");
+            console.log(req.responseText);
         }
-        
-
-
-
-
-
-
-    })
-
-
-
-
-
+    });
 })

@@ -7,11 +7,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Properties;
 
-import com.travelmaker.board.model.vo.Reply;
 import com.travelmaker.member.model.vo.Member;
 
 public class MemberDAO_phj {
@@ -39,33 +36,35 @@ public class MemberDAO_phj {
 	}
 
 
-	/** 비밀번호 조회 DAO 
+	/** 비밀번호 찾기 DAO
 	 * @param conn
-	 * @param mem
+	 * @param inputId
 	 * @return member
 	 * @throws Exception
 	 */
-	public Member selectPw(Connection conn, Member mem) throws Exception {
+	public Member selectPw(Connection conn, String inputId) throws Exception {
 		
-		Member member  = null; 
+		Member member = null;
 		
 		try {
 			String sql = prop.getProperty("selectPw");
-			
+			System.out.println("sql : " + sql);
 			pstmt = conn.prepareStatement(sql);
 			
-			pstmt.setString(1, mem.getMemberId());
-			pstmt.setInt(2, mem.getMemberQuestionCode());
-			pstmt.setString(3, mem.getMemberAnswer());
+			pstmt.setString(1, inputId);
 			
-			rs=pstmt.executeQuery();
+			rs = pstmt.executeQuery();
 			
-			member = new Member();
-			
-			member.setMemberPw( rs.getString(1) );
+			if(rs.next()) {
+				
+				member = new Member();
+				
+				member.setMemberPw(rs.getString("MEMBER_PW") );
+				member.setMemberQuestionCode(rs.getInt("MEMBER_Q_CD") );
+				member.setMemberAnswer(rs.getString("MEMBER_A") );
+			}
 			
 		}finally {
-			
 			close(rs);
 			close(pstmt);
 		}

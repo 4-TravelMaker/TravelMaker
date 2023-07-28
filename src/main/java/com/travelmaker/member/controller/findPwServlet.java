@@ -26,21 +26,15 @@ public class findPwServlet extends HttpServlet{
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
+		String inputId = req.getParameter("inputId");
+		
 		
 		try {
-			String inputId = req.getParameter("inputId");
-			String inputAnser = req.getParameter("inpuutAnswer");
-			int questionNo = Integer.parseInt(req.getParameter("idQuestion"));
-			
-			Member mem = new Member();
-			
-			mem.setMemberId(inputId);
-			mem.setMemberAnswer(inputAnser);
-			mem.setMemberQuestionCode(questionNo);
 			
 			MemberService_phj service = new MemberService_phj();
 			
-			Member member = service.selectPw(mem);
+			Member member = service.selectPw(inputId);
+			
 			
 			new Gson().toJson(member, resp.getWriter());
 			
@@ -48,10 +42,6 @@ public class findPwServlet extends HttpServlet{
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
-		
-		
 	}
-	
-	
 
 }
