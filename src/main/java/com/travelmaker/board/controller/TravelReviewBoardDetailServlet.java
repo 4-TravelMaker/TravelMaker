@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/TravelReview/detail")
+@WebServlet("/travelReview/detail")
 public class TravelReviewBoardDetailServlet extends HttpServlet{
 	
 	@Override
@@ -18,8 +18,7 @@ public class TravelReviewBoardDetailServlet extends HttpServlet{
 		try {
 			String path = "/WEB-INF/views/member/Review/TravelReviewBoardDetail.jsp";
 			
-			RequestDispatcher dispatcher = req.getRequestDispatcher(path);
-			dispatcher.forward(req, resp);
+			req.getRequestDispatcher(path).forward(req, resp);
 			
 		}catch (Exception e) {
 			e.printStackTrace();
