@@ -134,12 +134,8 @@
 }
 
 /* 일대일 문의 답변 조회 영역 */
-.reply-select-area{
-    margin-left: 30px;
-
-}
-
 .reply-select-area > section:first-of-type{
+    margin-left: 30px;
     font-size: 30px;
     font-weight: bold;
 }
@@ -156,13 +152,6 @@
     border-top: none;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
-}
-
-#inquiry-content-area2{
-    height: auto;
-    border-bottom: none;  
-    text-align: center;
-    padding: 40px;
 }
 
 #inquiry-content{

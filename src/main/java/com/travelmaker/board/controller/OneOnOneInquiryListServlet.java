@@ -24,7 +24,18 @@ public class OneOnOneInquiryListServlet extends HttpServlet{
 			
 			Member mem = new Member();
 			mem.setMemberNo(1);
-
+			mem.setMemberId("user01");
+			mem.setMemberPw("pass01!");
+			mem.setMemberNickname("유저일");
+			mem.setProfileImage("1");
+			mem.setMemberAddress("04540,,서울특별시 강남구 테헤란로 14길 6,,5층");
+			mem.setMemberTheme("1");
+			mem.setMemberQuestionCode(1);
+			mem.setMemberAnswer("가족");
+			mem.setEnrollDate("23/07/24");
+			mem.setSecessionFlag("N");
+			mem.setAdminFlag("Y");
+			
 			HttpSession session = req.getSession();
 			
 			session.setAttribute("loginMember", mem);
