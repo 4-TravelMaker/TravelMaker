@@ -28,14 +28,9 @@
         <section id="middle">
 
             <div id="title-notice">
-                <h1>여행 리뷰 게시판</h1>
+                <h1>공지사항</h1>
             </div>
            
-
-            <div>
-                <h2 style="padding-left: 105px;">공지사항</h2>
-            </div>
-            
             <div style="width: 1100px; padding-left: 100px;">
                 <table class="list-table">
                     <thead>
@@ -65,7 +60,7 @@
                                     <tr>
                                         <td>${board.boardNo}</td>
                                         <td>
-                                            <a href="#">${board.boardTitle}</a>
+                                            <a href="detail?no=${board.boardNo}&cp=${pagination.currentPage}&type=${param.type}">${board.boardTitle}</a>
                                         </td>
                                         <td>${board.createDate}</td>
                                         <td>${board.readCount}</td>
@@ -84,16 +79,16 @@
             </div>
 
             <div id="last">
-
+                
                 <div class="pagination-area">
-
+                    
                     <!-- 페이지네이션 a태그에 사용될 공통 주소를 저장한 변수 선언 -->
-                    <c:set var="url" value="list?type=${param.type}$cp="/>
-
+                    <c:set var="url" value="list?type=${param.type}&cp="/>
+                    
                     <ul class="pagination">
                         <!-- 첫 페이지로 이동 -->
                         <li><a href="${url}1">&lt;&lt;</a></li>
-
+                        
                         <!-- 이전 목록 마지막 번호로 이동 -->
                         <li><a href="${url}${pagination.prevPage}">&lt;</a></li>
 
@@ -108,6 +103,7 @@
 
                             <c:otherwise>
                                 <li><a href="${url}${i}">${i}</a></li>
+                                
                             </c:otherwise>
                         </c:choose>
 
@@ -133,12 +129,7 @@
 
         </section>
 
-        <footer>
-            <section>Copyright © TravelMaker Corp. All rights reserved.</section>
-            <section class="footer"> 　　이용약관　　 </section>
-            <section class="footer"> 　　운영정책　　 </section>
-            <section class="footer"> 　　1:1문의　　 </section>
-        </footer>
+        <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
     </main>
     
 </body>
