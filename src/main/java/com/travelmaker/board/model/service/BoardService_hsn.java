@@ -9,6 +9,7 @@ import java.util.Map;
 
 import com.travelmaker.board.model.dao.BoardDAO_hsn;
 import com.travelmaker.board.model.vo.Board;
+import com.travelmaker.board.model.vo.BoardDetail;
 import com.travelmaker.board.model.vo.Pagination;
 
 public class BoardService_hsn {
@@ -50,4 +51,25 @@ public class BoardService_hsn {
 		
 		
 		return map;
+	}
+
+
+
+	/** 댓글 상세조회 Service
+	 * @param boardNo
+	 * @return detail
+	 * @throws Exception
+	 */
+	public BoardDetail selectBoardDetail(int boardNo) throws Exception{
+		
+		Connection conn = getConnection();
+		
+		BoardDetail detail = dao.selectBoardDetail(conn, boardNo);
+		
+		if(detail != null) {
+			
+		}
+		
+		
+		return detail;
 	}}

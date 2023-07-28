@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Properties;
 
 import com.travelmaker.board.model.vo.Board;
+import com.travelmaker.board.model.vo.BoardDetail;
 import com.travelmaker.board.model.vo.Pagination;
 
 public class BoardDAO_hsn {
@@ -151,6 +152,49 @@ public class BoardDAO_hsn {
 		}
 		
 		return boardList;
+	}
+
+	/** 게시글 상세 조회 DAO
+	 * @param conn
+	 * @param boardNo
+	 * @return detail
+	 * @throws Exception
+	 */
+	public BoardDetail selectBoardDetail(Connection conn, int boardNo) throws Exception{
+		
+		BoardDetail detail = null;
+		
+		try {
+			
+			String sql = prop.getProperty("selectBoardDetail");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, boardNo);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				
+				detail = new BoardDetail();
+				
+				detail.setBoardNo(rs.getInt(1));
+				detail.setBoardTitle(rs.getString(2));
+				detail.setBoardContent(rs.getString(3));
+				detail.setCreateDate(rs.getString(4));
+				detail.setMemberNickname(rs.getString(5));
+			}
+			
+			
+			
+		}finally {
+			close(rs);
+			close(pstmt);
+			
+		}
+		
+		
+		return detail;
 	}
 	
 	
