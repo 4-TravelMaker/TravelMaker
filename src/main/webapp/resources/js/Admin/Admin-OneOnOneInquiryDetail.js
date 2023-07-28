@@ -27,10 +27,10 @@ insertBtn.addEventListener("click", function(){ // 작성 버튼이 클릭되었
         url : "insert",
 
         data : {"replyContent" : replyContent.value,
-                "memberNo" : loginMember.memberNo,
-                "boardNo" : detail.boardNo},
+                "memberNo" : loginMemberNo,
+                "boardNo" : boardNo},
 
-        type : "POST",
+        type : "get",
 
         success : function(result){
             alert("답변이 작성되었습니다.")
@@ -42,3 +42,38 @@ insertBtn.addEventListener("click", function(){ // 작성 버튼이 클릭되었
         }
     });
 })
+
+// 답변 목록 조회
+(function selectReplyList(){
+    
+    $.ajax({
+        url : contextPath + "/admin/OneOnOneInquiry/selectReplyList",
+        data : {"boardNo" : boardNo},
+        type : "get",
+        dataType : "JSON",
+        success : function(rList){
+
+            const customerInquiry = document.getElementById("customer-inquiry");
+            customerInquiry.innerHTML = "";
+            
+            for(let reply of rList){
+                const section1 = document.createElement("section");
+                section1.innerText = "Re: ${detail.boardTitle}";
+
+                const section2 = document.createElement("section");
+                section2.innerText = "작성자 닉네임 : ${reply.memberNickname} &nbsp;| &nbsp;작성일 : ${reply.createDate}";
+
+                const section3 = document.createElement("section");
+                section3.innerText = "${reply.replyContent}";
+
+                customerInquiry.append(section1, section2, section3);
+            }
+        },
+
+        error : function(req, status, error){
+            console.log("에러 발생");
+            console.log(req.responseText);
+        }
+    })
+
+})();

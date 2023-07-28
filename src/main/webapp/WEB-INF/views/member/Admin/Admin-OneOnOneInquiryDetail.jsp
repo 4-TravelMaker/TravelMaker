@@ -58,15 +58,21 @@
                 <section class="reply-select-area">
                     <section> <i class="fa-brands fa-replyd" style="color: #000000;"></i> &nbsp; 답변</section>
 
-                    <c:if test="${empty reply}">
-                        <section id="inquiry-content-area2">
+                    <c:if test="${empty rList}">
+                        <section class="customer-inquiry">
                             작성된 답변이 없습니다.
                         </section>
                     </c:if>
 
-                    <c:if test="${!empty reply}">
-                        <section id="inquiry-content-area2">
-                            ${reply.replyContent}
+                    <c:if test="${!empty rList}">
+                        <section class="customer-inquiry" id="customer-inquiry">
+                            <section>
+                                Re: ${detail.boardTitle}
+                            </section>
+                            <section>작성자 닉네임 : ${detail.memberNickname} &nbsp;| &nbsp;작성일 : ${detail.createDate}</section>
+                            <section>
+                                ${detail.boardContent}
+                            </section>
                         </section>
                     </c:if>
                     
@@ -92,6 +98,16 @@
     </main>
 
 	<jsp:include page="/WEB-INF/views/common/footer.jsp"/>
+
+    <script>
+        const contextPath = "${contextPath}";
+
+        // 게시글 번호
+        const boardNo = "${detail.boardNo}";
+
+        // 로그인한 회원 번호
+        const loginMemberNo = "${loginMember.memberNo}";
+    </script>
 
     <script src="${contextPath}/resources/js/Admin/Admin-OneOnOneInquiryDetail.js"></script>
     

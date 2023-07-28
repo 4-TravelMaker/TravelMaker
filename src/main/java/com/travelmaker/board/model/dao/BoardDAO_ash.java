@@ -192,9 +192,25 @@ public class BoardDAO_ash {
 		try {
 			String sql = prop.getProperty("selectReplyList");
 			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, boardNo);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				Reply reply = new Reply();
+				
+				reply.setMemberNickName(rs.getString(1));
+				reply.setReplyContent(rs.getString(2));
+				reply.setCreateDate(rs.getString(3));
+				
+				rList.add(reply);
+			}
 			
 		} finally {
-			
+			close(rs);
+			close(pstmt);
 		}
 		
 		return rList;

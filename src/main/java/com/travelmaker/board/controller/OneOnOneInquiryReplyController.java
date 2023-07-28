@@ -29,11 +29,11 @@ public class OneOnOneInquiryReplyController extends HttpServlet{
 		
 		try {
 			
-			String replyContent = req.getParameter("replyContent");
-			int memberNo = Integer.parseInt(req.getParameter("memberNo"));
-			int boardNo = Integer.parseInt(req.getParameter("boardNo"));
 
 			if(command.equals("selectReplyList")) {
+				int boardNo = Integer.parseInt(req.getParameter("boardNo"));
+				
+				System.out.println(boardNo);
 			
 				List<Reply> rList = service.selectReplyList(boardNo);
 				
@@ -42,7 +42,9 @@ public class OneOnOneInquiryReplyController extends HttpServlet{
 			}
 						
 			if(command.equals("insert")) {
-				
+				String replyContent = req.getParameter("replyContent");
+				int memberNo = Integer.parseInt(req.getParameter("memberNo"));
+				int boardNo = Integer.parseInt(req.getParameter("boardNo"));
 				
 				Reply reply = new Reply();
 				
