@@ -13,7 +13,6 @@ document.getElementById("findIdButton").onclick = function(){
 
    
 
-debugger
     $.ajax({
         url : "findIdCheck",
         data :  {"nameInput" : nameInput.value ,
@@ -21,8 +20,6 @@ debugger
                 "answer-Input" : memberA.value },
         type : "POST" ,
         success : function(result){
-            debugger
-            console.log("에러발생" + result);
             var massage = "";
 
             
@@ -36,13 +33,12 @@ debugger
 				$("#spanId").html(massage);
 
             } else {
-                
+
                 massage = "해당하는 아이디가 존재하지 않습니다";
 				$("#spanId").html(massage);
             }
 
 
-            debugger
             
         },
 
