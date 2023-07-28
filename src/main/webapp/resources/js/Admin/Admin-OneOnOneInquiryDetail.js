@@ -44,27 +44,30 @@ insertBtn.addEventListener("click", function(){ // 작성 버튼이 클릭되었
 })
 
 // 답변 목록 조회
-(function selectReplyList(){
+function selectReplyList(){
     
     $.ajax({
         url : contextPath + "/admin/OneOnOneInquiry/selectReplyList",
         data : {"boardNo" : boardNo},
         type : "get",
         dataType : "JSON",
-        success : function(rList){
 
+        success : function(rList){
             const customerInquiry = document.getElementById("customer-inquiry");
             customerInquiry.innerHTML = "";
             
             for(let reply of rList){
                 const section1 = document.createElement("section");
-                section1.innerText = "Re: ${detail.boardTitle}";
+                section1.innerText = "Re: " + boardTitle;
+                section1.classList.add("section1");
 
                 const section2 = document.createElement("section");
-                section2.innerText = "작성자 닉네임 : ${reply.memberNickname} &nbsp;| &nbsp;작성일 : ${reply.createDate}";
+                section2.innerText = "작성자 닉네임 : " + reply.memberNickName + " | 작성일 : " + reply.createDate;
+                section2.classList.add("section2");
 
                 const section3 = document.createElement("section");
-                section3.innerText = "${reply.replyContent}";
+                section3.innerText = reply.replyContent;
+                section3.classList.add("section3");
 
                 customerInquiry.append(section1, section2, section3);
             }
@@ -75,5 +78,6 @@ insertBtn.addEventListener("click", function(){ // 작성 버튼이 클릭되었
             console.log(req.responseText);
         }
     })
+}
 
-})();
+selectReplyList();

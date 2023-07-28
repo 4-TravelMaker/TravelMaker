@@ -31,6 +31,11 @@
     text-align: center;
 }
 
+.customer-inquiry2{
+    margin: 30px 30px 30px;
+    text-align: center;
+}
+
 /* 일대일 문의 상세 조회 제목 */
 .customer-inquiry > section:first-of-type{
     height: 50px;
@@ -195,4 +200,56 @@
     background-color: #000000;
 
     transition-duration: 1s;
+}
+
+/* 일대일 문의 답변 조회 스타일 */
+/* 일대일 문의 상세 조회 제목 */
+.customer-inquiry2 > .section1{
+    height: 50px;
+
+    padding-left: 20px;
+
+    display: flex;
+    align-items: center;
+
+    font-size: 20px;
+    font-weight: bold;
+
+    border: 1px solid #ddd;
+    border-bottom: none;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+/* 일대일 문의 상세 조회 정보 */
+.customer-inquiry2 > .section2{
+    height: 30px;
+
+    text-align: end;
+
+    padding-right: 20px;
+
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+
+    font-size: 13px;
+}
+
+/* 일대일 문의 상세 조회 내용 */
+.customer-inquiry2 > .section3{
+    height: 600px;
+    
+    text-align: left;
+    padding: 20px;
+
+    overflow: auto;
+
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+    margin-bottom: 10px;
 }
