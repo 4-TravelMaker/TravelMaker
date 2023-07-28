@@ -115,7 +115,7 @@
                                 </div>
                                     <!-- 확인 취소 버튼 영역 -->
                                 <div class="findButtonArea3">
-                                    <button  type="submit" id="findIdButton">확인</button>
+                                    <button  type="button" id="findIdButton">확인</button>
                                     <button id="cancelButton" onclick = "location.href = '#'">취소</button>
                                 </div>
 
@@ -195,9 +195,13 @@
         
         <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 
-        <script src="${contextPath}/resources/js/myPage/findPw.js"></script>
-
         
     </main>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    
+    <script src="${contextPath}/resources/js/myPage/findPw.js"></script>
+
+
+
 </body>
 </html>
