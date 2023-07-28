@@ -67,7 +67,7 @@
                                     <div style="height: 23px;"></div>
                                     <div style="height: 40px;">
                                         <select id="ism-Select" name="idQuestion" class="questionSelect">
-                                            <option value="basic" selected>질문을 고르세요</option>
+                                            <option value="0" selected>질문을 고르세요</option>
                                             <option value="1">기억에 남는 추억의 장소는?</option>
                                             <option value="2">자신의 인생 좌우명은?</option>
                                             <option value="3">가장 기억에 남는 선생님 성함은?</option>
@@ -94,7 +94,7 @@
                                 <div class="findIdButtonArea2">
                                     <div class="a">
                                         <button type="button" id="findIdButton" name="findId">아이디 찾기</button>
-                                        <button type="submit" id="cancelButton" name ="cancel" onclick = "location.href = '#'">취소</button>
+                                        <button type="submit" id="cancelButton" name ="cancel" onclick = "location.href = '${contextPath}'">취소</button>
                                     </div>
                                 </div>
                             </div>
