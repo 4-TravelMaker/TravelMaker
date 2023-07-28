@@ -9,6 +9,7 @@ document.getElementById("findIdButton").onclick = function(){
     const nameInput = document.getElementById("nameInput");
     const numberQ = document.getElementById("ism-Select");
     const memberA = document.getElementById("answer-Input");
+    const pwQuestionNunber = numberQ.options[numberQ.selectedIndex].value;
 
    
 
@@ -25,20 +26,23 @@ debugger
             var massage = "";
 
             
-            
-            if(result != null){
+            if(nameInput.value == "" || memberA.value == "" || pwQuestionNunber == '0' ){
+
+                alert("빈칸에 공란이 있으면 안됩니다");
+
+             }  else if(result != "null"){
+
                 massage = "회원 아이디는  " + result +  "  입니다.";
 				$("#spanId").html(massage);
 
             } else {
-                massage = "회원 아이디는 없습니다";
+                
+                massage = "해당하는 아이디가 존재하지 않습니다";
 				$("#spanId").html(massage);
             }
 
-           
 
-
-
+            debugger
             
         },
 
