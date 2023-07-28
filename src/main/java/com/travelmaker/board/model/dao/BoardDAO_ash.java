@@ -199,11 +199,12 @@ public class BoardDAO_ash {
 			rs = pstmt.executeQuery();
 			
 			while(rs.next()) {
+				
 				Reply reply = new Reply();
 				
-				reply.setMemberNickName(rs.getString(1));
-				reply.setReplyContent(rs.getString(2));
-				reply.setCreateDate(rs.getString(3));
+				reply.setMemberNickName(rs.getString("MEMBER_NICK"));
+				reply.setReplyContent(rs.getString("REPLY_CONTENT"));
+				reply.setCreateDate(rs.getString("CREATE_DT"));
 				
 				rList.add(reply);
 			}

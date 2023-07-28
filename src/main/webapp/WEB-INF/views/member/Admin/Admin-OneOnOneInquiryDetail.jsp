@@ -57,31 +57,14 @@
                 <!-- 일대일 문의 답변 조회 영역 -->
                 <section class="reply-select-area">
                     <section> <i class="fa-brands fa-replyd" style="color: #000000;"></i> &nbsp; 답변</section>
-
-                    <c:if test="${empty rList}">
-                        <section class="customer-inquiry">
-                            작성된 답변이 없습니다.
-                        </section>
-                    </c:if>
-
-                    <c:if test="${!empty rList}">
-                        <section class="customer-inquiry" id="customer-inquiry">
-                            <section>
-                                Re: ${detail.boardTitle}
-                            </section>
-                            <section>작성자 닉네임 : ${detail.memberNickname} &nbsp;| &nbsp;작성일 : ${detail.createDate}</section>
-                            <section>
-                                ${detail.boardContent}
-                            </section>
-                        </section>
-                    </c:if>
+                    <section class="customer-inquiry2" id="customer-inquiry"></section>
                     
                 </section>
 
 
                 <!-- 일대일 문의 답변 영역 -->
                 <section class="customer-inquiry admin-reply">
-                    <section> <i class="fa-brands fa-replyd" style="color: #000000;"></i> &nbsp; 답변하기</section>
+                    <section>답변하기</section>
                     <form action="insert" method="POST">
                         <section id="inquiry-content-area">
                             <textarea placeholder="답변 내용을 입력하세요" id="inquiry-content"></textarea>
@@ -104,6 +87,9 @@
 
         // 게시글 번호
         const boardNo = "${detail.boardNo}";
+
+        // 게시글 제목
+        const boardTitle = "${detail.boardTitle}";
 
         // 로그인한 회원 번호
         const loginMemberNo = "${loginMember.memberNo}";
