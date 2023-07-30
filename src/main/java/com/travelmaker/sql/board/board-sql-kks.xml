@@ -23,9 +23,10 @@
 		    SELECT ROWNUM RNUM, A.* FROM(    
 		        SELECT BOARD_NO, BOARD_TITLE, MEMBER_NICK, 
 		                TO_CHAR(CREATE_DT, 'YYYY-MM-DD') AS CREATE_DT, 
-		                READ_COUNT
+		                READ_COUNT, IMG_RENAME, PROFILE_IMG
 		        FROM BOARD
 		        JOIN MEMBER USING(MEMBER_NO)
+                LEFT JOIN BOARD_IMG USING(BOARD_NO)
 		        WHERE BOARD_CD = ?
 		        AND BOARD_ST = 'N'
 		        ORDER BY BOARD_NO DESC
@@ -33,12 +34,59 @@
 		)
 		WHERE RNUM BETWEEN ? AND ?
 	</entry>
-
-	<entry key="selectBoardThumbnail">
-		SELECT BOARD_NO, IMG_RENAME, IMG_ORIGINAL
-		FROM BOARD_IMG
-		JOIN BOARD USING(BOARD_NO)
-		WHERE BOARD_CD = ?
-		AND IMG_LEVEL = 0
+	
+	<!-- 게시글 상세 조회 -->
+	<entry key="selectBoardDetail">
+		SELECT BOARD_NO, BOARD_TITLE, BOARD_CONTENT,
+		    TO_CHAR(CREATE_DT, 'YYYY"년" MM"월" DD"일" HH24:MI:SS') CREATE_DT,
+		    READ_COUNT, MEMBER_NICK, PROFILE_IMG, MEMBER_NO, BOARD_NM,
+            (SELECT COUNT(*)
+             FROM BOARD_LIKE
+             WHERE BOARD_NO = ?) AS LIKE_COUNT
+		FROM BOARD
+		JOIN MEMBER USING(MEMBER_NO)
+		JOIN BOARD_TYPE USING(BOARD_CD)
+		WHERE BOARD_NO = ?
+		AND BOARD_ST = 'N'
+	</entry>
+	
+	<!-- 특정 게시글에 좋아요를 누른 회원 번호 조회 -->
+	<entry key="selectLikeList">
+		SELECT MEMBER_NO
+		FROM BOARD_LIKE
+		WHERE BOARD_NO = ?
+	</entry>
+	
+	<!-- 게시글에 첨부된 이미지 리스트 조회 -->
+	<entry key="selectImageList">
+		SELECT * FROM BOARD_IMG
+		WHERE BOARD_NO = ?
+		ORDER BY IMG_LEVEL
+	</entry>
+	
+	<!-- 좋아요 취소 -->
+	<entry key="minusLike">
+		DELETE FROM BOARD_LIKE
+		WHERE MEMBER_NO = ?
+		AND BOARD_NO = ?
+	</entry>
+	
+	<!-- 좋아요 클릭 -->
+	<entry key="plusLike">
+		INSERT INTO BOARD_LIKE
+		VALUES(?, ?)
+	</entry>
+	
+	<!-- 좋아요 개수 조회 -->
+	<entry key="selectLikeCount">
+		SELECT COUNT(BOARD_NO)
+		FROM BOARD_LIKE
+		WHERE BOARD_NO = ?
+	</entry>
+	
+	<!-- 각 게시글 당 댓글 개수 조회 -->
+	<entry key="getReplyCount">
+		SELECT COUNT(*) AS REPLY_COUNT FROM REPLY
+		WHERE BOARD_NO = ?
 	</entry>
 </properties>

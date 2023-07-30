@@ -8,7 +8,7 @@ body {
 }
 
 section {
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
 
@@ -172,6 +172,11 @@ nav {
     padding-bottom: 10px;
 }
 
+.profile {
+    width: 30px;
+    height: 30px;
+}
+
 .title{
     display: flex;
     align-items: center;
@@ -191,6 +196,7 @@ nav {
 }
 
 #image34{
+    width: 500px;
     border-radius: 50px;
 }
 
@@ -203,25 +209,15 @@ nav {
     height: 100%;
 }
 
-.fa-regular{
-    font-size: 30px;
-}
-
 .like{
     text-align: center;
     padding: 50px 0;
 }
 
-.comments {
-    display: flex;
-    text-align: center;
-    gap: 10px;
-    padding: 30px;
-
+.heart {
+    font-size: 30px;
+    cursor: pointer;
 }
-
-
-
 
 /* --------------------------------------------------------------------- */
 
