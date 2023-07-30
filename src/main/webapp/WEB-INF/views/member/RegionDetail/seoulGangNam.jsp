@@ -8,8 +8,8 @@
     <link rel="shortcut icon" type="image/x-icon" href="${contextPath}/resources/images/small_logo.png">
 
 
-    <link rel="stylesheet" href="../../resources/css/Region/region3.css">
-    <link rel="stylesheet" href="../../resources/css/main-style.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/Region/region3.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/main-style.css">
 
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,7 +32,7 @@
             <section class="like">
                 <p>좋아요</p>
                 <section>
-                     <img src="../../resources/images/RegionDetail/gangnam.jpg" width="550px" height="370px">
+                     <img src="${contextPath}/resources/images/RegionDetail/gangnam.jpg" width="550px" height="370px">
                 </section>
             </section>
             <section class="article">

@@ -1,6 +1,7 @@
 package com.travelmaker.board.controller;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.travelmaker.board.model.service.BoardService_hsn;
 import com.travelmaker.board.model.vo.BoardDetail;
+import com.travelmaker.board.model.vo.Reply;
 
 
 
@@ -28,10 +30,19 @@ public class BoardNoticeDetailServlet extends HttpServlet{
 			
 			BoardDetail detail = service.selectBoardDetail(boardNo);
 			
+			if(detail != null) {
+				BoardService_hsn rService = new BoardService_hsn();
+				
+				List<Reply> rList = rService.selectReplyList(boardNo);
+				req.setAttribute("rList", rList);
+				
+				System.out.println("rList = " + rList);
+			}
+			
 			
 			req.setAttribute("detail", detail);
 			
-			System.out.println(detail);
+			
 			
 			String path = "/WEB-INF/views/member/BoardNotice/BoardNoticeDetail.jsp";
 			RequestDispatcher dispatcher = req.getRequestDispatcher(path);

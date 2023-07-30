@@ -14,6 +14,7 @@ import java.util.Properties;
 import com.travelmaker.board.model.vo.Board;
 import com.travelmaker.board.model.vo.BoardDetail;
 import com.travelmaker.board.model.vo.Pagination;
+import com.travelmaker.board.model.vo.Reply;
 
 public class BoardDAO_hsn {
 	
@@ -195,6 +196,53 @@ public class BoardDAO_hsn {
 		
 		
 		return detail;
+	}
+
+	/** 댓글 목록 조회 DAO
+	 * @param conn
+	 * @param boardNo
+	 * @return rList
+	 * @throws Exception
+	 */
+	public List<Reply> selectReplyList(Connection conn, int boardNo) throws Exception{
+		List<Reply> rList = new ArrayList<>();
+		
+		try {
+			
+			String sql = prop.getProperty("selectReplyList");
+			
+			pstmt = conn.prepareStatement(sql);
+			System.out.println("boardNO"+boardNo);
+			pstmt.setInt(1, boardNo);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				
+				Reply r = new Reply();
+				
+				r.setReplyNo(rs.getInt(1));
+				r.setReplyContent(rs.getString(2));
+				r.setCreateDate(rs.getString(3));
+				r.setBoardNo(rs.getInt(4));
+				r.setMemberNo(rs.getInt(5));
+				r.setMemberNickName(rs.getString(6));
+				r.setProfileImage(rs.getString(7));
+				
+				rList.add(r);
+				
+			}
+			
+			System.out.println("dao" + rList );
+			
+		}finally {
+			
+			close(rs);
+			close(pstmt);
+			
+		}
+		
+		return rList;
 	}
 	
 	
