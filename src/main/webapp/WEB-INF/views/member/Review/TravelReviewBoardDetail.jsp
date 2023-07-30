@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TravelMaker</title>
-    <link rel="shortcut icon" type="image/x-icon" href="image/small_logo.png">
+    <link rel="shortcut icon" type="image/x-icon" href="${contextPath}/resources/images/Share/small_logo.png">
     <link rel="stylesheet" href="${contextPath}/resources/css/Review/TravelReviewBoardDetail.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/Review/reply-style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,7 +16,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/ef988defcf.js" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/aa566476b0.js" crossorigin="anonymous"></script>
-    
 </head>
 <body>
     <main>
@@ -25,23 +24,26 @@
         <section id="middle">
         
             <div class="container">
-                <h2>여행 리뷰 게시판</h2>
-
+                <h2>${detail.boardName}</h2>
             </div>
-            
             <div>
                 <div>
                     <div class="container">
-                        <h4>부산 3박 4일 여행기!</h4>
+                        <h1>${detail.boardTitle}</h1>
 
                         <div class="title">
                             <div id="name">
-                                <img src="${contextPath}/resources/images/profile.png" width="30px" height="30px">
-                                <span>작성자</span>
+                                <c:if test="${!empty board.profileImage}">
+                                    <img src="${contextPath}${detail.profileImage}" class="profile">
+                                </c:if>
+                                <c:if test="${empty board.profileImage}">
+                                    <img src="${contextPath}/resources/images/myPageProfile/profile.png" class="profile">
+                                </c:if>
+                                <span>${detail.memberNickname}</span>
                             </div>
 
                             <div class="date">
-                                <span>2023.06.29</span>
+                                <span>작성일 ${detail.createDate}</span>
                             </div>
                         </div>
                     </div>
@@ -51,31 +53,11 @@
                     <div class="container">
                         <div id="content-image">
                             <div id="image">
-                                <img src="${contextPath}/resources/images/Review/Dagu.jpg" width="500px" id="image34">
+                                <img src="${contextPath}/resources/images/Review/Dagu.jpg" id="image34">
                             </div>
     
                             <div id="notice">
-                                부산은 지금 나 홀로 떠나는 혼행지로 주목받는다.
-                                <br>
-                                <br>
-                                눈부시게 푸른바다....
-                            </div>
-                        </div>    
-                    </div>
-                </div>
-
-                <div>
-                    <div class="container">
-                        <div id="content-image">
-                            <div id="image">
-                                <img src="${contextPath}/resources/images/Review/Dagu.jpg" width="500px" id="image34">
-                            </div>
-    
-                            <div id="notice">
-                                부산은 지금 나 홀로 떠나는 혼행지로 주목받는다.
-                                <br>
-                                <br>
-                                눈부시게 푸른바다....
+                                ${detail.boardContent}
                             </div>
                         </div>    
                     </div>
@@ -85,13 +67,25 @@
             <div style="border-bottom: 2px solid lightgray;">
                 <div class="container">
                     <div class="like">
-                        <div>
-                            <i class="fa-regular fa-heart"></i>
-                        </div>
+                        <c:set var="likeList" value="${detail.likeList}"/>
+                        <div id="like-btn-box">
+                            <c:set var="likeState" value="empty"/>
+                            <c:forEach var="like" items="${likeList}">
+                                <c:if test="${loginMember.memberNo == like}">
+                                    <c:set var="likeState" value="full"/>
+                                </c:if>
+                            </c:forEach>
+                            <c:if test="${likeState == 'empty'}">
+                                <img src="${contextPath}/resources/images/Review/heart-empty.png" id="like-btn" class="heart empty">
+                            </c:if>
+                            <c:if test="${likeState == 'full'}">
+                                <img src="${contextPath}/resources/images/Review/heart-full.png" id="like-btn" class="heart full">
+                            </c:if>
+                            </div>
                         <div>
                             <span>좋아요</span>
                         </div>
-                        <div>1000</div>
+                        <div id="likeCountBox">${detail.likeCount}</div>
                     </div>
                 </div>
             </div>
@@ -101,18 +95,21 @@
             <!-- jQuery 추가 -->
             <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 
-            
-            
-
         </section>
 
-        <footer>
-            <section>Copyright © TravelMaker Corp. All rights reserved.</section>
-            <section class="footer"> 　　이용약관　　 </section>
-            <section class="footer"> 　　운영정책　　 </section>
-            <section class="footer"> 　　1:1문의　　 </section>
-        </footer>
+        <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
     </main>
-    
+
+    <script>
+        const contextPath = "${contextPath}";
+
+        const boardNo = "${detail.boardNo}";
+
+        const loginMemberNo = "${loginMember.memberNo}";
+
+        const likeList = "${likeList}";
+    </script>
+
+    <script src="${contextPath}/resources/js/Reply/reply.js"></script>
 </body>
 </html>
