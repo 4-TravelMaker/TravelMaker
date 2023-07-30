@@ -250,6 +250,8 @@ nav {
 /* 게시글 썸네일 이미지 img */
 .thumbnail-size {
     width: 100%;
+    height: 300px;
+    border: 1px solid #ddd;
     border-radius: 15px;
     margin: 10px 0;
 }

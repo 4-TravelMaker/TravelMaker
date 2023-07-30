@@ -29,18 +29,17 @@ public class OneOnOneInquiryReplyController extends HttpServlet{
 		
 		try {
 			
-
+			// 일대일 문의 답변 목록 조회
 			if(command.equals("selectReplyList")) {
 				int boardNo = Integer.parseInt(req.getParameter("boardNo"));
-				
-				System.out.println(boardNo);
-			
+
 				List<Reply> rList = service.selectReplyList(boardNo);
 				
 				new Gson().toJson(rList, resp.getWriter());
 				
 			}
-						
+			
+			// 일대일 문의 답변 작성
 			if(command.equals("insert")) {
 				String replyContent = req.getParameter("replyContent");
 				int memberNo = Integer.parseInt(req.getParameter("memberNo"));

@@ -23,7 +23,7 @@
 </head>
 <body>
     <main>
-        ${loginMember}
+       <%--  ${loginMember} --%>
        
        <jsp:include page="/WEB-INF/views/common/header.jsp"/>
        

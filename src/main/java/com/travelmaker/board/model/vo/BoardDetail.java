@@ -26,5 +26,6 @@ public class BoardDetail {
    private String boardName;
    
    private List<BoardImage> imageList;
+   private List<Integer> likeList;
    
 }

@@ -127,6 +127,8 @@ public class MyPageChangeInfo extends HttpServlet {
 			
 			int result = service.changeMyInfo(mem);
 			
+			String message = null;
+			
 			if(result > 0) { // 회원 정보 수정 성공 시
 				
 				loginMember.setMemberPw(memberPw);
@@ -137,8 +139,14 @@ public class MyPageChangeInfo extends HttpServlet {
 				loginMember.setMemberAnswer(memberAnswer);
 				loginMember.setProfileImage(profileImage);
 				
+				message = "회원 정보가 수정되었습니다.";
+				
+			} else {
+				
+				message = "회원 정보 수정에 실패했습니다.";
 			}
 			
+			session.setAttribute("message", message);
 			resp.sendRedirect( req.getContextPath() + "/member/myPage/changeInfo" );
 				
 		} catch(Exception e) {

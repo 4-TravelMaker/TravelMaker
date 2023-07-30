@@ -6,6 +6,8 @@
 <c:set var="pagination" value="${map.pagination}" />
 <c:set var="boardList" value="${map.boardList}" />
 <c:set var="imageList" value="${map.imageList}" />
+<c:set var="boardLikeList" value="${map.boardLikeList}" />
+<c:set var="replyCountList" value="${map.replyCountList}" />
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,7 +38,7 @@
                 </div>
 
                 <div class="content">
-                    ${imageList.BoardImage}
+                    
                     <c:choose>
                         <c:when test="${empty boardList}">
                             <span>게시글이 존재하지 않습니다.</span>
@@ -44,30 +46,43 @@
                         
                         <c:otherwise>
                             <c:forEach var="board" items="${boardList}" varStatus="status">
-                                
+
                                 <div class="board-area">
                                     <div class="member-box">
-                                        <img src="${contextPath}/resources/images/myPageProfile/profile.png" class="profileImage">
+                                        <c:if test="${!empty board.profileImage}">
+                                            <img src="${contextPath}${board.profileImage}" class="profileImage">
+                                        </c:if>
+                                        <c:if test="${empty board.profileImage}">
+                                            <img src="${contextPath}/resources/images/myPageProfile/profile.png" class="profileImage">
+                                        </c:if>
+
                                         <span class="memberNickname">${board.memberId}</span>
                                     </div>
             
-                                    <a href="#">
-                                        <img src="${contextPath}/resources/images/Review/review_test2.png" class="thumbnail-size">
+                                    <a href="detail?no=${board.boardNo}&cp=${pagination.currentPage}&type=${param.type}">
+                                        <c:if test="${!empty board.thumbnail}">
+                                            <img src="${contextPath}${board.thumbnail}" class="thumbnail-size">
+                                        </c:if>
+                                        <c:if test="${empty board.thumbnail}">
+                                            <img src="${contextPath}/resources/images/Review/logo.png" class="thumbnail-size">
+                                        </c:if>
                                     </a>
             
                                     <div class="icon-box">
                                         <div>
                                             <i class="fa-regular fa-heart"></i>
-                                            <div class="count">100</div>
+                                            <div class="count">${boardLikeList[status.index]}</div>
                                         </div>
             
                                         <div>
                                             <i class="fa-regular fa-comment"></i>
-                                            <div class="count">20</div>
+                                            <div class="count">${replyCountList[status.index]}</div>
                                         </div>
                                     </div>
             
-                                    <h1 class="boardTitle"><a href="#" class="boardTitle">${board.boardTitle}</a></h1>
+                                    <h1 class="boardTitle">
+                                        <a href="detail?no=${board.boardNo}&cp=${pagination.currentPage}&type=${param.type}" class="boardTitle">${board.boardTitle}</a>
+                                    </h1>
                                 </div>
                             </c:forEach>
                         </c:otherwise>

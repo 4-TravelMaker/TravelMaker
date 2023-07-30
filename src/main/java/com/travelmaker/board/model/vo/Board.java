@@ -1,5 +1,7 @@
 package com.travelmaker.board.model.vo;
 
+import java.util.List;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -26,5 +28,7 @@ public class Board {
 	private int boardCode; // 게시판 코드(1:지역/2:테마/3:여행계획/4:여행리뷰/5:공지사항/6:일대일문의)
 	private int boardCategory; // 게시판 카테고리 번호
 	private String boardState; // 게시글 삭제 여부(Y: 삭제, N:삭제 안함)
+	private String thumbnail; // 게시판 썸네일 이미지
+	private String profileImage; // 프로필 이미지
 	
 }
