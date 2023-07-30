@@ -26,16 +26,46 @@
                 </form>
             </section>
             <section></section>
+            
+        
+        <!-- <section class="ass"> -->
+            <c:choose>
+                <c:when test="${empty sessionScope.loginMember}">
+                    <section class="login-area">
+                        <button class="btn-style">
+                            <a href="${contextPath}/member/login">로그인</a>
+                        </button>
+                        <button class="btn-style">
+                            <a href="${contextPath}/member/signUp">회원가입</a>
+                        </button>
+                    </section>
+                </c:when>
+                <c:otherwise>
+                    <section class="login-area">
+                    
+                    <!-- 여기 부분에 이프문 작성 -->
+                    <!-- 프로필 이미지가 없을 경우 -->
+                            <c:if test="${empty loginMember.profileImage}">
+                                <img src="${contextPath}/resources/images/Admin/admin-profile.jpg" style="size: 50px;">
+                            </c:if>
 
-            <section class="login-area">
-                <button class="btn-style">
-                    <a href="${contextPath}/member/login">로그인</a>
-                </button>
-                <button class="btn-style">
-                    <a href="${contextPath}/member/signUp">회원가입</a>
-                </button>
-            </section>
-        </section>
+                            <!-- 프로필 이미지가 있을 경우 -->
+                            <c:if test="${!empty loginMember.profileImage}">
+                                <img src="${contextPath}${loginMember.profileImage}">
+                            </c:if>
+        
+                            <span>${loginMember.memberNickname}</span>
+                            
+                        <button class="btn-style">                    
+                            <a href="${contextPath}//member/myPage/changeInfo">성공했니</a>
+                        </button>
+                        
+                    </section>
+                </c:otherwise>
+            </c:choose>
+        <!-- </section> -->
+       
+    </section>
     </header>
 
     <nav>
