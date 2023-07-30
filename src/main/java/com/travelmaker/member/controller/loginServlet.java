@@ -32,8 +32,7 @@ public class loginServlet extends HttpServlet{
 		String inputId = req.getParameter("inputId");
 		String inputPw = req.getParameter("inputPw");
 		
-//		System.out.println("inputId : "  +inputId);
-//		System.out.println("inputPw : "  +inputPw);
+
 		
 
 		Member mem = new Member();
