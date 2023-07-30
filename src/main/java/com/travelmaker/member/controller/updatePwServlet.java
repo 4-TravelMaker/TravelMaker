@@ -7,40 +7,48 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
-import com.google.gson.Gson;
 import com.travelmaker.member.model.service.MemberService_phj;
 import com.travelmaker.member.model.vo.Member;
 
-@WebServlet("/member/findPw")
-public class findPwServlet extends HttpServlet{
-	
-	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String path = "/WEB-INF/views/member/Find/findPw.jsp";
-		
-		req.getRequestDispatcher(path).forward(req, resp);
-		
-	}
+@WebServlet("/member/updatePw")
+public class updatePwServlet extends HttpServlet{
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		String inputId = req.getParameter("inputId");
+		String id = req.getParameter("id");
+		String pw = req.getParameter("newPw");
+		String confirmPw = req.getParameter("pwConfirm");
 		
 		try {
-			
 			MemberService_phj service = new MemberService_phj();
 			
-			Member member = service.selectPw(inputId);
+			int result = service.updatePw(id, pw, confirmPw);
 			
+			HttpSession session = req.getSession();
+
+			String path = null;
+			String message = null; 
+
 			
-			new Gson().toJson(member, resp.getWriter());
+			if(result > 0) { // 성공
+				
+				message = "성공";
+				path = "login";
+				
+			}else {
+				message = "실패";
+				path = "pw";
+			}
 			
+			session.setAttribute("message", message);
+
+			resp.sendRedirect(path);
 			
-		} catch(Exception e) {
+		}catch(Exception e) {
 			e.printStackTrace();
 		}
 	}
-
 }
