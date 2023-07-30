@@ -30,4 +30,27 @@ public class MemberService_phj {
 		
 		return member;
 	}
+
+
+
+	/** 비밀번호 수정 Service
+	 * @param id
+	 * @param pw
+	 * @param confirmPw
+	 * @return result
+	 * @throws Exception
+	 */
+	public int updatePw(String id, String pw, String confirmPw) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		int result = dao.updatePw(conn, id, pw, confirmPw);
+		
+		if(result > 0) commit(conn);
+		else		   rollback(conn);
+		
+		close(conn);
+		
+		return result;
+	}
 }

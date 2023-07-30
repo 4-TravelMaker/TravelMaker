@@ -48,7 +48,6 @@ public class MemberDAO_phj {
 		
 		try {
 			String sql = prop.getProperty("selectPw");
-			System.out.println("sql : " + sql);
 			pstmt = conn.prepareStatement(sql);
 			
 			pstmt.setString(1, inputId);
@@ -70,5 +69,38 @@ public class MemberDAO_phj {
 		}
 		
 		return member;
+	}
+
+
+	/** 비밀번호 수정 DAO
+	 * @param conn
+	 * @param id
+	 * @param pw
+	 * @param confirmPw
+	 * @return result
+	 * @throws Exception
+	 */
+	public int updatePw(Connection conn, String id, String pw, String confirmPw) throws Exception{
+		
+		int result = 0;
+		
+		try {
+			
+			String sql = prop.getProperty("updatePw");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, pw);
+			pstmt.setString(2, id);
+			
+			result = pstmt.executeUpdate();
+			
+			
+		}finally {
+			
+			close(pstmt);
+		}
+		
+		return result;
 	}
 }

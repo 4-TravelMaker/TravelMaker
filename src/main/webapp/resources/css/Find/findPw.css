@@ -178,9 +178,12 @@ nav {
     border-bottom: 1px solid gray;
 }
 #middle1-2{height: 38%;}
+
 #middle1-3{
     border-top: 1px solid gray;
-    height: 42%;}
+    height: 42%;
+    display: none;
+}
 
 /* 비밀번호찾기 글씨 */
 #pwText {
@@ -433,7 +436,7 @@ height: 39px;}
 }
 
 .pwCheckingTextArea{
-    height: 30px;
+    height: 50px;
     display: flex;
 }
 

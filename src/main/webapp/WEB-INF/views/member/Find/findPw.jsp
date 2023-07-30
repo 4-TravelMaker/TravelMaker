@@ -116,7 +116,7 @@
                                     <!-- 확인 취소 버튼 영역 -->
                                 <div class="findButtonArea3">
                                     <button  type="button" id="findIdButton">확인</button>
-                                    <button id="cancelButton" onclick = "location.href = '#'">취소</button>
+                                    <button id="cancelButton">취소</button>
                                 </div>
 
                             </div>
@@ -128,7 +128,7 @@
                 </div>
                 <div id="middle1-3">
 
-                    <form action="#">
+                    <form action="updatePw">
 
                         <div style="height: 45px;"></div>
 
@@ -155,8 +155,8 @@
                             </div>
 
                             <div class="loginArea2">
-                                <input type="password" id="edit-input" name="editInput" class="editInput">
-                                <button class="checkPw" name="checkPw" onclick = "location.href = '#'">확인</button>
+                                <input type="password" id="edit-input" name="editInput" class="editInput"> 
+                                <button type="button" class="checkPw" name="checkPw" id="confrim">확인</button>
                             </div>
                             
                         </div>
@@ -167,7 +167,7 @@
 
                             <!-- 비밀번호 일치하면 나오는 텍스트 영역 -->
 
-                            <div id="PwcheckingText">비밀번호가 일치합니다</div>
+                            <div id="PwcheckingText"></div>
 
                         </div>
 
@@ -178,13 +178,11 @@
                             <!-- 비밀번호 수정 버튼 영역 -->
                             <div class="pwEditButtonArea">
 
-                                <button type="submit" id="pwEditButton" onclick = "location.href = '#'">비밀번호 수정</button>
-                                <button type="submit" id="cancelButton1" onclick = "location.href = '#'">취소</button>
+                                <button type="submit" id="pwEditButton">비밀번호 수정</button>
+                                <button type="button" id="cancelButton1" onclick = "location.href = '#'">취소</button>
 
                             </div>
-
                         </div>
-
                     </form>    
                 </div>
 
