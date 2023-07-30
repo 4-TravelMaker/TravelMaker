@@ -8,8 +8,8 @@
     <link rel="shortcut icon" type="image/x-icon" href="${contextPath}/resources/images/small_logo.png">
 
 
-    <link rel="stylesheet" href="../../resources/css/Region/region3.css">
-    <link rel="stylesheet" href="../../resources/css/main-style.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/Region/region3.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/main-style.css">
 
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,25 +24,25 @@
 
         <section id="middle1">
             <section class = "title">
-                <p>화춘옥 청담점</p>
-                <p>서울 강남구</p>
-                <mark>대한민국 최초의 원조수원갈비</mark>
+                <p>서울식물원</p>
+                <p>서울 강서구</p>
+                <mark>도심 속 아름다운 녹색 명소</mark>
                 <hr>
             </section>
             <section class="like">
                 <p>좋아요</p>
                 <section>
-                     <img src="../../resources/images/RegionDetail/gangnam.jpg" width="550px" height="370px">
+                     <img src="${contextPath}/resources/images/RegionDetail/gangseo.jpg" width="550px" height="370px">
                 </section>
             </section>
             <section class="article">
                 <p>상세정보</p>
                 <hr>
-                <p>1945년 개업한 대한민국 최초의 원조수원갈비 화춘옥이다. 수원식 양념갈비의 시작은 화춘옥에서 시작되어 수원뿐 아니라 전국 각지의 갈비 조리법에 영향을 끼쳐 갈비의 대중화에 선구적 역할을 했다. 화춘옥의 양념갈비는 최상급의 소갈비를 간장이 아닌 소금과 참기름을 베이스로 양념해 담백하고 자극적이지 않아 부담없이 먹기 좋다. 화춘옥 청담은 1,2층으로 나뉘어 프라이빗한 룸과 편안하게 식사하실 수 있는 홀까지 다양하게 좌석이 구비되어 있다.</p>
+                <p>서울식물원은 세계 12개 도시 식물과 식물 문화를 소개하고 도시의 생태감수성을 높이기 위해 서울에 남은 마지막 개발지 마곡에 조성되었다. 식물원과 공원을 결합한 이른바 ‘보타닉 공원’으로서 면적은 축구장 70개 크기에 달한다. 멸종 위기 야생식물 서식지를 확대하고 번식이 어려운 종의 증식 연구, 품종 개발 등 식물의 육성이라는 식물연구보전기관 본연의 역할은 물론, 도시 정원문화 확산의 교두보이자 평생교육기관의 역할을 수행한다. 식물원은 열린 숲과 주제원, 호수원, 습지원 등 4가지 공간으로 나뉘며, 그중 하이라이트는 식물문화센터와 야외 주제정원, 마곡문화관이 포함된 주제원이다.</p>
             </section>
             <section class="map">
                 <section id="map-area">
-                    <iframe src="https://korean.visitkorea.or.kr/mylocation/mylocation.do?cotId=0600a3bb-0af9-4c57-85f4-243b5a26824f&service=contents&latitude=37.5215355379&longitude=127.0377280114" width="1000" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://korean.visitkorea.or.kr/mylocation/mylocation.do?cotId=4cb342da-9f3a-47a7-beae-bc54ff1fd28c&service=contents&latitude=35.2437901894&longitude=129.0278976536" width="1000" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </section>
                 <section class="map1-1">
                     <section>

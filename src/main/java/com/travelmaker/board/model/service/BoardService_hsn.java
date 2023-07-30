@@ -11,6 +11,7 @@ import com.travelmaker.board.model.dao.BoardDAO_hsn;
 import com.travelmaker.board.model.vo.Board;
 import com.travelmaker.board.model.vo.BoardDetail;
 import com.travelmaker.board.model.vo.Pagination;
+import com.travelmaker.board.model.vo.Reply;
 
 public class BoardService_hsn {
 	
@@ -72,4 +73,21 @@ public class BoardService_hsn {
 		
 		
 		return detail;
+	}
+
+
+	/** 댓글 목록 조회 Service
+	 * @param boardNo
+	 * @return rList
+	 * @throws Exception
+	 */
+	public List<Reply> selectReplyList(int boardNo) throws Exception{
+		
+		Connection conn = getConnection();
+		
+		List<Reply> rList = dao.selectReplyList(conn, boardNo);
+		
+		close(conn);
+		
+		return rList;
 	}}

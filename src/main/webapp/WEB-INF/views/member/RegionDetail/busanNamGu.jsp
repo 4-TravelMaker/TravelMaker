@@ -8,8 +8,8 @@
     <link rel="shortcut icon" type="image/x-icon" href="${contextPath}/resources/images/small_logo.png">
 
 
-    <link rel="stylesheet" href="../../resources/css/Region/region3.css">
-    <link rel="stylesheet" href="../../resources/css/main-style.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/Region/region3.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/main-style.css">
 
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,25 +24,25 @@
 
         <section id="middle1">
             <section class = "title">
-                <p>화춘옥 청담점</p>
-                <p>서울 강남구</p>
-                <mark>대한민국 최초의 원조수원갈비</mark>
+                <p>오륙도 스카이워크</p>
+                <p>부산 남구</p>
+                <mark>끝없이 펼쳐진 바다 위를 걷는 기분!</mark>
                 <hr>
             </section>
             <section class="like">
                 <p>좋아요</p>
                 <section>
-                     <img src="../../resources/images/RegionDetail/gangnam.jpg" width="550px" height="370px">
+                     <img src="${contextPath}/resources/images/RegionDetail/busanNamGu.jpg" width="550px" height="370px">
                 </section>
             </section>
             <section class="article">
                 <p>상세정보</p>
                 <hr>
-                <p>1945년 개업한 대한민국 최초의 원조수원갈비 화춘옥이다. 수원식 양념갈비의 시작은 화춘옥에서 시작되어 수원뿐 아니라 전국 각지의 갈비 조리법에 영향을 끼쳐 갈비의 대중화에 선구적 역할을 했다. 화춘옥의 양념갈비는 최상급의 소갈비를 간장이 아닌 소금과 참기름을 베이스로 양념해 담백하고 자극적이지 않아 부담없이 먹기 좋다. 화춘옥 청담은 1,2층으로 나뉘어 프라이빗한 룸과 편안하게 식사하실 수 있는 홀까지 다양하게 좌석이 구비되어 있다.</p>
+                <p>오륙도 스카이워크의 옛 지명은 “승두말”이다. 승두말은 말안장처럼 생겼다고 「승두마」라고 부르는 것이 승두말로 되었으며 해녀들과 지역주민들은 「잘록개」라고 불렀다. 바다를 연모하는 승두말이 오륙도 여섯섬을 차례대로 순산하고 나서 승두말의 불룩했던 부분이 잘록하게 들어가 선창나루와 어귀의 언덕을 만들었다는 것이다. 동해와 남해의 경계지점이기도 한 이곳 승두말에 2012년 9월 12일에 착공하여 2013년 10월 18일 개장하면서 “하늘위를 걷는다”는 의미를 담아 “오륙도 스카이워크”라 이름하였다.</p>
             </section>
             <section class="map">
                 <section id="map-area">
-                    <iframe src="https://korean.visitkorea.or.kr/mylocation/mylocation.do?cotId=0600a3bb-0af9-4c57-85f4-243b5a26824f&service=contents&latitude=37.5215355379&longitude=127.0377280114" width="1000" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://korean.visitkorea.or.kr/mylocation/mylocation.do?cotId=2c96f4f4-b0c2-4501-847f-d5c151ba0088&service=contents&latitude=37.5536224280&longitude=127.1336405914" width="1000" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </section>
                 <section class="map1-1">
                     <section>

@@ -21,6 +21,6 @@ public class Reply {
 	private int memberNo; // 회원 번호(댓글 작성자)
 	private String replyState; // 댓글 삭제 여부(Y:삭제, N:삭제 안함)
 	private String memberNickName; // 회원 닉네임
-	private String profileImage; // 프로필 이미지
-	
+	private String profileImage; // 회원 이미지
+
 }
