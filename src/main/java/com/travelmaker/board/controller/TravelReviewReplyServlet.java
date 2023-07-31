@@ -10,50 +10,46 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.Gson;
-import com.travelmaker.board.model.service.BoardService_kks;
+import com.travelmaker.board.model.service.ReplyService_kks;
 import com.travelmaker.board.model.vo.Reply;
 
-@WebServlet("/travelReview/*")
-public class TravelReviewLikeServlet extends HttpServlet {
+@WebServlet("/travelReview/reply/*")
+public class TravelReviewReplyServlet extends HttpServlet {
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 		String uri = req.getRequestURI();
 		String contextPath = req.getContextPath();
-		String command = uri.substring( (contextPath + "/travelReview/").length() );
+		String command = uri.substring( (contextPath + "/travelReview/reply/").length() );
 		
-		BoardService_kks service = new BoardService_kks();
+		ReplyService_kks service = new ReplyService_kks();
 		
 		try {
 			
-			if(command.equals("selectLike")) {
-				
+			if(command.equals("selectReplyList")) {
+			
 				int boardNo = Integer.parseInt(req.getParameter("boardNo"));
 				
-				int likeCount = service.selectLikeCount(boardNo);
+				List<Reply> replyList = service.selectReplyList(boardNo);
 				
-				resp.getWriter().print(likeCount);
+				new Gson().toJson(replyList, resp.getWriter());
 				
 			}
 			
-			if(command.equals("minusLike")) { // 좋아요 클릭 취소
+			if(command.equals("insert")) {
 				
+				String replyContent = req.getParameter("replyContent");
 				int boardNo = Integer.parseInt(req.getParameter("boardNo"));
 				int memberNo = Integer.parseInt(req.getParameter("memberNo"));
 				
-				int result = service.minusLike(boardNo, memberNo);
+				Reply reply = new Reply();
 				
-				resp.getWriter().print(result);
+				reply.setReplyContent(replyContent);
+				reply.setMemberNo(memberNo);
+				reply.setBoardNo(boardNo);
 				
-			}
-			
-			if(command.equals("plusLike")) { // 좋아요 클릭
-				
-				int boardNo = Integer.parseInt(req.getParameter("boardNo"));
-				int memberNo = Integer.parseInt(req.getParameter("memberNo"));
-				
-				int result = service.plusLike(boardNo, memberNo);
+				int result = service.insertReply(reply);
 				
 				resp.getWriter().print(result);
 				
@@ -68,5 +64,5 @@ public class TravelReviewLikeServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		doGet(req, resp);
 	}
-
+	
 }

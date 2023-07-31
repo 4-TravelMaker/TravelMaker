@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.util.List;
 import com.travelmaker.board.model.dao.ReplyDAO_kks;
 import com.travelmaker.board.model.vo.Reply;
+import com.travelmaker.common.Util;
 
 public class ReplyService_kks {
 	
@@ -25,6 +26,29 @@ public class ReplyService_kks {
 		close(conn);
 		
 		return replyList;
+	}
+
+	/** 댓글 등록 Service
+	 * @param reply
+	 * @return result
+	 * @throws Exception
+	 */
+	public int insertReply(Reply reply) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		reply.setReplyContent( Util.XSSHandling( reply.getReplyContent() ) );
+		reply.setReplyContent( Util.newLineHandling( reply.getReplyContent() ) );
+		
+		int result = dao.insertReply(conn, reply);
+		
+		if(result > 0) commit(conn);
+		else 		   rollback(conn);
+		
+		close(conn);
+			
+		return result;
+		
 	}
 	
 }

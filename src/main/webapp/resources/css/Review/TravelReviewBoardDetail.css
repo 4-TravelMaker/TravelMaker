@@ -190,21 +190,21 @@ nav {
     gap: 10px;
 }
 
-#image{
+.image{
     display: flex;
     justify-content: center;
 }
 
-#image34{
+.board-content-image {
     width: 500px;
     border-radius: 50px;
 }
 
-#content-image{
+.content-image-box {
     padding-top: 100px;
 }
 
-#notice{
+.board-content {
     padding: 100px 0;
     height: 100%;
 }
