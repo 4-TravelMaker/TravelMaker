@@ -16,11 +16,11 @@ public class nickNameDupCheckServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		String memberNickname = req.getParameter("memberNickname");
-		
-		MemberService_lhk service = new MemberService_lhk();
 		
 		try { 
+			String memberNickname = req.getParameter("memberNickname");
+			
+			MemberService_lhk service = new MemberService_lhk();
 			
 			int result = service.nicknameDupcheck(memberNickname);
 			

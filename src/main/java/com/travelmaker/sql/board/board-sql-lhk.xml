@@ -2,4 +2,15 @@
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
 <comment>board-sql-lhk.xml</comment>
+	<entry key="searchList">
+		SELECT BOARD_TITLE,BOARD_CONTENT,READ_COUNT,CTGR_NM 
+		FROM BOARD
+		JOIN CATEGORY USING(CTGR_NO)
+		WHERE BOARD_TITLE LIKE '%' || ? || '%' 
+		OR BOARD_CONTENT LIKE '%' || ? || '%'
+		OR CTGR_NM LIKE '%' || ? || '%'
+	    AND BOARD_ST = 'N'
+	</entry>
+
+
 </properties>
