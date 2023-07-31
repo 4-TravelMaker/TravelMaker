@@ -94,7 +94,7 @@
                                 <div class="findIdButtonArea2">
                                     <div class="a">
                                         <button type="button" id="findIdButton" name="findId">아이디 찾기</button>
-                                        <button type="submit" id="cancelButton" name ="cancel" onclick = "location.href = '${contextPath}'">취소</button>
+                                        <button type="button" id="cancelButton" name ="cancel">취소</button>
                                     </div>
                                 </div>
                             </div>

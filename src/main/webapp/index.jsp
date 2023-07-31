@@ -227,7 +227,7 @@
                             <div class="embla__viewport1">
                                     <div class="embla__container2">
                                         <div class="embla__slide2">
-                                            <a href="#" style="text-decoration:none">
+                                            <a href="https://korean.visitkorea.or.kr/detail/rem_detail.do?cotid=d3850566-60ac-4367-9e63-a6b43c0cc355&con_type=11300" style="text-decoration:none">
                                                 <section class="item2 photo1">
                                                     <img src="resources/images/mainHome/theme/chilgok.png">
                                                 </section>
@@ -239,7 +239,7 @@
                                             </a>
                                         </div>
                                         <div class="embla__slide2">        
-                                            <a href="#" style="text-decoration:none">
+                                            <a href="https://korean.visitkorea.or.kr/detail/rem_detail.do?cotid=15222f90-6660-40d3-bef3-29f37a4ce786&con_type=10300" style="text-decoration:none">
                                                 <section class="item2 photo1">
                                                     <img src="resources/images/mainHome/theme/yangyang.png" >
                                                 </section>
@@ -251,7 +251,7 @@
                                             </a>
                                         </div>
                                         <div class="embla__slide2">
-                                            <a href="#" style="text-decoration:none">
+                                            <a href="https://korean.visitkorea.or.kr/detail/rem_detail.do?cotid=2b65aea9-38d0-4acf-a856-c99a1ef5db33&con_type=11000" style="text-decoration:none">
                                                 <section class="item2 photo1">
                                                     <img src="resources/images/mainHome/theme/youngdong.png" >
                                                 </section>
@@ -264,7 +264,7 @@
                                         </div>
 
                                         <div class="embla__slide2">
-                                            <a href="#" style="text-decoration:none">
+                                            <a href="https://korean.visitkorea.or.kr/detail/rem_detail.do?cotid=105d74ec-70ba-4da7-a4a0-2a8cf202ff0d&con_type=10300" style="text-decoration:none">
                                                 <section class="item2 photo1">
                                                     <img src="resources/images/mainHome/theme/activities.png" >
                                                 </section>
@@ -277,7 +277,7 @@
                                         </div>
                                         
                                         <div class="embla__slide2">
-                                            <a href="#" style="text-decoration:none">
+                                            <a href="https://korean.visitkorea.or.kr/detail/rem_detail.do?cotid=3d9ea823-7f0b-421e-b055-1fd8a453d0bf&con_type=10100" style="text-decoration:none">
                                                 <section class="item2 photo1">
                                                     <img src="resources/images/mainHome/theme/gosung.png" >
                                                 </section>

@@ -17,30 +17,30 @@ public class findIdCheckServlet extends HttpServlet  {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	
-		String memberName = req.getParameter("nameInput");
-		
-		System.out.println(memberName);
-		int memberQ = Integer.parseInt(req.getParameter("ism-Select"));
-		String memberA = req.getParameter("answer-Input");
 		
 		
 		
-		MemberService_lhk service = new MemberService_lhk();
-		
-		Member mem = new Member();
-		
-		mem.setMemberName(memberName);
-		mem.setMemberQuestionCode(memberQ);
-		mem.setMemberAnswer(memberA);
-		
-		
-		System.out.println(memberQ);
-		System.out.println(memberA);
 		
 		try {
 			
+			String memberName = req.getParameter("nameInput");
+			
+			System.out.println(memberName);
+			int numberQ = Integer.parseInt(req.getParameter("ism-Select"));
+			String memberA = req.getParameter("answer-Input");
+			
+			
+			
+			MemberService_lhk service = new MemberService_lhk();
+			
+			Member mem = new Member();
+			
+			mem.setMemberName(memberName);
+			mem.setMemberQuestionCode(numberQ);
+			mem.setMemberAnswer(memberA);
+			
 			String checkId = service.selectCheckId(mem);
-			System.out.println("아이디 : " + checkId);
+			
 			resp.getWriter().print(checkId);
 			
 		} catch (Exception e) {

@@ -20,6 +20,7 @@ document.getElementById("findIdButton").onclick = function(){
                 "answer-Input" : memberA.value },
         type : "POST" ,
         success : function(result){
+
             var massage = "";
 
             
@@ -54,3 +55,25 @@ document.getElementById("findIdButton").onclick = function(){
         });
 
 }
+
+ const cancel = document.getElementById("cancelButton");
+
+ cancel.addEventListener("click" , function(){
+
+     if(confirm("아이디찾기를 취소하시겠습니까?")){
+
+        alert("취소되었습니다")
+        location.href = "/TravelMaker/index.jsp";
+
+     } else{
+        false;
+     }
+
+
+
+
+
+
+
+
+ })
