@@ -42,8 +42,7 @@
             </section>
             <section class="map">
                 <section id="map-area">
-                    <iframe src="https://korean.visitkorea.or.kr/mylocation/mylocation.do?cotId=4cb342da-9f3a-47a7-beae-bc54ff1fd28c&service=contents&latitude=35.2437901894&longitude=129.0278976536" width="1000" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </section>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50598.23997620694!2d126.7587955486328!3d37.5694332!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357c9d01503c1eeb%3A0x947516d30347709a!2z7ISc7Jq47Iud66y87JuQ!5e0!3m2!1sko!2skr!4v1690762228595!5m2!1sko!2skr" width="1000" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                </section>
                 <section class="map1-1">
                     <section>
                         <ul>

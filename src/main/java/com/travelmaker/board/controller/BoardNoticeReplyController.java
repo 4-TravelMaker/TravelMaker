@@ -21,7 +21,7 @@ public class BoardNoticeReplyController extends HttpServlet{
 		
 		String uri = req.getRequestURI();
 		String contextPath = req.getContextPath();
-		String command = uri.substring( (contextPath + "/reply/").length()  );
+		String command = uri.substring( (contextPath + "/boardNotice/reply/").length()  );
 		
 		BoardService_hsn service = new BoardService_hsn();
 		
@@ -33,12 +33,50 @@ public class BoardNoticeReplyController extends HttpServlet{
 				
 				List<Reply> rList = service.selectReplyList(boardNo);
 				
-				new Gson().toJson(rList, resp.getWriter());
+				System.out.println("rList = " + rList);
 				
-				System.out.println(" rList = " +rList);
+				new Gson().toJson(rList, resp.getWriter());
 				
 			}
 			
+			// 댓글 등록
+			if(command.equals("insert")) {
+				
+				String replyContent = req.getParameter("replyContent");
+				int memberNo = Integer.parseInt(req.getParameter("memberNo"));
+				int boardNo = Integer.parseInt(req.getParameter("boardNo"));
+				
+				
+				Reply reply = new Reply();
+				reply.setReplyContent(replyContent);
+				reply.setMemberNo(memberNo);
+				reply.setBoardNo(boardNo);
+				
+				int result = service.insertReply(reply);
+				
+				resp.getWriter().print(result);
+			}
+			
+			// 댓글 삭제 
+			if(command.equals("delete")) {
+				
+				int replyNo = Integer.parseInt(req.getParameter("replyNo"));
+				
+				int result = service.deleteReply(replyNo);
+				
+				
+				resp.getWriter().print(result);
+			}
+			
+			//댓글 수정
+			if(command.equals("update")) {
+				
+				int replyNo = Integer.parseInt( req.getParameter("replyNo"));
+				String replyContent = req.getParameter("replyContent");
+				
+				int result = service.updateReply( replyNo, replyContent);
+				resp.getWriter().print(result);
+			}
 			
 			
 		}catch (Exception e) {
@@ -53,6 +91,8 @@ public class BoardNoticeReplyController extends HttpServlet{
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
+		
+		doGet(req, resp);
 		
 	}
 	
