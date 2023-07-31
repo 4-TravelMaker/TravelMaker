@@ -72,20 +72,20 @@ public class MemberDAO_phj {
 	}
 
 
+	
+	
 	/** 비밀번호 수정 DAO
 	 * @param conn
 	 * @param id
 	 * @param pw
-	 * @param confirmPw
 	 * @return result
 	 * @throws Exception
 	 */
-	public int updatePw(Connection conn, String id, String pw, String confirmPw) throws Exception{
+	public int updatePw(Connection conn, String id, String pw) throws Exception{
 		
 		int result = 0;
 		
 		try {
-			
 			String sql = prop.getProperty("updatePw");
 			
 			pstmt = conn.prepareStatement(sql);
@@ -97,7 +97,6 @@ public class MemberDAO_phj {
 			
 			
 		}finally {
-			
 			close(pstmt);
 		}
 		

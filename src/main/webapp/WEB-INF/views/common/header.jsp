@@ -75,7 +75,7 @@
     <nav>
         <section id="nav">
             <section class="nav-menu">
-                <a href="#">지역</a>
+                <a href="${contextPath}/Region/main">지역</a>
             </section>
             <section class="nav-menu">
                 <a href="${contextPath}/theme/list?type=2">테마</a>

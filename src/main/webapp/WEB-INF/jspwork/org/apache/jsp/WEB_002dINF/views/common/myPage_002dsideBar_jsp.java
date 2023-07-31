@@ -201,7 +201,7 @@ public final class myPage_002dsideBar_jsp extends org.apache.jasper.runtime.Http
           out.write("\r\n");
           out.write("                <img src=\"");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${contextPath}", java.lang.String.class, (javax.servlet.jsp.PageContext)_jspx_page_context, null));
-          out.write("/resources/images/myPageProfile/profile.png\" id=\"real-profile-image\">\r\n");
+          out.write("/resources/images/Admin/admin-profile.jpg\" id=\"real-profile-image\">\r\n");
           out.write("            ");
           int evalDoAfterBody = _jspx_th_c_005fif_005f0.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)

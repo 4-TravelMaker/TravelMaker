@@ -54,7 +54,24 @@ public class OneOnOneInquiryReplyController extends HttpServlet{
 				int result = service.insertOneOnOneInquiryReply(reply);
 				
 				resp.getWriter().print(result);
+			}
+			
+			if(command.equals("delete")) {
+				int replyNo = Integer.parseInt(req.getParameter("replyNo"));
 				
+				int result = service.deleteOneOnOneInquiryReply(replyNo);
+				
+				resp.getWriter().print(result);
+			}
+			
+			if(command.equals("update")) {
+				
+				int replyNo = Integer.parseInt( req.getParameter("replyNo") );
+				String replyContent = req.getParameter("replyContent");
+				
+				int result = service.updateOneOnOneInquiryReply(replyNo, replyContent);
+				
+				resp.getWriter().print(result);
 			}
 			
 		} catch (Exception e) {

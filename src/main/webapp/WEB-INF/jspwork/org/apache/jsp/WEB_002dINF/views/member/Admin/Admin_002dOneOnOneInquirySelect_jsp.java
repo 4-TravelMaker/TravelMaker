@@ -41,6 +41,7 @@ public final class Admin_002dOneOnOneInquirySelect_jsp extends org.apache.jasper
   }
 
   private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fc_005fset_0026_005fvar_005fvalue_005fnobody;
+  private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fc_005fif_0026_005ftest;
   private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fc_005fchoose;
   private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fc_005fwhen_0026_005ftest;
   private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fc_005fotherwise;
@@ -86,6 +87,7 @@ public final class Admin_002dOneOnOneInquirySelect_jsp extends org.apache.jasper
 
   public void _jspInit() {
     _005fjspx_005ftagPool_005fc_005fset_0026_005fvar_005fvalue_005fnobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+    _005fjspx_005ftagPool_005fc_005fif_0026_005ftest = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _005fjspx_005ftagPool_005fc_005fchoose = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _005fjspx_005ftagPool_005fc_005fwhen_0026_005ftest = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _005fjspx_005ftagPool_005fc_005fotherwise = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
@@ -95,6 +97,7 @@ public final class Admin_002dOneOnOneInquirySelect_jsp extends org.apache.jasper
 
   public void _jspDestroy() {
     _005fjspx_005ftagPool_005fc_005fset_0026_005fvar_005fvalue_005fnobody.release();
+    _005fjspx_005ftagPool_005fc_005fif_0026_005ftest.release();
     _005fjspx_005ftagPool_005fc_005fchoose.release();
     _005fjspx_005ftagPool_005fc_005fwhen_0026_005ftest.release();
     _005fjspx_005ftagPool_005fc_005fotherwise.release();
@@ -204,13 +207,24 @@ public final class Admin_002dOneOnOneInquirySelect_jsp extends org.apache.jasper
       out.write("                <!-- 회원 검색 및 삭제 버튼 영역 -->\r\n");
       out.write("                <section>\r\n");
       out.write("                    <section class=\"search-area\">\r\n");
-      out.write("                        <input type=\"text\" placeholder=\"아이디 입력\" id=\"member-search\">\r\n");
-      out.write("                        <button type=\"submit\">검색</button>\r\n");
+      out.write("                        <form action=\"list\" method=\"get\" id=\"boardSearch\" onsubmit=\"return searchValidate()\">\r\n");
+      out.write("                            <input type=\"text\" placeholder=\"아이디 입력\" id=\"member-search\" name=\"query2\">\r\n");
+      out.write("                            <input type=\"hidden\" name=\"type\" value=\"");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${param.type}", java.lang.String.class, (javax.servlet.jsp.PageContext)_jspx_page_context, null));
+      out.write("\">\r\n");
+      out.write("                            <button type=\"submit\">검색</button>\r\n");
+      out.write("                        </form>\r\n");
       out.write("                    </section>\r\n");
       out.write("                </section>\r\n");
       out.write("\r\n");
       out.write("                <!-- 일대일 문의 조회 목록 영역 -->\r\n");
+      out.write("                ");
+      if (_jspx_meth_c_005fif_005f0(_jspx_page_context))
+        return;
+      out.write("\r\n");
+      out.write("\r\n");
       out.write("                <section>\r\n");
+      out.write("\r\n");
       out.write("                    <table class=\"post-table\">\r\n");
       out.write("                        <thead>\r\n");
       out.write("                            <tr class=\"table-bk\">\r\n");
@@ -237,7 +251,7 @@ public final class Admin_002dOneOnOneInquirySelect_jsp extends org.apache.jasper
       out.write("                <section class=\"pagination-area\">\r\n");
       out.write("\r\n");
       out.write("                    ");
-      if (_jspx_meth_c_005fset_005f2(_jspx_page_context))
+      if (_jspx_meth_c_005fset_005f3(_jspx_page_context))
         return;
       out.write("\r\n");
       out.write("\r\n");
@@ -245,12 +259,15 @@ public final class Admin_002dOneOnOneInquirySelect_jsp extends org.apache.jasper
       out.write("                        <!-- 첫 페이지로 이동 -->\r\n");
       out.write("                        <li><a hef=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${url}", java.lang.String.class, (javax.servlet.jsp.PageContext)_jspx_page_context, null));
-      out.write("1\">&lt;&lt;</a></li>\r\n");
+      out.write('1');
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${sURL}", java.lang.String.class, (javax.servlet.jsp.PageContext)_jspx_page_context, null));
+      out.write("\">&lt;&lt;</a></li>\r\n");
       out.write("\r\n");
       out.write("                        <!-- 이전 목록 마지막 번호로 이동 -->\r\n");
       out.write("                        <li><a href=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${url}", java.lang.String.class, (javax.servlet.jsp.PageContext)_jspx_page_context, null));
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${pagination.prevPage}", java.lang.String.class, (javax.servlet.jsp.PageContext)_jspx_page_context, null));
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${sURL}", java.lang.String.class, (javax.servlet.jsp.PageContext)_jspx_page_context, null));
       out.write("\">&lt;</a></li>\r\n");
       out.write("\r\n");
       out.write("                        <!-- 범위가 정해진 일반 for문을 사용 -->\r\n");
@@ -263,12 +280,14 @@ public final class Admin_002dOneOnOneInquirySelect_jsp extends org.apache.jasper
       out.write("                        <li><a href=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${url}", java.lang.String.class, (javax.servlet.jsp.PageContext)_jspx_page_context, null));
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${pagination.nextPage}", java.lang.String.class, (javax.servlet.jsp.PageContext)_jspx_page_context, null));
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${sURL}", java.lang.String.class, (javax.servlet.jsp.PageContext)_jspx_page_context, null));
       out.write("\">&gt;</a></li>\r\n");
       out.write("                        \r\n");
       out.write("                        <!-- 끝 페이지로 이동 -->\r\n");
       out.write("                        <li><a href=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${url}", java.lang.String.class, (javax.servlet.jsp.PageContext)_jspx_page_context, null));
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${pagination.maxPage}", java.lang.String.class, (javax.servlet.jsp.PageContext)_jspx_page_context, null));
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${sURL}", java.lang.String.class, (javax.servlet.jsp.PageContext)_jspx_page_context, null));
       out.write("\">&gt;&gt;</a></li>\r\n");
       out.write("                    </ul>\r\n");
       out.write("                \r\n");
@@ -280,9 +299,12 @@ public final class Admin_002dOneOnOneInquirySelect_jsp extends org.apache.jasper
       out.write("        \r\n");
       out.write("    </main>\r\n");
       out.write("\r\n");
+      out.write("    <script src=\"");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${contextPath}", java.lang.String.class, (javax.servlet.jsp.PageContext)_jspx_page_context, null));
+      out.write("/resources/js/Admin/Admin-OneOnOneInquirySearch.js\"></script>\r\n");
+      out.write("\r\n");
       out.write("	");
       org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "/WEB-INF/views/common/footer.jsp", out, false);
-      out.write("\r\n");
       out.write("\r\n");
       out.write("    \r\n");
       out.write("</body>\r\n");
@@ -358,6 +380,72 @@ public final class Admin_002dOneOnOneInquirySelect_jsp extends org.apache.jasper
     return false;
   }
 
+  private boolean _jspx_meth_c_005fif_005f0(javax.servlet.jsp.PageContext _jspx_page_context)
+          throws java.lang.Throwable {
+    javax.servlet.jsp.PageContext pageContext = _jspx_page_context;
+    javax.servlet.jsp.JspWriter out = _jspx_page_context.getOut();
+    //  c:if
+    org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_005fif_005f0 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _005fjspx_005ftagPool_005fc_005fif_0026_005ftest.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
+    boolean _jspx_th_c_005fif_005f0_reused = false;
+    try {
+      _jspx_th_c_005fif_005f0.setPageContext(_jspx_page_context);
+      _jspx_th_c_005fif_005f0.setParent(null);
+      // /WEB-INF/views/member/Admin/Admin-OneOnOneInquirySelect.jsp(58,16) name = test type = boolean reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+      _jspx_th_c_005fif_005f0.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${!empty param.query2}", boolean.class, (javax.servlet.jsp.PageContext)_jspx_page_context, null)).booleanValue());
+      int _jspx_eval_c_005fif_005f0 = _jspx_th_c_005fif_005f0.doStartTag();
+      if (_jspx_eval_c_005fif_005f0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+        do {
+          out.write("\r\n");
+          out.write("                    ");
+          if (_jspx_meth_c_005fset_005f2(_jspx_th_c_005fif_005f0, _jspx_page_context))
+            return true;
+          out.write("\r\n");
+          out.write("                        <h3 id=\"search-result\"><i class=\"fa-solid fa-magnifying-glass\" style=\"color: #000000;\"></i> \"");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${param.query2}", java.lang.String.class, (javax.servlet.jsp.PageContext)_jspx_page_context, null));
+          out.write("\" 검색 결과</h3>\r\n");
+          out.write("                ");
+          int evalDoAfterBody = _jspx_th_c_005fif_005f0.doAfterBody();
+          if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+            break;
+        } while (true);
+      }
+      if (_jspx_th_c_005fif_005f0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+        return true;
+      }
+      _005fjspx_005ftagPool_005fc_005fif_0026_005ftest.reuse(_jspx_th_c_005fif_005f0);
+      _jspx_th_c_005fif_005f0_reused = true;
+    } finally {
+      org.apache.jasper.runtime.JspRuntimeLibrary.releaseTag(_jspx_th_c_005fif_005f0, _jsp_getInstanceManager(), _jspx_th_c_005fif_005f0_reused);
+    }
+    return false;
+  }
+
+  private boolean _jspx_meth_c_005fset_005f2(javax.servlet.jsp.tagext.JspTag _jspx_th_c_005fif_005f0, javax.servlet.jsp.PageContext _jspx_page_context)
+          throws java.lang.Throwable {
+    javax.servlet.jsp.PageContext pageContext = _jspx_page_context;
+    javax.servlet.jsp.JspWriter out = _jspx_page_context.getOut();
+    //  c:set
+    org.apache.taglibs.standard.tag.rt.core.SetTag _jspx_th_c_005fset_005f2 = (org.apache.taglibs.standard.tag.rt.core.SetTag) _005fjspx_005ftagPool_005fc_005fset_0026_005fvar_005fvalue_005fnobody.get(org.apache.taglibs.standard.tag.rt.core.SetTag.class);
+    boolean _jspx_th_c_005fset_005f2_reused = false;
+    try {
+      _jspx_th_c_005fset_005f2.setPageContext(_jspx_page_context);
+      _jspx_th_c_005fset_005f2.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_005fif_005f0);
+      // /WEB-INF/views/member/Admin/Admin-OneOnOneInquirySelect.jsp(59,20) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+      _jspx_th_c_005fset_005f2.setVar("sURL");
+      // /WEB-INF/views/member/Admin/Admin-OneOnOneInquirySelect.jsp(59,20) name = value type = javax.el.ValueExpression reqTime = true required = false fragment = false deferredValue = true expectedTypeName = java.lang.Object deferredMethod = false methodSignature = null
+      _jspx_th_c_005fset_005f2.setValue(new org.apache.jasper.el.JspValueExpression("/WEB-INF/views/member/Admin/Admin-OneOnOneInquirySelect.jsp(59,20) '&query2=${param.query2}'",_jsp_getExpressionFactory().createValueExpression(_jspx_page_context.getELContext(),"&query2=${param.query2}",java.lang.Object.class)).getValue(_jspx_page_context.getELContext()));
+      int _jspx_eval_c_005fset_005f2 = _jspx_th_c_005fset_005f2.doStartTag();
+      if (_jspx_th_c_005fset_005f2.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+        return true;
+      }
+      _005fjspx_005ftagPool_005fc_005fset_0026_005fvar_005fvalue_005fnobody.reuse(_jspx_th_c_005fset_005f2);
+      _jspx_th_c_005fset_005f2_reused = true;
+    } finally {
+      org.apache.jasper.runtime.JspRuntimeLibrary.releaseTag(_jspx_th_c_005fset_005f2, _jsp_getInstanceManager(), _jspx_th_c_005fset_005f2_reused);
+    }
+    return false;
+  }
+
   private boolean _jspx_meth_c_005fchoose_005f0(javax.servlet.jsp.PageContext _jspx_page_context)
           throws java.lang.Throwable {
     javax.servlet.jsp.PageContext pageContext = _jspx_page_context;
@@ -410,7 +498,7 @@ public final class Admin_002dOneOnOneInquirySelect_jsp extends org.apache.jasper
     try {
       _jspx_th_c_005fwhen_005f0.setPageContext(_jspx_page_context);
       _jspx_th_c_005fwhen_005f0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_005fchoose_005f0);
-      // /WEB-INF/views/member/Admin/Admin-OneOnOneInquirySelect.jsp(71,32) name = test type = boolean reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+      // /WEB-INF/views/member/Admin/Admin-OneOnOneInquirySelect.jsp(80,32) name = test type = boolean reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
       _jspx_th_c_005fwhen_005f0.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${empty boardList}", boolean.class, (javax.servlet.jsp.PageContext)_jspx_page_context, null)).booleanValue());
       int _jspx_eval_c_005fwhen_005f0 = _jspx_th_c_005fwhen_005f0.doStartTag();
       if (_jspx_eval_c_005fwhen_005f0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
@@ -484,10 +572,10 @@ public final class Admin_002dOneOnOneInquirySelect_jsp extends org.apache.jasper
     try {
       _jspx_th_c_005fforEach_005f0.setPageContext(_jspx_page_context);
       _jspx_th_c_005fforEach_005f0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_005fotherwise_005f0);
-      // /WEB-INF/views/member/Admin/Admin-OneOnOneInquirySelect.jsp(80,36) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+      // /WEB-INF/views/member/Admin/Admin-OneOnOneInquirySelect.jsp(89,36) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
       _jspx_th_c_005fforEach_005f0.setVar("board");
-      // /WEB-INF/views/member/Admin/Admin-OneOnOneInquirySelect.jsp(80,36) name = items type = javax.el.ValueExpression reqTime = true required = false fragment = false deferredValue = true expectedTypeName = java.lang.Object deferredMethod = false methodSignature = null
-      _jspx_th_c_005fforEach_005f0.setItems(new org.apache.jasper.el.JspValueExpression("/WEB-INF/views/member/Admin/Admin-OneOnOneInquirySelect.jsp(80,36) '${boardList}'",_jsp_getExpressionFactory().createValueExpression(_jspx_page_context.getELContext(),"${boardList}",java.lang.Object.class)).getValue(_jspx_page_context.getELContext()));
+      // /WEB-INF/views/member/Admin/Admin-OneOnOneInquirySelect.jsp(89,36) name = items type = javax.el.ValueExpression reqTime = true required = false fragment = false deferredValue = true expectedTypeName = java.lang.Object deferredMethod = false methodSignature = null
+      _jspx_th_c_005fforEach_005f0.setItems(new org.apache.jasper.el.JspValueExpression("/WEB-INF/views/member/Admin/Admin-OneOnOneInquirySelect.jsp(89,36) '${boardList}'",_jsp_getExpressionFactory().createValueExpression(_jspx_page_context.getELContext(),"${boardList}",java.lang.Object.class)).getValue(_jspx_page_context.getELContext()));
       int[] _jspx_push_body_count_c_005fforEach_005f0 = new int[] { 0 };
       try {
         int _jspx_eval_c_005fforEach_005f0 = _jspx_th_c_005fforEach_005f0.doStartTag();
@@ -505,6 +593,7 @@ public final class Admin_002dOneOnOneInquirySelect_jsp extends org.apache.jasper
             out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${pagination.currentPage}", java.lang.String.class, (javax.servlet.jsp.PageContext)_jspx_page_context, null));
             out.write("&type=");
             out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${param.type}", java.lang.String.class, (javax.servlet.jsp.PageContext)_jspx_page_context, null));
+            out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${sURL}", java.lang.String.class, (javax.servlet.jsp.PageContext)_jspx_page_context, null));
             out.write('"');
             out.write('>');
             out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${board.boardTitle}", java.lang.String.class, (javax.servlet.jsp.PageContext)_jspx_page_context, null));
@@ -544,28 +633,28 @@ public final class Admin_002dOneOnOneInquirySelect_jsp extends org.apache.jasper
     return false;
   }
 
-  private boolean _jspx_meth_c_005fset_005f2(javax.servlet.jsp.PageContext _jspx_page_context)
+  private boolean _jspx_meth_c_005fset_005f3(javax.servlet.jsp.PageContext _jspx_page_context)
           throws java.lang.Throwable {
     javax.servlet.jsp.PageContext pageContext = _jspx_page_context;
     javax.servlet.jsp.JspWriter out = _jspx_page_context.getOut();
     //  c:set
-    org.apache.taglibs.standard.tag.rt.core.SetTag _jspx_th_c_005fset_005f2 = (org.apache.taglibs.standard.tag.rt.core.SetTag) _005fjspx_005ftagPool_005fc_005fset_0026_005fvar_005fvalue_005fnobody.get(org.apache.taglibs.standard.tag.rt.core.SetTag.class);
-    boolean _jspx_th_c_005fset_005f2_reused = false;
+    org.apache.taglibs.standard.tag.rt.core.SetTag _jspx_th_c_005fset_005f3 = (org.apache.taglibs.standard.tag.rt.core.SetTag) _005fjspx_005ftagPool_005fc_005fset_0026_005fvar_005fvalue_005fnobody.get(org.apache.taglibs.standard.tag.rt.core.SetTag.class);
+    boolean _jspx_th_c_005fset_005f3_reused = false;
     try {
-      _jspx_th_c_005fset_005f2.setPageContext(_jspx_page_context);
-      _jspx_th_c_005fset_005f2.setParent(null);
-      // /WEB-INF/views/member/Admin/Admin-OneOnOneInquirySelect.jsp(103,20) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-      _jspx_th_c_005fset_005f2.setVar("url");
-      // /WEB-INF/views/member/Admin/Admin-OneOnOneInquirySelect.jsp(103,20) name = value type = javax.el.ValueExpression reqTime = true required = false fragment = false deferredValue = true expectedTypeName = java.lang.Object deferredMethod = false methodSignature = null
-      _jspx_th_c_005fset_005f2.setValue(new org.apache.jasper.el.JspValueExpression("/WEB-INF/views/member/Admin/Admin-OneOnOneInquirySelect.jsp(103,20) 'list?type=${param.type}&cp='",_jsp_getExpressionFactory().createValueExpression(_jspx_page_context.getELContext(),"list?type=${param.type}&cp=",java.lang.Object.class)).getValue(_jspx_page_context.getELContext()));
-      int _jspx_eval_c_005fset_005f2 = _jspx_th_c_005fset_005f2.doStartTag();
-      if (_jspx_th_c_005fset_005f2.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_th_c_005fset_005f3.setPageContext(_jspx_page_context);
+      _jspx_th_c_005fset_005f3.setParent(null);
+      // /WEB-INF/views/member/Admin/Admin-OneOnOneInquirySelect.jsp(112,20) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+      _jspx_th_c_005fset_005f3.setVar("url");
+      // /WEB-INF/views/member/Admin/Admin-OneOnOneInquirySelect.jsp(112,20) name = value type = javax.el.ValueExpression reqTime = true required = false fragment = false deferredValue = true expectedTypeName = java.lang.Object deferredMethod = false methodSignature = null
+      _jspx_th_c_005fset_005f3.setValue(new org.apache.jasper.el.JspValueExpression("/WEB-INF/views/member/Admin/Admin-OneOnOneInquirySelect.jsp(112,20) 'list?type=${param.type}&cp='",_jsp_getExpressionFactory().createValueExpression(_jspx_page_context.getELContext(),"list?type=${param.type}&cp=",java.lang.Object.class)).getValue(_jspx_page_context.getELContext()));
+      int _jspx_eval_c_005fset_005f3 = _jspx_th_c_005fset_005f3.doStartTag();
+      if (_jspx_th_c_005fset_005f3.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
         return true;
       }
-      _005fjspx_005ftagPool_005fc_005fset_0026_005fvar_005fvalue_005fnobody.reuse(_jspx_th_c_005fset_005f2);
-      _jspx_th_c_005fset_005f2_reused = true;
+      _005fjspx_005ftagPool_005fc_005fset_0026_005fvar_005fvalue_005fnobody.reuse(_jspx_th_c_005fset_005f3);
+      _jspx_th_c_005fset_005f3_reused = true;
     } finally {
-      org.apache.jasper.runtime.JspRuntimeLibrary.releaseTag(_jspx_th_c_005fset_005f2, _jsp_getInstanceManager(), _jspx_th_c_005fset_005f2_reused);
+      org.apache.jasper.runtime.JspRuntimeLibrary.releaseTag(_jspx_th_c_005fset_005f3, _jsp_getInstanceManager(), _jspx_th_c_005fset_005f3_reused);
     }
     return false;
   }
@@ -580,13 +669,13 @@ public final class Admin_002dOneOnOneInquirySelect_jsp extends org.apache.jasper
     try {
       _jspx_th_c_005fforEach_005f1.setPageContext(_jspx_page_context);
       _jspx_th_c_005fforEach_005f1.setParent(null);
-      // /WEB-INF/views/member/Admin/Admin-OneOnOneInquirySelect.jsp(113,24) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+      // /WEB-INF/views/member/Admin/Admin-OneOnOneInquirySelect.jsp(122,24) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
       _jspx_th_c_005fforEach_005f1.setVar("i");
-      // /WEB-INF/views/member/Admin/Admin-OneOnOneInquirySelect.jsp(113,24) name = begin type = int reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+      // /WEB-INF/views/member/Admin/Admin-OneOnOneInquirySelect.jsp(122,24) name = begin type = int reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
       _jspx_th_c_005fforEach_005f1.setBegin(((java.lang.Integer) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${pagination.startPage}", int.class, (javax.servlet.jsp.PageContext)_jspx_page_context, null)).intValue());
-      // /WEB-INF/views/member/Admin/Admin-OneOnOneInquirySelect.jsp(113,24) name = end type = int reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+      // /WEB-INF/views/member/Admin/Admin-OneOnOneInquirySelect.jsp(122,24) name = end type = int reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
       _jspx_th_c_005fforEach_005f1.setEnd(((java.lang.Integer) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${pagination.endPage}", int.class, (javax.servlet.jsp.PageContext)_jspx_page_context, null)).intValue());
-      // /WEB-INF/views/member/Admin/Admin-OneOnOneInquirySelect.jsp(113,24) name = step type = int reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+      // /WEB-INF/views/member/Admin/Admin-OneOnOneInquirySelect.jsp(122,24) name = step type = int reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
       _jspx_th_c_005fforEach_005f1.setStep(1);
       int[] _jspx_push_body_count_c_005fforEach_005f1 = new int[] { 0 };
       try {
@@ -674,7 +763,7 @@ public final class Admin_002dOneOnOneInquirySelect_jsp extends org.apache.jasper
     try {
       _jspx_th_c_005fwhen_005f1.setPageContext(_jspx_page_context);
       _jspx_th_c_005fwhen_005f1.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_005fchoose_005f1);
-      // /WEB-INF/views/member/Admin/Admin-OneOnOneInquirySelect.jsp(116,32) name = test type = boolean reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+      // /WEB-INF/views/member/Admin/Admin-OneOnOneInquirySelect.jsp(125,32) name = test type = boolean reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
       _jspx_th_c_005fwhen_005f1.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${i == pagination.currentPage}", boolean.class, (javax.servlet.jsp.PageContext)_jspx_page_context, null)).booleanValue());
       int _jspx_eval_c_005fwhen_005f1 = _jspx_th_c_005fwhen_005f1.doStartTag();
       if (_jspx_eval_c_005fwhen_005f1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
@@ -717,6 +806,7 @@ public final class Admin_002dOneOnOneInquirySelect_jsp extends org.apache.jasper
           out.write("                                    <li><a href=\"");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${url}", java.lang.String.class, (javax.servlet.jsp.PageContext)_jspx_page_context, null));
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${i}", java.lang.String.class, (javax.servlet.jsp.PageContext)_jspx_page_context, null));
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${sURL}", java.lang.String.class, (javax.servlet.jsp.PageContext)_jspx_page_context, null));
           out.write('"');
           out.write('>');
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${i}", java.lang.String.class, (javax.servlet.jsp.PageContext)_jspx_page_context, null));

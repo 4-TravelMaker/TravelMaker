@@ -41,7 +41,7 @@
     outline: none;
 }
 
-.search-area > button{
+.search-area button{
     margin-top: 2px;
     margin-left: 7px;
     height: 30px;
@@ -56,7 +56,7 @@
     cursor: pointer;
 }
 
-.search-area > button:hover{
+.search-area button:hover{
     color: white;
     background-color: #000000;
 
@@ -122,6 +122,12 @@
 .post-table a{
     text-decoration: none;
     color: black;
+}
+
+/* 검색 결과 조회 */
+#search-result{
+    margin-left: 20px;
+    margin-bottom: 0;
 }
 
 /* 페이지네이션(Pagination) */

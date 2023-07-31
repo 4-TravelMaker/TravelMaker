@@ -2,6 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"  %>
 
+<c:set var="imageList" value="${detail.imageList}" />
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,12 +52,14 @@
 
                 <div style="border-top: 2px solid lightgray;">
                     <div class="container">
-                        <div id="content-image">
-                            <div id="image">
-                                <img src="${contextPath}/resources/images/Review/Dagu.jpg" id="image34">
-                            </div>
+                        <div class="content-image-box">
+                            <c:forEach var="image" items="${imageList}">
+                                <div class="image">
+                                    <img src="${contextPath}${image.imageReName}" class="board-content-image">
+                                </div>
+                            </c:forEach>
     
-                            <div id="notice">
+                            <div class="board-content">
                                 ${detail.boardContent}
                             </div>
                         </div>    
@@ -64,6 +67,7 @@
                 </div>
             </div>
 
+            <!-- 좋아요 -->
             <div style="border-bottom: 2px solid lightgray;">
                 <div class="container">
                     <div class="like">
@@ -110,6 +114,6 @@
         const likeList = "${likeList}";
     </script>
 
-    <script src="${contextPath}/resources/js/Reply/reply.js"></script>
+    <script src="${contextPath}/resources/js/Reply/reply_kks.js"></script>
 </body>
 </html>

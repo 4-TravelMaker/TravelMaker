@@ -90,6 +90,7 @@
 .reply-btn-area{
     display: flex;
     justify-content: right;
+    margin-bottom: 10px;
 }
 
 #go-to-list-btn{
@@ -159,7 +160,7 @@
     border-bottom-right-radius: 5px;
 }
 
-#inquiry-content{
+.inquiry-content{
     width: 796px;
     height: 500px;
     padding: 20px 10px;
@@ -178,6 +179,8 @@
     justify-content: center;
     align-items: center;
     margin-top: 5px;
+
+    border: none;
 }
 
 .post-btn{

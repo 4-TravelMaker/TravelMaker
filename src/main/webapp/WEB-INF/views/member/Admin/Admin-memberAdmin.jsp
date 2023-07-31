@@ -60,14 +60,14 @@
                     <table class="member-table">
                         <thead>
                             <tr class="table-bk">
-                                <th>회원 번호</th>
+                                <th>회원<br>번호</th>
                                 <th>아이디</th>
                                 <th>이름</th>
                                 <th>닉네임</th>
                                 <th>주소</th>
-                                <th>선호 테마</th>
+                                <th>선호<br>테마</th>
                                 <th>가입일</th>
-                                <th>탈퇴 여부</th>
+                                <th>탈퇴<br>여부</th>
                             </tr>
                         </thead>
 

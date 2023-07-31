@@ -8,8 +8,15 @@
     <section class="left-section">
         <section class="left-section-head">관리자 페이지</section>
         <section class="left-section-image">
-            <img src="${contextPath}/resources/images/Admin/admin-profile.jpg" width="180px" height="auto" id="admin-profile"><br>
-            관리자 님
+            <c:if test="${empty loginMember.profileImage}">
+                <img src="${contextPath}/resources/images/Admin/admin-profile.jpg" width="180px" height="auto" id="admin-profile"><br>
+            </c:if>
+
+            <c:if test="${!empty loginMember.profileImage}">
+                <img src="${contextPath}${loginMember.profileImage}" width="180px" height="auto" id="admin-profile"><br>
+            </c:if>
+
+            ${loginMember.memberNickname} 님
         </section>
         <!-- 마이 페이지 왼쪽 메뉴 -->
         <section>

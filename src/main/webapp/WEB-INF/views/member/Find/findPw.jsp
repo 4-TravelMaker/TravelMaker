@@ -38,7 +38,7 @@
 
                 <div id="middle1-2">
 
-                    <form action="findPw" method="post">
+                    <form action="updatePw">
 
                         <div class="findIdArea1">
                             <div id="findIdArea1Text">회원가입 시 등록한 질문에 대한 답변이 같아야, 비밀번호 찾기가 가능합니다.</div>
@@ -115,20 +115,16 @@
                                 </div>
                                     <!-- 확인 취소 버튼 영역 -->
                                 <div class="findButtonArea3">
-                                    <button  type="button" id="findIdButton">확인</button>
-                                    <button id="cancelButton">취소</button>
+                                    <button type="button" id="findIdButton">확인</button>
+                                    <button type="button" id="cancelButton">취소</button>
                                 </div>
 
                             </div>
 
                         </div>
+                        </div>
+                         <div id="middle1-3">
 
-                    </form>    
-
-                </div>
-                <div id="middle1-3">
-
-                    <form action="updatePw">
 
                         <div style="height: 45px;"></div>
 
@@ -179,14 +175,13 @@
                             <div class="pwEditButtonArea">
 
                                 <button type="submit" id="pwEditButton">비밀번호 수정</button>
-                                <button type="button" id="cancelButton1" onclick = "location.href = '#'">취소</button>
+                                <button type="button" id="cancelButton1" onclick = "location.href = '/TravelMaker/index.jsp'">취소</button>
 
                             </div>
                         </div>
                     </form>    
                 </div>
 
-                
            </div>
            <div id="middlearea3"></div>
         </section>

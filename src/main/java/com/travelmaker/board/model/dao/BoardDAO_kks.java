@@ -16,6 +16,7 @@ import com.travelmaker.board.model.vo.BoardDetail;
 import com.travelmaker.board.model.vo.BoardImage;
 import com.travelmaker.board.model.vo.BoardLike;
 import com.travelmaker.board.model.vo.Pagination;
+import com.travelmaker.board.model.vo.Reply;
 
 
 /**
@@ -415,7 +416,7 @@ public class BoardDAO_kks {
 		
 		List<Integer> replyCountList = new ArrayList<>();
 		
-try {
+		try {
 			
 			for(int boardNo : boardNoList) {
 				

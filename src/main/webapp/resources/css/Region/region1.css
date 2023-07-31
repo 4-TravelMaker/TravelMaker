@@ -7,12 +7,9 @@ body {
     font-family: 'Noto Sans KR', sans-serif;
 }
 
-section {
-    /* border: 1px solid black; */
-}
 
 .main-area{ /* 제일 큰 영역 (middle1+middle2) */
-    height: 1200px;
+    height: 1400px;
 }
 
 main {
@@ -46,7 +43,6 @@ main {
     display: flex;
     justify-content: space-around;
 
-    /* border-bottom: 1px solid #ddd; */
 
 }
 
@@ -62,6 +58,8 @@ main {
     width: 290px;
     border-radius: 100px 100px 0px 0px;
     margin-top: 10px;
+
+    cursor: pointer;
 }
 
 #article{ /* 기사글 */
@@ -86,20 +84,25 @@ main {
 }
 
 .middle2{ /* 두번째 행 (지도+여행지 정보)*/
-    height: 700px;
+    height: 900px;
     display: flex;
+    justify-content: center;
 }
 
 .middle2>section:nth-child(1){  /* map-area */
-    width: 770px;
+    width: 800px;
     display: flex;
     justify-content: center;
 }
 
 .map-area > img{ /* 지도 이미지 */
-    width: 500px;
-    height: 700px;
-   
+    margin-top: 20px;
+    width: 600px;
+    height: 800px;
+}
+
+a{
+    text-decoration: none;
 }
 
 .middle2>section:nth-child(2){  /* info-area */
@@ -118,124 +121,131 @@ main {
 #SEOUL{
     display: inline-block;
     position: absolute;
-    top : 925PX;
-    left: 650PX;
+    top : 980PX;
+    left: 870PX;
     cursor: pointer;
     color: rgb(219, 157, 75);
 }
 
 #SEOUL:hover{
     color: white;
+    font-size: 22px;
+
 }
 
 #kW{
     display: inline-block;
     position: absolute;
-    top : 875PX;
-    left: 750PX;
+    top : 920PX;
+    left: 1000PX;
     cursor: pointer;
     color: rgb(202, 73, 95);
 }
 
 #kW:hover{
     color: white;
+    font-size: 22px;
 }
 
 #kB{
     display: inline-block;
     position: absolute;
-    top : 1045PX;
-    left: 785PX;
+    top : 1110PX;
+    left: 1050PX;
     cursor: pointer;
     color: green;
 }
 
 #kB:hover{
     color: white;
+    font-size: 22px;
 }
 
 #kN{
     display: inline-block;
     position: absolute;
-    top : 1170PX;
-    left: 750PX;
+    top : 1270PX;
+    left: 990PX;
     cursor: pointer;
     color: rgb(207, 80, 207);
 }
 
 #kN:hover{
     color: white;
+    font-size: 22px;
 }
 
 #CB{
     display: inline-block;
     position: absolute;
-    top : 975PX;
-    left: 700PX;
+    top : 1035PX;
+    left: 930PX;
     cursor: pointer;
     color: rgb(87, 82, 82);
 }
 
 #CB:hover{
     color: white;
+    font-size: 22px;
 }
 
 #CN{
     display: inline-block;
     position: absolute;
-    top : 1015PX;
-    left: 600PX;
+    top : 1095PX;
+    left: 810PX;
     cursor: pointer;
     color: rgb(84, 154, 182);
 }
 
 #CN:hover{
     color: white;
+    font-size: 22px;
 }
 
 
 #JB{
     display: inline-block;
     position: absolute;
-    top : 1130PX;
-    left: 620PX;
+    top : 1198PX;
+    left: 835PX;
     cursor: pointer;
     color: rgb(136, 17, 136);
 }
 
 #JB:hover{
     color: white;
+    font-size: 22px;
 }
 
 #JN{
     display: inline-block;
     position: absolute;
-    top : 1235PX;
-    left: 605PX;
+    top : 1345PX;
+    left: 805PX;
     cursor: pointer;
     color: #6d6565;
 }
 
 #JN:hover{
     color: white;
+    font-size: 22px;
 }
 
 #JJ{
     display: inline-block;
     position: absolute;
-    top : 1357PX;
-    left: 580PX;
+    top : 1470PX;
+    left: 785PX;
     cursor: pointer;
     color: rgb(4, 48, 10);
 }
 
 #JJ:hover{
     color: white;
+    font-size: 22px;
 }
 
-#info-area{
-    /* visibility: hidden; */
-}
 
 #information{
     height: 15%;
@@ -255,12 +265,6 @@ main {
     display: flex;
 }
 
-#detail-area2{
-    /* display: flex;
-    justify-content: space-around;
-    align-items: center;
-    text-decoration: none; */
-}
 
 .detail img{
     height: 90px;

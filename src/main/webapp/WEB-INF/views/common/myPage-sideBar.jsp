@@ -9,7 +9,7 @@
 		<section class="left-section-head">마이 페이지</section>
         <section class="left-section-profile">
             <c:if test="${empty loginMember.profileImage}">
-                <img src="${contextPath}/resources/images/myPageProfile/profile.png" id="real-profile-image">
+                <img src="${contextPath}/resources/images/Admin/admin-profile.jpg" id="real-profile-image">
             </c:if>
 
             <c:if test="${!empty loginMember.profileImage}">
