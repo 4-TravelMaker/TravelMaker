@@ -24,32 +24,11 @@ public class Region extends HttpServlet {
 			String path = "/WEB-INF/views/member/Region/region1.jsp";
 			
 			RequestDispatcher dispatcher = req.getRequestDispatcher(path);
-			dispatcher.forward(req, resp);
 			
+			dispatcher.forward(req, resp);
 			
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
-	}
-	
-	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
-		try {
-			int ctgrNo = Integer.parseInt(req.getParameter("region"));
-			
-			BoardService_phj service = new BoardService_phj();
-			
-			// 카테고리 정보 조회 
-			List<Category> list;
-			list = service.selectCategory(ctgrNo);
-			
-			new Gson().toJson( list, resp.getWriter() );
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-					
-		
 	}
 }

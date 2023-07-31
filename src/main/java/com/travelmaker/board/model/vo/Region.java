@@ -12,10 +12,12 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 
-public class Category {
+
+public class Region {
 	
-	private int categoryNo;
-	private String categoryName;
+	private String boardTitle;
+	private String imgRename;
+	private int boardNo;
 	private int categorySubNo;
-	private String regionName;
+
 }

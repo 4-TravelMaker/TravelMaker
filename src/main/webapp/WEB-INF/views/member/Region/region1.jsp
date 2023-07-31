@@ -1,9 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<c:set var="categoryNo" value="${list.categoryNo}"/>
-<c:set var="categoryName" value="${list.categoryName}"/>
-<c:set var="categorySubNo" value="${list.categorySubNo}"/>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -65,65 +62,20 @@
            </section>
 
            <hr>
-           
-           
+
            <section class="middle2">
             <section class="map-area">
                 <img src="${contextPath}/resources/images/Region/map2.PNG">
-                <span id="SEOUL" class="region">서울 <input type="hidden" value="4"> </span>
-                <span id="kW" class="region" value="8">강원도 <input type="hidden" value="8" name="region-type"> </span>
-                <span id="JB" class="region" value="10">전라북도 <input type="hidden" value="10" name="region-type"> </span>
-                <span id="JN" class="region" value="10">전라남도 <input type="hidden" value="10" name="region-type"> </span>
-                <span id="CB" class="region" value="9">충청북도 <input type="hidden" value="9" name="region-type"> </span>
-                <span id="CN" class="region" value="9">충청남도 <input type="hidden" value="9" name="region-type"> </span>
-                <span id="kB" class="region" value="11">경상북도 <input type="hidden" value="11" name="region-type"> </span>
-                <span id="kN" class="region" value="11">경상남도 <input type="hidden" value="11" name="region-type"> </span>
-                <span id="JJ" class="region" value="12">제주 <input type="hidden" value="12" name="region-type"> </span>
+                <span id="SEOUL" class="region"><a href="ctgr?ctgr=4&name=서울" style = "color:rgb(219, 157, 75)">서울</a></span>
+                <span id="kW" class="region"><a href="ctgr?ctgr=8&name=강원도" style = "color:rgb(202, 73, 95)">강원도</a></span>
+                <span id="JB" class="region"><a href="ctgr?ctgr=10&name=전라도" style = "color: rgb(136, 17, 136)">전라북도</a></span>
+                <span id="JN" class="region"><a href="ctgr?ctgr=10&name=전라도" style = "color: #6d6565">전라남도</a></span>
+                <span id="CB" class="region"><a href="ctgr?ctgr=9&name=충청도" style = "color:rgb(87, 82, 82)">충청북도</a></span>
+                <span id="CN" class="region"><a href="ctgr?ctgr=9&name=충청도" style = "color: rgb(84, 154, 182)">충청남도</a></span>
+                <span id="kB" class="region"><a href="ctgr?ctgr=11&name=경상도" style = "color:green">경상북도</a></span>
+                <span id="kN" class="region"><a href="ctgr?ctgr=11&name=경상도" style = "color: rgb(207, 80, 207)">경상남도</a></span>
+                <span id="JJ" class="region"><a href="ctgr?ctgr=12&name=제주도" style = "color: rgb(4, 48, 10)">제주</a></span>
             </section>
-            <section id="info-area">
-                    <section id="information">
-                         <div id="info2"></div> 
-                     </section>
-                     <section class="detail-area">
-                        <a href="detail" id="detail-area2">
-                            <div class="detail">
-                                <div>
-                                    <img src="${contextPath}/resources/images/Region/star.jpg">
-                                </div>
-                                <div class="font">강남구</div>
-                            </div>
-
-                            <div class="detail">
-                                <div>
-                                    <img src="${contextPath}/resources/images/Region/star.jpg">
-                                </div>
-                                <div class="font">강동구</div>
-                            </div>
-
-                            <div class="detail">
-                                <div>
-                                    <img src="${contextPath}/resources/images/Region/star.jpg">
-                                </div>
-                                <div class="font">강북구</div>
-                            </div>
-
-                            <div class="detail">
-                                <div>
-                                    <img src="${contextPath}/resources/images/Region/star.jpg">
-                                </div>
-                                <div class="font">강서구</div>
-                            </div>
-
-                            <div class="detail">
-                                <div>
-                                    <img src="${contextPath}/resources/images/Region/star.jpg">
-                                </div>
-                                <div class="font">중구</div>
-                            </div>
-                        </a>
-                    </section>
-
-                </section>
                 </section>
             </section>
         </section>   

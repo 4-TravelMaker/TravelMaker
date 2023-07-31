@@ -36,21 +36,20 @@ public class MemberService_phj {
 	/** 비밀번호 수정 Service
 	 * @param id
 	 * @param pw
-	 * @param confirmPw
 	 * @return result
 	 * @throws Exception
 	 */
-	public int updatePw(String id, String pw, String confirmPw) throws Exception {
+	public int updatePw(String id, String pw) throws Exception{
 		
 		Connection conn = getConnection();
 		
-		int result = dao.updatePw(conn, id, pw, confirmPw);
+		int result = dao.updatePw(conn, id, pw);
 		
-		if(result > 0) commit(conn);
-		else		   rollback(conn);
-		
-		close(conn);
+		if(result > 0)  commit(conn);
+		else     		rollback(conn);
 		
 		return result;
 	}
+
+
 }

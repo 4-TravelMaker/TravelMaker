@@ -112,14 +112,11 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
 }
 
 img{
     overflow: hidden;
 }
-
-
 
 .btn-style {
     width: 100px;
