@@ -37,27 +37,27 @@ public class ThemeKeywordServlet extends HttpServlet{
 			}
 			
 			if(command.equals("familyTrip")) {
-				String path = "/WEB-INF/views/member/Theme/ThemeCafe.jsp";
+				String path = "/WEB-INF/views/member/Theme/ThemeFamilyTrip.jsp";
 				req.getRequestDispatcher(path).forward(req, resp);
 			}
 			
 			if(command.equals("trainTrip")) {
-				String path = "/WEB-INF/views/member/Theme/ThemeCafe.jsp";
+				String path = "/WEB-INF/views/member/Theme/ThemeTrainTrip.jsp";
 				req.getRequestDispatcher(path).forward(req, resp);
 			}
 			
 			if(command.equals("pet")) {
-				String path = "/WEB-INF/views/member/Theme/ThemeCafe.jsp";
+				String path = "/WEB-INF/views/member/Theme/ThemePet.jsp";
 				req.getRequestDispatcher(path).forward(req, resp);
 			}
 			
 			if(command.equals("camPing")) {
-				String path = "/WEB-INF/views/member/Theme/ThemeCafe.jsp";
+				String path = "/WEB-INF/views/member/Theme/ThemeCamping.jsp";
 				req.getRequestDispatcher(path).forward(req, resp);
 			}
 			
 			if(command.equals("famousRestaurant")) {
-				String path = "/WEB-INF/views/member/Theme/ThemeCafe.jsp";
+				String path = "/WEB-INF/views/member/Theme/ThemeFamousRestaurant.jsp";
 				req.getRequestDispatcher(path).forward(req, resp);
 			}
 			
