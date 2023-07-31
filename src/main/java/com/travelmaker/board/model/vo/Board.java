@@ -30,5 +30,6 @@ public class Board {
 	private String boardState; // 게시글 삭제 여부(Y: 삭제, N:삭제 안함)
 	private String thumbnail; // 게시판 썸네일 이미지
 	private String profileImage; // 프로필 이미지
+	private String categoryName; // 카테고리 이름
 	
 }

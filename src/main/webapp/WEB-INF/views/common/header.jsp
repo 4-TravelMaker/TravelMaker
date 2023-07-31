@@ -20,7 +20,7 @@
                     <fieldset>
                         <section>
                             <input type="search" id="query" name="query" autocomplete="off">
-                            <button type="submit" id="search-btn" class="fa-solid fa-magnifying-glass"></button>
+                            <button type="button" id="search-btn" class="fa-solid fa-magnifying-glass" onclick="header.search();"></button>
                         </section>
                     </fieldset>
                 </form>
@@ -87,3 +87,63 @@
             </section>
         </section>
     </nav>
+    
+    
+	<script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+	
+	<script>
+
+    
+     const input = document.getElementById("query");
+
+	 var header = {};
+     header.search = function(){
+     var searchParam =  $("#query").val();
+
+     if(searchParam == ""){
+
+        alert("검색어를 입력해주세요")
+        input.focus();
+        return;
+     } else{
+         
+         location.href="${contextPath}/searchList?searchParam="+ searchParam;
+
+     }
+    
+   
+     }
+
+     $(function(){
+        
+        $("#query").keypress(function(e){
+		if(e.keyCode && e.keyCode == 13){
+			$("#search-btn").trigger("click");
+			return false;
+		}
+        
+		//엔터키 막기
+		if(e.keyCode && e.keyCode == 13){
+			  e.preventDefault();	
+		}
+	}); 
+
+
+
+
+
+
+
+
+     })
+
+     
+
+     
+	
+	
+	
+	</script>
+	
+	
+   
