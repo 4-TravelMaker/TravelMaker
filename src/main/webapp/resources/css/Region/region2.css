@@ -7,22 +7,17 @@ body {
     font-family: 'Noto Sans KR', sans-serif;
 }
 
-section {
-   border: 1px solid black;
-}
-
-
 main {
     width: 1200px;
     height: auto;
     margin: auto;
 }
 
-#middle { /* 중간 영역  */
-    height: 1300px;
+#middle5 { /* 중간 영역  */
+    height: 800px;
 }
 
-#middle > hr{
+#middle5 > hr{
     margin-left: 40px;
     margin-right: 40px;
     margin-bottom: 40px;
@@ -52,18 +47,35 @@ main {
     display: flex;
     justify-content: space-evenly;
     text-align: center;
-    /* border-bottom: 2px solid #ddd; */
-    height: 60px;
+    height: 55px;
 }
 
 .middle1-2>section{
     border: 2px solid #ddd;
     border-radius: 10px;
-    width: 65px;
+    width: 70px;
     color: gray;
     padding: 2px;
     height: 30px;
     font-weight: bold;
+    margin-top: 12px;
+}
+
+.middle1-2>section:hover{
+    background-color: rgb(153, 216, 199);
+    color: white;
+}
+
+#middle-area{
+    height: 700px;
+}
+
+#middle-area > section:nth-child(1){
+    height: 50%;
+}
+
+#middle-area > section:nth-child(2){
+    height: 50%;
 }
 
 .middle1-2>section:hover{
@@ -84,30 +96,27 @@ main {
 }
 
 #middle > section:nth-child(3){ /* 사진영역 1 */
-    height: 250px;
+    height: 100px;
     margin-top: 50px;
 }
 
 #middle > section:nth-child(4){ /* 사진영역 2 */
-    height: 250px;
-}
-
-#middle > section:nth-child(5){ /* 사진영역 3 */
-    height: 250px;
-}
-
-#middle > section:nth-child(6){ /* 사진영역 4 */
-    height: 250px;
+    height: 100px;
 }
 
 .photobox{ /* 사진 + 제목 영역 */
-    width: 250px;
+    width: 280px;
+    height: 240px;
 }
 
 .photo{ /* 사진 */
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.photo img{
+    cursor: pointer;
 }
 
 

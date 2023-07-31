@@ -16,39 +16,36 @@ import com.travelmaker.member.model.vo.Member;
 public class updatePwServlet extends HttpServlet{
 	
 	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		String id = req.getParameter("id");
-		String pw = req.getParameter("newPw");
-		String confirmPw = req.getParameter("pwConfirm");
 		
 		try {
-			MemberService_phj service = new MemberService_phj();
 			
-			int result = service.updatePw(id, pw, confirmPw);
+			String id = req.getParameter("id");
+			String pw = req.getParameter("editInput1");
+			
+			int result = new MemberService_phj().updatePw(id,pw);
 			
 			HttpSession session = req.getSession();
-
 			String path = null;
 			String message = null; 
-
 			
-			if(result > 0) { // 성공
-				
-				message = "성공";
+			if(result>0) { // 성공
+				message = "비밀번호가 수정되었습니다.";
 				path = "login";
 				
-			}else {
-				message = "실패";
-				path = "pw";
+			}else {  // 실패
+				message = "비밀번호 수정에 실패했습니다.";
+				path = req.getHeader("referer");;
 			}
 			
 			session.setAttribute("message", message);
-
-			resp.sendRedirect(path);
+			
+			resp.sendRedirect(path);			
 			
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
+		
 	}
 }

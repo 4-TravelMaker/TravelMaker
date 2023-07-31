@@ -5,6 +5,7 @@ const inpuutAnswer = document.getElementById("answer-Input"); // pw 답변 입�
 const idQuestion = document.getElementById("ism-Select"); // 질문 체크 
 const pwCheckingArea = document.getElementById("pwCheckingArea"); // 비밀번호 일치 문구 출력 
 const updateArea = document.getElementById("middle1-3");  // 수정 영역 
+const cancelBtn = document.getElementById("cancelButton");  // 취소 버튼 
 
 
 
@@ -17,14 +18,14 @@ findButton.addEventListener("click", function(){
 
         success : function(member){
 
-            if(inpuutAnswer.value == member.memberAnswer){
+            if(inpuutAnswer.value == member.memberAnswer && idQuestion.value == member.memberQuestionCode){
                 pwCheckingArea.innerHTML = "답변이 일치합니다.";
                 pwCheckingArea.style.color = 'green';
                 updateArea.style.display = 'block';
                 
 
             } else {
-                pwCheckingArea.innerHTML = "답변이 일치 하지 않습니다";
+                pwCheckingArea.innerHTML = "질문 또는 답변이 일치 하지 않습니다";
                 pwCheckingArea.style.color = 'red';
                 inpuutAnswer.value = "";
                 inpuutAnswer.focus();
@@ -35,6 +36,10 @@ findButton.addEventListener("click", function(){
             console.log(req.responseText);
         }
     });
+
+
+
+
 })
 
 
@@ -55,30 +60,22 @@ document.getElementById("confrim").addEventListener("click", function(){
     }
 })
 
-document.getElementById("pwEditButton").addEventListener("click", function(){
+cancelBtn.addEventListener("click", function(){
 
-    const id = document.getElementById("idInput");   /* 회원 아이디 */
-    const newPw = document.getElementById("edit-input1"); /* 수정하고 싶은 비밀번호 */
-    const pwConfirm = document.getElementById("edit-input"); /* 비밀번호 확인 */
+    if(confirm("비밀번호 찾기를 취소하시겠습니까?")){
 
-    $.ajax({
-        url : "updatePw",
-        data : {"id" : id.value,
-                "newPw" : newPw.value,
-                "pwConfirm" : pwConfirm.value},
-        type : "POST",
+        alert("메인페이지로 이동합니다.")
+        location.href = "/TravelMaker/index.jsp";
 
-        success : function(result){
-            alert("비밀번호가 수정되었습니다.")
-        },
-        
-        error : function(req, status, error){
-            alert("에러")
-            console.log("에러발생");
-            console.log(req.responseText);
-        }
-    });
+    }
+
+
+
+
 })
+
+
+
 
 
 
