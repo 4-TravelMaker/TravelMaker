@@ -105,32 +105,32 @@
                     </section>
                     <section class="flex-container4">
                         <div class="item3" id="spring">
-                            <a href="">#액티비티</a>
+                            <a href="activity?type=2">#액티비티</a>
                         </div>
                         <div class="item3" id="childday">
-                            <a href="">#맛집</a>
+                            <a href="famousRestaurant?type=2">#맛집</a>
                         </div>
                         <div class="item3" id="festival">
-                            <a href="">#카페</a>
+                            <a href="cafe?type=2">#카페</a>
                         </div>
                         <div class="item3" id="flower">
-                            <a href="">#커플여행</a>
+                            <a href="coupleTrip?type=2">#커플여행</a>
                         </div>                        
                     </section>
 
 
                     <section class="flex-container5">
                         <div class="item3" id="mountain">
-                            <a href="">#캠핑</a>
+                            <a href="camPing?type=2">#캠핑</a>
                         </div>
                         <div class="item3" id="couple">
-                            <a href="">#반려견동반</a>
+                            <a href="pet?type=2">#반려견동반</a>
                         </div>
                         <div class="item3" id="single">
-                            <a href="">#기차여행</a>
+                            <a href="trainTrip?type=2">#기차여행</a>
                         </div>
                         <div class="item3" id="bunggle">
-                            <a href="">#가족여행</a>
+                            <a href="familyTrip?type=2">#가족여행</a>
                         </div>
                     </section>
                 </section>
