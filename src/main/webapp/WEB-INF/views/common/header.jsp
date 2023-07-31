@@ -121,7 +121,7 @@
      $(function(){
         
         $("#query").keypress(function(e){
-		if(e.keyCode && e.keyCode == 13){
+		if(e.keyCode == 13){
 			$("#search-btn").trigger("click");
 			return false;
 		}

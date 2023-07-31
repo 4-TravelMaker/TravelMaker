@@ -3,13 +3,46 @@
 <properties>
 <comment>board-sql-lhk.xml</comment>
 	<entry key="searchList">
-		SELECT BOARD_TITLE,BOARD_CONTENT,READ_COUNT,CTGR_NM 
+		SELECT BOARD_NO,BOARD_TITLE,BOARD_CONTENT,READ_COUNT,CTGR_NM 
 		FROM BOARD
 		JOIN CATEGORY USING(CTGR_NO)
-		WHERE BOARD_TITLE LIKE '%' || ? || '%' 
+		WHERE (BOARD_TITLE LIKE '%' || ? || '%' 
 		OR BOARD_CONTENT LIKE '%' || ? || '%'
-		OR CTGR_NM LIKE '%' || ? || '%'
+		OR CTGR_NM LIKE '%' || ? || '%')
 	    AND BOARD_ST = 'N'
+	</entry>
+	
+	<entry key="travelInfos">
+		SELECT BOARD_NO,BOARD_TITLE,BOARD_CONTENT,READ_COUNT,CTGR_NM 
+		FROM BOARD
+		JOIN CATEGORY USING(CTGR_NO)
+		WHERE (BOARD_TITLE LIKE '%' || ? || '%'
+		OR BOARD_CONTENT LIKE '%' || ? || '%'
+		OR CTGR_NM LIKE '%' || ? || '%')
+		AND board_cd in (1,2,3)
+		AND BOARD_ST = 'N'
+	</entry>
+	
+	<entry key="travelReview">
+		SELECT BOARD_NO,BOARD_TITLE,BOARD_CONTENT,READ_COUNT,CTGR_NM 
+		FROM BOARD
+		JOIN CATEGORY USING(CTGR_NO)
+		WHERE (BOARD_TITLE LIKE '%' || ? || '%'
+		OR BOARD_CONTENT LIKE '%' || ? || '%'
+		OR CTGR_NM LIKE '%' || ? || '%')
+		AND board_cd in (4)
+		AND BOARD_ST = 'N'
+	</entry>
+	
+	<entry key="travelAll">
+		SELECT BOARD_NO,BOARD_TITLE,BOARD_CONTENT,READ_COUNT,CTGR_NM 
+		FROM BOARD
+		JOIN CATEGORY USING(CTGR_NO)
+		WHERE (BOARD_TITLE LIKE '%' || ? || '%'
+		OR BOARD_CONTENT LIKE '%' || ? || '%'
+		OR CTGR_NM LIKE '%' || ? || '%')
+		AND board_cd in (1,2,3,4)
+		AND BOARD_ST = 'N'
 	</entry>
 
 

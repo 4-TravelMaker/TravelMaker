@@ -31,4 +31,38 @@ public class BoardService_lhk {
 		return boardList;
 	}
 
+
+	/**
+	 * @param searchResult
+	 * @return
+	 */
+	public List<Board> travelInfos(String searchResult) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		List<Board> boardList = dao.travelInfos(conn,searchResult);
+		
+		return boardList;
+	}
+
+
+	public List<Board> travelReview(String searchResult) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		List<Board> boardList = dao.travelReview(conn,searchResult);
+		
+		return boardList;
+	}
+
+
+	public List<Board> travelAll(String searchResult) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		List<Board> boardList = dao.travelAll(conn,searchResult);
+		
+		return boardList;
+	}
+
 }
