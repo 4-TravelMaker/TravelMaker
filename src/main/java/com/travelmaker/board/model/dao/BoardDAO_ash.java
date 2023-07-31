@@ -205,6 +205,7 @@ public class BoardDAO_ash {
 				reply.setMemberNickName(rs.getString("MEMBER_NICK"));
 				reply.setReplyContent(rs.getString("REPLY_CONTENT"));
 				reply.setCreateDate(rs.getString("CREATE_DT"));
+				reply.setReplyNo(rs.getInt("REPLY_NO"));
 				
 				rList.add(reply);
 			}
@@ -215,6 +216,141 @@ public class BoardDAO_ash {
 		}
 		
 		return rList;
+	}
+
+	/** 일대일 문의 답변 삭제 DAO
+	 * @param conn
+	 * @param replyNo
+	 * @return result
+	 * @throws Exception
+	 */
+	public int deleteOneOnOneInquiryReply(Connection conn, int replyNo) throws Exception {
+		
+		int result = 0;
+		
+		try {
+			String sql = prop.getProperty("deleteOneOnOneInquiryReply");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, replyNo);
+			
+			result = pstmt.executeUpdate();
+			
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
+	/** 일대일 문의 답변 수정 DAO
+	 * @param conn
+	 * @param replyNo
+	 * @param replyContent
+	 * @return result
+	 * @throws Exception
+	 */
+	public int updateOneOnOneInquiryReply(Connection conn, int replyNo, String replyContent) throws Exception {
+		
+		int result = 0;
+		
+		try {
+			String sql = prop.getProperty("updateOneOnOneInquiryReply");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, replyContent);
+			pstmt.setInt(2, replyNo);
+			
+			result = pstmt.executeUpdate();
+			
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
+	/** 검색 조건에 만족하는 게시글 수 조회 DAO
+	 * @param type
+	 * @param conn
+	 * @param condition
+	 * @return listCount
+	 * @throws Exception
+	 */
+	public int searchListCount(int type, Connection conn, String condition) throws Exception {
+		
+		int listCount = 0;
+		
+		try {
+			
+			String sql = prop.getProperty("searchListCount") + condition;
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, type);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				listCount = rs.getInt(1);
+			}
+			
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return listCount;
+	}
+
+	/** 검색 조건에 만족하는 게시글 목록 조회 DAO
+	 * @param conn
+	 * @param pagination
+	 * @param type
+	 * @param condition
+	 * @return boardList
+	 * @throws Exception
+	 */
+	public List<Board> searchOneOnOneInquiryBoardList(Connection conn, Pagination pagination, int type,
+			String condition) throws Exception {
+		
+		List<Board> boardList = new ArrayList<>();
+		
+		try {
+			String sql = prop.getProperty("searchOneOnOneInquiryBoardList1") + condition + prop.getProperty("searchOneOnOneInquiryBoardList2");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			int start = ( pagination.getCurrentPage() - 1 ) * pagination.getLimit() + 1;
+			int end = start + pagination.getLimit() - 1;
+			
+			pstmt.setInt(1, type);
+			pstmt.setInt(2, start);
+			pstmt.setInt(3, end);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()){
+				
+				Board board = new Board();
+				
+				board.setBoardNo( rs.getInt("BOARD_NO") );
+				board.setBoardTitle( rs.getString("BOARD_TITLE") );
+				board.setMemberId( rs.getString("MEMBER_ID") );
+				board.setCreateDate( rs.getString("CREATE_DT") );
+				board.setReadCount( rs.getInt("READ_COUNT") );
+				
+				boardList.add(board);
+			}
+			
+		} finally {
+	         close(rs);
+	         close(pstmt);
+		}
+		
+		return boardList;
 	}
 
 }

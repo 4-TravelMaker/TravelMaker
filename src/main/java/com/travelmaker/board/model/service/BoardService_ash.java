@@ -12,6 +12,7 @@ import com.travelmaker.board.model.vo.Board;
 import com.travelmaker.board.model.vo.BoardDetail;
 import com.travelmaker.board.model.vo.Pagination;
 import com.travelmaker.board.model.vo.Reply;
+import com.travelmaker.common.Util;
 
 public class BoardService_ash {
 	
@@ -71,6 +72,9 @@ public class BoardService_ash {
 		
 		Connection conn = getConnection();
 		
+		reply.setReplyContent( Util.XSSHandling(reply.getReplyContent()) );
+		reply.setReplyContent( Util.newLineHandling(reply.getReplyContent()) );
+		
 		int result = dao.insertOneOnOneInquiryReply(conn, reply);
 
 		if(result > 0) commit(conn);
@@ -95,6 +99,81 @@ public class BoardService_ash {
 		close(conn);
 		
 		return rList;
+	}
+
+	/** 일대일 문의 답변 삭제 Service
+	 * @param replyNo
+	 * @return result
+	 * @throws Exception
+	 */
+	public int deleteOneOnOneInquiryReply(int replyNo) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		int result = dao.deleteOneOnOneInquiryReply(conn, replyNo);
+
+		if(result > 0) commit(conn);
+		else		   rollback(conn);
+		
+		close(conn);
+		
+		return result;
+	}
+
+	/** 일대일 문의 답변 수정 Service
+	 * @param replyNo
+	 * @param replyContent
+	 * @return result
+	 * @throws Exception
+	 */
+	public int updateOneOnOneInquiryReply(int replyNo, String replyContent) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		// XSS 처리
+		replyContent = Util.XSSHandling(replyContent);
+		
+		// 개행문자 처리
+		replyContent = Util.newLineHandling(replyContent);
+		
+		int result = dao.updateOneOnOneInquiryReply(conn, replyNo, replyContent);
+		
+		if(result > 0) commit(conn);
+		else		   rollback(conn);
+		
+		close(conn);
+		
+		return result;
+	}
+
+	/** 일대일 문의 아이디 검색 Service
+	 * @param type
+	 * @param cp
+	 * @param query
+	 * @return map
+	 * @throws Exception
+	 */
+	public Map<String, Object> searchOneOnOneInquiryBoardList(int type, int cp, String query) throws Exception {
+
+		Connection conn = getConnection();
+		
+		String condition = "AND MEMBER_ID LIKE '%" + query + "%'";
+		
+		// 검색 조건에 만족하는 게시글 수 조회
+		int listCount = dao.searchListCount(type, conn, condition);
+		
+		Pagination pagination = new Pagination(cp, listCount);
+		
+		List<Board> boardList = dao.searchOneOnOneInquiryBoardList(conn, pagination, type, condition);
+		
+		Map<String, Object> map = new HashMap<>();
+		
+		map.put("pagination", pagination);
+		map.put("boardList", boardList);
+		
+		close(conn);
+		
+		return map;
 	}
 
 }

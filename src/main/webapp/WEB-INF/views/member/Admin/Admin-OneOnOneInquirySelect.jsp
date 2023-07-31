@@ -46,13 +46,22 @@
                 <!-- 회원 검색 및 삭제 버튼 영역 -->
                 <section>
                     <section class="search-area">
-                        <input type="text" placeholder="아이디 입력" id="member-search">
-                        <button type="submit">검색</button>
+                        <form action="list" method="get" id="boardSearch" onsubmit="return searchValidate()">
+                            <input type="text" placeholder="아이디 입력" id="member-search" name="query2">
+                            <input type="hidden" name="type" value="${param.type}">
+                            <button type="submit">검색</button>
+                        </form>
                     </section>
                 </section>
 
                 <!-- 일대일 문의 조회 목록 영역 -->
+                <c:if test="${!empty param.query2}">
+                    <c:set var="sURL" value="&query2=${param.query2}"/>
+                        <h3 id="search-result"><i class="fa-solid fa-magnifying-glass" style="color: #000000;"></i> "${param.query2}" 검색 결과</h3>
+                </c:if>
+
                 <section>
+
                     <table class="post-table">
                         <thead>
                             <tr class="table-bk">
@@ -81,7 +90,7 @@
                                         <tr>
                                             <td>${board.boardNo}</td>
                                             <td>
-                                                <a href="detail?no=${board.boardNo}&cp=${pagination.currentPage}&type=${param.type}">${board.boardTitle}</a>
+                                                <a href="detail?no=${board.boardNo}&cp=${pagination.currentPage}&type=${param.type}${sURL}">${board.boardTitle}</a>
                                             </td>
                                             <td>${board.memberId}</td>
                                             <td>${board.createDate}</td>
@@ -104,10 +113,10 @@
 
                     <ul class="pagination">
                         <!-- 첫 페이지로 이동 -->
-                        <li><a hef="${url}1">&lt;&lt;</a></li>
+                        <li><a hef="${url}1${sURL}">&lt;&lt;</a></li>
 
                         <!-- 이전 목록 마지막 번호로 이동 -->
-                        <li><a href="${url}${pagination.prevPage}">&lt;</a></li>
+                        <li><a href="${url}${pagination.prevPage}${sURL}">&lt;</a></li>
 
                         <!-- 범위가 정해진 일반 for문을 사용 -->
                         <c:forEach var="i" begin="${pagination.startPage}" end="${pagination.endPage}" step="1">
@@ -118,17 +127,17 @@
                                 </c:when>
 
                                 <c:otherwise>
-                                    <li><a href="${url}${i}">${i}</a></li>
+                                    <li><a href="${url}${i}${sURL}">${i}</a></li>
                                 </c:otherwise>
                             </c:choose>
 
                         </c:forEach>
 
                         <!-- 다음 목록 시작 번호로 이동 -->
-                        <li><a href="${url}${pagination.nextPage}">&gt;</a></li>
+                        <li><a href="${url}${pagination.nextPage}${sURL}">&gt;</a></li>
                         
                         <!-- 끝 페이지로 이동 -->
-                        <li><a href="${url}${pagination.maxPage}">&gt;&gt;</a></li>
+                        <li><a href="${url}${pagination.maxPage}${sURL}">&gt;&gt;</a></li>
                     </ul>
                 
                 </section>
@@ -139,8 +148,9 @@
         
     </main>
 
-	<jsp:include page="/WEB-INF/views/common/footer.jsp"/>
+    <script src="${contextPath}/resources/js/Admin/Admin-OneOnOneInquirySearch.js"></script>
 
+	<jsp:include page="/WEB-INF/views/common/footer.jsp"/>
     
 </body>
 </html>

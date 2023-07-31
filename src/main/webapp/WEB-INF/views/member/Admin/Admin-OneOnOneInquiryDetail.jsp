@@ -53,29 +53,23 @@
                     </div>
                 </section>
 
+                <!-- 일대일 문의 답변 작성 영역 -->
+                <section class="customer-inquiry admin-reply">
+                    <section>답변하기</section>
+                    <section id="inquiry-content-area">
+                        <textarea placeholder="답변 내용을 입력하세요" id="inquiry-content" class="inquiry-content"></textarea>
+                    </section>
+                    <section id="post-btn-area" class="post-btn-area">
+                        <button type="button" class="post-btn" id="insert-btn">작성</button>
+                        <button type="button" class="post-btn" id="cancel-btn">취소</button>
+                    </section>
+                </section>
                 
                 <!-- 일대일 문의 답변 조회 영역 -->
                 <section class="reply-select-area">
                     <section> <i class="fa-brands fa-replyd" style="color: #000000;"></i> &nbsp; 답변</section>
                     <section class="customer-inquiry2" id="customer-inquiry"></section>
-                    
                 </section>
-
-
-                <!-- 일대일 문의 답변 영역 -->
-                <section class="customer-inquiry admin-reply">
-                    <section>답변하기</section>
-                    <form action="insert" method="POST">
-                        <section id="inquiry-content-area">
-                            <textarea placeholder="답변 내용을 입력하세요" id="inquiry-content"></textarea>
-                        </section>
-                        <section id="post-btn-area">
-                            <button class="post-btn" id="insert-btn">작성</button>
-                            <button type="button" class="post-btn" id="cancel-btn">취소</button>
-                        </section>
-                    </form>
-                </section>
-
             </section>
         
     </main>
@@ -93,6 +87,9 @@
 
         // 로그인한 회원 번호
         const loginMemberNo = "${loginMember.memberNo}";
+
+        // 로그인한 회원 닉네임
+        const loginMemberNickName = "${loginMember.memberNickname}";
     </script>
 
     <script src="${contextPath}/resources/js/Admin/Admin-OneOnOneInquiryDetail.js"></script>
