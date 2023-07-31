@@ -70,6 +70,7 @@ public class ReplyDAO_kks {
 				reply.setProfileImage( rs.getString(7) );
 				
 				replyList.add(reply);
+				
 			}
 			
 		} finally {
@@ -78,6 +79,35 @@ public class ReplyDAO_kks {
 		}
 		
 		return replyList;
+	}
+
+	/** 댓글 등록 DAO
+	 * @param conn
+	 * @param reply
+	 * @return result
+	 * @throws Exception
+	 */
+	public int insertReply(Connection conn, Reply reply) throws Exception {
+		
+		int result = 0;
+		
+		try {
+			
+			String sql = prop.getProperty("insertReply");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, reply.getReplyContent());
+			pstmt.setInt(2, reply.getBoardNo());
+			pstmt.setInt(3, reply.getMemberNo());
+			
+			result = pstmt.executeUpdate();
+			
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
 	}
 
 }
