@@ -22,24 +22,6 @@ public class OneOnOneInquiryListServlet extends HttpServlet{
 		
 		try {
 			
-			Member mem = new Member();
-			mem.setMemberNo(1);
-			mem.setMemberId("user01");
-			mem.setMemberPw("pass01!");
-			mem.setMemberNickname("유저일");
-			mem.setProfileImage("1");
-			mem.setMemberAddress("04540,,서울특별시 강남구 테헤란로 14길 6,,5층");
-			mem.setMemberTheme("1");
-			mem.setMemberQuestionCode(1);
-			mem.setMemberAnswer("가족");
-			mem.setEnrollDate("23/07/24");
-			mem.setSecessionFlag("N");
-			mem.setAdminFlag("Y");
-			
-			HttpSession session = req.getSession();
-			
-			session.setAttribute("loginMember", mem);
-			
 			int type = Integer.parseInt(req.getParameter("type"));
 
 			int cp = 1;
@@ -50,7 +32,18 @@ public class OneOnOneInquiryListServlet extends HttpServlet{
 			
 			BoardService_ash service = new BoardService_ash();
 			
-			Map<String, Object> map = service.selectOneOnOneInquiryList(type, cp);
+			Map<String, Object> map = null;
+			
+			if(req.getParameter("query2") == null){ // 일반 목록 조회
+				
+				map = service.selectOneOnOneInquiryList(type, cp);
+				
+			} else { // 검색 목록 조회
+				
+				String query = req.getParameter("query2");
+				
+				map = service.searchOneOnOneInquiryBoardList(type, cp, query);
+			}
 			
 			req.setAttribute("map", map);
 			
