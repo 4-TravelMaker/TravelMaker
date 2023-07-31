@@ -30,18 +30,18 @@
 
               
                 <section class="serchResult">"${param.searchParam}" 검색 결과</section>
-           
+           		<input type="hidden" id="hiddenSerchResult" value="${param.searchParam}">
            </section>
 
            <section style="height: 15px;"></section>
 
            <section class="selectArea">
 
-                <button id="allbutton">전체</button>
+                <button id="allbutton" onclick="search.TravelInfo(this);">전체</button>
                 <span>|</span>
-                <button id="travelInfoButton">여행정보</button>  
+                <button id="travelInfoButton" onclick="search.TravelInfo(this);">여행정보</button>  
                 <span>|</span>
-                <button id="travelReviewButton">여행 리뷰 게시판</button>
+                <button id="travelReviewButton" onclick="search.TravelInfo(this);">여행 리뷰 게시판</button>
 
            </section>
 
@@ -50,39 +50,39 @@
            <section class="resultArea">
 
                 
-            <c:choose>
+                <c:choose>
 
-                <c:when test="${empty boardList}">
-
-
-                    <h1 class="notFindText">검색 결과가 없습니다</h1>
+                    <c:when test="${empty boardList}">
 
 
+                        <h1 class="notFindText">검색 결과가 없습니다</h1>
 
-                </c:when>
 
-                <c:otherwise>
 
-                    <c:forEach var="board" items="${boardList}">
+                    </c:when>
+
+                    <c:otherwise>
+
+                        <c:forEach var="board" items="${boardList}">
+                        
+                            <li style="height: 150px; list-style: none;" >
+                                <section style="float: left;">
+                                    <a href="#">
+                                    <img src="${contextPath}/resources/images/logo.png">
+                                    </a>
+                                </section>
+                                <section style="font-weight: bold; font-size:23px; margin-left: 130px;">
+                                    <a href="boardNotice/detail?no=${board.boardNo}&cp=${pagination.currentPage}&type=${param.type}">${board.boardTitle}</a>
+                                </section>
+                                <p class="categoryName">${board.categoryName}</p>
+                                <p class="readCount">조회수 : ${board.readCount}</p>                    
+                            </li>
+
+                        </c:forEach>
+
+                    </c:otherwise>    
                     
-                        <li style="height: 150px; list-style: none;" >
-                            <section style="float: left;">
-                                <a href="#">
-                                <img src="${contextPath}/resources/images/logo.png">
-                                </a>
-                            </section>
-                            <section style="font-weight: bold; font-size:23px; margin-left: 130px;">
-                                <a href="boardNotice/detail?no=${board.boardNo}&cp=${pagination.currentPage}&type=${param.type}">${board.boardTitle}</a>
-                            </section>
-                            <p class="categoryName">${board.categoryName}</p>
-                            <p class="readCount">조회수 : ${board.readCount}</p>                    
-                        </li>
-
-                    </c:forEach>
-
-                </c:otherwise>    
-                
-            </c:choose>
+                </c:choose>
                
             
            </section>
@@ -91,5 +91,26 @@
 
         <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
     </main>
+    
+    <script>
+    	var search = {};
+    	
+    	search.TravelInfo = function (obj){
+            debugger
+    		
+            var searchParam = $("#hiddenSerchResult").val();
+            var travelInfo;
+    		if(obj.id == "travelInfoButton") {
+    			travelInfo = "travelInfo";
+    		} else if(obj.id == "travelReviewButton") {
+    			travelInfo = "travelReview";
+    		} else {
+                travelInfo = "";
+            }
+            location.href="${contextPath}/board/searchLists?searchParam="+ searchParam +"&travelInfo="+ travelInfo;
+    	}
+    
+    
+    </script>
 </body>
 </html>

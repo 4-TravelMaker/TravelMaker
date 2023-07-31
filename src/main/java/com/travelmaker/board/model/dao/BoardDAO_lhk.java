@@ -59,10 +59,11 @@ public class BoardDAO_lhk {
 			while(rs.next()) {
 				Board board = new Board();
 				
-				board.setBoardTitle(rs.getString(1));
-				board.setBoardContent(rs.getString(2));
-				board.setReadCount(rs.getInt(3));
-				board.setCategoryName(rs.getString(4));
+				board.setBoardNo(rs.getInt(1));
+				board.setBoardTitle(rs.getString(2));
+				board.setBoardContent(rs.getString(3));
+				board.setReadCount(rs.getInt(4));
+				board.setCategoryName(rs.getString(5));
 				
 				boardList.add(board);
 				
@@ -91,4 +92,135 @@ public class BoardDAO_lhk {
 		return boardList;
 	}
 
+	public List<Board> travelInfos(Connection conn, String searchResult) throws Exception {
+		
+		List<Board> boardList = new ArrayList<Board>();
+		
+		try {
+			String sql = prop.getProperty("travelInfos");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, searchResult);
+			pstmt.setString(2, searchResult);
+			pstmt.setString(3, searchResult);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				Board board = new Board();
+				
+				board.setBoardNo(rs.getInt(1));
+				board.setBoardTitle(rs.getString(2));
+				board.setBoardContent(rs.getString(3));
+				board.setReadCount(rs.getInt(4));
+				board.setCategoryName(rs.getString(5));
+				
+				boardList.add(board);
+				
+			}
+			
+			
+			
+		} finally {
+			
+			close(rs);
+			close(pstmt);
+			
+		}
+		
+		
+		
+		
+		
+		
+		return boardList;
+	}
+
+	public List<Board> travelReview(Connection conn, String searchResult) throws Exception {
+		
+		List<Board> boardList = new ArrayList<Board>();
+			
+			try {
+				String sql = prop.getProperty("travelReview");
+				
+				pstmt = conn.prepareStatement(sql);
+				
+				pstmt.setString(1, searchResult);
+				pstmt.setString(2, searchResult);
+				pstmt.setString(3, searchResult);
+				
+				rs = pstmt.executeQuery();
+				
+				while(rs.next()) {
+					Board board = new Board();
+					
+					board.setBoardNo(rs.getInt(1));
+					board.setBoardTitle(rs.getString(2));
+					board.setBoardContent(rs.getString(3));
+					board.setReadCount(rs.getInt(4));
+					board.setCategoryName(rs.getString(5));
+					
+					boardList.add(board);
+					
+				}
+				
+				
+			} finally {
+				
+				close(rs);
+				close(pstmt);
+				
+			}
+			
+			
+			return boardList;
+	}
+
+	
+	public List<Board> travelAll(Connection conn, String searchResult) throws Exception{
+		
+		List<Board> boardList = new ArrayList<Board>();
+		
+		try {
+			String sql = prop.getProperty("travelAll");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, searchResult);
+			pstmt.setString(2, searchResult);
+			pstmt.setString(3, searchResult);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				Board board = new Board();
+				
+				board.setBoardNo(rs.getInt(1));
+				board.setBoardTitle(rs.getString(2));
+				board.setBoardContent(rs.getString(3));
+				board.setReadCount(rs.getInt(4));
+				board.setCategoryName(rs.getString(5));
+				
+				boardList.add(board);
+				
+			}
+			
+			
+		} finally {
+			
+			close(rs);
+			close(pstmt);
+			
+		}
+		
+		
+		return boardList;
+	}
+
+	
+	
+	
+	
+	
 }
