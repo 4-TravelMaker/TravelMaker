@@ -26,7 +26,7 @@
                 <a href="#">내 게시글/댓글 관리</a>
             </section>
             <section class="left-section-btn-box">
-                <a href="#">1:1 문의</a>
+                <a href="${contextPath}/myPage/myPageCounselling">1:1 문의</a>
             </section>
             <section class="left-section-btn-box">
                 <a href="#">회원 탈퇴</a>

@@ -101,6 +101,7 @@ header {
     width: 15%;
     height: 100%;
     display: flex;
+    align-content: center;
     justify-content: center;
     align-items: end;
     padding-bottom: 30px;
