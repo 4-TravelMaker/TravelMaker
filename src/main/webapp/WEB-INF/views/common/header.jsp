@@ -48,21 +48,35 @@
                     <!-- 여기 부분에 이프문 작성 -->
                     <!-- 프로필 이미지가 없을 경우 -->
                         <div class="loginArea5">
-                                <c:if test="${empty loginMember.profileImage}">
-                                    <a href="${contextPath}//member/myPage/changeInfo">
-                                        <img src="${contextPath}/resources/images/Admin/admin-profile.jpg">
-                                    </a>
-                                </c:if>
+                            <c:if test="${empty loginMember.profileImage}">
+                                <a href="${contextPath}//member/myPage/changeInfo">
+                                    <img src="${contextPath}/resources/images/Admin/admin-profile.jpg">
+                                </a>
+                            </c:if>
 
-                                <!-- 프로필 이미지가 있을 경우 -->
-                                <c:if test="${!empty loginMember.profileImage}">
-                                   <a href="${contextPath}//member/myPage/changeInfo"><img src="${contextPath}${loginMember.profileImage}">
-                                   </a>
+                            <!-- 프로필 이미지가 있을 경우 -->
+                            <c:if test="${!empty loginMember.profileImage}">
+                                <a href="${contextPath}//member/myPage/changeInfo"><img src="${contextPath}${loginMember.profileImage}">
+                                </a>
+                            </c:if>
+                            <span id="nickname-member">${loginMember.memberNickname}</span>
+                            <c:if test="${loginMember.adminFlag != 'Y'}">
+                                <button class="logout-btn-style">                    
+                                    <a href="${contextPath}/memeber/logout">로그아웃</a>
+                                </button>
+                            </c:if>
+
+                            <div class="logout-admin-btn-area">
+                                <c:if test="${loginMember.adminFlag == 'Y'}">
+                                    <button class="logout-btn">                    
+                                        <a href="${contextPath}/memeber/logout">로그아웃</a>
+                                    </button>
+                                    <button class="admin-btn">
+                                        <a href="${contextPath}/admin/selectAll">관리자<br>페이지</a>
+                                    </button>
                                 </c:if>
-                                <span id="nickname-member">${loginMember.memberNickname}</span>
-                            <button class="logout-btn-style">                    
-                                <a href="${contextPath}/memeber/logout">로그아웃</a>
-                            </button>
+                            </div>
+
                         </div>
                     </section>
                 </c:otherwise>
