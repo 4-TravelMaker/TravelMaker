@@ -208,4 +208,23 @@ public class BoardService_ash {
 		return map;
 	}
 
+	/** 마이페이지 - 일대일 문의글 삭제 Service
+	 * @param boardNo
+	 * @return result
+	 * @throws Exception
+	 */
+	public int deleteOneOnOneInquiryBoard(int boardNo) throws Exception {
+
+		Connection conn = getConnection();
+		
+		int result = dao.deleteOneOnOneInquiryBoard(conn, boardNo);
+
+		if(result > 0) commit(conn);
+		else		   rollback(conn);
+		
+		close(conn);
+		
+		return result;
+	}
+
 }

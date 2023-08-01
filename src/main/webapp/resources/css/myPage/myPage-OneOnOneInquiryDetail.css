@@ -1,13 +1,13 @@
 /* middle */
 #middle {
-    height: 1100px;
+    height: auto;
     display: flex;
 }
 
 /* 왼쪽 영역 - 마이페이지 사이드 바 */
 .left-section {
     width: 300px;
-    height: 100%;
+    height: auto;
     background-color: rgba(153, 216, 199, 0.46);
 }
 
@@ -146,7 +146,7 @@
 }
 
 
-/* 목록으로, 답변하기 버튼 영역 */
+/* 목록으로, 수정하기, 삭제하기 버튼 영역 */
 .reply-btn-area{
     display: flex;
     justify-content: right;
@@ -199,6 +199,29 @@
     transition-duration: 1s;
 }
 
+#delete-btn{
+    margin-top: 10px;
+    margin-left: 7px;
+    height: 30px;
+    width: 85px;
+
+    border: none;
+    border-radius: 5px;
+
+    background-color: #ddd;
+    color: white;
+    font-size: 15px;
+
+    cursor: pointer;
+}
+
+#delete-btn:hover{
+    background-color: black;
+    color: white;
+
+    transition-duration: 1s;  
+}
+
 /* 일대일 문의 답변 조회 영역 */
 .reply-select-area > section:first-of-type{
     margin-left: 30px;
@@ -206,45 +229,32 @@
     font-weight: bold;
 }
 
-/* 일대일 문의 답변 작성 영역 */
-.admin-reply{
-    display: none;
-}
+.title-style{
+    width: 800px;
+    height: 30px;
 
-#inquiry-content-area{
-    height: 525px;
+    padding: 8px;
 
-    border: 1px solid #ddd;
-    border-top: none;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-}
-
-.inquiry-content{
-    width: 796px;
-    height: 500px;
-    padding: 20px 10px;
-    margin-bottom: 10px;
     resize: none;
-
     outline: none;
 
-    border: 1px solid #ddd;
+    overflow: hidden;
 }
 
-/* 작성, 취소 버튼 영역 */
-#post-btn-area{
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.content-style{
+    width: 796px;
+    height: 552px;
+
+    padding: 8px;
+
+    resize: none;
+    outline: none;
+
+    overflow: auto;
+}
+
+.reply-btn{
     margin-top: 5px;
-
-    border: none;
-}
-
-.post-btn{
-    margin-top: 2px;
     margin-left: 7px;
     height: 30px;
     width: 60px;
@@ -258,7 +268,29 @@
     cursor: pointer;
 }
 
-.post-btn:hover{
+.reply-btn:hover{
+    color: white;
+    background-color: #000000;
+
+    transition-duration: 1s;
+}
+
+.cancel-btn{
+    margin-top: 5px;
+    margin-left: 7px;
+    height: 30px;
+    width: 60px;
+
+    border: none;
+    border-radius: 5px;
+
+    color: white;
+    background-color: #ddd;
+
+    cursor: pointer;
+}
+
+.cancel-btn:hover{
     color: white;
     background-color: #000000;
 
