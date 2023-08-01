@@ -2,9 +2,9 @@ package com.travelmaker.board.model.service;
 
 import java.util.List;
 
-import com.travelmaker.board.controller.Region;
 import com.travelmaker.board.model.dao.BoardDAO_phj;
 import com.travelmaker.board.model.vo.Category;
+import com.travelmaker.board.model.vo.Region;
 import com.travelmaker.board.model.vo.Reply;
 import static com.travelmaker.common.JDBCTemplate.*;
 
@@ -35,19 +35,21 @@ public class BoardService_phj {
 	}
 
 	
-	/** 지역별 게시글 제목/ 사진 조회 Service
+	
+	
+	/** 지역 사진/제목 조회 Service
 	 * @param ctgrNo
-	 * @return region
+	 * @return rList
 	 * @throws Exception
 	 */
-	public List<Region> regionTitle(int ctgrNo) throws Exception {
+	public List<Region> regionTitle(int ctgrNo) throws Exception{
 		
 		Connection conn = getConnection();
 		
-		List<Region> region = dao.regionTitle(conn, ctgrNo);
+		List<Region> rList = dao.regionTitle(conn, ctgrNo);
 		
 		close(conn);
 		
-		return region;
+		return rList;
 	}
 }
