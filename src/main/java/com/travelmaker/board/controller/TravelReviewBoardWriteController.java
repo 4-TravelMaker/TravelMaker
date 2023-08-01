@@ -27,18 +27,18 @@ public class TravelReviewBoardWriteController extends HttpServlet {
 		
 		try {
 			
-//			String mode = req.getParameter("mode");
-//			
-//			if(mode.equals("update")) {
-//				
-//				int boardNo = Integer.parseInt( req.getParameter("no") );
-//				
-//				BoardDetail detail = new BoardService_kks().selectBoardDetail(boardNo);
-//				
-//				detail.setBoardContent( detail.getBoardContent().replaceAll("<br>", "\n") );
-//				
-//				req.setAttribute("detail", detail);
-//			}
+			String mode = req.getParameter("mode");
+			
+			if(mode.equals("update")) {
+				
+				int boardNo = Integer.parseInt( req.getParameter("no") );
+				
+				BoardDetail detail = new BoardService_kks().selectBoardDetail(boardNo);
+				
+				detail.setBoardContent( detail.getBoardContent().replaceAll("<br>", "\n") );
+				
+				req.setAttribute("detail", detail);
+			}
 			
 			String path = "/WEB-INF/views/member/Review/writeForm.jsp";
 			req.getRequestDispatcher(path).forward(req, resp);
@@ -122,6 +122,37 @@ public class TravelReviewBoardWriteController extends HttpServlet {
 					path = "write?mode=" + mode + "&type=" + boardCode;
 				}
 				
+				resp.sendRedirect(path);
+				
+			}
+			
+			if(mode.equals("update")) {
+				
+				int boardNo = Integer.parseInt( mpReq.getParameter("no") );
+				
+				int cp = Integer.parseInt( mpReq.getParameter("cp") );
+				
+				String deleteList = mpReq.getParameter("deleteList");
+				
+				detail.setBoardNo(boardNo);
+				
+				int result = service.updateBoard(detail, imageList, deleteList);
+				
+				String path = null;
+				String message = null;
+				
+				if(result > 0) {
+					
+					path = "detail?no=" + boardNo + "&type=" + boardCode + "&cp=" + cp; 
+					message = "게시글이 수정되었습니다.";
+					
+				} else {
+					
+					path = req.getHeader("referer");
+					message = "게시글 수정 실패";
+				}
+				
+				session.setAttribute("message", message);
 				resp.sendRedirect(path);
 				
 			}

@@ -120,6 +120,8 @@
         <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
     </main>
 
+    <script src="${contextPath}/resources/js/review/boardDetail.js"></script>
+
     <script>
         const contextPath = "${contextPath}";
 
@@ -130,6 +132,6 @@
         const likeList = "${likeList}";
     </script>
 
-    <script src="${contextPath}/resources/js/Reply/reply_kks.js"></script>
+    <script src="${contextPath}/resources/js/review/reply.js"></script>
 </body>
 </html>

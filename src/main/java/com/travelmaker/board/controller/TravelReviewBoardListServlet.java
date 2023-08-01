@@ -29,7 +29,20 @@ public class TravelReviewBoardListServlet extends HttpServlet {
 			
 			BoardService_kks service = new BoardService_kks();
 			
-			Map<String, Object> map = service.selectBoardList(type, cp);
+			Map<String, Object> map = null;
+			
+			if(req.getParameter("key") == null) {
+				
+				map = service.selectBoardList(type, cp);
+				
+			} else {
+				
+				String key = req.getParameter("key");
+				String query = req.getParameter("query");
+				
+				map = service.searchBoardList(type, cp, key, query);
+				
+			}
 			
 			req.setAttribute("map", map);
 			

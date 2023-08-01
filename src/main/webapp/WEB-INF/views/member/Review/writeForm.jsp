@@ -25,8 +25,9 @@
 
             <form action="write" enctype="multipart/form-data" method="POST" class="board-write"
                   onsubmit="return writeValidate()">
+
                 <div id="text-title-div">
-                    <input type="text" name="boardTitle" id="text-title" placeholder="제목을 입력해주세요.">
+                    <input type="text" name="boardTitle" id="text-title" placeholder="제목을 입력해주세요." value="${detail.boardTitle}">
                 </div>
 
                 <%-- imageList에 존재하는 이미지 레벨을 이용하여 변수 생성 --%>
@@ -98,7 +99,7 @@
                 </div>
 
                 <div class="board-content">
-                    <textarea name="boardContent" id="boardContent"></textarea>
+                    <textarea name="boardContent" id="boardContent">${detail.boardContent}</textarea>
                 </div>
                 <span id="counter">0</span>/1000
 
@@ -106,11 +107,11 @@
                     <button class="btn" id="writeBtn">작성</button>
 
                     <c:if test="${param.mode == 'insert'}">
-                        <button type="button" id="goToListBtn">목록으로</button>
+                        <button class="btn" type="button" id="goToListBtn">목록으로</button>
                     </c:if>
 
                     <c:if test="${param.mode == 'update'}">
-                    <button type="button" onclick="location.href='${header.referer}'">이전으로</button>
+                    <button class="btn" type="button" onclick="location.href='${header.referer}'">이전으로</button>
                 </c:if>
                 </div>
 
@@ -130,6 +131,7 @@
         <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
     </main>
     
+    <script src="${contextPath}/resources/js/review/boardDetail.js"></script>
     <script src="${contextPath}/resources/js/review/writeForm.js"></script>
 </body>
 </html>

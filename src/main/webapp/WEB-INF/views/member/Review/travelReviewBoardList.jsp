@@ -29,19 +29,21 @@
 
         <section id="middle">
         
-            <h1 class="title">여행 리뷰 게시판</h1>
+            <span class="title">여행 리뷰 게시판 <c:if test="${!empty param.key}"><span class="query-result"> - "${param.query}" 검색 결과</span></c:if></span>
 
             <div class="container">
 
-                <div id="write-btn">
-                    <a href="write?mode=insert&type=${param.type}&cp=${param.cp}">글쓰기</a>
-                </div>
+                <c:if test="${!empty loginMember}">
+                    <div id="write-btn">
+                        <a href="write?mode=insert&cp=${param.cp}&type=${param.type}">글쓰기</a>
+                    </div>
+                </c:if>
 
                 <div class="content">
                     
                     <c:choose>
                         <c:when test="${empty boardList}">
-                            <span>게시글이 존재하지 않습니다.</span>
+                            <div class="nothing">게시글이 존재하지 않습니다.</div>
                         </c:when>
                         
                         <c:otherwise>
@@ -119,12 +121,27 @@
             </ul>
         </section>
 
+        <form action="list" method="GET" id="boardSearch" onsubmit="return searchValidate()">
+            <input type="hidden" name="type" value="${param.type}">
+
+            <select name="key" id="search-key">
+                <option value="t">제목</option>
+                <option value="c">내용</option>
+                <option value="tc">제목+내용</option>
+                <option value="w">작성자</option>
+            </select>
+
+            <input type="text" name="query" id="search-query" placeholder="검색어를 입력해주세요.">
+
+            <button>검색</button>
+        </form>
+
         <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 
     </main>
     
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
-    <script src="${contextPath}/resources/js/review/travelReviewBoardList.js"></script>
+    <script src="${contextPath}/resources/js/review/boardDetail.js"></script>
 
 </body>
 </html>
