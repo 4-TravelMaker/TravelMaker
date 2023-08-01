@@ -59,7 +59,7 @@
                                 <a href="${contextPath}//member/myPage/changeInfo"><img src="${contextPath}${loginMember.profileImage}">
                                 </a>
                             </c:if>
-                            <span id="nickname-member">${loginMember.memberNickname}</span>
+                            <span id="nickname-member">${loginMember.memberNickname} 님, 환영합니다!</span>
                             <c:if test="${loginMember.adminFlag != 'Y'}">
                                 <button class="logout-btn-style">                    
                                     <a href="${contextPath}/memeber/logout">로그아웃</a>

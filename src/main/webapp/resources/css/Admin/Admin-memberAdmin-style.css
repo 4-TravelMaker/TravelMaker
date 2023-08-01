@@ -123,5 +123,9 @@
 }
 
 #search-container{
-    overflow: auto;
+    overflow-y: scroll;
+}
+
+#memberList{
+    font-size: 14px;
 }

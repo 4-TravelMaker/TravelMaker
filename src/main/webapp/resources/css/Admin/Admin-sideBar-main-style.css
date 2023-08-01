@@ -1,4 +1,8 @@
 /* 마이 페이지 왼쪽 메뉴 */
+#middle{
+    display: flex;
+}
+
 .left-section {
     width: 300px;
     height: auto;

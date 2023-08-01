@@ -16,7 +16,6 @@
 				MEMBER_ADDR, MEMBER_THM, ENROLL_DT, SECESSION_FL
 		FROM MEMBER
 		WHERE MEMBER_ID = ?
-		AND SECESSION_FL = 'N'
 	</entry>
 	
 	<!-- 회원 탈퇴 처리 -->
