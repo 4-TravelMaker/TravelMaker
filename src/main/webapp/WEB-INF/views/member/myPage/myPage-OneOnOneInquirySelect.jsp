@@ -34,6 +34,11 @@
                 <section class="title">
                     <i class="fa-solid fa-circle-question" style="color: #000000;"></i>
                     &nbsp;1:1 문의
+                    <span id="write-board-btn-area">
+                        <a href="write">
+                            <button type="button" id="write-board-btn">문의글 작성하기</button>
+                        </a>
+                    </span>
                 </section>
             </section>
 

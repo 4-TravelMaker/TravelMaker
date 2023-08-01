@@ -227,4 +227,31 @@ public class BoardService_ash {
 		return result;
 	}
 
+	/** 마이페이지 - 일대일 문의글 수정 Service
+	 * @param boardNo
+	 * @param boardTitle
+	 * @param boardContent
+	 * @return result
+	 * @throws Exception
+	 */
+	public int updateOneOnOneInquiryBoard(int boardNo, String boardTitle, String boardContent) throws Exception {
+
+		Connection conn = getConnection();
+		
+		// XSS 처리
+		boardContent = Util.XSSHandling(boardContent);
+		
+		// 개행문자 처리
+		boardContent = Util.newLineHandling(boardContent);
+		
+		int result = dao.updateOneOnOneInquiryBoard(conn, boardNo, boardTitle, boardContent);
+		
+		if(result > 0) commit(conn);
+		else		   rollback(conn);
+		
+		close(conn);
+		
+		return result;
+	}
+
 }
