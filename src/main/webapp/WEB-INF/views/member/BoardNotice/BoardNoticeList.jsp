@@ -78,6 +78,12 @@
                 </table>
             </div>
 
+            <div class="btn-area">
+                <c:if test="${!empty loginMember}">
+                    <button id="insertBtn" onclick="location.href='write?mode=insert&type=${param.type}&cp=${param.cp}'">글쓰기</button>
+                </c:if>
+            </div>
+
             <div id="last">
                 
                 <div class="pagination-area">

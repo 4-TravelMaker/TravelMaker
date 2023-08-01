@@ -44,29 +44,70 @@
                     <div class="container">
                         <div id="content-area">
 
-                            <!-- 게시판 이미지 영역 -->
-                            <div class="img-box">
+                            <!-- 이미지가 있을 경우 -->
+                            <c:if test="${!empty detail.imageList}">
 
-                                <div class="boardImg">
-                                    <img src="${contextPath}/resources/images/logo.png">
+                                <!-- 썸네일이 있을 경우 변수 생성 -->
+                                <c:if test="${detail.imageList[0].imageLevel == 0}">
+                                    <c:set var="thumnail" value="${detail.imageList[0]}" />
+                                </c:if>
+
+                            </c:if>
+
+                            <!-- 썸네일 영역(썸네일이 있을 경우) -->
+                            <c:if test="${!empty thumnail}">
+
+                                <div class="img-box">
+                                    <div class="boardImg thumnail">
+                                        <img src="${contextPath}${thumnail.imageReName}">
+                                    </div>
                                 </div>
 
-                                <div class="boardImg">
-                                    <img src="${contextPath}/resources/images/logo.png">
+                            </c:if>
+
+                            <c:if test="${empty thumnail}">
+                                <c:set var="start" value="0"/>
+                            </c:if>
+
+                            <c:if test="${!empty thumnail}">
+                                <c:set var="start" value="1"/>
+                            </c:if>
+
+
+                            <!-- 업로드 이미지가 있는 경우 -->
+                            <c:if test="${fn:length(detail.imageList) > start}">
+
+                                <!-- 업로드 이미지 영역 -->
+                                <div class="img-box">
+
+                                    <c:forEach var="i" begin="${start}" end="${fn:length(detail.imageList) -1}">
+                                        <div class="boardImg">
+                                            <img src="${contextPath}${detail.imageList[i].imageReName}">
+                                        </div>
+                                    </c:forEach>
                                 </div>
 
-                                <div class="boardImg">
-                                    <img src="${contextPath}/resources/images/logo.png">
-                                </div>
 
-                            </div>
+                            </c:if>
     
                             <!-- 게시판 내용 영역 -->
                             <div class="board-content">${detail.boardContent}</div>
 
                             <div class="board-btn-area">
-                                <button id="updateBtn">수정</button>
-                                <button id="deleteBtn">삭제</button>
+
+                                <c:if test="${loginMember.memberNo == detail.memberNo}">
+                                    <c:if test="${empty param.cp}">
+                                        <c:set var="cp" value="1"/>
+                                    </c:if>
+
+                                    <c:if test="${!empty param.cp}">
+                                        <c:set var="cp" value="${param.cp}"/>
+                                    </c:if>
+
+                                    <button id="updateBtn">수정</button>
+                                    <button id="deleteBtn">삭제</button>
+
+                                </c:if>
                                 <button id="goToListBtn">목록으로</button>
                             </div>
 

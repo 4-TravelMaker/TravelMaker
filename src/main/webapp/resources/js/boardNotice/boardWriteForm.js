@@ -17,7 +17,7 @@ for(let i = 0; i< inputImage.length; i++){
         if(this.files[0] != undefined){
 
             const reader = new FileReader(); // <- 선택된 파일을 읽을 객체
-            reader.readAsDataURL(this.file[0]);
+            reader.readAsDataURL(this.files[0]);
 
             reader.onload = function(e){
 
@@ -52,6 +52,7 @@ function writeValidate(){
     const boardTitle = document.getElementsByName("boardTitle")[0];
     const boardContent = document.querySelector("[name='boardContent']");
 
+    
     if(boardTitle.value.trim().length == 0){
         alert("제목을 입력해주세요.");
         boardTitle.value = "";

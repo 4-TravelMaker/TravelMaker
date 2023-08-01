@@ -10,6 +10,7 @@ import java.util.Map;
 import com.travelmaker.board.model.dao.BoardDAO_hsn;
 import com.travelmaker.board.model.vo.Board;
 import com.travelmaker.board.model.vo.BoardDetail;
+import com.travelmaker.board.model.vo.BoardImage;
 import com.travelmaker.board.model.vo.Pagination;
 import com.travelmaker.board.model.vo.Reply;
 import com.travelmaker.common.Util;
@@ -57,7 +58,7 @@ public class BoardService_hsn {
 
 
 
-	/** 댓글 상세조회 Service
+	/** 게시글 상세조회 Service
 	 * @param boardNo
 	 * @return detail
 	 * @throws Exception
@@ -70,9 +71,12 @@ public class BoardService_hsn {
 		
 		if(detail != null) {
 			
+			List<BoardImage> imageList = dao.selectImageList(conn, boardNo);
+			
+			detail.setImageList(imageList);
 		}
 		
-		
+		close(conn);
 		return detail;
 	}
 
@@ -187,5 +191,59 @@ public class BoardService_hsn {
 		
 		
 		return result;
+	}
+
+
+	/** 게시글 등록 Service
+	 * @param detail
+	 * @param imageList
+	 * @param boardCode
+	 * @return boardNo
+	 * @throws Exception
+	 */
+	public int insertBoard(BoardDetail detail, List<BoardImage> imageList, int boardCode) throws Exception{
+		
+		Connection conn = getConnection();
+		
+		// 다음 작성할 게시글 번호 얻어오기
+		int boardNo = dao.nextBoardNo(conn);
+		
+		// 게시글 부분만 삽입
+		detail.setBoardNo(boardNo);
+		
+		// XSS 방지 처리
+		detail.setBoardTitle(Util.XSSHandling(detail.getBoardTitle()));
+		detail.setBoardContent(Util.XSSHandling(detail.getBoardContent()));
+		
+		// 개행 문자 처리
+		detail.setBoardContent(Util.newLineHandling(detail.getBoardContent()));
+		
+		int result = dao.insertBoard(conn, detail, boardCode);
+		
+		if(result > 0) {
+			
+			for(BoardImage image : imageList) {
+				
+				image.setBoardNo(boardNo); // 게시글 번호 세팅
+				
+				result = dao.insertBoardImage(conn, image);
+				
+				if(result == 0) {
+					break;
+				}
+			} // for문 종료
+		} // if문 종료
+		
+		if(result > 0) {
+			commit(conn);
+		}else {
+			rollback(conn);
+			boardNo = 0; // 게시글 번호를 0으로 바꿔서 실패했음을 컨트롤러에 전달
+		}
+		
+		close(conn);
+		
+		
+		return boardNo;
 	}
 }
