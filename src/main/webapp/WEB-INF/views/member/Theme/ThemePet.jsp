@@ -26,7 +26,9 @@
             <section class="container">
 
                 <section class="container1">
-                    <h2>서울 근교 여행, 붉게 물드는 하늘을 감상하는 노을 명소 4</h2>
+                    <h2>댕댕이도 같이여행 하개!</h2>
+                    <b>태안여행, 태안 애견펜션(하늘지기펜션)</b>
+                    
                 </section>
                 <section class="container2">
                     좋아요 0     조회수 0                    
@@ -39,21 +41,16 @@
                     <section class="flex_container1">
                         
                         <div class="item">
-                            <img src="${contextPath}/resources/images/ThemeBoard/theme1/NodeulIslandmain.png">
-                            <strong><h2>노들섬</h2></strong>
-                                
+                            <img src="${contextPath}/resources/images/ThemeBoard/Pet/pet1.jpg">
                         </div>
                         <div class="item">
-                            <img src="${contextPath}/resources/images/ThemeBoard/theme1/NamhanFortress.jpg">
-                            <strong><h2>남한산성</h2></strong>
+                            <img src="${contextPath}/resources/images/ThemeBoard/Pet/pet2.jpg">
                         </div>
                         <div class="item">
-                            <img src="${contextPath}/resources/images/ThemeBoard/theme1/BanpoHangangPark.jpg">
-                            <strong><h2>반포한강공원</h2></strong>
+                            <img src="${contextPath}/resources/images/ThemeBoard/Pet/pet3.jpg">
                         </div>
                         <div class="item">
-                            <img src="${contextPath}/resources/images/ThemeBoard/theme1/AchasanMountain.jpg">
-                            <strong><h2>아차산</h2></strong>
+                            <img src="${contextPath}/resources/images/ThemeBoard/Pet/pet4.jpg">
                         </div>
                     </section>  
 
@@ -64,19 +61,19 @@
                 <section class="container5">
                    
                             <b>이런 분들에게 추천해 드립니다!</b>
-                            <p>붉게 물드는 노을을 감상하고 싶은 분</p>
-                            <p>서울 근교에서 낭만을 즐기고 싶은 분</p>
-                            <p>저녁 산책을 즐기고 싶은분</p>
+                            <p>반려견과 함께 여행을 가고싶으신 분</p>
+                            <p>반려견과 편안하게 힐링이 필요하신 분</p>
+                            <p>눈치보지 않고 반려견과 걷고싶으신 분</p>
                     
 
                 </section>
                 <section class="container6">
-                    <b>노들섬</b>
+                    <b>하늘지기펜션</b>
                 </section>
 
                 <section class="container7">
                     <section class="container7-1">
-                        <img src="${contextPath}/resources/images/ThemeBoard/theme1/NodeulIslandSubmain.jpg" alt="">
+                        <img src="${contextPath}/resources/images/ThemeBoard/Pet/petsub.jpg">
                     </section>
                 </section>
 
@@ -84,13 +81,10 @@
                     <section class="container8-1">
                         <table>
                             <ul>
-                                <li>하루의 바쁜 일과를 끝내고,
-                                    저마다의 이유로 바라보는 한강.
-                                    그 중심엔, 노들섬이 있습니다.</li>
-                                <li> 당신의 눈과 귀를 즐겁게 할
-                                    노들섬의 새로운 시작.</li>
-                                <li>음악과 미술이 함께하는
-                                    노들섬에 오신 것을 환영합니다.</li>
+                                <li>반려견 인구 천만시대에 
+                                    이뻐하는 반려견과 여행을 가고싶으신가요?</li>
+                                <li>당신과 반려견의 좋은 추억을 만들수 있어요!</li>
+                                <li>편안하게 눈치보지 않고 사랑하는 반려견</li>
                             </ul>
                         </table>
 
@@ -101,10 +95,10 @@
                 <section class="container9">
                     <section class="container9-1">
                         <section class="item3">
-                            <img src="${contextPath}/resources/images/ThemeBoard/theme1/NodeulIsland.jpg">
+                            <img src="${contextPath}/resources/images/ThemeBoard/Pet/pet5.jpg">
                         </section>
                         <section class="item3">
-                            <img src="${contextPath}/resources/images/ThemeBoard/theme1/NodeulIslands.jpg">
+                            <img src="${contextPath}/resources/images/ThemeBoard/Pet/pet6.jpg">
                         </section>
 
                     </section>
@@ -141,11 +135,60 @@
 
                 </section>
 
+                <section class="container9">
+                    <section class="container9-1">
+                        <section class="item3">
+                            <img src="${contextPath}/resources/images/ThemeBoard/Pet/pet7.jpg">
+                        </section>
+                        <section class="item3">
+                            <img src="${contextPath}/resources/images/ThemeBoard/Pet/pet8.jpg">
+                        </section>
+
+                    </section>
+
+                </section>
+
+                <section class="container10">
+                    <section class="container10-1">
+                        <section class="item4">
+                            <table>
+                                 <ul>
+                                    <li>위치 : 서울시 용산구 양녕로 445</li>
+                                    <li>운영시간 : 24시간</li>
+                                    <li>이용요금 : 무료</li>
+                                    <li>문의 : 02-749-4500</li>
+                                    <li>주차 : 공용주차장</li>
+                                 </ul>
+                            </table>
+                        </section>
+
+                        <section class="item4">
+                            <table>
+                                <ul>
+                                    <li>위치 : 서울시 용산구 양녕로 445</li>
+                                    <li>운영시간 : 24시간</li>
+                                    <li>이용요금 : 무료</li>
+                                    <li>문의 : 02-749-4500</li>
+                                    <li>주차 : 공용주차장</li>
+                                </ul>
+                           </table>
+                        </section>
+
+                    </section>
+
+                </section>
+
+
+                
+
+                
+
                
                
             </section>    
            
         </section>
+
 
         <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
     </main>

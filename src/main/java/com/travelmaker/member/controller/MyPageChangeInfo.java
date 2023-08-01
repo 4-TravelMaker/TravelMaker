@@ -26,7 +26,7 @@ public class MyPageChangeInfo extends HttpServlet {
 		
 		MemberService_kks service = new MemberService_kks();
 		
-		int memberNo = 1;
+		int memberNo = 0;
 		
 		try {
 			Member loginMember = service.autoLogin(memberNo);

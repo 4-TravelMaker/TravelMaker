@@ -56,49 +56,42 @@
                 <section class="container3"><hr></section>
                 <br>
                 <section class="container4">
-                    <b>여진구의 테마 추천!</b>
+                    <b>Travel Maker의 테마 추천!</b>
                 </section>
                 <br><br>
                 <section class="container5">
                     <section class="flex-container1">
                         <div class="item" id="photo">
-                            <img src="${contextPath}/resources/images/ThemeBoard/main/autumnLOVE.jpg">
-                                <strong><h2>가을 타는 당신!</h2></strong>
-                                <br>
-                                <b>여행지 이름</b>
-                                <br>
-                                <b>여행지 주소</b>
+                            <a href="http://localhost:8080/TravelMaker/theme/pet?type=2">
+                                <img src="${contextPath}/resources/images/ThemeBoard/main/petMain.jpg">
+                                <strong><h2>반려견과 함께!</h2></strong>
+                            </a>
                         </div>
                         <div class="item" id="photo">
+                           <a href="http://localhost:8080/TravelMaker/theme/coupleTrip?type=2">
                             <img src="${contextPath}/resources/images/ThemeBoard/main/coupleTrip.jpg">
-                                <strong><h2>연인과 함께!</h2></strong>
-                                <br>
-                                <b>여행지 이름</b>
-                                <br>
-                                <b>여행지 주소</b>
+                            <strong><h2>연인과 함께!</h2></strong>
+                        </a>
+                                
                         </div>
                         <div class="item" id="photo">
-                            <img src="${contextPath}/resources/images/ThemeBoard/main/oldPalace.jpg">
-                                <strong><h2>역사.. 좋아하세요?</h2></strong>
-                                <br>
-                                <b>여행지 이름</b>
-                                <br>
-                                <b>여행지 주소</b>
+                            <a href="http://localhost:8080/TravelMaker/theme/trainTrip?type=2">
+                                <img src="${contextPath}/resources/images/ThemeBoard/main/TrainTripMain.jpg">
+                                <strong><h2>칙칙폭폭! 기차여행!</h2></strong>
+                            </a>
                         </div>
                         <div class="item" id="photo">
-                            <img src="${contextPath}/resources/images/ThemeBoard/main/Disneyland.jpg">
-                                <strong><h2>5월은 가정의날!</h2></strong>
-                                <br>
-                                <b>여행지 이름</b>
-                                <br>
-                                <b>여행지 주소</b>
+                            <a href="http://localhost:8080/TravelMaker/theme/familyTrip?type=2">
+                                <img src="${contextPath}/resources/images/ThemeBoard/main/FamilyTripMain.jpg">
+                                <strong><h2>가족과 함께!</h2></strong>
+                            </a>
                         </div>
                     </section>
 
                     
                 </section>
 
-                <br><br><br>
+                
                 <section class="container6">
                     <section class="container6-1">
                         <b>키워드 & 해쉬태그</b>

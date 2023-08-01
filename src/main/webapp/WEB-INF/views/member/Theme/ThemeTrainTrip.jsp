@@ -26,7 +26,8 @@
             <section class="container">
 
                 <section class="container1">
-                    <h2>서울 근교 여행, 붉게 물드는 하늘을 감상하는 노을 명소 4</h2>
+                    <h2>칙칙폭폭!! 테마가 있는 기차 여행</h2>
+                    <b>부산의 밤 풍경을 즐기는 여행(힐링코스)</b>
                 </section>
                 <section class="container2">
                     좋아요 0     조회수 0                    
@@ -39,21 +40,16 @@
                     <section class="flex_container1">
                         
                         <div class="item">
-                            <img src="${contextPath}/resources/images/ThemeBoard/theme1/NodeulIslandmain.png">
-                            <strong><h2>노들섬</h2></strong>
-                                
+                            <img src="${contextPath}/resources/images/ThemeBoard/TrainTrip/TrainTripArt1.jpg">                                
                         </div>
                         <div class="item">
-                            <img src="${contextPath}/resources/images/ThemeBoard/theme1/NamhanFortress.jpg">
-                            <strong><h2>남한산성</h2></strong>
+                            <img src="${contextPath}/resources/images/ThemeBoard/TrainTrip/TrainTripDia1.jpg">
                         </div>
                         <div class="item">
-                            <img src="${contextPath}/resources/images/ThemeBoard/theme1/BanpoHangangPark.jpg">
-                            <strong><h2>반포한강공원</h2></strong>
+                            <img src="${contextPath}/resources/images/ThemeBoard/TrainTrip/TrainTripDron1.jpg">
                         </div>
                         <div class="item">
-                            <img src="${contextPath}/resources/images/ThemeBoard/theme1/AchasanMountain.jpg">
-                            <strong><h2>아차산</h2></strong>
+                            <img src="${contextPath}/resources/images/ThemeBoard/TrainTrip/TrainTripTrain1.jpg">
                         </div>
                     </section>  
 
@@ -64,19 +60,19 @@
                 <section class="container5">
                    
                             <b>이런 분들에게 추천해 드립니다!</b>
-                            <p>붉게 물드는 노을을 감상하고 싶은 분</p>
-                            <p>서울 근교에서 낭만을 즐기고 싶은 분</p>
-                            <p>저녁 산책을 즐기고 싶은분</p>
+                            <p>아름다운 동해 바다를 따라 움직이는 기차여행을 원하는 분</p>
+                            <p>도시의 불빛을 한눈에 보면서 부산야경에 힐링 하실분</p>
+                            <p>커플이라면 부산에서 꼭 가봐야 할곳만 추천 받고 싶은 분</p>
                     
 
                 </section>
                 <section class="container6">
-                    <b>노들섬</b>
+                    <b>부산 여행</b>
                 </section>
 
                 <section class="container7">
                     <section class="container7-1">
-                        <img src="${contextPath}/resources/images/ThemeBoard/theme1/NodeulIslandSubmain.jpg" alt="">
+                        <img src="${contextPath}/resources/images/ThemeBoard/TrainTrip/TrainTripSub.jpg">
                     </section>
                 </section>
 
@@ -84,13 +80,9 @@
                     <section class="container8-1">
                         <table>
                             <ul>
-                                <li>하루의 바쁜 일과를 끝내고,
-                                    저마다의 이유로 바라보는 한강.
-                                    그 중심엔, 노들섬이 있습니다.</li>
-                                <li> 당신의 눈과 귀를 즐겁게 할
-                                    노들섬의 새로운 시작.</li>
-                                <li>음악과 미술이 함께하는
-                                    노들섬에 오신 것을 환영합니다.</li>
+                                <li>부산여행에 해안절경을 보신적 있으세요?</li>
+                                <li>사랑하는 연인 혹은 가족과 부산에서 좋은추억을 가져가보세요!</li>
+                                <li>드론라이트 쇼는 꼭 보고 가셔야하는거 알죠!?</li>
                             </ul>
                         </table>
 
@@ -101,10 +93,10 @@
                 <section class="container9">
                     <section class="container9-1">
                         <section class="item3">
-                            <img src="${contextPath}/resources/images/ThemeBoard/theme1/NodeulIsland.jpg">
+                            <img src="${contextPath}/resources/images/ThemeBoard/TrainTrip/TrainTripArt2.jpg">
                         </section>
                         <section class="item3">
-                            <img src="${contextPath}/resources/images/ThemeBoard/theme1/NodeulIslands.jpg">
+                            <img src="${contextPath}/resources/images/ThemeBoard/TrainTrip/TrainTripDia2.jpg">
                         </section>
 
                     </section>
@@ -116,10 +108,11 @@
                         <section class="item4">
                             <table>
                                  <ul>
-                                    <li>위치 : 서울시 용산구 양녕로 445</li>
-                                    <li>운영시간 : 24시간</li>
-                                    <li>이용요금 : 무료</li>
-                                    <li>문의 : 02-749-4500</li>
+                                    <li>뮤지엄 원</li>
+                                    <li>위치 : 부산광역시 해운대구 센텀서로 20</li>
+                                    <li>이용시간 : 10:00~19:00</li>
+                                    <li>이용요금 : 성인 18,000원 미성년 15,000원</li>
+                                    <li>문의 : 051-731-3302</li>
                                     <li>주차 : 공용주차장</li>
                                  </ul>
                             </table>
@@ -128,10 +121,10 @@
                         <section class="item4">
                             <table>
                                 <ul>
-                                    <li>위치 : 서울시 용산구 양녕로 445</li>
-                                    <li>운영시간 : 24시간</li>
-                                    <li>이용요금 : 무료</li>
-                                    <li>문의 : 02-749-4500</li>
+                                    <li>부산다이아몬드 타워</li>
+                                    <li>운영시간 : 10:00~22:00</li>
+                                    <li>위치 : 부산광역시 중구 용두산길 37-55 </li>
+                                    <li>문의 : 051-601-1800</li>
                                     <li>주차 : 공용주차장</li>
                                 </ul>
                            </table>
@@ -140,6 +133,54 @@
                     </section>
 
                 </section>
+
+                <section class="container9">
+                    <section class="container9-1">
+                        <section class="item3">
+                            <img src="${contextPath}/resources/images/ThemeBoard/TrainTrip/TrainTripDron2.jpg">
+                        </section>
+                        <section class="item3">
+                            <img src="${contextPath}/resources/images/ThemeBoard/TrainTrip/TrainTripTrain2.jpg">
+                        </section>
+
+                    </section>
+
+                </section>
+
+                <section class="container10">
+                    <section class="container10-1">
+                        <section class="item4">
+                            <table>
+                                 <ul>
+                                    <li>광안리M 드론 라이트쇼</li>
+                                    <li>위치 : 부산광역시 수영구 광안해변로 219</li>
+                                    <li>이용시간 : 매주 토요일 2회 공연</li>
+                                    <li>문의 : 051-610-4882</li>
+                                    <li>주차 : 공용주차장</li>
+                                 </ul>
+                            </table>
+                        </section>
+
+                        <section class="item4">
+                            <table>
+                                <ul>
+                                    <li>해운대 블루라인파크</li>
+                                    <li>위치 : 부산광역시 해운대구 청사포로 116</li>
+                                    <li>이용시간 : 09:30~20:30</li>
+                                    <li>문의 : 051-701-5548</li>
+                                    <li>주차 : 공용주차장</li>
+                                </ul>
+                           </table>
+                        </section>
+
+                    </section>
+
+                </section>
+
+
+                
+
+                
 
                
                
