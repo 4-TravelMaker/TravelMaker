@@ -46,7 +46,6 @@
                         
                         <c:otherwise>
                             <c:forEach var="board" items="${boardList}" varStatus="status">
-
                                 <div class="board-area">
                                     <div class="member-box">
                                         <c:if test="${!empty board.profileImage}">

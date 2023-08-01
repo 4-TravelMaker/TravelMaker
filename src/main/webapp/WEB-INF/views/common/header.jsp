@@ -49,14 +49,14 @@
                     <!-- 프로필 이미지가 없을 경우 -->
                         <div class="loginArea5">
                             <c:if test="${empty loginMember.profileImage}">
-                                <a href="${contextPath}//member/myPage/changeInfo">
+                                <a href="${contextPath}/member/myPage/changeInfo">
                                     <img src="${contextPath}/resources/images/Admin/admin-profile.jpg">
                                 </a>
                             </c:if>
 
                             <!-- 프로필 이미지가 있을 경우 -->
                             <c:if test="${!empty loginMember.profileImage}">
-                                <a href="${contextPath}//member/myPage/changeInfo"><img src="${contextPath}${loginMember.profileImage}">
+                                <a href="${contextPath}/member/myPage/changeInfo"><img src="${contextPath}${loginMember.profileImage}">
                                 </a>
                             </c:if>
                             <span id="nickname-member">${loginMember.memberNickname} 님, 환영합니다!</span>

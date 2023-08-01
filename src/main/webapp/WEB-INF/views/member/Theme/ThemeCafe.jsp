@@ -41,20 +41,20 @@
                         
                         <div class="item">
                             <img src="${contextPath}/resources/images/ThemeBoard/Cafe/Cafe1.jpg">
-                          
+                            <b>동화속인가요?</b>
                                 
                         </div>
                         <div class="item">
                             <img src="${contextPath}/resources/images/ThemeBoard/Cafe/Cafefood2.jpg">
-                          
+                            <b>피자맛집!?</b>
                         </div>
                         <div class="item">
                             <img src="${contextPath}/resources/images/ThemeBoard/Cafe/CafeMenu2.jpg">
-                          
+                            <b>사실 빵 맛집!</b>
                         </div>
                         <div class="item">
                             <img src="${contextPath}/resources/images/ThemeBoard/Cafe/Cafe3.jpg">
-                       
+                            <b>거기다 뷰 맛집!</b>
                         </div>
                     </section>  
 

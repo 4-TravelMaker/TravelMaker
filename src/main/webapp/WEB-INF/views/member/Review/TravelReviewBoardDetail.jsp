@@ -92,6 +92,22 @@
                         <div id="likeCountBox">${detail.likeCount}</div>
                     </div>
                 </div>
+                <div class="board-btn-area">
+
+                    <c:if test="${loginMember.memberNo == detail.memberNo}">
+                        <c:if test="${empty param.cp}">
+                            <c:set var="cp" value="1"/>
+                        </c:if>
+
+                        <c:if test="${!empty param.cp}">
+                            <c:set var="cp" value="${param.cp}"/>
+                        </c:if>
+                        
+                        <button class="reply-btn" id="updateBtn" onclick="location.href='write?mode=update&type=${param.type}&cp=${cp}&no=${detail.boardNo}'">수정</button>
+                        <button class="reply-btn" id="deleteBtn">삭제</button>
+                    </c:if>
+                        <button class="reply-btn" id="goToListBtn">목록으로</button>
+                </div>
             </div>
 
             <jsp:include page="/WEB-INF/views/member/Review/reply.jsp"/>

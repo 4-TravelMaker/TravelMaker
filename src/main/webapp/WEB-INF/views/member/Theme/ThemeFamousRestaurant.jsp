@@ -41,16 +41,19 @@
                         
                         <div class="item">
                             <img src="${contextPath}/resources/images/ThemeBoard/FamousRestaurant/FamousRestaurantSomdari5.jpg">
-                                
+                            <b>솜다리버거!</b>  
                         </div>
                         <div class="item">
                             <img src="${contextPath}/resources/images/ThemeBoard/FamousRestaurant/FamousRestaurantSomdari2.jpg">
+                            <b>육즙팡팡!</b>
                         </div>
                         <div class="item">
                             <img src="${contextPath}/resources/images/ThemeBoard/FamousRestaurant/FamousRestaurantSomdari3.jpg">
+                            <b>수제버거 맛집!</b>
                         </div>
                         <div class="item">
                             <img src="${contextPath}/resources/images/ThemeBoard/FamousRestaurant/FamousRestaurantSomdari6.jpg">
+                            <b>뷰 맛집!</b>
                         </div>
                     </section>  
 

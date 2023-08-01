@@ -37,9 +37,6 @@ findButton.addEventListener("click", function(){
         }
     });
 
-
-
-
 })
 
 

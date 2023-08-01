@@ -30,7 +30,6 @@
                 <hr>
             </section>
             <section class="like">
-                <p>좋아요</p>
                 <section>
                      <img src="${contextPath}/resources/images/Region/Jeolla/iksan.jpg" width="550px" height="370px">
                 </section>

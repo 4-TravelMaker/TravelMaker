@@ -42,15 +42,19 @@
                         
                         <div class="item">
                             <img src="${contextPath}/resources/images/ThemeBoard/Pet/pet1.jpg">
+                            <b>반려견</b>
                         </div>
                         <div class="item">
                             <img src="${contextPath}/resources/images/ThemeBoard/Pet/pet2.jpg">
+                            <b>맹방해수욕장</b>
                         </div>
                         <div class="item">
                             <img src="${contextPath}/resources/images/ThemeBoard/Pet/pet3.jpg">
+                            <b>맹방해수욕장</b>
                         </div>
                         <div class="item">
                             <img src="${contextPath}/resources/images/ThemeBoard/Pet/pet4.jpg">
+                            <b>맹방해수욕장</b>
                         </div>
                     </section>  
 

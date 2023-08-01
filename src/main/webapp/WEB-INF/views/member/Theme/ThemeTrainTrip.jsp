@@ -41,15 +41,19 @@
                         
                         <div class="item">
                             <img src="${contextPath}/resources/images/ThemeBoard/TrainTrip/TrainTripArt1.jpg">                                
+                            <b>뮤지엄 원</b>
                         </div>
                         <div class="item">
                             <img src="${contextPath}/resources/images/ThemeBoard/TrainTrip/TrainTripDia1.jpg">
+                            <b>다이아몬드 타워</b>
                         </div>
                         <div class="item">
                             <img src="${contextPath}/resources/images/ThemeBoard/TrainTrip/TrainTripDron1.jpg">
+                            <b>드론 라이트쇼</b>
                         </div>
                         <div class="item">
                             <img src="${contextPath}/resources/images/ThemeBoard/TrainTrip/TrainTripTrain1.jpg">
+                            <b>블루라인파크</b>
                         </div>
                     </section>  
 
@@ -107,14 +111,13 @@
                     <section class="container10-1">
                         <section class="item4">
                             <table>
-                                 <ul>
+                                <ul>
                                     <li>뮤지엄 원</li>
                                     <li>위치 : 부산광역시 해운대구 센텀서로 20</li>
                                     <li>이용시간 : 10:00~19:00</li>
                                     <li>이용요금 : 성인 18,000원 미성년 15,000원</li>
                                     <li>문의 : 051-731-3302</li>
-                                    <li>주차 : 공용주차장</li>
-                                 </ul>
+                                </ul>
                             </table>
                         </section>
 

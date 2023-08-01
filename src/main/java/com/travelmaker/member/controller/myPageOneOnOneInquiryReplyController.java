@@ -14,7 +14,7 @@ import com.travelmaker.board.model.service.BoardService_ash;
 import com.travelmaker.board.model.vo.Reply;
 
 @WebServlet("/myPage/OneOnOneInquiry/*")
-public class myPageOneOnOneInquiryController extends HttpServlet{
+public class myPageOneOnOneInquiryReplyController extends HttpServlet{
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -28,13 +28,48 @@ public class myPageOneOnOneInquiryController extends HttpServlet{
 		try {
 			
 			// 일대일 문의 답변 목록 조회
-			if(command.equals("list")) {
+			if(command.equals("selectReplyList")) {
 				int boardNo = Integer.parseInt(req.getParameter("boardNo"));
 
 				List<Reply> rList = service.selectReplyList(boardNo);
 				
 				new Gson().toJson(rList, resp.getWriter());
 				
+			}
+			
+			// 일대일 문의 답변 작성
+			if(command.equals("insert")) {
+				String replyContent = req.getParameter("replyContent");
+				int memberNo = Integer.parseInt(req.getParameter("memberNo"));
+				int boardNo = Integer.parseInt(req.getParameter("boardNo"));
+				
+				Reply reply = new Reply();
+				
+				reply.setReplyContent(replyContent);
+				reply.setMemberNo(memberNo);
+				reply.setBoardNo(boardNo);
+				
+				int result = service.insertOneOnOneInquiryReply(reply);
+				
+				resp.getWriter().print(result);
+			}
+			
+			if(command.equals("delete")) {
+				int boardNo = Integer.parseInt(req.getParameter("boardNo"));
+				
+				int result = service.deleteOneOnOneInquiryBoard(boardNo);
+				
+				resp.getWriter().print(result);
+			}
+			
+			if(command.equals("update")) {
+				
+				int replyNo = Integer.parseInt( req.getParameter("replyNo") );
+				String replyContent = req.getParameter("replyContent");
+				
+				int result = service.updateOneOnOneInquiryReply(replyNo, replyContent);
+				
+				resp.getWriter().print(result);
 			}
 			
 		} catch (Exception e) {

@@ -92,7 +92,7 @@ public class BoardNoticeWriteController extends HttpServlet{
 					
 					imageList.add(image); // 리스트에 추가
 					
-					System.out.println(imageList);
+//					System.out.println(imageList);
 				} // if문 종료
 				
 			} // while문 종료
@@ -130,6 +130,40 @@ public class BoardNoticeWriteController extends HttpServlet{
 					path = "write?mode=" + mode + "&type=" + boardCode;
 				}
 				
+				resp.sendRedirect(path);
+				
+			}
+			
+			if(mode.equals("update")) {
+				
+				int boardNo = Integer.parseInt(mpReq.getParameter("no"));
+				
+				int cp = Integer.parseInt(mpReq.getParameter("cp"));
+				
+				String deleteList = mpReq.getParameter("deleteList");
+				
+				detail.setBoardNo(boardNo);
+				
+				int result = service.updateBoard( detail, imageList, deleteList);
+				
+				String path = null;
+				String message = null;
+				
+				if(result > 0) {
+					
+					path = "detail?no=" + boardNo + "&type=" + boardCode + "&cp=" + cp;
+					
+					message = "게시글이 수정되었습니다.";
+				}else {
+					
+					System.out.println("게시글 수정 실패");
+					
+					path = req.getHeader("referer");
+					
+					message = "게시글 수정에 실패하셨습니다.";
+				}
+				
+				session.setAttribute("message", message);
 				resp.sendRedirect(path);
 				
 				

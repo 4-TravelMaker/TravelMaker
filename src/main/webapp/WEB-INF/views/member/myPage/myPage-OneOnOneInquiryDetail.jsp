@@ -27,74 +27,62 @@
 
         <jsp:include page="/WEB-INF/views/common/myPage-sideBar.jsp"/>
 
-            <section class="right-section">
+        <section class="right-section">
 
-                <section class="right-section">
+            <!-- 관리자 페이지 상단 우측 제목 -->
+            <section>
+                <div class="title">
+                    <i class="fa-solid fa-circle-question" style="color: #000000;"></i>
+                    &nbsp;1:1 문의
+                </div>
+            </section>
 
-                    <!-- 관리자 페이지 상단 우측 제목 -->
-                    <section>
-                        <div class="title">
-                            <i class="fa-solid fa-circle-question" style="color: #000000;"></i>
-                            &nbsp;1:1 문의
-                        </div>
-                    </section>
-    
-                    <!-- 일대일 문의 상세 조회 영역 -->
-                    <section class="customer-inquiry">
-                        <section>
-                            ${detail.boardTitle}
-                        </section>
-                        <section>게시글 번호 : ${detail.boardNo} &nbsp;| &nbsp;작성자 닉네임 : ${detail.memberNickname} &nbsp;| &nbsp;아이디 : ${detail.memberId} &nbsp;| &nbsp;작성일 : ${detail.createDate}</section>
-                        <section>
-                            ${detail.boardContent}
-                        </section>
-                        <div class="reply-btn-area">
-                            <button type="button" id="go-to-list-btn" onclick="location.href='${header.referer}'">목록으로</button>
-                            <button type="button" id="reply-btn">답변하기</button>
-                        </div>
-                    </section>
-    
-                    <!-- 일대일 문의 답변 작성 영역 -->
-                    <section class="customer-inquiry admin-reply">
-                        <section>답변하기</section>
-                        <section id="inquiry-content-area">
-                            <textarea placeholder="답변 내용을 입력하세요" id="inquiry-content" class="inquiry-content"></textarea>
-                        </section>
-                        <section id="post-btn-area" class="post-btn-area">
-                            <button type="button" class="post-btn" id="insert-btn">작성</button>
-                            <button type="button" class="post-btn" id="cancel-btn">취소</button>
-                        </section>
-                    </section>
-                    
-                    <!-- 일대일 문의 답변 조회 영역 -->
-                    <section class="reply-select-area">
-                        <section> <i class="fa-brands fa-replyd" style="color: #000000;"></i> &nbsp; 답변</section>
-                        <section class="customer-inquiry2" id="customer-inquiry"></section>
-                    </section>
+            <!-- 일대일 문의 상세 조회 영역 -->
+            <section class="customer-inquiry">
+                <section class="updateContent-title">
+                    ${detail.boardTitle}
                 </section>
+                <section>게시글 번호 : ${detail.boardNo} &nbsp;| &nbsp;작성자 닉네임 : ${detail.memberNickname} &nbsp;| &nbsp;아이디 : ${detail.memberId} &nbsp;| &nbsp;작성일 : ${detail.createDate}</section>
+                <section class="updateContent-content">
+                    ${detail.boardContent}
+                </section>
+                <div class="reply-btn-area">
+                    <button type="button" id="go-to-list-btn" onclick="location.href='${contextPath}/myPage/OneOnOneInquiry/list?type=${param.type}&cp=${param.cp}'">목록으로</button>
+                    <button type="button" id="reply-btn">수정하기</button>
+                    <button type="button" id="delete-btn">삭제하기</button>
+                </div>
+            </section>
             
-        </main>
+            <!-- 일대일 문의 답변 조회 영역 -->
+            <section class="reply-select-area">
+                <section> <i class="fa-brands fa-replyd" style="color: #000000;"></i> &nbsp; 답변</section>
+                <section class="customer-inquiry2" id="customer-inquiry"></section>
+            </section>
+
+        </section>
+            
+    </main>
+
+    <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
+
+    <script>
+        const contextPath = "${contextPath}";
+
+        // 게시글 번호
+        const boardNo = "${detail.boardNo}";
+
+        // 게시글 제목
+        const boardTitle = "${detail.boardTitle}";
+
+        // 로그인한 회원 번호
+        const loginMemberNo = "${loginMember.memberNo}";
+
+        // 로그인한 회원 닉네임
+        const loginMemberNickName = "${loginMember.memberNickname}";
+    </script>
+
+    <script src="${contextPath}/resources/js/myPage/myPage-OneOnOneInquiryDetail.js"></script>
     
-        <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
-    
-        <script>
-            const contextPath = "${contextPath}";
-    
-            // 게시글 번호
-            const boardNo = "${detail.boardNo}";
-    
-            // 게시글 제목
-            const boardTitle = "${detail.boardTitle}";
-    
-            // 로그인한 회원 번호
-            const loginMemberNo = "${loginMember.memberNo}";
-    
-            // 로그인한 회원 닉네임
-            const loginMemberNickName = "${loginMember.memberNickname}";
-        </script>
-    
-        <script src="${contextPath}/resources/js/Admin/Admin-OneOnOneInquiryDetail.js"></script>
-        
     
 </body>
 </html>
