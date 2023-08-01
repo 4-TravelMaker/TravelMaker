@@ -33,7 +33,7 @@ public class BoardNoticeReplyController extends HttpServlet{
 				
 				List<Reply> rList = service.selectReplyList(boardNo);
 				
-				System.out.println("rList = " + rList);
+//				System.out.println("rList = " + rList);
 				
 				new Gson().toJson(rList, resp.getWriter());
 				

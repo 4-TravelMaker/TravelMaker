@@ -246,4 +246,54 @@ public class BoardService_hsn {
 		
 		return boardNo;
 	}
+
+
+	/** 게시글 수정 Service
+	 * @param detail
+	 * @param imageList
+	 * @param deleteList
+	 * @return result
+	 * @throws Exception
+	 */
+	public int updateBoard(BoardDetail detail, List<BoardImage> imageList, String deleteList) throws Exception{
+		
+		Connection conn = getConnection();
+		
+		detail.setBoardTitle(Util.XSSHandling(detail.getBoardTitle()));
+		detail.setBoardContent(Util.XSSHandling(detail.getBoardContent()));
+		
+		detail.setBoardContent(Util.newLineHandling(detail.getBoardContent()));
+		
+		int result = dao.updateBoard(conn, detail);
+		
+		if(result > 0) {
+			
+			for(BoardImage img : imageList) {
+				
+				img.setBoardNo(detail.getBoardNo());
+				
+				result = dao.updateBoardImage(conn, img);
+				
+				if(result == 0) {
+					result = dao.insertBoardImage(conn, img);
+				}
+			}
+			
+			if(!deleteList.equals("")) {
+				result = dao.deleteBoardImage(conn, deleteList, detail.getBoardNo());
+			}
+		}
+		if(result > 0)	commit(conn);
+		else			rollback(conn);
+		
+		close(conn);
+		
+		return result;
+	}
+
+//------------------------------------------------------------------------------------------------------------------------------------------------
+	//관리자 페이지 게시글 관리 Service 시작
+	
+
+	
 }

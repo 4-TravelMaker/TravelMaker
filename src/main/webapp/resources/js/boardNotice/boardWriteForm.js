@@ -32,7 +32,7 @@ for(let i = 0; i< inputImage.length; i++){
         }
     });
 
-    // 미리보기 석제 버튼이 클릭 되었을 때의 동작
+    // 미리보기 삭제 버튼이 클릭 되었을 때의 동작
     deleteImage[i].addEventListener("click",function(){
 
         // 미리보기가 존재하는 경우에만 x버튼 동작
@@ -52,7 +52,7 @@ function writeValidate(){
     const boardTitle = document.getElementsByName("boardTitle")[0];
     const boardContent = document.querySelector("[name='boardContent']");
 
-    
+
     if(boardTitle.value.trim().length == 0){
         alert("제목을 입력해주세요.");
         boardTitle.value = "";
