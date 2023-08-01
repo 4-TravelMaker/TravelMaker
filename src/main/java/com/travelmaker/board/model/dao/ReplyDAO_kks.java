@@ -110,4 +110,30 @@ public class ReplyDAO_kks {
 		return result;
 	}
 
+	/** 댓글 삭제 DAO
+	 * @param conn
+	 * @param replyNo
+	 * @return result
+	 * @throws Exception
+	 */
+	public int deleteReply(Connection conn, int replyNo) throws Exception {
+		
+		int result = 0;
+		
+		try {
+			
+			String sq = prop.getProperty("deleteReply");
+			
+			pstmt = conn.prepareStatement(sq);
+			
+			pstmt.setInt(1, replyNo);
+			
+			result = pstmt.executeUpdate();
+			
+		} finally {
+			close(pstmt);
+		}
+		return result;
+	}
+
 }

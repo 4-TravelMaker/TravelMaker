@@ -50,5 +50,24 @@ public class ReplyService_kks {
 		return result;
 		
 	}
+
+	/** 댓글 삭제 Service
+	 * @param replyNo
+	 * @return result
+	 * @throws Exception
+	 */
+	public int deleteReply(int replyNo) throws Exception{
+		
+		Connection conn = getConnection();
+		
+		int result = dao.deleteReply(conn, replyNo);
+		
+		if(result > 0)	commit(conn);
+		else			rollback(conn);
+		
+		close(conn);
+		
+		return result;
+	}
 	
 }

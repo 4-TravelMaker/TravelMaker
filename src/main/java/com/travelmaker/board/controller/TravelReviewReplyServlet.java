@@ -55,6 +55,16 @@ public class TravelReviewReplyServlet extends HttpServlet {
 				
 			}
 			
+			if(command.equals("delete")) {
+				
+				int replyNo = Integer.parseInt( req.getParameter("replyNo") );
+				
+				int result = service.deleteReply(replyNo);
+				
+				resp.getWriter().print(result);
+				
+			}
+			
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
