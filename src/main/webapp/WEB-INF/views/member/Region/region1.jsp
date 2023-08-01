@@ -73,7 +73,7 @@
                 <span id="CB" class="region"><a href="ctgr?ctgr=9&name=충청도" style = "color:rgb(87, 82, 82)">충청북도</a></span>
                 <span id="CN" class="region"><a href="ctgr?ctgr=9&name=충청도" style = "color: rgb(84, 154, 182)">충청남도</a></span>
                 <span id="kB" class="region"><a href="ctgr?ctgr=11&name=경상도" style = "color:green">경상북도</a></span>
-                <span id="kN" class="region"><a href="ctgr?ctgr=11&name=경상도" style = "color: rgb(207, 80, 207)">경상남도</a></span>
+                <span id="kN" class="region"><a href="ctgr?ctgr=5&name=경상도" style = "color: rgb(207, 80, 207)">경상남도</a></span>
                 <span id="JJ" class="region"><a href="ctgr?ctgr=12&name=제주도" style = "color: rgb(4, 48, 10)">제주</a></span>
             </section>
                 </section>

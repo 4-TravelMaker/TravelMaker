@@ -18,4 +18,6 @@ public class Category {
 	private String categoryName;
 	private int categorySubNo;
 	private String regionName;
+	private String boardTitle;
+	private String imgRename;
 }

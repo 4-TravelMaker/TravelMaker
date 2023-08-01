@@ -59,10 +59,9 @@ public class BoardDAO_phj {
 				
 				Category ctgr =  new Category();
 				
-				ctgr.setCategoryNo( rs.getInt("CTGR_NO") );
-				ctgr.setCategoryName( rs.getString("CTGR_NM") );
-				ctgr.setCategorySubNo( rs.getInt("PARENT_CTGR_NO") );
-				
+				ctgr.setCategoryName(  rs.getString("CTGR_NM"));
+				ctgr.setBoardTitle( rs.getString("BOARD_TITLE"));
+				ctgr.setImgRename( rs.getString("IMG_RENAME"));
 				
 				cList.add(ctgr);
 			}
@@ -83,7 +82,7 @@ public class BoardDAO_phj {
 	 */
 	public List<Region> regionTitle(Connection conn, int ctgrNo) throws Exception {
 		
-		List<Region> rList = null;
+		List<Region> rList = new ArrayList<Region>();
 		
 		try {
 			String sql = prop.getProperty("regionTitle");
@@ -98,26 +97,22 @@ public class BoardDAO_phj {
 				
 				Region rg = new Region();
 				
-				rg.setBoardTitle( rs.getString(1));
-				rg.setImgRename( rs.getString(2));
-				rg.setBoardNo( rs.getInt(3));
-				rg.setCategorySubNo( rs.getInt(4));
+				rg.setBoardTitle( rs.getString("BOARD_TITLE"));
+				rg.setImgRename( rs.getString("IMG_RENAME"));
+				rg.setBoardNo( rs.getInt("BOARD_NO"));
+				rg.setCategorySubNo( rs.getInt("PARENT_CTGR_NO"));
+				
+				rList.add(rg);
 			}
-			
 			
 			
 		}finally {
 			close(rs);
 			close(pstmt);
-			
-			
 		}
-		
 		
 		return rList;
 	}
-
-
 			
 }
 	
