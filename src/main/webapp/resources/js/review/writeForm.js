@@ -42,6 +42,7 @@ for(let i = 0; i < inputImage.length; i++) {
 
         // 미리보기가 존재하는 경우에만 (이전에 추가된 이미지가 있을 때만) x버튼 동작
         if(preview[i].getAttribute("src") != '') {
+            
             // 미리보기 삭제
             preview[i].removeAttribute("src");
             
@@ -59,7 +60,7 @@ for(let i = 0; i < inputImage.length; i++) {
 function writeValidate() {
 
     const boardTitle = document.getElementById("text-title");
-    const boardContent = document.querySelector("[name='boardContent']");
+    const boardContent = document.getElementById("boardContent");
 
     if(boardTitle.value.trim().length == 0) {
         alert("제목을 입력해주세요.");
@@ -75,15 +76,6 @@ function writeValidate() {
         return false;
     }
 
-    // 제목, 내용이 유효한 경우
-    // deleteList(input 태그)에 deleteSet(삭제된 이미지 레벨)을 추가
-    // -> JS 배열 특징 사용
-    // --> JS배열을 HTML 요소 또는 console에 출력하게 되는 경우 1,2,3 같은 문자열로 출력됨
-    //     (배열 기호가 벗겨짐)
-
-    // * Set -> Array로 변경 -> deleteList.value에 대입
-    
-    // Array.from(유사배열 | 컬렉션) : 유사배열 | 컬렉션을 배열로 변환해서 반환
     deleteList.value = Array.from(deleteSet);
 
     return true;
