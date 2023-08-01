@@ -130,6 +130,11 @@ header {
     cursor: pointer;
 }
 
+.btn-style:hover{
+    background-color: #ddd;
+    transition-duration: 1s;
+}
+
 .login-area a {
     color: white;
     text-decoration: none;
@@ -238,7 +243,37 @@ footer > section:first-child {
     cursor: pointer;
 }
 
+.logout-btn-style:hover {
+    background-color: #ddd;
+    transition-duration: 1s;
+}
+
 #nickname-member {
     font-weight: bold;
     margin-bottom: 5px;
+}
+
+/* 관리자 로그인 시 로그아웃, 관리자 페이지 버튼 활성화 */
+.logout-admin-btn-area{
+    display: flex;
+}
+
+.logout-admin-btn-area > button{
+    width: 80px;
+    height: 33px;
+    margin: 5px;
+
+    border: 1px solid transparent;
+    border-radius: 10px;
+
+    background-color: rgb(153, 216, 199);
+    font-size: 11px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.logout-admin-btn-area > button:hover{
+    background-color: #ddd;
+    transition-duration: 1s;
 }
