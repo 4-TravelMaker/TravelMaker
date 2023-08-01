@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.travelmaker.board.model.service.BoardService_phj;
 import com.travelmaker.board.model.vo.Category;
+import com.travelmaker.board.model.vo.Region;
 import com.travelmaker.member.model.service.MemberService_phj;
 
 
@@ -27,9 +28,6 @@ public class RegionCt extends HttpServlet{
 		String contextPath = req.getContextPath();
 		String command = uri.substring(  (contextPath + "/Region/").length()  );
 		
-		
-		
-		
 		try {
 			
 			if(command.equals("ctgr")) { 
@@ -37,7 +35,6 @@ public class RegionCt extends HttpServlet{
 				String name = req.getParameter("name");
 				
 				BoardService_phj service = new BoardService_phj();
-				
 				
 				// 데이터 담아갈 객체 생성
 				List<Category> cList = new ArrayList<Category>();
@@ -49,21 +46,17 @@ public class RegionCt extends HttpServlet{
 				req.setAttribute("cList", cList);
 				req.setAttribute("name", name);
 				
+				
 				String path = "/WEB-INF/views/member/Region/region2.jsp";
 				
 				RequestDispatcher dispatcher = req.getRequestDispatcher(path);
 				dispatcher.forward(req, resp);
 			}
 			
-			
-
-			
 		}catch(Exception e) {
+			
 			e.printStackTrace();
+			
 		}
 	}
-	
-	
-	
-	
 }

@@ -33,23 +33,6 @@ public class BoardService_phj {
 		
 		return cList;
 	}
-
 	
 	
-	
-	/** 지역 사진/제목 조회 Service
-	 * @param ctgrNo
-	 * @return rList
-	 * @throws Exception
-	 */
-	public List<Region> regionTitle(int ctgrNo) throws Exception{
-		
-		Connection conn = getConnection();
-		
-		List<Region> rList = dao.regionTitle(conn, ctgrNo);
-		
-		close(conn);
-		
-		return rList;
-	}
 }

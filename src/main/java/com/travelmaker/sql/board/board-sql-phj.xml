@@ -5,18 +5,11 @@
 
 	<!-- 카테고리 조회 -->
 	<entry key="selectctgr">
-		SELECT * FROM CATEGORY
+		SELECT DISTINCT CTGR_NM, BOARD_TITLE, IMG_RENAME 
+        FROM BOARD
+        LEFT JOIN BOARD_IMG USING(BOARD_NO)
+        LEFT JOIN CATEGORY USING (CTGR_NO)
 		WHERE PARENT_CTGR_NO = ?
 	</entry>
 	
-	<!-- 게시판 사진&제목 조회 -->
-	<entry key="regionTitle">
-		SELECT BOARD_TITLE, IMG_RENAME, BOARD_NO, PARENT_CTGR_NO
-		FROM BOARD
-		JOIN BOARD_IMG USING(BOARD_NO)
-		JOIN CATEGORY USING (CTGR_NO)
-		WHERE PARENT_CTGR_NO = ?
-	</entry>
-
-
 </properties>
