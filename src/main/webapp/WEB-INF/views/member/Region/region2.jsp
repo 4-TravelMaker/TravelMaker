@@ -40,7 +40,7 @@
                 <section class="middle1-3">
                     <section class="photobox">
                         <section class="photo">
-                            <a href="regionDetail">
+                            <a href="regionDetail?ctgr=${param.ctgr}">
                                 <img src="${contextPath}/resources/images/DDP.jpg" width="230px" height="190px" class="photo2">
                             </a>
                         </section>
@@ -48,14 +48,14 @@
                     </section>
                     <section class="photobox">
                         <section class="photo">
-                            <a href="regionDetail">
+                            <a href="regionDetail?ctgr=${param.ctgr}">
                                 <img src="${contextPath}/resources/images/DDP.jpg" width="230px" height="190px" class="photo2">
                             </a>
                         </section>
                         <section id="title">DDP</section>
                     </section>
                     <section class="photobox">
-                        <a href="regionDetail">
+                        <a href="regionDetail?ctgr=${param.ctgr}">
                             <img src="${contextPath}/resources/images/DDP.jpg" width="230px" height="190px" class="photo2">
                         </a>
                         <section id="title">DDP</section>

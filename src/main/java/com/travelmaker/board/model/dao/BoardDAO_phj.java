@@ -11,10 +11,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-import com.travelmaker.board.controller.Region;
 import com.travelmaker.board.model.vo.Category;
+import com.travelmaker.board.model.vo.Region;
 import com.travelmaker.board.model.vo.Reply;
-import com.travelmaker.member.model.dao.MemberDAO_ash;
 
 public class BoardDAO_phj {
 	
@@ -73,6 +72,49 @@ public class BoardDAO_phj {
 			close(pstmt);
 		}
 		return cList;
+	}
+
+
+	/** 지역 사진/제목 조회 Service
+	 * @param conn
+	 * @param ctgrNo
+	 * @return rList
+	 * @throws Exception
+	 */
+	public List<Region> regionTitle(Connection conn, int ctgrNo) throws Exception {
+		
+		List<Region> rList = null;
+		
+		try {
+			String sql = prop.getProperty("regionTitle");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, ctgrNo);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				
+				Region rg = new Region();
+				
+				rg.setBoardTitle( rs.getString(1));
+				rg.setImgRename( rs.getString(2));
+				rg.setBoardNo( rs.getInt(3));
+				rg.setCategorySubNo( rs.getInt(4));
+			}
+			
+			
+			
+		}finally {
+			close(rs);
+			close(pstmt);
+			
+			
+		}
+		
+		
+		return rList;
 	}
 
 
