@@ -26,7 +26,7 @@
             <form action="write" enctype="multipart/form-data" method="POST" class="board-write"
                   onsubmit="return writeValidate()">
                 <div id="text-title-div">
-                    <input type="text" id="text-title" placeholder="제목을 입력해주세요.">
+                    <input type="text" name="boardTitle" id="text-title" placeholder="제목을 입력해주세요.">
                 </div>
 
                 <%-- imageList에 존재하는 이미지 레벨을 이용하여 변수 생성 --%>
@@ -61,7 +61,8 @@
 
                 <div class="img-box">
                     <div class="boardImg">
-                        <label for="img0">썸네일
+                        <p>썸네일</p>
+                        <label for="img0">
                             <img class="preview" src="${img0}">
                         </label>
                         <input type="file" class="inputImage" id="img0" name="0" accept="image/*">
@@ -69,26 +70,29 @@
                     </div>
 
                     <div class="boardImg">
-                        <label for="img0">이미지1
+                        <p>이미지1</p>
+                        <label for="img1">
                             <img class="preview" src="${img1}">
                         </label>
-                        <input type="file" class="inputImage" id="img0" name="0" accept="image/*">
+                        <input type="file" class="inputImage" id="img1" name="1" accept="image/*">
                         <span class="delete-image">&times;</span>
                     </div>
 
                     <div class="boardImg">
-                        <label for="img0">이미지2
+                        <p>이미지2</p>
+                        <label for="img2">
                             <img class="preview" src="${img2}">
                         </label>
-                        <input type="file" class="inputImage" id="img0" name="0" accept="image/*">
+                        <input type="file" class="inputImage" id="img2" name="2" accept="image/*">
                         <span class="delete-image">&times;</span>
                     </div>
 
                     <div class="boardImg">
-                        <label for="img0">이미지3
+                        <p>이미지3</p>
+                        <label for="img3">
                             <img class="preview" src="${img3}">
                         </label>
-                        <input type="file" class="inputImage" id="img0" name="0" accept="image/*">
+                        <input type="file" class="inputImage" id="img3" name="3" accept="image/*">
                         <span class="delete-image">&times;</span>
                     </div>
                 </div>
@@ -99,8 +103,15 @@
                 <span id="counter">0</span>/1000
 
                 <div class="btn-last">
-                    <button class="btn">작성</button>
-                    <button class="btn">취소</button>
+                    <button class="btn" id="writeBtn">작성</button>
+
+                    <c:if test="${param.mode == 'insert'}">
+                        <button type="button" id="goToListBtn">목록으로</button>
+                    </c:if>
+
+                    <c:if test="${param.mode == 'update'}">
+                    <button type="button" onclick="location.href='${header.referer}'">이전으로</button>
+                </c:if>
                 </div>
 
             <input type="hidden" name="mode" value="${param.mode}">

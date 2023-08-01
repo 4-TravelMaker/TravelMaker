@@ -15,6 +15,7 @@ import com.travelmaker.board.model.vo.BoardImage;
 import com.travelmaker.board.model.vo.BoardLike;
 import com.travelmaker.board.model.vo.Pagination;
 import com.travelmaker.board.model.vo.Reply;
+import com.travelmaker.common.Util;
 
 public class BoardService_kks {
 
@@ -154,6 +155,53 @@ public class BoardService_kks {
 		close(conn);
 		
 		return likeCount;
+	}
+
+	/** 게시글 등록 Service
+	 * @param detail
+	 * @param imageList
+	 * @param boardCode
+	 * @return boardNo
+	 * @throws Exception
+	 */
+	public int insertBoard(BoardDetail detail, List<BoardImage> imageList, int boardCode) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		int boardNo = dao.nextBoardNo(conn);
+		
+		detail.setBoardNo(boardNo);
+		
+		detail.setBoardTitle( Util.XSSHandling( detail.getBoardTitle() ) );
+		detail.setBoardContent( Util.XSSHandling( detail.getBoardContent() ) );
+		detail.setBoardContent( Util.newLineHandling( detail.getBoardContent() ) );
+		
+		int result = dao.insertBoard(conn, detail, boardCode);
+		
+		if(result > 0) {
+			
+			for(BoardImage image : imageList) {
+				
+				image.setBoardNo(boardNo);
+				
+				result = dao.insertBoardImage(conn, image);
+				
+				if(result == 0) {
+					break;
+				}
+			}
+		}
+		
+		if(result > 0) {
+			commit(conn);
+		} else {
+			rollback(conn);
+			boardNo = 0;
+		}
+		
+		close(conn);
+		
+		return boardNo;
 	}
 
 }
