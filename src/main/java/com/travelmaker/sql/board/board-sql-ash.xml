@@ -122,4 +122,10 @@
 		WHERE RNUM BETWEEN ? AND ?
 	</entry>
 	
+	<!-- 마이페이지 - 일대일 문의글 삭제 -->
+	<entry key="deleteOneOnOneInquiryBoard">
+		UPDATE BOARD SET
+		BOARD_ST = 'Y'
+		WHERE BOARD_NO = ?
+	</entry>
 </properties>

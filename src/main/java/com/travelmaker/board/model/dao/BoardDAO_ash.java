@@ -438,4 +438,30 @@ public class BoardDAO_ash {
 		return boardList;
 	}
 
+	/** 마이페이지 - 일대일 문의글 삭제 DAO
+	 * @param conn
+	 * @param boardNo
+	 * @return result
+	 * @throws Exception
+	 */
+	public int deleteOneOnOneInquiryBoard(Connection conn, int boardNo) throws Exception {
+
+		int result = 0;
+		
+		try {
+			String sql = prop.getProperty("deleteOneOnOneInquiryBoard");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, boardNo);
+			
+			result = pstmt.executeUpdate();
+			
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
 }
