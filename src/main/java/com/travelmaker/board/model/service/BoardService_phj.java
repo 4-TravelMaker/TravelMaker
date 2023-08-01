@@ -33,6 +33,23 @@ public class BoardService_phj {
 		
 		return cList;
 	}
+
 	
+	
+	/** 지역 상세페이지 조회
+	 * @param boardNo
+	 * @return region
+	 * @throws Exception
+	 */
+	public Region selectDetail(int boardNo) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		Region region = dao.selectDetail(conn, boardNo);
+		
+		close(conn);
+
+		return region;
+	}
 	
 }

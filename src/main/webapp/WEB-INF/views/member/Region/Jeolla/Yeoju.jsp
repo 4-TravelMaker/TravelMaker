@@ -25,7 +25,7 @@
         <section id="middle1">
             <section class = "title">
                 <p>여주온천</p>
-                <p>경기 여주시</p>
+                <p>여주시</p>
                 <mark>생체에너지 활성화를 통한 건강과 휴식 제공</mark>
                 <hr>
             </section>

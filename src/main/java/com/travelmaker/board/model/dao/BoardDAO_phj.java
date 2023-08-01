@@ -62,6 +62,8 @@ public class BoardDAO_phj {
 				ctgr.setCategoryName(  rs.getString("CTGR_NM"));
 				ctgr.setBoardTitle( rs.getString("BOARD_TITLE"));
 				ctgr.setImgRename( rs.getString("IMG_RENAME"));
+				ctgr.setImgLevel(rs.getInt("IMG_LEVEL"));
+				ctgr.setBoardNo(rs.getInt("BOARD_NO"));
 				
 				cList.add(ctgr);
 			}
@@ -112,6 +114,43 @@ public class BoardDAO_phj {
 		}
 		
 		return rList;
+	}
+
+
+	/** 지역 상세페이지 조회
+	 * @param conn
+	 * @param boardNo
+	 * @return region
+	 * @throws Exception
+	 */
+	public Region selectDetail(Connection conn, int boardNo) throws Exception {
+	
+		Region region = null;
+		
+		try {
+			String sql = prop.getProperty("selectDetail");
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, boardNo);
+			
+			rs = pstmt.executeQuery();
+
+			if(rs.next()) {
+				
+				region = new Region();
+				
+				region.setBoardTitle( rs.getString(1));
+				region.setBoardContent( rs.getString(2));
+				region.setImgRename(rs.getString(3));
+				region.setImgOriginal(rs.getString(4));
+				region.setCategoryName( rs.getString(5));
+			}
+			
+		}finally {
+			close(rs);
+			close(pstmt);
+		}
+		return region;
 	}
 			
 }

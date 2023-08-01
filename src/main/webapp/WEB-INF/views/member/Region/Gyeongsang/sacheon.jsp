@@ -24,8 +24,7 @@
 
         <section id="middle1">
             <section class = "title">
-                <p>사천아이
-                </p>
+                <p>사천아이</p>
                 <p>경남 사천시</p>
                 <mark>한려해상국립공원을 한눈에 조망할 수 있는 대관람차</mark>
                 <hr>
