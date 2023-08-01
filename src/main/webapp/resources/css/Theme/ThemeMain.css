@@ -180,7 +180,7 @@ img{
     
 }
 
-#photo > img{ 
+#photo img{ 
     border-radius: 20px;
     
 }
@@ -317,7 +317,13 @@ img{
 }
 
 a:hover{
-    color: white;
+    color: darkcyan;
+    
+}
+
+a{
+    color: black;
+    text-decoration: none;
 }
 
 

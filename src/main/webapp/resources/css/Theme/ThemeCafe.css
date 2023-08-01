@@ -263,6 +263,7 @@ nav {
     height: 350px;
     display: flex;
     justify-content: center;
+    padding-top: 13px;
 }
 
 .container7-1{
