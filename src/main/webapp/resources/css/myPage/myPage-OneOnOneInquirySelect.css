@@ -79,6 +79,33 @@
     border-bottom: 1px solid #ddd;
 }
 
+#write-board-btn-area{
+    position: relative;
+    left: 570px;
+}
+
+#write-board-btn{
+    height: 40px;
+    width: 125px;
+
+    font-size: 15px;
+
+    border: none;
+    border-radius: 10px;
+
+    color: white;
+    background-color: #ddd;
+
+    cursor: pointer;
+}
+
+#write-board-btn:hover{
+    color: white;
+    background-color: black;
+
+    transition-duration: 1s;
+}
+
 /* 내용 조회 영역 */
 .right-section > section:nth-of-type(2){
     height: 800px;

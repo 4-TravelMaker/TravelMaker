@@ -34,24 +34,6 @@ public class myPageOneOnOneInquiryReplyController extends HttpServlet{
 				List<Reply> rList = service.selectReplyList(boardNo);
 				
 				new Gson().toJson(rList, resp.getWriter());
-				
-			}
-			
-			// 일대일 문의 답변 작성
-			if(command.equals("insert")) {
-				String replyContent = req.getParameter("replyContent");
-				int memberNo = Integer.parseInt(req.getParameter("memberNo"));
-				int boardNo = Integer.parseInt(req.getParameter("boardNo"));
-				
-				Reply reply = new Reply();
-				
-				reply.setReplyContent(replyContent);
-				reply.setMemberNo(memberNo);
-				reply.setBoardNo(boardNo);
-				
-				int result = service.insertOneOnOneInquiryReply(reply);
-				
-				resp.getWriter().print(result);
 			}
 			
 			if(command.equals("delete")) {
@@ -64,10 +46,11 @@ public class myPageOneOnOneInquiryReplyController extends HttpServlet{
 			
 			if(command.equals("update")) {
 				
-				int replyNo = Integer.parseInt( req.getParameter("replyNo") );
-				String replyContent = req.getParameter("replyContent");
+				int boardNo = Integer.parseInt( req.getParameter("boardNo") );
+				String boardTitle = req.getParameter("boardTitle");
+				String boardContent = req.getParameter("boardContent");
 				
-				int result = service.updateOneOnOneInquiryReply(replyNo, replyContent);
+				int result = service.updateOneOnOneInquiryBoard(boardNo, boardTitle, boardContent);
 				
 				resp.getWriter().print(result);
 			}

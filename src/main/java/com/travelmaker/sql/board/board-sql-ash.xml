@@ -128,4 +128,13 @@
 		BOARD_ST = 'Y'
 		WHERE BOARD_NO = ?
 	</entry>
+
+	<!-- 마이페이지 - 일대일 문의글 수정 -->
+	<entry key="updateOneOnOneInquiryBoard">
+		UPDATE BOARD SET
+		BOARD_TITLE = ?,
+		BOARD_CONTENT = ?
+		WHERE BOARD_NO = ?
+	</entry>
+	
 </properties>

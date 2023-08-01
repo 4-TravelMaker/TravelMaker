@@ -464,4 +464,34 @@ public class BoardDAO_ash {
 		return result;
 	}
 
+	/** 마이페이지 - 일대일 문의글 수정 DAO
+	 * @param conn
+	 * @param boardNo
+	 * @param boardTitle
+	 * @param boardContent
+	 * @return result
+	 * @throws Exception
+	 */
+	public int updateOneOnOneInquiryBoard(Connection conn, int boardNo, String boardTitle, String boardContent) throws Exception {
+		
+		int result = 0;
+		
+		try {
+			String sql = prop.getProperty("updateOneOnOneInquiryBoard");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, boardTitle);
+			pstmt.setString(2, boardContent);
+			pstmt.setInt(3, boardNo);
+			
+			result = pstmt.executeUpdate();
+			
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
 }
