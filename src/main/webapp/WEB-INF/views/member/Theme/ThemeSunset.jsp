@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TravelMaker</title>
     <link rel="shortcut icon" type="image/x-icon" href="image/small_logo.png">
-    <link rel="stylesheet" href="${contextPath}/resources/css/Theme/ThemePlaceNodeul.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/Theme/ThemeSunset.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
@@ -29,11 +29,12 @@
                 <section class="container1">
                     <h2>서울 근교 여행, 붉게 물드는 하늘을 감상하는 노을 명소 4</h2>
                 </section>
-                <br>
-                
                 <section class="container2">
-                    좋아요 0     조회수 0                    
+
+                    <h4>좋아요 0    조회수 0 </h4>
+                   
                 </section>
+                <br>
                 <section class="container2-1">
                     <hr>
                 </section>
@@ -43,8 +44,7 @@
                         
                         <div class="item">
                             <img src="${contextPath}/resources/images/ThemeBoard/theme1/NodeulIslandmain.png">
-                            <strong><h3>노들섬</h3></strong>
-                                
+                            <strong><h3>노들섬</h3></strong>   
                         </div>
                         <div class="item">
                             <img src="${contextPath}/resources/images/ThemeBoard/theme1/NamhanFortress.jpg">
@@ -61,21 +61,28 @@
                     </section>  
 
                 </section>
+
                 <section class="container4">
                     <hr>
                 </section>
                 <section class="container5">
-
-                            <br>
-                            <b>이런 분들에게 추천해 드립니다!</b>
-                            <p>붉게 물드는 노을을 감상하고 싶은 분</p>
-                            <p>서울 근교에서 낭만을 즐기고 싶은 분</p>
-                            <p>저녁 산책을 즐기고 싶은분</p>
-                    
+                    <br>
+                    <br>
+                    <b>이런 분들에게 추천해 드립니다!</b>
+                    <p>֎ 붉게 물드는 노을을 감상하고 싶은 분</p>
+                    <p>֎ 서울 근교에서 낭만을 즐기고 싶은 분</p>
+                    <p>֎ 저녁 산책을 즐기고 싶은 분</p>
+                                <br>
+                           ⭐ 추천 장소 ⭐
+                                <br>
+                    <h4>노들섬, 남한산성, 반포 한강공원, 아차산</h4>
 
                 </section>
+                <br>
+                <br>
+                <br>
                 <section class="container6">
-                    <b>노들섬</b>
+                    <h4>노들섬</h4>
                 </section>
 
                 <section class="container7">
@@ -83,6 +90,8 @@
                         <img src="${contextPath}/resources/images/ThemeBoard/theme1/NodeulIslandSubmain.jpg" alt="">
                     </section>
                 </section>
+
+                <br>
 
                 <section class="container8">
                     <section class="container8-1">
@@ -101,15 +110,61 @@
                     </section>
                     
                 </section>
+
+                <br>
                
-                <div style="height: 30px;"></div>
                 <section class="container9">
                     <section class="container9-1">
                         <section class="item3">
-                            <img src="${contextPath}/resources/images/ThemeBoard/theme1/NodeulIsland.jpg">
+                            <img src="${contextPath}/resources/images/ThemeBoard/Sunset/nodeul.jpg">
                         </section>
                         <section class="item3">
-                            <img src="${contextPath}/resources/images/ThemeBoard/theme1/NodeulIslands.jpg">
+                            <img src="${contextPath}/resources/images/ThemeBoard/Sunset/namhansansung.jpg">
+                        </section>
+
+                    </section>
+
+                </section>
+
+                <section class="container10">
+                    <section class="container10-1">
+                        <section class="item4">
+                            <table>
+                                <ul>
+                                    <li>※노들섬</li>
+                                    <li>위치 : 서울시 용산구 양녕로 445</li>
+                                    <li>운영시간 : 24시간</li>
+                                    <li>이용요금 : 무료</li>
+                                    <li>문의 : 02-749-4500</li>
+                                   
+                                 </ul>
+                            </table>
+                        </section>
+
+                        <section class="item4">
+                            <table>
+                                <ul>
+                                    <li>※남한산성</li>
+                                    <li>위치 : 경기도 광주시 남한산성면 산성리 산23</li>
+                                    <li>운영시간 : 24시간</li>
+                                    <li>이용요금 : [남한산성 입장료] 무료</li>
+                                    <li>문의 :  031-8008-5155</li>
+                                   
+                                </ul>
+                           </table>
+                        </section>
+
+                    </section>
+
+                </section>
+
+                <section class="container9">
+                    <section class="container9-1">
+                        <section class="item3">
+                            <img src="${contextPath}/resources/images/ThemeBoard/Sunset/hangang.jpg">
+                        </section>
+                        <section class="item3">
+                            <img src="${contextPath}/resources/images/ThemeBoard/Sunset/achasan.jpg">
                         </section>
 
                     </section>
@@ -121,10 +176,11 @@
                         <section class="item4">
                             <table>
                                  <ul>
-                                    <li>위치 : 서울시 용산구 양녕로 445</li>
-                                    <li>운영시간 : 24시간</li>
+                                    <li>※반포한강공원</li>
+                                    <li>위치 : 서울특별시 서초구 신반포로11길 40 한강공원 반포 안내센터</li>
+                                    <li>운영시간 : 24시간[연중무휴]</li>
                                     <li>이용요금 : 무료</li>
-                                    <li>문의 : 02-749-4500</li>
+                                    <li>문의 : 반포 안내센터 02-3780-0541~3</li>
                                     <li>주차 : 공용주차장</li>
                                  </ul>
                             </table>
@@ -133,10 +189,11 @@
                         <section class="item4">
                             <table>
                                 <ul>
-                                    <li>위치 : 서울시 용산구 양녕로 445</li>
-                                    <li>운영시간 : 24시간</li>
+                                    <li>※아차산</li>
+                                    <li>위치 : 경기도 구리시 아천동</li>
+                                    <li>운영시간 : 연중무휴 </li>
                                     <li>이용요금 : 무료</li>
-                                    <li>문의 : 02-749-4500</li>
+                                    <li>문의 : 아차산 관리사무소 02-450-1655</li>
                                     <li>주차 : 공용주차장</li>
                                 </ul>
                            </table>
@@ -146,12 +203,16 @@
 
                 </section>
 
+
+                
+
+                
+
                
                
             </section>    
            
         </section>
-
         <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
     </main>
 </body>
