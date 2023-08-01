@@ -41,16 +41,19 @@
                         
                         <div class="item">
                             <img src="${contextPath}/resources/images/ThemeBoard/CoupleTrip/CoupleTripArt1.jpg">
-                                
+                            <b>클레이아크 미술관</b>
                         </div>
                         <div class="item">
                             <img src="${contextPath}/resources/images/ThemeBoard/CoupleTrip/CoupleTripBongridan1.jpg">
+                            <b>봉리단길</b>
                         </div>
                         <div class="item">
                             <img src="${contextPath}/resources/images/ThemeBoard/CoupleTrip/CoupleTripSky1.jpg">
+                            <b>김해천문대</b>
                         </div>
                         <div class="item">
                             <img src="${contextPath}/resources/images/ThemeBoard/CoupleTrip/CoupleTripThemePark1.jpg">
+                            <b>가야테마파크</b>
                         </div>
                     </section>  
 

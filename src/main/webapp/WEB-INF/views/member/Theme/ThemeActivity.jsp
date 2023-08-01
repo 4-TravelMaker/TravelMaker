@@ -41,20 +41,20 @@
                         
                         <div class="item">
                             <img src="${contextPath}/resources/images/ThemeBoard/Activity/Activity1.jpg">
-                            
+                            <b>하늘을 날자!</b>
                                 
                         </div>
                         <div class="item">
                             <img src="${contextPath}/resources/images/ThemeBoard/Activity/Activity2.jpg">
-                            
+                            <b>시속 120km!</b>
                         </div>
                         <div class="item">
                             <img src="${contextPath}/resources/images/ThemeBoard/Activity/Activity3.jpg">
-                            
+                            <b>노을뷰도 멋져!</b>
                         </div>
                         <div class="item">
                             <img src="${contextPath}/resources/images/ThemeBoard/Activity/Activity4.jpg">
-                            
+                            <b>같이 타면 재미 2배!</b>
                         </div>
                     </section>  
 
