@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TravelMaker</title>
     <link rel="shortcut icon" type="image/x-icon" href="image/small_logo.png">
-    <link rel="stylesheet" href="${contextPath}/resources/css/ThemePlaceNodeul.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/Theme/ThemePlaceNodeul.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
@@ -62,7 +62,8 @@
                     <hr>
                 </section>
                 <section class="container5">
-                   
+
+                            <br>
                             <b>이런 분들에게 추천해 드립니다!</b>
                             <p>붉게 물드는 노을을 감상하고 싶은 분</p>
                             <p>서울 근교에서 낭만을 즐기고 싶은 분</p>
@@ -98,6 +99,7 @@
                     
                 </section>
                
+                <div style="height: 30px;"></div>
                 <section class="container9">
                     <section class="container9-1">
                         <section class="item3">

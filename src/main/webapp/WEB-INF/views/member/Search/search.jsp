@@ -11,7 +11,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>${param.searchParam}" 검색 결과</title>
+    <title>"${param.searchParam}" 검색 결과</title>
     <link rel="shortcut icon" type="image/x-icon" href="${contextPath}/resources/images/Share/small_logo.png">
     <link rel="stylesheet" href="${contextPath}/resources/css/Search/search.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -65,6 +65,8 @@
 
                         <c:forEach var="board" items="${boardList}">
                         
+                        	
+                        
                             <li style="height: 150px; list-style: none;" >
                                 <section style="float: left;">
                                     <a href="#">
@@ -72,7 +74,15 @@
                                     </a>
                                 </section>
                                 <section style="font-weight: bold; font-size:23px; margin-left: 130px;">
-                                    <a href="boardNotice/detail?no=${board.boardNo}&cp=${pagination.currentPage}&type=${param.type}">${board.boardTitle}</a>
+                                
+	                                <c:if test= "${board.boardCode == 4}">
+	                                    <a href="${contextPath}/travelReview/detail?no=${board.boardNo}&cp=1&type=4">${board.boardTitle}</a>
+	                                </c:if>
+                                
+                                	<c:if test= "${board.boardCode == 5 }">
+                                		 <a href="${contextPath}/boardNotice/detail?no=${board.boardNo}&cp=1&type=5">${board.boardTitle}</a>
+                                	</c:if>
+                                
                                 </section>
                                 <p class="categoryName">${board.categoryName}</p>
                                 <p class="readCount">조회수 : ${board.readCount}</p>                    
@@ -93,6 +103,10 @@
     </main>
     
     <script>
+
+    
+
+
     	var search = {};
     	
     	search.TravelInfo = function (obj){
@@ -108,6 +122,8 @@
                 travelInfo = "";
             }
             location.href="${contextPath}/board/searchLists?searchParam="+ searchParam +"&travelInfo="+ travelInfo;
+
+
     	}
     
     

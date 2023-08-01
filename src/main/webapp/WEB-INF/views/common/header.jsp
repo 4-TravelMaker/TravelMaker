@@ -21,8 +21,8 @@
                 <form action="#" name="search-form">
                     <fieldset>
                         <section>
-                            <input type="search" id="query" name="query" autocomplete="off">
-                            <button type="button" id="search-btn" class="fa-solid fa-magnifying-glass" onclick="header.search();"></button>
+                            <input type="search" id="query" name="query" autocomplete="off" onkeydown="characterCheck(this)">
+                            <button type="button" id="search-btn" class="fa-solid fa-magnifying-glass" onclick="header.search();" ></button>
                         </section>
                     </fieldset>
                 </form>
@@ -111,18 +111,33 @@
 	
 	<script>
 
-    
+    /* 특수문자  검색 막는 함수 */
+
+    function characterCheck(obj){
+    var regExp = /[\{\}\[\]\/?.,;:|\)*~`!^\-_+┼<>@\#$%&\'\"\\\(\=]/gi; 
+   
+    if( regExp.test(obj.value) ){
+        alert("특수문자는 입력하실수 없습니다.");
+        obj.value = obj.value.substring( 0 , obj.value.length - 2 );
+        return;
+        }
+    }
+
+
+    // 검색 값 던져주는 함수
+
      const input = document.getElementById("query");
 
 	 var header = {};
      header.search = function(){
      var searchParam =  $("#query").val();
 
-     if(searchParam == ""){
+     if(searchParam.trim().length == 0 ){
 
         alert("검색어를 입력해주세요")
         input.focus();
         return;
+
      } else{
          
          location.href="${contextPath}/searchList?searchParam="+ searchParam;
@@ -131,6 +146,8 @@
     
    
      }
+
+     // 엔터 검색 가능 함수
 
      $(function(){
         
@@ -145,13 +162,6 @@
 			  e.preventDefault();	
 		}
 	}); 
-
-
-
-
-
-
-
 
      })
 

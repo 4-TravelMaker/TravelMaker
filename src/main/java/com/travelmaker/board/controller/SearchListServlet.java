@@ -28,11 +28,12 @@ public class SearchListServlet extends HttpServlet{
 			List<Board> boardList = null;
 			
 			if(!travelInfo.equals("")) {
+				
 				if(travelInfo.equals("travelInfo")) {
 					
 					 boardList = service.travelInfos(searchParam);
 					
-				} else if(travelInfo.equals("travelReview")){
+			} else if(travelInfo.equals("travelReview")){
 					
 					 boardList =  service.travelReview(searchParam);
 				}
@@ -48,6 +49,7 @@ public class SearchListServlet extends HttpServlet{
 			req.getRequestDispatcher(path).forward(req, resp);
 			
 		} catch (Exception e) {
+			
 			e.printStackTrace();
 		}
 		

@@ -64,6 +64,7 @@ public class BoardDAO_lhk {
 				board.setBoardContent(rs.getString(3));
 				board.setReadCount(rs.getInt(4));
 				board.setCategoryName(rs.getString(5));
+				board.setBoardCode(rs.getInt(6));
 				
 				boardList.add(board);
 				
@@ -92,6 +93,12 @@ public class BoardDAO_lhk {
 		return boardList;
 	}
 
+	/** 여행정보 DAO
+	 * @param conn
+	 * @param searchResult
+	 * @return boardList
+	 * @throws Exception
+	 */
 	public List<Board> travelInfos(Connection conn, String searchResult) throws Exception {
 		
 		List<Board> boardList = new ArrayList<Board>();
@@ -115,6 +122,7 @@ public class BoardDAO_lhk {
 				board.setBoardContent(rs.getString(3));
 				board.setReadCount(rs.getInt(4));
 				board.setCategoryName(rs.getString(5));
+				board.setBoardCode(rs.getInt(6));
 				
 				boardList.add(board);
 				
@@ -137,6 +145,12 @@ public class BoardDAO_lhk {
 		return boardList;
 	}
 
+	/** 여행리뷰 DAO
+	 * @param conn
+	 * @param searchResult
+	 * @return boardList
+	 * @throws Exception
+	 */
 	public List<Board> travelReview(Connection conn, String searchResult) throws Exception {
 		
 		List<Board> boardList = new ArrayList<Board>();
@@ -160,6 +174,7 @@ public class BoardDAO_lhk {
 					board.setBoardContent(rs.getString(3));
 					board.setReadCount(rs.getInt(4));
 					board.setCategoryName(rs.getString(5));
+					board.setBoardCode(rs.getInt(6));
 					
 					boardList.add(board);
 					
@@ -178,6 +193,12 @@ public class BoardDAO_lhk {
 	}
 
 	
+	/** 전체 DAO
+	 * @param conn
+	 * @param searchResult
+	 * @return
+	 * @throws Exception
+	 */
 	public List<Board> travelAll(Connection conn, String searchResult) throws Exception{
 		
 		List<Board> boardList = new ArrayList<Board>();
@@ -201,6 +222,7 @@ public class BoardDAO_lhk {
 				board.setBoardContent(rs.getString(3));
 				board.setReadCount(rs.getInt(4));
 				board.setCategoryName(rs.getString(5));
+				board.setBoardCode(rs.getInt(6));
 				
 				boardList.add(board);
 				
