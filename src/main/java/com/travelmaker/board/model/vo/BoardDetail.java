@@ -25,6 +25,7 @@ public class BoardDetail {
    private int memberNo;
    private String boardName;
    
+   
    private List<BoardImage> imageList;
    private List<Integer> likeList;
    

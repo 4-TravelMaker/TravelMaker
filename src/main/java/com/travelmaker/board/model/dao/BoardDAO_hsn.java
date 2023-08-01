@@ -13,6 +13,7 @@ import java.util.Properties;
 
 import com.travelmaker.board.model.vo.Board;
 import com.travelmaker.board.model.vo.BoardDetail;
+import com.travelmaker.board.model.vo.BoardImage;
 import com.travelmaker.board.model.vo.Pagination;
 import com.travelmaker.board.model.vo.Reply;
 
@@ -357,6 +358,142 @@ public class BoardDAO_hsn {
 			close(pstmt);
 		}
 		return result;
+	}
+
+	
+	/** 다음 게시글 번호 조회 DAO
+	 * @param conn
+	 * @return boardNo
+	 * @throws Exception
+	 */
+	public int nextBoardNo(Connection conn) throws Exception{
+		
+		int boardNo = 0;
+		
+		try {
+			
+			String sql = prop.getProperty("nextBoardNo");
+			
+			stmt = conn.createStatement();
+			
+			rs = stmt.executeQuery(sql);
+			
+			if(rs.next()) {
+				boardNo = rs.getInt(1);
+			}
+			
+		}finally {
+			
+			close(rs);
+			close(stmt);
+		}
+		return boardNo;
+	}
+
+	/** 게시글 삽입 DAO
+	 * @param conn
+	 * @param detail
+	 * @param boardCode
+	 * @return result
+	 * @throws Exception
+	 */
+	public int insertBoard(Connection conn, BoardDetail detail, int boardCode) throws Exception{
+		
+		int result = 0;
+		
+		try {
+			
+			String sql = prop.getProperty("insertBoard");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, detail.getBoardNo());
+			pstmt.setString(2, detail.getBoardTitle());
+			pstmt.setString(3, detail.getBoardContent());
+			pstmt.setInt(4, detail.getMemberNo());
+			pstmt.setInt(5, boardCode);
+			
+			result = pstmt.executeUpdate();
+			
+			
+		}finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
+	/** 게시글 이미지 삽입 DAO
+	 * @param conn
+	 * @param image
+	 * @return result
+	 * @throws Exception
+	 */
+	public int insertBoardImage(Connection conn, BoardImage image) throws Exception{
+		
+		int result = 0;
+		
+		try {
+			
+			String sql = prop.getProperty("insertBoardImage");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, image.getImageReName());
+			pstmt.setString(2, image.getImageOriginal());
+			pstmt.setInt(3, image.getBoardNo());
+			pstmt.setInt(4, image.getImageLevel());
+			
+			result = pstmt.executeUpdate();
+			
+		}finally {
+			close(pstmt);
+			
+		}
+		return result;
+	}
+
+	
+	/** 게시글에 첨부된 이미지 리스트 조회 DAO
+	 * @param conn
+	 * @param boardNo
+	 * @return imageList
+	 * @throws Exception
+	 */
+	public List<BoardImage> selectImageList(Connection conn, int boardNo) throws Exception{
+		
+		List<BoardImage> imageList =new ArrayList<>();
+		
+		try {
+			
+			String sql = prop.getProperty("selectImageList");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, boardNo);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				
+				BoardImage image = new BoardImage();
+				
+				image.setImageNo(rs.getInt(1));
+				image.setImageReName(rs.getString(2));
+				image.setImageOriginal(rs.getString(3));
+				image.setBoardNo(rs.getInt(4));
+				image.setImageLevel(rs.getInt(5));
+				
+				imageList.add(image);
+			}
+			
+		}finally {
+			close(rs);
+			close(pstmt);
+			
+		}
+		
+		return imageList;
 	}
 	
 	
