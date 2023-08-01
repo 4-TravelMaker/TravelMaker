@@ -16,8 +16,11 @@ import lombok.ToString;
 public class Region {
 	
 	private String boardTitle;
+	private String boardContent;
 	private String imgRename;
+	private String imgOriginal;
 	private int boardNo;
 	private int categorySubNo;
+	private String categoryName;
 
 }

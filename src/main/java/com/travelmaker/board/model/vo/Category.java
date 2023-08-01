@@ -14,10 +14,12 @@ import lombok.ToString;
 
 public class Category {
 	
+	private int boardNo;
 	private int categoryNo;
 	private String categoryName;
 	private int categorySubNo;
 	private String regionName;
 	private String boardTitle;
 	private String imgRename;
+	private int imgLevel;
 }

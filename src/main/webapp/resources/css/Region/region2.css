@@ -109,9 +109,13 @@ main {
     height: 240px;
 }
 
+a {
+    text-decoration: none;
+}
+
 .photo{ /* 사진 */
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 }
 

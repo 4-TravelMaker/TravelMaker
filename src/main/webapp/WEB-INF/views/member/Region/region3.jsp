@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,21 +26,20 @@
 
         <section id="middle1">
             <section class = "title">
-                <p>헤이다이닝</p>
-                <p>울산 남구</p>
-                <mark>매콤한 먹물파스타가 맛있는 레스토랑</mark>
+                <p>${region.boardTitle}</p>
+                <mark>${region.categoryName}</mark>
                 <hr>
             </section>
             <section class="like">
                 <p>좋아요</p>
                 <section>
-                     <img src="${contextPath}/resources/images/Region/hey.jpg" width="550px" height="370px">
+                     <img src="${contextPath}${region.imgRename}" width="550px" height="370px">
                 </section>
             </section>
             <section class="article">
                 <p>상세정보</p>
                 <hr>
-                <p>울산 삼산동 업스퀘어 근처 맥도날드 뒤편에 있는 헤이다이닝은 깔끔하고 모던한 장소에서 식사를 즐길 수 있는 이탈리안 레스토랑이다. 대표 메뉴는 타이거 쉬림프 로제 파스타, 이베리코 온 더 리조또, 블랙앵거스 살치살 스테이크이고 그 외 스퀴드 잉크 파스타, 오징어먹물 아란치니, 자몽에이드 등 다양한 메뉴가 있다. 밤이 되면 조도로 분위기를 조절해서 연인들의 데이트 장소로 인기가 많다. 태화강변이 근처에 있어 함께 둘러보기 좋고, 서점과 미술관, 공원도 있다.</p>
+                <p>${region.boardContent}</p>
             </section>
             <section class="map">
                 <section id="map-area">

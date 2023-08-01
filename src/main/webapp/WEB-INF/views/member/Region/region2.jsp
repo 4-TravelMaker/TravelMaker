@@ -40,14 +40,13 @@
                 <section class="middle1-3">
                     <section class="photobox">
                         <section class="photo">
-                            <a href="regionDetail?ctgr=${param.ctgr}" style="color: black">
-                                    <c:forEach var="i" items="${cList}">
-                                        <img src="${contextPath}${i.imgRename}" width="230px" height="190px" class="photo2">
-                                        <section id="title">${i.boardTitle}</section>
-                                    </c:forEach>
-                            </a>
+                            <c:forEach var="i" items="${cList}">
+                                <a href="regionDetail?ctgr=${param.ctgr}&board=${i.boardNo}" style="color: black">
+                                    <img src="${contextPath}${i.imgRename}" width="230px" height="190px" class="photo2">
+                                    <section id="title">${i.boardTitle}</section>
+                                </a>
+                            </c:forEach>
                         </section>
-                    
                     </section>
                 </section>
     

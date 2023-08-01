@@ -32,7 +32,7 @@
             <section class="like">
                 <p>좋아요</p>
                 <section>
-                     <img src="${contextPath}/resources/images/RegionDetail/gangnam.jpg" width="550px" height="370px">
+                     <img src="${contextPath}/resources/images/Region/Seoul/gangnam.jpg" width="550px" height="370px">
                 </section>
             </section>
             <section class="article">

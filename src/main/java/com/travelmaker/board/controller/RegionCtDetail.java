@@ -22,6 +22,18 @@ protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws Se
 	
 	try {
 		
+		int boardNo = Integer.parseInt(req.getParameter("board"));
+		
+		
+		BoardService_phj service = new BoardService_phj();
+		
+		Region region = new Region();
+		
+		region = service.selectDetail(boardNo);
+		
+		req.setAttribute("region", region);
+		
+		
 		String path = "/WEB-INF/views/member/Region/region3.jsp";
 		
 		RequestDispatcher dispatcher = req.getRequestDispatcher(path);
@@ -30,8 +42,6 @@ protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws Se
 		
 	}catch(Exception e) {
 		e.printStackTrace();
-	}
-	
-	
+		}
 	}
 }
