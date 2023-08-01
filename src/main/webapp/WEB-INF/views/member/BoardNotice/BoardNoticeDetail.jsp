@@ -96,6 +96,7 @@
                             <div class="board-btn-area">
 
                                 <c:if test="${loginMember.memberNo == detail.memberNo}">
+                                    
                                     <c:if test="${empty param.cp}">
                                         <c:set var="cp" value="1"/>
                                     </c:if>
@@ -104,8 +105,8 @@
                                         <c:set var="cp" value="${param.cp}"/>
                                     </c:if>
 
-                                    <button id="updateBtn">수정</button>
-                                    <button id="deleteBtn">삭제</button>
+                                    <button id="updateBtn" onclick="location.href='write?mode=update&type=${param.type}&cp=${cp}&no=${detail.boardNo}'">수정</button>
+                                    <button id="deleteBtn" onclick>삭제</button>
 
                                 </c:if>
                                 <button id="goToListBtn">목록으로</button>

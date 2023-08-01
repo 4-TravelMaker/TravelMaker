@@ -21,7 +21,8 @@
     <main>
         <jsp:include page="/WEB-INF/views/common/header.jsp"/>
 
-        <form action="write" enctype="multipart/form-data" method="POST" class="board-write">
+        <form action="write" enctype="multipart/form-data" method="POST" class="board-write"
+            onsubmit="return writeValidate()">
 
             <!-- 제목 -->
             <h1 class="board-title">
@@ -136,7 +137,7 @@
             <input type="hidden" name="type" value="${param.type}">
 
             <!-- 게시글 번호 -->
-            <input type="hidden" name="typnoe" value="${param.no}">
+            <input type="hidden" name="no" value="${param.no}">
 
             <!-- 현재 페이지 -->
             <input type="hidden" name="cp" value="${param.cp}">
