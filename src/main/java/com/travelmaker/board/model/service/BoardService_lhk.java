@@ -32,9 +32,10 @@ public class BoardService_lhk {
 	}
 
 
-	/**
+	/** 여행정보 Service
 	 * @param searchResult
-	 * @return
+	 * @throws Exception
+	 * @return boardList
 	 */
 	public List<Board> travelInfos(String searchResult) throws Exception {
 		
@@ -46,6 +47,11 @@ public class BoardService_lhk {
 	}
 
 
+	/** 여행리뷰 Service
+	 * @param searchResult
+	 * @return boardList
+	 * @throws Exception
+	 */
 	public List<Board> travelReview(String searchResult) throws Exception {
 		
 		Connection conn = getConnection();
@@ -56,6 +62,11 @@ public class BoardService_lhk {
 	}
 
 
+	/** 전체 Service
+	 * @param searchResult
+	 * @return boardList
+	 * @throws Exception
+	 */
 	public List<Board> travelAll(String searchResult) throws Exception {
 		
 		Connection conn = getConnection();

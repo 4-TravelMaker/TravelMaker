@@ -227,44 +227,44 @@
                             <div class="embla__viewport1">
                                     <div class="embla__container2">
                                         <div class="embla__slide2">
-                                            <a href="https://korean.visitkorea.or.kr/detail/rem_detail.do?cotid=d3850566-60ac-4367-9e63-a6b43c0cc355&con_type=11300" style="text-decoration:none">
+                                            <a href="${contextPath}/theme/famousRestaurant" style="text-decoration:none">
                                                 <section class="item2 photo1">
-                                                    <img src="resources/images/mainHome/theme/chilgok.png">
+                                                    <img src="${contextPath}/resources/images/ThemeBoard/FamousRestaurant/Sub.png">
                                                 </section>
                                                 <strong>
-                                                    유유자적 걸으며 즐기는
+                                                    서퍼의 천국 양양에 서퍼들이 반한 맛집!
                                                     <br>
-                                                    경북 칠곡 여행
+                                                    솜다리 버거
                                                 </strong>
                                             </a>
                                         </div>
                                         <div class="embla__slide2">        
-                                            <a href="https://korean.visitkorea.or.kr/detail/rem_detail.do?cotid=15222f90-6660-40d3-bef3-29f37a4ce786&con_type=10300" style="text-decoration:none">
+                                            <a href="${contextPath}/theme/coupleTrip" style="text-decoration:none">
                                                 <section class="item2 photo1">
-                                                    <img src="resources/images/mainHome/theme/yangyang.png" >
+                                                    <img src="${contextPath}/resources/images/ThemeBoard/CoupleTrip/CoupleTripArt1.jpg" >
                                                 </section>
                                                 <strong>
-                                                    바닷바람을 만끽할 수 있는
+                                                    날 풀리기만 기다렸다면!? 김해로 커플여행 가즈앙!
                                                     <br>
-                                                    강원 양양 여행
+                                                    경남 김해 커플여행 코스
                                                 </strong>
                                             </a>
                                         </div>
                                         <div class="embla__slide2">
-                                            <a href="https://korean.visitkorea.or.kr/detail/rem_detail.do?cotid=2b65aea9-38d0-4acf-a856-c99a1ef5db33&con_type=11000" style="text-decoration:none">
+                                            <a href="${contextPath}/theme/familyTrip" style="text-decoration:none">
                                                 <section class="item2 photo1">
-                                                    <img src="resources/images/mainHome/theme/youngdong.png" >
+                                                    <img src="${contextPath}/resources/images/ThemeBoard/FamilyTrip/FamilyTripSub.jpg" >
                                                 </section>
                                                 <strong>
-                                                    그림 같은 풍경이 펼쳐지는
+                                                    아이와 나들이 떠나는 인천 여행 :)
                                                     <br>
-                                                    충북 영동 여행
+                                                    인천 가족나들이 코스
                                                 </strong>
                                             </a>
                                         </div>
 
                                         <div class="embla__slide2">
-                                            <a href="https://korean.visitkorea.or.kr/detail/rem_detail.do?cotid=105d74ec-70ba-4da7-a4a0-2a8cf202ff0d&con_type=10300" style="text-decoration:none">
+                                            <a href="${contextPath}/theme/activity" style="text-decoration:none">
                                                 <section class="item2 photo1">
                                                     <img src="resources/images/mainHome/theme/activities.png" >
                                                 </section>
