@@ -36,7 +36,7 @@ public class BoardNoticeDetailServlet extends HttpServlet{
 				List<Reply> rList = rService.selectReplyList(boardNo);
 				req.setAttribute("rList", rList);
 				
-				System.out.println("rList = " + rList);
+//				System.out.println("rList = " + rList);
 			}
 			
 			

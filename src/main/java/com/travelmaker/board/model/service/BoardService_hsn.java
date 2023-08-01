@@ -12,6 +12,7 @@ import com.travelmaker.board.model.vo.Board;
 import com.travelmaker.board.model.vo.BoardDetail;
 import com.travelmaker.board.model.vo.Pagination;
 import com.travelmaker.board.model.vo.Reply;
+import com.travelmaker.common.Util;
 
 public class BoardService_hsn {
 	
@@ -90,4 +91,101 @@ public class BoardService_hsn {
 		close(conn);
 		
 		return rList;
-	}}
+	}
+
+
+
+	/** 댓글 등록 Service
+	 * @param reply
+	 * @return result
+	 * @throws Exception
+	 */
+	public int insertReply(Reply reply) throws Exception{
+		
+		Connection conn = getConnection();
+		
+		// 공격 방지 처리
+		reply.setReplyContent(Util.XSSHandling(reply.getReplyContent()));
+		
+		// 개행문자 변경 처리
+		reply.setReplyContent(Util.newLineHandling(reply.getReplyContent()));
+		
+		int result = dao.insertReply(conn, reply);
+		
+		if(result > 0 )	commit(conn);
+		else			rollback(conn);
+		
+		close(conn);
+		
+		return result;
+	}
+
+
+	/** 댓글 삭제 Service
+	 * @param replyNo
+	 * @return result
+	 * @throws Exception
+	 */
+	public int deleteReply(int replyNo) throws Exception{
+		
+		Connection conn = getConnection();
+		
+		int result = dao.deleteReply(conn, replyNo);
+		
+		if(result > 0 )	commit(conn);
+		else			rollback(conn);
+		
+		close(conn);
+		
+		
+		
+		return result;
+	}
+
+
+	/** 게시글 삭제 Service
+	 * @param boardNo
+	 * @return
+	 */
+	public int deleteBoard(int boardNo) throws Exception{
+		
+		Connection conn = getConnection();
+		
+		int result = dao.deleteBoard(conn, boardNo);
+		
+		if(result > 0 )	commit(conn);
+		else			rollback(conn);
+		
+		close(conn);
+		
+		return result;
+	}
+
+
+	/** 댓글 수정 Service
+	 * @param replyNo
+	 * @param replyContent
+	 * @return result
+	 * @throws Exception
+	 */
+	public int updateReply(int replyNo, String replyContent) throws Exception{
+		
+		Connection conn = getConnection();
+		
+		// XSS 처리
+		replyContent = Util.XSSHandling(replyContent);
+		
+		// 개행문자 처리
+		replyContent = Util.newLineHandling(replyContent);
+		
+		int result = dao.updateReply(conn, replyNo, replyContent);
+		
+		if(result > 0)	commit(conn);
+		else			rollback(conn);
+		
+		close(conn);
+		
+		
+		return result;
+	}
+}
