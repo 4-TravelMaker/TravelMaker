@@ -89,5 +89,6 @@
 	<entry key="getReplyCount">
 		SELECT COUNT(*) AS REPLY_COUNT FROM REPLY
 		WHERE BOARD_NO = ?
+		AND REPLY_ST = 'N'
 	</entry>
 </properties>

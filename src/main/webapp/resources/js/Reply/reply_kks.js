@@ -344,3 +344,42 @@ function showUpdateReply(replyNo, btn){
     replyRow.append(replyBtnArea);
 
 }
+
+// 댓글 수정 취소
+function updateCancel(btn){
+    // 매개변수 btn : 클릭된 취소 버튼
+    // 전역변수 beforeReplyRow : 수정 전 원래 행(댓글)을 저장한 변수
+    
+    if(confirm("댓글 수정을 취소하시겠습니까?")){
+        btn.parentElement.parentElement.innerHTML = beforeReplyRow;
+    }
+
+}
+
+// 댓글 수정(AJAX)
+function updateReply(replyNo, btn){
+
+    // 새로 작성된 댓글 내용 얻어오기
+    const replyContent = btn.parentElement.previousElementSibling.value;
+
+    $.ajax({
+        url : contextPath + "/travelReview/reply/update",
+        data : {"replyNo" : replyNo,
+                "replyContent" : replyContent},
+        type : "POST",
+        success : function(result){
+            if(result > 0){
+                alert("댓글이 수정되었습니다.");
+                selectReplyList();
+
+            }else{
+                alert("댓글 수정 실패");
+            }
+        },
+        error : function(req, status, error){
+            console.log("댓글 수정 실패");
+            console.log(req.responseText);
+        }        
+
+    });
+}
