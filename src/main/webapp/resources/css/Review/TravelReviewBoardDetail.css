@@ -215,10 +215,16 @@ nav {
 }
 
 .heart {
-    font-size: 30px;
+    width: 90px;
+    height: 90px;
     cursor: pointer;
 }
 
+.board-btn-area {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
 
 
 /* --------------------------------------------------------------------- */

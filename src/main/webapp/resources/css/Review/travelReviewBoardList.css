@@ -158,18 +158,25 @@ nav {
 }
 
 /* --------------------------------------------------------------------- */
-#middle { height: 100%; }
+#middle {
+    height: 100%;
+    margin: 0 110px;
+}
 
-/* 게시글 전체 div */
-.container{ padding: 0 50px; }
-
-/* 타이틀 h1 */
+/* 타이틀 span */
 .title{
-    margin: 30px 100px;
-    padding: 20px;
+    margin: 40px 35px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    font-size: 25px;
+    color: black;
+    font-weight: bold;
+}
+
+.query-result {
+    font-size: 20px;
+    margin-left: 12px;
+    font-weight: normal;
 }
 
 /* 게시글 작성 버튼 div */
@@ -207,6 +214,16 @@ nav {
     row-gap: 60px;
     grid-template-rows: 1fr;
     grid-template-columns: 1fr 1fr 1fr;
+}
+
+.nothing {
+    height: 500px;
+    width: 800px;
+    position: relative;
+    top: 229px;
+    left: 287px;
+    font-size: 37px;
+    font-weight: bold;
 }
 
 /* 게시글 1개 사이즈 div */
@@ -299,6 +316,40 @@ nav {
     color: white;
     font-weight: bold;
     padding-bottom: 2px;
+}
+
+#boardSearch {
+    width: 500px;
+    height: 30px;
+
+    display: flex;
+    justify-content: space-between;
+    margin: 30px auto;
+}
+
+#boardSearch * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+#boardSearch select {
+    width: 100px;
+}
+
+#boardSearch input {
+    margin: 0 10px;
+    flex-grow: 1;
+    padding-left: 10px;
+}
+
+#boardSearch button {
+    width: 100px;
+    background-color: rgb(153, 216, 199);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border: 0;
 }
 
 

@@ -98,7 +98,7 @@
                 <a href="#">여행 계획하기</a>
             </section>
             <section class="nav-menu">
-                <a href="${contextPath}/travelReview/list?type=4">여행 리뷰</a>
+                <a href="${contextPath}/travelReview/list?type=4&cp=1">여행 리뷰</a>
             </section>
             <section class="nav-menu">
                 <a href="${contextPath}/boardNotice/list?type=5">공지사항</a>
