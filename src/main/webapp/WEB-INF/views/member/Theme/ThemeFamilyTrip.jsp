@@ -41,16 +41,19 @@
                         
                         <div class="item">
                             <img src="${contextPath}/resources/images/ThemeBoard/FamilyTrip/FamilyTripRobbot1.jpg">
-                                
+                            <b>로봇랜드</b>
                         </div>
                         <div class="item">
                             <img src="${contextPath}/resources/images/ThemeBoard/FamilyTrip/FamilyTripAra1.jpg">
+                            <b>아라뱃길&아라폭포</b>
                         </div>
                         <div class="item">
                             <img src="${contextPath}/resources/images/ThemeBoard/FamilyTrip/FamilyTripMarket1.jpg">
+                            <b>정서진중앙시장</b>
                         </div>
                         <div class="item">
                             <img src="${contextPath}/resources/images/ThemeBoard/FamilyTrip/FamilyTripRiverPark1.jpg">
+                            <b>청라호수공원</b>
                         </div>
                     </section>  
 
@@ -68,7 +71,7 @@
 
                 </section>
                 <section class="container6">
-                    <b>노들섬</b>
+                    <b>가족여행추천</b>
                 </section>
 
                 <section class="container7">
@@ -114,7 +117,6 @@
                                     <li>운영시간 : 11:30~20:00</li>
                                     <li>이용요금 : 무료</li>
                                     <li>문의 : 1899-3650</li>
-                                    <li>주차 : 자체주차장 가능</li>
                                  </ul>
                             </table>
                         </section>
