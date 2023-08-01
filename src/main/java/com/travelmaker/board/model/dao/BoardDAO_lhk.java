@@ -57,6 +57,7 @@ public class BoardDAO_lhk {
 			rs = pstmt.executeQuery();
 			
 			while(rs.next()) {
+				
 				Board board = new Board();
 				
 				board.setBoardNo(rs.getInt(1));
@@ -70,13 +71,6 @@ public class BoardDAO_lhk {
 				
 			}
 			
-			
-			
-			
-
-
-			
-			
 		} finally {
 			
 			close(rs);
@@ -84,9 +78,6 @@ public class BoardDAO_lhk {
 			
 			
 		}
-		
-		
-
 		
 		
 		
@@ -115,6 +106,7 @@ public class BoardDAO_lhk {
 			rs = pstmt.executeQuery();
 			
 			while(rs.next()) {
+				
 				Board board = new Board();
 				
 				board.setBoardNo(rs.getInt(1));
@@ -136,7 +128,6 @@ public class BoardDAO_lhk {
 			close(pstmt);
 			
 		}
-		
 		
 		
 		
@@ -167,6 +158,7 @@ public class BoardDAO_lhk {
 				rs = pstmt.executeQuery();
 				
 				while(rs.next()) {
+					
 					Board board = new Board();
 					
 					board.setBoardNo(rs.getInt(1));

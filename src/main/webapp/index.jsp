@@ -39,12 +39,12 @@
                                 <div class="embla__container">
                                     
                                     <div class="embla__slide">
-                                        <a href="https://korean.visitkorea.or.kr/detail/rem_detail.do?cotid=b30c2e42-dd00-463a-b726-0e40b1d13bbb" style="display:contents">
+                                        <a href="${contextPath}/theme/sunset" style="display:contents">
                                             <img src="resources/images/mainHome/sunset.png"  style="width:100%;height:100%;object-fit:contain;">
                                         </a>
                                     </div>
                                     <div class="embla__slide">
-                                        <a href="https://korean.visitkorea.or.kr/detail/rem_detail.do?cotid=7cf983d9-35e7-49e0-914d-1e67665be577" style="display:contents"> 
+                                        <a href="${contextPath}/theme/nightView" style="display:contents"> 
                                             <img src="resources/images/mainHome/incheon.png" style="width:100%;height:100%;object-fit:contain;">
                                         </a>
                                     </div>
@@ -277,14 +277,14 @@
                                         </div>
                                         
                                         <div class="embla__slide2">
-                                            <a href="https://korean.visitkorea.or.kr/detail/rem_detail.do?cotid=3d9ea823-7f0b-421e-b055-1fd8a453d0bf&con_type=10100" style="text-decoration:none">
+                                            <a href="${contextPath}/theme/trainTrip" style="text-decoration:none">
                                                 <section class="item2 photo1">
-                                                    <img src="resources/images/mainHome/theme/gosung.png" >
+                                                    <img src="${contextPath}/resources/images/ThemeBoard/TrainTrip/TrainTripTrain1.jpg" >
                                                 </section>
                                                 <strong>
-                                                    여름 무더위를 피할
+                                                    칙칙폭폭!! 기차타고 떠나요~
                                                     <br>
-                                                    강원 고성,삼척 물놀이 명소
+                                                    부산의 밤 풍경을 즐기는 여행(힐링코스)
                                                 </strong>
                                             </a>
                                         </div>
