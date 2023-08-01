@@ -26,12 +26,11 @@
 
         <section id="middle1">
             <section class = "title">
-                <p>${region.boardTitle}</p>
-                <mark>${region.categoryName}</mark>
+                <p><mark>${region.boardTitle}</mark></p>
+                <p>${region.categoryName}</p>
                 <hr>
             </section>
             <section class="like">
-                <p>좋아요</p>
                 <section>
                      <img src="${contextPath}${region.imgRename}" width="550px" height="370px">
                 </section>
@@ -43,7 +42,7 @@
             </section>
             <section class="map">
                 <section id="map-area">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3246.44095145655!2d129.3363825763945!3d35.5428105375645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3567cd0d93edbeb9%3A0x42b8e0827e3bfd7e!2z7Zek7J2064uk7J2064ud!5e0!3m2!1sko!2skr!4v1690441747654!5m2!1sko!2skr" width="1000" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="${region.imgOriginal}" width="1000" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </section>
                 <section class="map1-1">
                     <section>

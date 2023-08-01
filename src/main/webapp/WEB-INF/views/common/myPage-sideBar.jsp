@@ -22,8 +22,9 @@
             <section class="left-section-btn-box">
                 <a href="#">회원 정보 수정</a>
             </section>
+
             <section class="left-section-btn-box">
-                <a href="#">내 게시글/댓글 관리</a>
+                <a href="${contextPath}/myPage/board">내 게시글/댓글 관리</a>
             </section>
             <section class="left-section-btn-box">
                 <a href="${contextPath}/myPage/OneOnOneInquiry/list?type=6">1:1 문의</a>
