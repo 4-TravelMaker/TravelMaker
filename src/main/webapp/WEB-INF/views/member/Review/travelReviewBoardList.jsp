@@ -34,7 +34,7 @@
             <div class="container">
 
                 <div id="write-btn">
-                    <a href="#">작성</a>
+                    <a href="write?mode=insert&type=${param.type}&cp=${param.cp}">글쓰기</a>
                 </div>
 
                 <div class="content">
