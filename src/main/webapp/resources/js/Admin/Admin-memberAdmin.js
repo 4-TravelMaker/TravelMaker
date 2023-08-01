@@ -24,8 +24,8 @@ document.getElementsByClassName("search-btn")[0].addEventListener("click", funct
 
                 const input = document.createElement("input");
                 input.setAttribute("type", "checkbox");
-                input.setAttribute("name", "memberInfo");
-                input.setAttribute("value", "회원 번호");
+                input.setAttribute("name", "memberNo");
+                input.setAttribute("value", member.memberNo);
 
                 const span = document.createElement("span");
 
@@ -58,60 +58,6 @@ document.getElementsByClassName("search-btn")[0].addEventListener("click", funct
 
                 div.append(tr);
 
-                secessionBtn.addEventListener("click", function(){
-
-                    for(var i=0; i<checkedMemberList.length; i++){
-                        if(checkedMemberList[i].checked == true){
-                            count++;
-                        }
-                    }
-                
-                    if(count == 0){
-                        alert("탈퇴시킬 회원을 선택해 주세요.");
-                    }
-                
-                    if(count > 1){
-                        alert("한 명만 선택해 주세요.");
-                
-                        for(let i=0; i<checkedMemberList.length; i++){
-                            checkedMemberList[i].checked = false;
-                        }
-                    }
-                
-                    for(let i=0; i<checkedMemberList.length; i++){
-                
-                        if(checkedMemberList[i].checked){
-                            checkedMemberNo = checkedMemberList[i].value;
-                        }
-                    }
-                
-                    $.ajax({
-                
-                        url : "memberSecession",
-                        data : { "memberNo" : checkedMemberNo },
-                        type : "GET",
-                        dataType : "JSON",
-                
-                        success : function(result){
-                
-                            if(checkedMemberNo != null && result > 0){
-                                
-                                if(confirm("정말 탈퇴시키겠습니까?")){
-                                    alert("회원 탈퇴 처리가 완료되었습니다.");
-                                }
-                
-                            } else{
-                                alert("회원 탈퇴 처리 실패");
-                            }
-                        },
-                
-                        error : function(result){
-                            alert("오류 발생");
-                        }
-                    })
-                })
-
-
             } else { // 회원 정보가 없을 때
 
                 const tr = document.createElement("tr");
@@ -130,7 +76,7 @@ document.getElementsByClassName("search-btn")[0].addEventListener("click", funct
         },
 
         error : function(){
-            console.log("에러 발생");
+            console.log("오류 발생");
         }
     });
 
@@ -153,6 +99,7 @@ secessionBtn.addEventListener("click", function(){
 
     if(count == 0){
         alert("탈퇴시킬 회원을 선택해 주세요.");
+        return;
     }
 
     if(count > 1){
@@ -161,6 +108,8 @@ secessionBtn.addEventListener("click", function(){
         for(let i=0; i<checkedMemberList.length; i++){
             checkedMemberList[i].checked = false;
         }
+        
+        return;
     }
 
     for(let i=0; i<checkedMemberList.length; i++){
@@ -183,10 +132,11 @@ secessionBtn.addEventListener("click", function(){
 
                 if(confirm("정말 탈퇴시키겠습니까?")){
                     alert("회원 탈퇴 처리가 완료되었습니다.");
+                    location.reload();
                 }
 
             } else{
-                alert("회원 탈퇴 처리 실패");
+                alert("회원 탈퇴 처리에 실패했습니다.");
             }
         },
 
@@ -195,4 +145,3 @@ secessionBtn.addEventListener("click", function(){
         }
     })
 })
-

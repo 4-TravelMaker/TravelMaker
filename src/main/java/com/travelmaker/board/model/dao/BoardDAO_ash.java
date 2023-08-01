@@ -102,6 +102,7 @@ public class BoardDAO_ash {
 				board.setMemberId( rs.getString("MEMBER_ID") );
 				board.setCreateDate( rs.getString("CREATE_DT"));
 				board.setReadCount( rs.getInt("READ_COUNT"));
+				board.setBoardContent( rs.getString("BOARD_CONTENT") );
 				
 				boardList.add(board);
 			}
@@ -348,6 +349,90 @@ public class BoardDAO_ash {
 		} finally {
 	         close(rs);
 	         close(pstmt);
+		}
+		
+		return boardList;
+	}
+
+	/** 마이페이지 - 일대일 문의 게시판 전체 게시글 수 조회 DAO
+	 * @param memberNo
+	 * @param conn
+	 * @param type
+	 * @return listCount
+	 * @throws Exception
+	 */
+	public int getMyPageListCount(int memberNo, Connection conn, int type) throws Exception {
+
+		int listCount = 0;
+		
+		try {
+			
+			String sql = prop.getProperty("getMyPageListCount");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, type);
+			pstmt.setInt(2, memberNo);
+
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				listCount = rs.getInt(1);
+			}
+			
+		} finally{
+			close(rs);
+			close(pstmt);
+		}
+		
+		return listCount;
+	}
+
+	/** 마이페이지 - 일대일 문의 게시판 일정한 범위의 목록 조회 DAO
+	 * @param conn
+	 * @param pagination
+	 * @param type
+	 * @param memberNo
+	 * @return boardList
+	 * @throws Exception
+	 */
+	public List<Board> selectMyPageOneOnOneInquiryList(Connection conn, Pagination pagination, int type, int memberNo) throws Exception {
+		
+		List<Board> boardList = new ArrayList<>();
+		
+		try {
+			
+			String sql = prop.getProperty("selectMyOneOnOneInquiryList");
+			
+			int start = ( pagination.getCurrentPage() - 1 ) * pagination.getLimit() + 1;
+			int end = start + pagination.getLimit() - 1;
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, type);
+			pstmt.setInt(2, memberNo);
+			pstmt.setInt(3, start);
+			pstmt.setInt(4, end);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				Board board = new Board();
+				
+				board.setBoardNo( rs.getInt("BOARD_NO") );
+				board.setBoardTitle( rs.getString("BOARD_TITLE") );
+				board.setMemberNo( rs.getInt("MEMBER_NO") );
+				board.setMemberId( rs.getString("MEMBER_ID"));
+				board.setCreateDate( rs.getString("CREATE_DT"));
+				board.setReadCount( rs.getInt("READ_COUNT"));
+				board.setBoardContent( rs.getString("BOARD_CONTENT") );
+				
+				boardList.add(board);
+			}
+			
+		} finally {
+			close(rs);
+			close(pstmt);
 		}
 		
 		return boardList;

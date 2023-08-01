@@ -1,0 +1,215 @@
+/* middle */
+#middle {
+    height: 1100px;
+    display: flex;
+}
+
+/* 왼쪽 영역 - 마이페이지 사이드 바 */
+.left-section {
+    width: 300px;
+    height: 100%;
+    background-color: rgba(153, 216, 199, 0.46);
+}
+
+.left-section-head {
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#real-profile-image {
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+}
+
+.left-section-profile {
+    text-align: center;
+}
+
+.left-section-profile > section {
+    font-size: 20px;
+    padding-top: 5px;
+}
+
+.left-section-btn-area {
+    width: 100%;
+    height: 550px;
+    text-align: center;
+}
+
+.left-section-btn-box {
+    width: 80%;
+    height: 50px;
+    background-color: rgb(153, 216, 199);
+    border: 1px solid transparent;
+    border-radius: 25px;
+    margin: 50px 22px;
+    padding-top: 10px;
+}
+
+.left-section-btn-box > a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* 오른쪽 영역 - 일대일 문의 조회 */
+.right-section{
+    width: 900px;
+}
+
+.right-section > section:first-of-type{
+    display: flex;
+    height: 100px;
+}
+
+.title{
+    width: 96%;
+    padding: 30px 15px;
+    margin-left: 20px;
+    
+    font-size: 30px;
+    font-weight: bold;
+
+    border-bottom: 1px solid #ddd;
+}
+
+/* 내용 조회 영역 */
+.right-section > section:nth-of-type(2){
+    height: 800px;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: center;
+}
+
+
+.post-table{
+    margin: 20px 0 20px;
+    background-color: white;
+    width: 860px;
+    
+    border: 1px solid #ddd;
+    border-collapse: collapse;
+
+    text-align: center;
+}
+
+.table-bk{
+    background-color: #eeeeee;
+    border: 1px solid #ddd;
+}
+
+.post-table th, td{
+    border-bottom: 1px solid #ddd;
+}
+
+.post-table a{
+    text-decoration: none;
+    color: black;
+}
+
+/* 페이지네이션(Pagination) */
+.pagination-area{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination{
+    padding: 0;
+    list-style: none;
+
+    display: flex;
+    justify-content: center;
+}
+
+.pagination > li{
+    width: 20px;
+    margin: 0 5px;
+    text-align: center;
+}
+
+.pagination a{
+    width: 100%;
+    height: 100%;
+    display: block;
+
+    text-decoration: none;
+    color: black;
+}
+
+/* 현재 페이지 번호 */
+.pagination .current{
+    background-color: rgb(153, 216, 199);
+    color: white;
+    font-weight: bold;
+    border-radius: 50%;
+}
+
+/* 비밀번호 확인 프롬프트 */
+.pw-prompt {
+    width: 250px;
+    height: 170px;
+    border: 1px solid black;
+    background-color: white;
+
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    padding-top: 20px;
+    text-align: center;
+
+    display: none;
+}
+
+.pw-prompt > label {
+    font-size: 18px;
+}
+
+.pw-check-box {
+    width: 90%;
+    border: 2px solid rgb(153, 216, 199);
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    margin: 20px 0px 20px 13px;
+}
+
+.pw-check { /* input */
+    width: 150px;
+    height: 30px;
+    border: 0;
+    outline: 0;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.fa-key {
+    width: 25px;
+    background-color: white;
+    font-size: 1.2em;
+    border: none;
+    margin-top: 3px;
+}
+
+.pw-btn {
+    width: 55px;
+    height: 30px;
+
+    color: white;
+    font-weight: bold;
+    background-color: rgb(153, 216, 199);
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+
+    margin: 0px 5px;
+}
+
