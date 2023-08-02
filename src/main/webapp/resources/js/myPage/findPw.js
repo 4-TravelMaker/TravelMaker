@@ -66,9 +66,6 @@ cancelBtn.addEventListener("click", function(){
 
     }
 
-
-
-
 })
 
 
