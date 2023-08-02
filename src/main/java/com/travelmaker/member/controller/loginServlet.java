@@ -30,8 +30,8 @@ public class loginServlet extends HttpServlet{
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 				
-		String inputId = req.getParameter("inputId");
-		String inputPw = req.getParameter("inputPw");
+		String inputId = req.getParameter("inputId"); // 위치홀더를 파라미터로 받아오겠다 =>  
+		String inputPw = req.getParameter("inputPw"); //파라미터는 VS코드에 JSP에서 저 위치에 name값을 파라미터로 받아온다.
 //		String saveId = req.getParameter("saveId");
 
 
