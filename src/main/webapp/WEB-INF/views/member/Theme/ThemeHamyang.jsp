@@ -27,7 +27,7 @@
 
                 <br>
                 <section class="container1">
-                    <h2>인천 여행, 선선한 저녁에 즐기는 인천 야경 명소 4</h2>
+                    <h2>경남 여행, 자연을 다채로운 방법으로 즐기는 함안 여행</h2>
                 </section>
                 <section class="container2">
 
@@ -43,20 +43,20 @@
                     <section class="flex_container1">
                         
                         <div class="item">
-                            <img src="${contextPath}/resources/images/ThemeBoard/nightView/songdo1.jpg">
-                            <strong><h3>송도센트럴파크</h3></strong>   
+                            <img src="${contextPath}/resources/images/ThemeBoard/hamyang/imgokpark.jpg">
+                            <strong><h3>입곡군립공원</h3></strong>   
                         </div>
                         <div class="item">
-                            <img src="${contextPath}/resources/images/ThemeBoard/nightView/subongpark.jpg">
-                            <strong><h3>수봉공원</h3></strong>
+                            <img src="${contextPath}/resources/images/ThemeBoard/hamyang/movingbote.jpg">
+                            <strong><h3>아라힐링무빙보트</h3></strong>
                         </div>
                         <div class="item">
-                            <img src="${contextPath}/resources/images/ThemeBoard/nightView/bustour.jpg">
-                            <strong><h3>인천시티투어</h3></strong>
+                            <img src="${contextPath}/resources/images/ThemeBoard/hamyang/mujinjung.jpg">
+                            <strong><h3>무진정</h3></strong>
                         </div>
                         <div class="item">
-                            <img src="${contextPath}/resources/images/ThemeBoard/nightView/triplestreet.jpg">
-                            <strong><h3>트리플스트리트</h3></strong>
+                            <img src="${contextPath}/resources/images/ThemeBoard/hamyang/akyangpark.jpg">
+                            <strong><h3>악양생태공원</h3></strong>
                         </div>
                     </section>  
 
@@ -69,25 +69,26 @@
                     <br>
                     <br>
                     <b>이런 분들에게 추천해 드립니다!</b>
-                    <p>֎ 선선한 저녁 여행을 즐기고 싶은 분</p>
-                    <p>֎ 알록달록한 밤의 모습을 보고 싶은 분</p>
-                    <p>֎ 서울 근교로 여행을 가고 싶은 분</p>
+                    <p>֎ 가족과 여름휴가를 계획하고 계신 분</p>
+                    <p>֎ 액티비티를 즐기고 싶은 분</p>
+                    <p>֎ 자연을 다채롭게 즐기고 싶은 분</p>
                                 <br>
-                           ⭐ 추천 코스 ⭐
+                           ⭐ 추천 장소 ⭐
                                 <br>
-                    <h4>송도센트럴파크, 수봉공원, 인천시티투어, 트리플스트리트</h4>
+                    <h4>입곡군립공원, 아라힐링 무빙보트, 무진정, 악양생태공원</h4>
 
                 </section>
                 <br>
                 <br>
                 <br>
                 <section class="container6">
-                    <h4>송도센트럴파크</h4>
+                    <h4>입곡군립공원
+                    </h4>
                 </section>
 
                 <section class="container7">
                     <section class="container7-1">
-                        <img src="${contextPath}/resources/images/ThemeBoard/nightView/songdo2.jpg" alt="">
+                        <img src="${contextPath}/resources/images/ThemeBoard/hamyang/imgokpark1.jpg" alt="">
                     </section>
                 </section>
 
@@ -97,12 +98,10 @@
                     <section class="container8-1">
                         <table>
                             <ul>
-                                <li>송도센트럴파크는 바닷물을 이용한 해수공원이자 
-                                    한국의 지형적 특성을 살린 도시공원입니다</li>
-                                <li> 밤이 되면 주변 빌딩들의 불빛과 색색깔의 
-                                    빛을 내는 공원 조명이 더해져 아름다운 야경을 감상하고</li>
-                                <li>낮과 다른 매력을 가진 저녁에 선선한 바람을 만끽하며
-                                     도심의 화려한 모습을 담아보세요</li>
+                                <li>입곡군립공원은 입곡저수지 상류에 자연 생태를 그대로 보존하여 만들어진 공간입니다.</li>
+                                <li>저수지를 중심으로 왼쪽에는 깎아지른 절벽에 우거진 송림이, 
+                                    오른쪽으로는 완만한 경사지에 활엽수림과 침엽수림이 멋진 조화를 이루고 있는 곳인데요. </li>
+                                <li> 다양한 액티비티 시설과 산책로가 있어 다채롭게 즐길 수 있는 이곳에 방문해 보세요.</li>
                             </ul>
                         </table>
 
@@ -111,14 +110,15 @@
                 </section>
 
                 <br>
+                <br>
                
                 <section class="container9">
                     <section class="container9-1">
                         <section class="item3">
-                            <img src="${contextPath}/resources/images/ThemeBoard/nightView/songdo3.jpg">
+                            <img src="${contextPath}/resources/images/ThemeBoard/hamyang/mujinjung1.jpg">
                         </section>
                         <section class="item3">
-                            <img src="${contextPath}/resources/images/ThemeBoard/nightView/subongpark1.jpg">
+                            <img src="${contextPath}/resources/images/ThemeBoard/hamyang/movingbote1.jpg">
                         </section>
 
                     </section>
@@ -130,11 +130,11 @@
                         <section class="item4">
                             <table>
                                 <ul>
-                                    <li>※송도센트럴파크</li>
-                                    <li>위치 : 인천광역시 연수구 컨벤시아대로 160</li>
+                                    <li>※입곡군립공원</li>
+                                    <li>위치 : 경상남도 함안군 산인면 입곡리 산59</li>
                                     <li>운영시간 : 연중무휴</li>
                                     <li>이용요금 : 무료</li>
-                                    <li>문의 : 032-456-2860</li>
+                                    <li>문의 : 061-659-5708</li>
                                    
                                  </ul>
                             </table>
@@ -142,13 +142,11 @@
 
                         <section class="item4">
                             <table>
-                                <ul>
-                                    <li>※수봉공원</li>
-                                    <li>위치 : 인천광역시 미추홀구 수봉안길 84</li>
-                                    <li>운영시간 : 연중무휴</li>
-                                    <li>주차 : 공영 주차장 이용</li>
-                                    <li>이용요금 : 무료</li>
-                                   
+                                <ul style="width:450px;">
+                                    <li>※아라힐링카페</li>
+                                    <li>위치 : 경상남도 함안군 산인면 입곡공원길 225</li>
+                                    <li>운영시간 : 화~일요일 10:00~18:00 (휴식 시간 11:30~12:10, 15:00~15:30) / 매주 월요일, 설·추석 당일 휴무</li>
+                                    <li>문의 : 아라힐링카페(무빙보트, 아라힐링사이클) 055-580-4596</li>
                                 </ul>
                            </table>
                         </section>
@@ -160,10 +158,10 @@
                 <section class="container9">
                     <section class="container9-1">
                         <section class="item3">
-                            <img src="${contextPath}/resources/images/ThemeBoard/nightView/bustour1.jpg">
+                            <img src="${contextPath}/resources/images/ThemeBoard/hamyang/mujinjung1.jpg">
                         </section>
                         <section class="item3">
-                            <img src="${contextPath}/resources/images/ThemeBoard/nightView/triplestreet1.jpg">
+                            <img src="${contextPath}/resources/images/ThemeBoard/hamyang/akyangpark1.jpg">
                         </section>
 
                     </section>
@@ -175,12 +173,12 @@
                         <section class="item4">
                             <table>
                                  <ul>
-                                    <li>※인천종합관광안내소</li>
-                                    <li>위치 : 인천광역시 연수구 인천타워대로 234 1층 인천종합관광안내소</li>
-                                    <li>운영시간 : 24시간[연중무휴]</li>
-                                    <li>이용요금 : 성인 10,000원 , 소인&경로 8,000원</li>
-                                    <li>문의 : 1899-0960</li>
-                                    <li>주차 : 공용주차장</li>
+                                    <li>※ 무진정</li>
+                                    <li>위치 : 경상남도 함안군 함안면 괴산리</li>
+                                    <li>운영시간 : 연중무휴</li>
+                                    <li>이용요금 : 무료</li>
+                                    <li>문의 : 055-580-2551</li>
+                                    <li>주차 : 자체 주차장 이용</li>
                                  </ul>
                             </table>
                         </section>
@@ -188,11 +186,11 @@
                         <section class="item4">
                             <table>
                                 <ul>
-                                    <li>※트리플스트리트</li>
-                                    <li>위치 : 인천광역시 연수구 송도과학로16번길 33-1</li>
-                                    <li>운영시간 : 10:30~22:00 </li>
-                                    <li>이용요금 : 가게별로 상이</li>
-                                    <li>문의 : 032-310-9400, 032-310-9500</li>
+                                    <li>※ 악양생태공원</li>
+                                    <li>위치 : 경상남도 함안군 대산면 서촌리 1418</li>
+                                    <li>운영시간 : 연중무휴 </li>
+                                    <li>이용요금 : 무료</li>
+                                    <li>문의 : 055-580-3421</li>
                                     <li>주차 : 자체 주차장 이용</li>
                                 </ul>
                            </table>
