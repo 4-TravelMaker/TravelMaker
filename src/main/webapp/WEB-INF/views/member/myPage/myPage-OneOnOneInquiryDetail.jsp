@@ -47,7 +47,12 @@
                     ${detail.boardContent}
                 </section>
                 <div class="reply-btn-area">
-                    <button type="button" id="go-to-list-btn" onclick="location.href='${contextPath}/myPage/OneOnOneInquiry/list?type=${param.type}&cp=${param.cp}'">목록으로</button>
+                    <c:if test="${!empty param.cp}">
+                        <button type="button" id="go-to-list-btn" onclick="location.href='${contextPath}/myPage/OneOnOneInquiry/list?type=${param.type}&cp=${param.cp}'">목록으로</button>
+                    </c:if>
+                    <c:if test="${empty param.cp}">
+                        <button type="button" id="go-to-list-btn" onclick="location.href='${contextPath}/myPage/OneOnOneInquiry/list?type=${param.type}&cp=1'">목록으로</button>
+                    </c:if>
                     <button type="button" id="reply-btn">수정하기</button>
                     <button type="button" id="delete-btn">삭제하기</button>
                 </div>

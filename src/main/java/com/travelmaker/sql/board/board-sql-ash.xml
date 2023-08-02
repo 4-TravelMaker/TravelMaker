@@ -137,4 +137,14 @@
 		WHERE BOARD_NO = ?
 	</entry>
 	
+	<!-- 마이페이지 - 일대일 문의 다음 게시글 번호 조회 -->
+	<entry key="nextBoardNo">
+		SELECT SEQ_BOARD_NO.NEXTVAL FROM DUAL
+	</entry>	
+
+	<!-- 마이페이지 - 일대일 문의글 작성 -->
+	<entry key="insertBoard">
+		INSERT INTO BOARD
+		VALUES(?, ?, ?, DEFAULT, DEFAULT, ?, ?, 1, DEFAULT)
+	</entry>
 </properties>
