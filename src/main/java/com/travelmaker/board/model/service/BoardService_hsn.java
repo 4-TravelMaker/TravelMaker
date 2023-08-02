@@ -291,9 +291,89 @@ public class BoardService_hsn {
 		return result;
 	}
 
+
+
+	
+
 //------------------------------------------------------------------------------------------------------------------------------------------------
 	//관리자 페이지 게시글 관리 Service 시작
 	
+	/** 게시글 관리 게시글 목록 조회 Service
+	 * @param type
+	 * @param cp
+	 * @return map
+	 * @throws Exception
+	 */
+	public Map<String, Object> memberBoardList(int type, int cp) throws Exception{
+		
+		Connection conn = getConnection();
+		
+		// 전체 게시글 수
+		int listCount = dao.getListCount(conn, type);
+		
+		// 페이지네이션
+		Pagination pagination = new Pagination(cp, listCount);
+		
+		// 게시글 목록 조회
+		List<Board> boardList = dao.memberBoardList(conn, pagination,type);
+		
+		Map<String, Object> map = new HashMap<>();
+		
+		map.put("pagination", pagination);
+		map.put("boardList", boardList);
+		
+		close(conn);
+		
+		return map;
+	}
+
+
+	/** 게시글 관리 아이디 검색 Service
+	 * @param type
+	 * @param cp
+	 * @param query
+	 * @return map
+	 * @throws Exception
+	 */
+	public Map<String, Object> searchMemberBoardList(int type, int cp, String query) throws Exception{
+		
+		Connection conn = getConnection();
+		
+		String condition = "AND MEMBER_ID LIKE '%" + query + "%'";
+		
+		int listCount = dao.searchListCount(type, conn, condition);
+		
+		Pagination pagination = new Pagination(cp, listCount);
+		
+		List<Board> boardList = dao.searchMemberBoardList(conn, pagination, type, condition);
+		
+		Map<String, Object> map = new HashMap<>();
+		
+		map.put("pagination", pagination);
+		map.put("boardList", boardList);
+		
+		close(conn);
+		
+		return map;
+	}
+
+
+
+	/** 관리자 페이지 게시글 관리 상세 조회 Service
+	 * @param boardNo
+	 * @return detail
+	 * @throws Exception
+	 */
+	public BoardDetail adminMemberBoardDetail(int boardNo) throws Exception{
+		
+		Connection conn = getConnection();
+		
+		BoardDetail detail = dao.adminMemberBoardDetail(conn, boardNo);
+		
+		close(conn);
+		
+		return detail;
+	}
 
 	
 }
