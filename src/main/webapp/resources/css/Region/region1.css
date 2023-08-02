@@ -121,7 +121,7 @@ a{
 #SEOUL{
     display: inline-block;
     position: absolute;
-    top : 980PX;
+    top : 987PX;
     left: 870PX;
     cursor: pointer;
     color: rgb(219, 157, 75);
@@ -178,7 +178,7 @@ a{
 #CB{
     display: inline-block;
     position: absolute;
-    top : 1040PX;
+    top : 1043PX;
     left: 930PX;
     cursor: pointer;
     color: rgb(87, 82, 82);
@@ -207,7 +207,7 @@ a{
 #JB{
     display: inline-block;
     position: absolute;
-    top : 1198PX;
+    top : 1207PX;
     left: 835PX;
     cursor: pointer;
     color: rgb(136, 17, 136);
@@ -235,8 +235,8 @@ a{
 #JJ{
     display: inline-block;
     position: absolute;
-    top : 1470PX;
-    left: 785PX;
+    top : 1475PX;
+    left: 790PX;
     cursor: pointer;
     color: rgb(4, 48, 10);
 }

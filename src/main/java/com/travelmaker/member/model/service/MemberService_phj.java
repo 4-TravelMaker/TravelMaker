@@ -3,10 +3,16 @@ package com.travelmaker.member.model.service;
 import static com.travelmaker.common.JDBCTemplate.*;
 
 import java.sql.Connection;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import com.travelmaker.board.model.vo.Board;
+import com.travelmaker.board.model.vo.BoardDetail;
+import com.travelmaker.board.model.vo.Pagination;
+import com.travelmaker.board.model.vo.Pagination;
 import com.travelmaker.board.model.vo.Reply;
+import com.travelmaker.common.Util;
 import com.travelmaker.member.model.dao.MemberDAO_phj;
 import com.travelmaker.member.model.vo.Member;
 
@@ -52,44 +58,101 @@ public class MemberService_phj {
 		return result;
 	}
 
-
-
-	/** 회원 게시글 목록 조회 service
+	
+	
+	
+	/** 게시글 목록 조회 service
 	 * @param memberNo
-	 * @return list
+	 * @param type
+	 * @param cp
+	 * @return
 	 * @throws Exception
 	 */
-	public List<Board> selectBoard(int memberNo) throws Exception {
+	public Map<String, Object> selectBoard(int memberNo, int type, int cp) throws Exception {
 		
 		Connection conn = getConnection();
 		
-		List<Board> list = dao.selectBoard(conn, memberNo);
+		// 전체 게시글 수 
+		int listCount = dao.getListCount(conn, type);
+		
+		Pagination pagination = new Pagination(cp, listCount);
+		
+		// 게시글 목록 조회
+		List<Board> boardList = dao.selectBoard(conn, pagination, type, memberNo);
+		
+		Map<String, Object> map = new HashMap<String, Object>();
+		
+		map.put("pagination", pagination);
+		map.put("board", boardList);
 		
 		close(conn);
 		
-		return list;
+		return map;
+	}
+
+
+
+	/** 게시글 상세 조회 Service
+	 * @param boardNo
+	 * @return detail
+	 * @throws Exception
+	 */
+	public BoardDetail selectBoardDetail(int boardNo) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		BoardDetail detail = dao.selectBoardDetail(conn, boardNo);
+		
+		close(conn);
+		
+		return detail;
 	}
 
 
 
 	/** 게시글 삭제 service
 	 * @param boardNo
-	 * @return result
+	 * @return result1
 	 * @throws Exception
 	 */
 	public int deleteBoard(int boardNo) throws Exception{
 		
 		Connection conn = getConnection();
 		
-		int result = dao.deleteBoard(conn, boardNo);
+		int result1 = dao.deleteBoard(conn, boardNo);
 		
-		if(result>0) commit(conn);
-		else		 rollback(conn);
+		if(result1 >0) commit(conn);
+		else         rollback(conn);
+		
+		close(conn);
+		
+		return result1;
+	}
+
+
+
+	/** 게시글 수정 service
+	 * @param boardNo
+	 * @param boardTitle
+	 * @param boardContent
+	 * @return result
+	 * @throws Exception
+	 */
+	public int updateBoard(int boardNo, String boardTitle, String boardContent) throws Exception{
+		
+		Connection conn = getConnection();
+		
+		boardContent = Util.XSSHandling(boardContent);
+		
+		boardContent = Util.newLineHandling(boardContent);
+		
+		int result = dao.updateBoard(conn, boardNo, boardTitle, boardContent);
+		
+		if(result > 0) commit(conn);
+		else           rollback(conn);
 		
 		close(conn);
 		
 		return result;
 	}
-
-
 }

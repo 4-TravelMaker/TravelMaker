@@ -2,6 +2,7 @@ package com.travelmaker.member.controller;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -29,13 +30,23 @@ public class MyPageBoard extends HttpServlet {
 			
 			int memberNo = loginMember.getMemberNo();
 			
+			
+			int type = Integer.parseInt(req.getParameter("type"));
+			
+			int cp = 1;
+			
+			if(req.getParameter("cp") != null) {
+				cp = Integer.parseInt(req.getParameter("cp"));
+			}
+			
 			MemberService_phj service = new MemberService_phj();
+
+			Map<String, Object> map = service.selectBoard(memberNo, type, cp);
 			
-			List<Board> list = service.selectBoard(memberNo);
+			req.setAttribute("map", map);
 			
-			String path = "/WEB-INF/views/member/myPage/myPage-board.jsp";
 			
-			req.setAttribute("list", list);
+			String path = "/WEB-INF/views/member/myPage/myPage-board1.jsp";
 			
 			RequestDispatcher dispatcher = req.getRequestDispatcher(path);
 			dispatcher.forward(req, resp);
