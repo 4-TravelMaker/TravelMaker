@@ -31,17 +31,17 @@
                     <section class="pic-area1">
                         <section id="pic">
                             <a href="${contextPath}/Region/ctgr?ctgr=4&name=서울">
-                                <img src="${contextPath}/resources/images/main3.jpg">
+                                <img src="${contextPath}/resources/images/main4.png">
                             </a>
                         </section>
                         <section id="article">
                             <p style="color:rgb(202, 73, 95)">추천! 가볼만한 곳 </p>
-                            <p style="color:rgb(105, 38, 49)">가볼만한 여행지를 추천합니다!</p>
+                            <p style="color:rgb(105, 38, 49)">가볼만한 맛집을 추천합니다!</p>
                         </section>
                     </section>
                     <section class="pic-area2">
                         <section id="pic">
-                            <a href="${contextPath}/Region/ctgr?ctgr=12&name=제주도">
+                            <a href="${contextPath}/Region/ctgr?ctgr=10&name=전라도">
                                 <img src="${contextPath}/resources/images/main2.png">
                             </a>
                         </section>
@@ -53,7 +53,7 @@
                     <section class="pic-area3">
                         <section id="pic">
                             <a href="${contextPath}/Region/ctgr?ctgr=8&name=강원도">
-                                <img src="${contextPath}/resources/images/main.png">
+                                <img src="${contextPath}/resources/images/main6.png">
                             </a>
                         </section>
                         <section id="article">

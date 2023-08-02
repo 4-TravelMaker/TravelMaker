@@ -12,6 +12,8 @@ import java.util.List;
 import java.util.Properties;
 
 import com.travelmaker.board.model.vo.Board;
+import com.travelmaker.board.model.vo.BoardDetail;
+import com.travelmaker.board.model.vo.Pagination;
 import com.travelmaker.member.model.vo.Member;
 
 public class MemberDAO_phj {
@@ -106,57 +108,138 @@ public class MemberDAO_phj {
 		return result;
 	}
 
-
-	/** 회원 게시글 목록 조회 service
+	/** 게시글 수 조회 DAO
 	 * @param conn
-	 * @param memberNo
-	 * @return list
+	 * @param type
+	 * @return listCount
 	 * @throws Exception
 	 */
-	public List<Board> selectBoard(Connection conn, int memberNo) throws Exception {
+	public int getListCount(Connection conn, int type) throws Exception {
 		
-		List<Board> list = new ArrayList<Board>();
+		int listCount = 0;
 		
 		try {
-			String sql = prop.getProperty("selectBoard");
+			
+			String sql = prop.getProperty("getListCount");
 			
 			pstmt = conn.prepareStatement(sql);
 			
-			pstmt.setInt(1, memberNo);
+			pstmt.setInt(1, type);
+
+			rs = pstmt.executeQuery();
 			
-			rs=pstmt.executeQuery();
-			
-			while(rs.next()) {
-				
-				Board bo = new Board();
-				
-				bo.setBoardNo( rs.getInt(1));
-				bo.setBoardTitle( rs.getString(2));
-				bo.setBoardContent( rs.getString(3));
-				bo.setMemberNo(rs.getInt(4));
-				bo.setBoardCode( rs.getInt(5));
-				
-				list.add(bo);
+			if(rs.next()) {
+				listCount = rs.getInt(1);
 			}
-			
 			
 		}finally {
 			close(rs);
 			close(pstmt);
 		}
-		return list;
+		
+		return listCount;
+	}
+
+
+	/** 게시글 목록 조회 DAO
+	 * @param conn
+	 * @param pagination
+	 * @param type
+	 * @param memberNo
+	 * @return boardList
+	 */
+	public List<Board> selectBoard(Connection conn, Pagination pagination, int type, int memberNo) throws Exception {
+		
+		List<Board> boardList = new ArrayList<>();
+		
+		try {
+			
+			String sql = prop.getProperty("selectBoardList");
+			
+			int start = ( pagination.getCurrentPage() - 1 ) * pagination.getLimit() + 1;
+			int end = start + pagination.getLimit() - 1;
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, memberNo);
+			pstmt.setInt(2, type);
+			pstmt.setInt(3, start);
+			pstmt.setInt(4, end);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				
+				Board board = new Board();
+				
+				board.setBoardNo( rs.getInt("BOARD_NO") );
+				board.setBoardTitle( rs.getString("BOARD_TITLE") );
+				board.setMemberId( rs.getString("MEMBER_ID") );
+				board.setCreateDate( rs.getString("CREATE_DT"));
+				board.setReadCount( rs.getInt("READ_COUNT"));
+				board.setBoardContent( rs.getString("BOARD_CONTENT") );
+				
+				boardList.add(board);
+			}
+		}finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return boardList;
+	}
+
+	
+
+	/** 게시글 상세조회 service
+	 * @param conn
+	 * @param boardNo
+	 * @return detail
+	 * @throws Exception
+	 */
+	public BoardDetail selectBoardDetail(Connection conn, int boardNo) throws Exception{
+		
+		BoardDetail detail = null;
+		
+		try {
+			String sql = prop.getProperty("selectBoardDetail");
+			
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, boardNo);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				
+				detail = new BoardDetail();
+				
+				detail.setBoardNo( rs.getInt("BOARD_NO") );
+				detail.setBoardTitle( rs.getString("BOARD_TITLE") );
+				detail.setBoardContent( rs.getString("BOARD_CONTENT") );
+				detail.setCreateDate( rs.getString("CREATE_DT") );
+				detail.setMemberNickname( rs.getString("MEMBER_NICK") );
+				detail.setMemberId( rs.getString("MEMBER_ID") );
+			}
+			
+		}finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return detail;
 	}
 
 
 	/** 게시글 삭제 DAO
 	 * @param conn
 	 * @param boardNo
-	 * @return result
+	 * @return result 
 	 * @throws Exception
 	 */
 	public int deleteBoard(Connection conn, int boardNo) throws Exception {
 		
-		int result = 0;
+		int result1 = 0;
 		
 		try {
 			String sql = prop.getProperty("deleteBoard");
@@ -165,14 +248,43 @@ public class MemberDAO_phj {
 			
 			pstmt.setInt(1, boardNo);
 			
-			result = pstmt.executeUpdate();
-			
+			result1 = pstmt.executeUpdate();
 			
 		}finally {
 			close(pstmt);
 		}
 		
+		return result1;
 		
+	}
+
+
+	/** 게시글 수정 DAO
+	 * @param conn
+	 * @param boardNo
+	 * @param boardTitle
+	 * @param boardContent
+	 * @return result
+	 * @throws Exception
+	 */
+	public int updateBoard(Connection conn, int boardNo, String boardTitle, String boardContent) throws Exception {
+		
+		int result = 0;
+		
+		try {
+			String sql = prop.getProperty("updateBoard");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, boardTitle);
+			pstmt.setString(2, boardContent);
+			pstmt.setInt(3, boardNo);
+			
+			result = pstmt.executeUpdate();
+			
+		}finally {
+			close(pstmt);
+		}
 		return result;
 	}
 }
