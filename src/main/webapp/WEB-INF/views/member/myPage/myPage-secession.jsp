@@ -1,17 +1,26 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
-<%-- 문자열 관련 함수(메소드) 제공 JSTL (EL 형식으로 작성) --%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelMaker</title>
+    <link rel="shortcut icon" type="image/x-icon" href="${contextPath}/resources/images/Share/small_logo.png">
+    <link rel="stylesheet" href="${contextPath}/resources/css/myPage/myPage-secession.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ef988defcf.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <main>
 
-    <link rel="stylesheet" href="${contextPath}/resources/css/myPage-secession.css">
-
-	<!-- header -->
     <jsp:include page="/WEB-INF/views/common/header.jsp"/>
-    <!-- myPage-sideBar -->
     <jsp:include page="/WEB-INF/views/common/myPage-sideBar.jsp"/>
     
-            <form action="#" onsubmit="return pwPrompt()">
+            <form action="secession" method="POST" onsubmit="return pwPrompt()">
                 <section class="right-section">
                     <section class="right-section-head">회원 탈퇴<hr></section>
 
@@ -23,7 +32,7 @@
                         </div>
 
                         <div>
-                            <span style="font-weight: bold;">- 사용하고 계신 아이디()는 탈퇴할 경우 재사용 및 복구가 불가능합니다.</span>
+                            <span style="font-weight: bold;">- 사용하고 계신 아이디( ${loginMember.memberNickname} )는 탈퇴할 경우 재사용 및 복구가 불가능합니다.</span>
                             <br><br>
                             <span>탈퇴한 아이디는 본인과 타인 모두 재사용 및 복구가 불가능하오니 신중하게 선택하시기 바랍니다.</span>
                             <br><br><br>

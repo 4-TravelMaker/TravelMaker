@@ -30,7 +30,7 @@
                 <a href="${contextPath}/myPage/OneOnOneInquiry/list?type=6">1:1 문의</a>
             </section>
             <section class="left-section-btn-box">
-                <a href="#">회원 탈퇴</a>
+                <a href="${contextPath}/myPage/secession">회원 탈퇴</a>
             </section>
         </section>
     </section>

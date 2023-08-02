@@ -24,4 +24,5 @@ function pwPrompt() {
         $("#pw-check").focus();
         return false;
     }
+
 }

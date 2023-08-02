@@ -169,4 +169,10 @@
 		)
 		WHERE RNUM BETWEEN ? AND ?
 	</entry>
+	
+	<entry key="plusReadCount">
+		UPDATE BOARD SET
+		READ_COUNT = READ_COUNT + 1
+		WHERE BOARD_NO = ?
+	</entry>
 </properties>

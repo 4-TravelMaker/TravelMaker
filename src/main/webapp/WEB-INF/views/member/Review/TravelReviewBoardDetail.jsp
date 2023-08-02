@@ -33,24 +33,21 @@
                         <h1>${detail.boardTitle}</h1>
 
                         <div class="title">
-                            <div id="name">
-                                <c:if test="${!empty board.profileImage}">
-                                    <img src="${contextPath}${detail.profileImage}" class="profile">
-                                </c:if>
-                                <c:if test="${empty board.profileImage}">
-                                    <img src="${contextPath}/resources/images/myPageProfile/profile.png" class="profile">
-                                </c:if>
-                                <span>${detail.memberNickname}</span>
-                            </div>
-
-                            <div class="date">
-                                <span>작성일 ${detail.createDate}</span>
+                            <c:if test="${!empty board.profileImage}">
+                                <img src="${contextPath}${detail.profileImage}" class="profile">
+                            </c:if>
+                            <c:if test="${empty board.profileImage}">
+                                <img src="${contextPath}/resources/images/myPageProfile/profile.png" class="profile">
+                            </c:if>
+                            <div>
+                                <div>${detail.memberNickname}</div>
+                                <div><span style="margin-right: 15px;">${detail.createDate}</span> <span>조회 ${detail.readCount}</span></div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div style="border-top: 2px solid lightgray;">
+                <div>
                     <div class="container">
                         <div class="content-image-box">
                             <c:forEach var="image" items="${imageList}">
@@ -68,7 +65,7 @@
             </div>
 
             <!-- 좋아요 -->
-            <div style="border-bottom: 2px solid lightgray;">
+            <div>
                 <div class="container">
                     <div class="like">
                         <c:set var="likeList" value="${detail.likeList}"/>
