@@ -112,6 +112,39 @@ public class MemberDAO_kks {
 		return result;
 	}
 
+	/** 회원 비밀번호 일치 여부 체크 DAO
+	 * @param conn
+	 * @param inputPw
+	 * @return result
+	 * @throws Exception
+	 */
+	public int memberPwCheck(Connection conn, String inputPw, int memberNo) throws Exception {
+		
+		int result = 0;
+		
+		try {
+			
+			String sql = prop.getProperty("memberPwCheck");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, inputPw);
+			pstmt.setInt(2, memberNo);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				result = rs.getInt(1);
+			}
+			
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
 	/** 회원 탈퇴 DAO
 	 * @param conn
 	 * @param memberNo
