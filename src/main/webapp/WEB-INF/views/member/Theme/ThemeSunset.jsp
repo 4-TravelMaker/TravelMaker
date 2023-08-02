@@ -31,7 +31,7 @@
                 </section>
                 <section class="container2">
 
-                    <h4>좋아요 0    조회수 0 </h4>
+                    <h4>조회수 ${detail.readCount}</h4>
                    
                 </section>
                 <br>
@@ -72,17 +72,17 @@
                     <p>֎ 붉게 물드는 노을을 감상하고 싶은 분</p>
                     <p>֎ 서울 근교에서 낭만을 즐기고 싶은 분</p>
                     <p>֎ 저녁 산책을 즐기고 싶은 분</p>
-                                <br>
-                           ⭐ 추천 장소 ⭐
-                                <br>
+                           <h4>⭐ 추천 장소 ⭐</h4>
                     <h4>노들섬, 남한산성, 반포 한강공원, 아차산</h4>
 
                 </section>
                 <br>
                 <br>
                 <br>
+                <br>
+                <br>
                 <section class="container6">
-                    <h4>노들섬</h4>
+                    노들섬
                 </section>
 
                 <section class="container7">
@@ -157,6 +157,8 @@
                     </section>
 
                 </section>
+
+                <br>
 
                 <section class="container9">
                     <section class="container9-1">

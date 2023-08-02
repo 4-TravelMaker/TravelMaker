@@ -31,7 +31,7 @@
                 </section>
                 <section class="container2">
 
-                    <h4>좋아요 0    조회수 0 </h4>
+                    <h4>조회수 ${detail.readCount}</h4>
                    
                 </section>
                 <br>
@@ -72,18 +72,18 @@
                     <p>֎ 6월의 꽃이 궁금하신 분</p>
                     <p>֎ 몽글몽글한 수국을 보고 싶은 분</p>
                     <p>֎ 연휴 기간 가볼 만한 곳을 찾는 분</p>
-                                <br>
-                           ⭐ 추천 장소 ⭐
-                                <br>
+                            <h4>⭐ 추천 장소 ⭐</h4>
                     <h4>공주 유구 색동수국정원, 태안 팜카밀레 허브정원, 경남 고성 그레이스정원, 제주 마노르블랑</h4>
 
                 </section>
                 <br>
                 <br>
                 <br>
+                <br>
+                <br>
                 <section class="container6">
-                    <h4>제주 마노르블랑
-                    </h4>
+                    제주 마노르블랑
+                    
                 </section>
 
                 <section class="container7">
@@ -110,7 +110,7 @@
 
                 <br>
                 <br>
-                <br>
+                
                
                 <section class="container9">
                     <section class="container9-1">
@@ -118,7 +118,7 @@
                             <img src="${contextPath}/resources/images/ThemeBoard/Flower/gongju1.jpg">
                         </section>
                         <section class="item3">
-                            <img src="${contextPath}/resources/images/ThemeBoard/Flower/hwasung3.jpg">
+                            <img src="${contextPath}/resources/images/ThemeBoard/Flower/sukkuk1.jpg">
                         </section>
 
                     </section>
@@ -142,7 +142,7 @@
 
                         <section class="item4">
                             <table>
-                                <ul style="width:450px;">
+                                <ul style="width:500px;">
                                     <li>※ 팜카밀레</li>
                                     <li>위치 :충청남도 태안군 남면 우운길 56-19</li>
                                     <li>운영시간:[4월~11월] 매일 09:00~18:00 [12월~3월] 매일 09:00~17:00</li>
@@ -156,13 +156,15 @@
 
                 </section>
 
+                <br>
+
                 <section class="container9">
                     <section class="container9-1">
                         <section class="item3">
-                            <img src="${contextPath}/resources/images/ThemeBoard/Flower/haegungdong1.jpg">
+                            <img src="${contextPath}/resources/images/ThemeBoard/Flower/graceGradem1.jpg">
                         </section>
                         <section class="item3">
-                            <img src="${contextPath}/resources/images/ThemeBoard/Flower/yongdongmarket1.jpg">
+                            <img src="${contextPath}/resources/images/ThemeBoard/Flower/sukkuk1.jpg">
                         </section>
 
                     </section>
@@ -173,11 +175,11 @@
                     <section class="container10-1">
                         <section class="item4">
                             <table>
-                                 <ul>
+                                 <ul style="width: 470px;">
                                     <li>※  그레이스정원</li>
                                     <li>위치 : 경상남도 고성군 상리면 삼상로 1312-71</li>
                                     <li>운영시간 : 월~일요일 09:00~18:00 (입장 마감 17:00) </li>
-                                    <li>이용요금 : 성인 5,000원 / 중·고등학생, 경로 4,000원 / 어린이 3,000원 </li>
+                                    <li>이용요금 : 성인 5,000원 / 중·고등학생, 경로 4,000원</li>
                                     <li>문의 : 055-673-1803</li>
                                     <li>주차 : 자체 주차장 이용</li>
                                  </ul>

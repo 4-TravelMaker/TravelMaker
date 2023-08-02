@@ -32,7 +32,7 @@
                 <br>
                 
                 <section class="container2">
-                    좋아요 0     조회수 0                    
+                    <h4>조회수 ${detail.readCount}</h4>              
                 </section>
                 <section class="container2-1">
                     <hr>

@@ -64,12 +64,12 @@
                                         </a>
                                     </div>
                                     <div class="embla__slide">
-                                        <a href="https://korean.visitkorea.or.kr/detail/rem_detail.do?cotid=9b251ab6-7f28-4547-a5bb-508644372dc9" style="display: contents">
+                                        <a href="${contextPath}/theme/flower" style="display: contents">
                                             <img src="resources/images/mainHome/summerflower.png" style="width:100%;height:100%;object-fit:contain;">
                                         </a>
                                     </div>
                                     <div class="embla__slide">
-                                        <a href="https://korean.visitkorea.or.kr/detail/rem_detail.do?cotid=e46d4b2f-5da4-40ad-ac69-f6492bfb6816" style="display: contents;">
+                                        <a href="${contextPath}/theme/chungnam" style="display: contents;">
                                             <img src="resources/images/mainHome/chungnam.png" style="width:100%;height:100%;object-fit:contain;">
                                         </a>
                                     </div>

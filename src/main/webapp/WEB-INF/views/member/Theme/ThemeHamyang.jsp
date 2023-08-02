@@ -31,7 +31,7 @@
                 </section>
                 <section class="container2">
 
-                    <h4>좋아요 0    조회수 0 </h4>
+                    <h4>조회수 ${detail.readCount}</h4>
                    
                 </section>
                 <br>
@@ -72,18 +72,17 @@
                     <p>֎ 가족과 여름휴가를 계획하고 계신 분</p>
                     <p>֎ 액티비티를 즐기고 싶은 분</p>
                     <p>֎ 자연을 다채롭게 즐기고 싶은 분</p>
-                                <br>
-                           ⭐ 추천 장소 ⭐
-                                <br>
+                           <h4>⭐ 추천 장소 ⭐</h4>
                     <h4>입곡군립공원, 아라힐링 무빙보트, 무진정, 악양생태공원</h4>
 
                 </section>
                 <br>
                 <br>
                 <br>
+                <br>
+                <br>
                 <section class="container6">
-                    <h4>입곡군립공원
-                    </h4>
+                    입곡군립공원
                 </section>
 
                 <section class="container7">
@@ -115,7 +114,7 @@
                 <section class="container9">
                     <section class="container9-1">
                         <section class="item3">
-                            <img src="${contextPath}/resources/images/ThemeBoard/hamyang/mujinjung1.jpg">
+                            <img src="${contextPath}/resources/images/ThemeBoard/hamyang/imgokpark2.jpg">
                         </section>
                         <section class="item3">
                             <img src="${contextPath}/resources/images/ThemeBoard/hamyang/movingbote1.jpg">
@@ -154,6 +153,8 @@
                     </section>
 
                 </section>
+
+                <br>
 
                 <section class="container9">
                     <section class="container9-1">

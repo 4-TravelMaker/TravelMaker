@@ -69,9 +69,28 @@
                         
                             <li style="height: 150px; list-style: none;" >
                                 <section style="float: left;">
-                                    <a href="#">
-                                    <img src="${contextPath}/resources/images/logo.png">
+                                
+                                
+                               	  <c:if test= "${board.boardCode == 4}">
+                                    <a href="${contextPath}/travelReview/detail?no=${board.boardNo}&cp=1&type=4">
+                                    	<img src="${contextPath}/resources/images/logo.png">
                                     </a>
+                               	  </c:if>
+                               	  
+                               	   <c:if test= "${board.boardCode == 5}">
+                                    <a href="${contextPath}/boardNotice/detail?no=${board.boardNo}&cp=1&type=5">
+                                    
+                                    	<c:if test="${empty board.boardImage}">
+                                    		<img src="${contextPath}/resources/images/logo.png">
+                                    	</c:if>
+                                    	
+                                    	<c:if test="${!empty board.boardImage}">
+											<img src="${contextPath}${board.boardImage}">                                   	
+                                    	</c:if>
+                                    
+                                    </a>
+                               	  </c:if>
+                                    
                                 </section>
                                 <section style="font-weight: bold; font-size:23px; margin-left: 130px;">
                                 

@@ -31,5 +31,6 @@ public class Board {
 	private String thumbnail; // 게시판 썸네일 이미지
 	private String profileImage; // 프로필 이미지
 	private String categoryName; // 카테고리 이름
+	private String boardImage; // 게시글 이미지 
 	
 }
