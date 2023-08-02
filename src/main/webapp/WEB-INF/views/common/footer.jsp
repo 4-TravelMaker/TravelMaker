@@ -5,9 +5,9 @@
 
 <footer>
     <section>Copyright © TravelMaker Corp. All rights reserved.</section>
-    <section class="footer"> 　　이용약관　　 </section>
-    <section class="footer"> 　　운영정책　　 </section>
-    <section class="footer"> 　　1:1문의　　 </section>
+    <section class="footer"> <a href="${contextPath}/teamProjectIntroduce">　　프로젝트 소개　　</a> </section>
+    <section class="footer"> <a href="${contextPath}/policy">　　이용약관　　</a> </section>
+    <section class="footer"> <a href="${contextPath}/myPage/OneOnOneInquiry/list?type=6">　　1:1문의　　</a> </section>
 </footer>
         
 <%-- session에 message 속성이 존재하는 경우 alert창으로 해당 내용을 출력 --%>
