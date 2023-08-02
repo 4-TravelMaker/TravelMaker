@@ -27,8 +27,6 @@ remSel.addEventListener("click", function(){
             type: "get",
             success : function(result){
                 if(result > 0){
-
-
                       alert("게시글이 삭제 되었습니다.");
                   } else {
                       alert ("게시글 삭제에 실패했습니다..");
