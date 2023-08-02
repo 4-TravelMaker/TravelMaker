@@ -32,9 +32,8 @@ public class loginServlet extends HttpServlet{
 				
 		String inputId = req.getParameter("inputId");
 		String inputPw = req.getParameter("inputPw");
-		
+//		String saveId = req.getParameter("saveId");
 
-		
 
 		Member mem = new Member();
 		mem.setMemberId(inputId);
@@ -64,7 +63,7 @@ public class loginServlet extends HttpServlet{
 					
 					c.setMaxAge(0);
 				}
-				c.setPath(req.getContextPath());
+				c.setPath(req.getContextPath()+"/member/login");
 				resp.addCookie(c);
 				
 			}else {

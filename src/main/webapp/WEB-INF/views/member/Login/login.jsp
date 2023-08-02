@@ -43,7 +43,7 @@
                         <div id="inputArea1-1">
                             <label for="idInput"><img src="${contextPath}/resources/images/Login/loginmark.png" id="image"></label>
                             <div id="idArea">
-                                <input type="text" id="idInput" name="inputId" placeholder="아이디" autocomplete="off">
+                                <input type="text" id="idInput" name="inputId" placeholder="아이디" autocomplete="off" value="${cookie.saveId.value}">
                             </div>
                             <label for="pwInput"><img src="${contextPath}/resources/images/Login/passward.png" id="image"></label>
                             <div id="pwArea">
@@ -71,7 +71,14 @@
                 
                         </div>
                     <div id="InputArea3" style="margin-top: 2px; margin-left: 18px;"  >
-                        <label for="cherckId"><input type="checkbox" id="cherckId">아이디 저장</label>
+                        
+                        <c:if test="${!empty cookie.saveId.value}">
+                            <c:set var="chk" value="checked"/>
+                        </c:if>
+                        
+                        <label for="checkId">
+                            <input type="checkbox" id="checkId" name="saveId" ${chk}>아이디 저장
+                        </label>
                     </div>
                 </form>
             </div>
