@@ -27,6 +27,14 @@
 		AND SECESSION_FL = 'N'
 	</entry>
 	
+	<!-- 비밀번호 일치 여부 검사 -->
+	<entry key="memberPwCheck">
+		SELECT COUNT(*) FROM MEMBER
+		WHERE MEMBER_PW = ?
+		AND MEMBER_NO = ?
+	</entry>
+	
+	<!-- 회원 탈퇴 -->
 	<entry key="memberSecession">
 		UPDATE MEMBER SET
 		SECESSION_FL = 'Y'

@@ -46,6 +46,22 @@ public class MemberService_kks {
 		return result;
 	}
 
+	/** 회원 비밀번호 일치 여부 체크 Service
+	 * @param inputPw
+	 * @return result
+	 * @throws Exception
+	 */
+	public int memberPwCheck(String inputPw, int memberNo) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		int result = dao.memberPwCheck(conn, inputPw, memberNo);
+		
+		close(conn);
+		
+		return result;
+	}
+
 	/** 회원 탈퇴 Service
 	 * @param memberNo
 	 * @return result
