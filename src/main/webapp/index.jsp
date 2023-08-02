@@ -44,22 +44,22 @@
                                         </a>
                                     </div>
                                     <div class="embla__slide">
-                                        <a href="${contextPath}/theme/nightView" style="display:contents"> 
+                                        <a href="${contextPath}/theme/nightVeiw" style="display:contents"> 
                                             <img src="resources/images/mainHome/incheon.png" style="width:100%;height:100%;object-fit:contain;">
                                         </a>
                                     </div>
                                     <div class="embla__slide">
-                                        <a href="https://korean.visitkorea.or.kr/detail/rem_detail.do?cotid=dad57d1b-05e5-4633-a85b-58e32d93b1fe" style="display:contents">
+                                        <a href="${contextPath}/theme/yeosuSea" style="display:contents">
                                             <img src="resources/images/mainHome/yeosu.png" style="width:100%;height:100%;object-fit:contain;">
                                         </a>
                                     </div>
                                     <div class="embla__slide">
-                                        <a href="https://korean.visitkorea.or.kr/detail/rem_detail.do?cotid=3301d3ce-aa66-483d-8e78-66b4cac3a426" style="display:contents">
+                                        <a href="${contextPath}/theme/hamyang" style="display:contents">
                                             <img src="resources/images/mainHome/han-an.png" style="width:100%;height:100%;object-fit:contain;">
                                         </a>
                                     </div>
                                     <div class="embla__slide">
-                                        <a href="https://korean.visitkorea.or.kr/detail/rem_detail.do?cotid=b3e8cc50-c792-4c9a-8fac-49376c99ef41" style="display:contents">
+                                        <a href="${contextPath}/theme/suwon" style="display:contents">
                                             <img src="resources/images/mainHome/suwon.png" style="width:100%;height:100%;object-fit:contain;">
                                         </a>
                                     </div>

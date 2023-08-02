@@ -27,7 +27,7 @@
 
                 <br>
                 <section class="container1">
-                    <h2>인천 여행, 선선한 저녁에 즐기는 인천 야경 명소 4</h2>
+                    <h2>6월 꽃구경, 몽글몽글 피어난 수국 명소 4</h2>
                 </section>
                 <section class="container2">
 
@@ -43,20 +43,20 @@
                     <section class="flex_container1">
                         
                         <div class="item">
-                            <img src="${contextPath}/resources/images/ThemeBoard/nightView/songdo1.jpg">
-                            <strong><h3>송도센트럴파크</h3></strong>   
+                            <img src="${contextPath}/resources/images/ThemeBoard/Flower/gongju.jpg">
+                            <strong><h3>공주 유구 색동수국정원</h3></strong>   
                         </div>
                         <div class="item">
-                            <img src="${contextPath}/resources/images/ThemeBoard/nightView/subongpark.jpg">
-                            <strong><h3>수봉공원</h3></strong>
+                            <img src="${contextPath}/resources/images/ThemeBoard/Flower/hubgarden.jpg">
+                            <strong><h3>태안 팜카밀레 허브정원</h3></strong>
                         </div>
                         <div class="item">
-                            <img src="${contextPath}/resources/images/ThemeBoard/nightView/bustour.jpg">
-                            <strong><h3>인천시티투어</h3></strong>
+                            <img src="${contextPath}/resources/images/ThemeBoard/Flower/graceGradem.jpg">
+                            <strong><h3>경남 고성 그레이스 정원</h3></strong>
                         </div>
                         <div class="item">
-                            <img src="${contextPath}/resources/images/ThemeBoard/nightView/triplestreet.jpg">
-                            <strong><h3>트리플스트리트</h3></strong>
+                            <img src="${contextPath}/resources/images/ThemeBoard/Flower/sukkuk.jpg">
+                            <strong><h3>제주 마노르블랑</h3></strong>
                         </div>
                     </section>  
 
@@ -69,25 +69,26 @@
                     <br>
                     <br>
                     <b>이런 분들에게 추천해 드립니다!</b>
-                    <p>֎ 선선한 저녁 여행을 즐기고 싶은 분</p>
-                    <p>֎ 알록달록한 밤의 모습을 보고 싶은 분</p>
-                    <p>֎ 서울 근교로 여행을 가고 싶은 분</p>
+                    <p>֎ 6월의 꽃이 궁금하신 분</p>
+                    <p>֎ 몽글몽글한 수국을 보고 싶은 분</p>
+                    <p>֎ 연휴 기간 가볼 만한 곳을 찾는 분</p>
                                 <br>
-                           ⭐ 추천 코스 ⭐
+                           ⭐ 추천 장소 ⭐
                                 <br>
-                    <h4>송도센트럴파크, 수봉공원, 인천시티투어, 트리플스트리트</h4>
+                    <h4>공주 유구 색동수국정원, 태안 팜카밀레 허브정원, 경남 고성 그레이스정원, 제주 마노르블랑</h4>
 
                 </section>
                 <br>
                 <br>
                 <br>
                 <section class="container6">
-                    <h4>송도센트럴파크</h4>
+                    <h4>제주 마노르블랑
+                    </h4>
                 </section>
 
                 <section class="container7">
                     <section class="container7-1">
-                        <img src="${contextPath}/resources/images/ThemeBoard/nightView/songdo2.jpg" alt="">
+                        <img src="${contextPath}/resources/images/ThemeBoard/Flower/sukkuk2.jpg" alt="">
                     </section>
                 </section>
 
@@ -97,12 +98,9 @@
                     <section class="container8-1">
                         <table>
                             <ul>
-                                <li>송도센트럴파크는 바닷물을 이용한 해수공원이자 
-                                    한국의 지형적 특성을 살린 도시공원입니다</li>
-                                <li> 밤이 되면 주변 빌딩들의 불빛과 색색깔의 
-                                    빛을 내는 공원 조명이 더해져 아름다운 야경을 감상하고</li>
-                                <li>낮과 다른 매력을 가진 저녁에 선선한 바람을 만끽하며
-                                     도심의 화려한 모습을 담아보세요</li>
+                                <li>마노르블랑은 최남단인 제주도에 있어 우리나라에서 가장 먼저 수국을 볼 수 있는 곳입니다.</li>
+                                <li>이곳은 계절마다 다른 꽃을 심어 수국 이외에도 사계절 내내 다양한 종류의 꽃들을 만날 수 있는데요.</li>
+                                <li>사계앞바다가 보이는 색다른 풍경을 가지고 있어 인생 사진을 남기기 좋습니다. 산책로를 따라 곳곳에 놓인 포토존에서 소중한 추억을 남겨보세요.</li>
                             </ul>
                         </table>
 
@@ -111,14 +109,16 @@
                 </section>
 
                 <br>
+                <br>
+                <br>
                
                 <section class="container9">
                     <section class="container9-1">
                         <section class="item3">
-                            <img src="${contextPath}/resources/images/ThemeBoard/nightView/songdo3.jpg">
+                            <img src="${contextPath}/resources/images/ThemeBoard/Flower/gongju1.jpg">
                         </section>
                         <section class="item3">
-                            <img src="${contextPath}/resources/images/ThemeBoard/nightView/subongpark1.jpg">
+                            <img src="${contextPath}/resources/images/ThemeBoard/Flower/hwasung3.jpg">
                         </section>
 
                     </section>
@@ -129,12 +129,12 @@
                     <section class="container10-1">
                         <section class="item4">
                             <table>
-                                <ul>
-                                    <li>※송도센트럴파크</li>
-                                    <li>위치 : 인천광역시 연수구 컨벤시아대로 160</li>
+                                <ul style="width: 450px;">
+                                    <li>※  유구 색동수국정원</li>
+                                    <li>위치 :  충청남도 공주시 유구읍 창말길 44</li>
                                     <li>운영시간 : 연중무휴</li>
                                     <li>이용요금 : 무료</li>
-                                    <li>문의 : 032-456-2860</li>
+                                    <li>문의 : 공주시 콜센터 041-840-3800</li>
                                    
                                  </ul>
                             </table>
@@ -142,13 +142,12 @@
 
                         <section class="item4">
                             <table>
-                                <ul>
-                                    <li>※수봉공원</li>
-                                    <li>위치 : 인천광역시 미추홀구 수봉안길 84</li>
-                                    <li>운영시간 : 연중무휴</li>
-                                    <li>주차 : 공영 주차장 이용</li>
-                                    <li>이용요금 : 무료</li>
-                                   
+                                <ul style="width:450px;">
+                                    <li>※ 팜카밀레</li>
+                                    <li>위치 :충청남도 태안군 남면 우운길 56-19</li>
+                                    <li>운영시간:[4월~11월] 매일 09:00~18:00 [12월~3월] 매일 09:00~17:00</li>
+                                    <li>문의 : 041-675-3636</li>
+                                    <li>주차 : 자체 주차장 이용</li>
                                 </ul>
                            </table>
                         </section>
@@ -160,10 +159,10 @@
                 <section class="container9">
                     <section class="container9-1">
                         <section class="item3">
-                            <img src="${contextPath}/resources/images/ThemeBoard/nightView/bustour1.jpg">
+                            <img src="${contextPath}/resources/images/ThemeBoard/Flower/haegungdong1.jpg">
                         </section>
                         <section class="item3">
-                            <img src="${contextPath}/resources/images/ThemeBoard/nightView/triplestreet1.jpg">
+                            <img src="${contextPath}/resources/images/ThemeBoard/Flower/yongdongmarket1.jpg">
                         </section>
 
                     </section>
@@ -175,24 +174,24 @@
                         <section class="item4">
                             <table>
                                  <ul>
-                                    <li>※인천종합관광안내소</li>
-                                    <li>위치 : 인천광역시 연수구 인천타워대로 234 1층 인천종합관광안내소</li>
-                                    <li>운영시간 : 24시간[연중무휴]</li>
-                                    <li>이용요금 : 성인 10,000원 , 소인&경로 8,000원</li>
-                                    <li>문의 : 1899-0960</li>
-                                    <li>주차 : 공용주차장</li>
+                                    <li>※  그레이스정원</li>
+                                    <li>위치 : 경상남도 고성군 상리면 삼상로 1312-71</li>
+                                    <li>운영시간 : 월~일요일 09:00~18:00 (입장 마감 17:00) </li>
+                                    <li>이용요금 : 성인 5,000원 / 중·고등학생, 경로 4,000원 / 어린이 3,000원 </li>
+                                    <li>문의 : 055-673-1803</li>
+                                    <li>주차 : 자체 주차장 이용</li>
                                  </ul>
                             </table>
                         </section>
 
                         <section class="item4">
                             <table>
-                                <ul>
-                                    <li>※트리플스트리트</li>
-                                    <li>위치 : 인천광역시 연수구 송도과학로16번길 33-1</li>
-                                    <li>운영시간 : 10:30~22:00 </li>
-                                    <li>이용요금 : 가게별로 상이</li>
-                                    <li>문의 : 032-310-9400, 032-310-9500</li>
+                                <ul style="width: 450px;">
+                                    <li>※  마노르블랑 수국축제</li>
+                                    <li>위치 :제주특별자치도 서귀포시 안덕면 일주서로2100번길 46</li>
+                                    <li>운영시간 : 매일 09:00~18:30 </li>
+                                    <li>이용요금 : 성인 5,500원 / 초·중·고등학생 4,000원</li>
+                                    <li>문의 : 064-794-0999</li>
                                     <li>주차 : 자체 주차장 이용</li>
                                 </ul>
                            </table>

@@ -27,7 +27,7 @@
 
                 <br>
                 <section class="container1">
-                    <h2>인천 여행, 선선한 저녁에 즐기는 인천 야경 명소 4</h2>
+                    <h2>전남 여행, 푸른 물결을 다양하게 즐기는 여수여행</h2>
                 </section>
                 <section class="container2">
 
@@ -43,20 +43,20 @@
                     <section class="flex_container1">
                         
                         <div class="item">
-                            <img src="${contextPath}/resources/images/ThemeBoard/nightView/songdo1.jpg">
-                            <strong><h3>송도센트럴파크</h3></strong>   
+                            <img src="${contextPath}/resources/images/ThemeBoard/Yeosu/odongdo.jpg">
+                            <strong><h3>오동도</h3></strong>   
                         </div>
                         <div class="item">
-                            <img src="${contextPath}/resources/images/ThemeBoard/nightView/subongpark.jpg">
-                            <strong><h3>수봉공원</h3></strong>
+                            <img src="${contextPath}/resources/images/ThemeBoard/Yeosu/hangilam.jpg">
+                            <strong><h3>항일암</h3></strong>
                         </div>
                         <div class="item">
-                            <img src="${contextPath}/resources/images/ThemeBoard/nightView/bustour.jpg">
-                            <strong><h3>인천시티투어</h3></strong>
+                            <img src="${contextPath}/resources/images/ThemeBoard/Yeosu/mansungli.jpg">
+                            <strong><h3>만성리해수욕장</h3></strong>
                         </div>
                         <div class="item">
-                            <img src="${contextPath}/resources/images/ThemeBoard/nightView/triplestreet.jpg">
-                            <strong><h3>트리플스트리트</h3></strong>
+                            <img src="${contextPath}/resources/images/ThemeBoard/Yeosu/dolsanpark.jpg">
+                            <strong><h3>돌산공원</h3></strong>
                         </div>
                     </section>  
 
@@ -69,25 +69,25 @@
                     <br>
                     <br>
                     <b>이런 분들에게 추천해 드립니다!</b>
-                    <p>֎ 선선한 저녁 여행을 즐기고 싶은 분</p>
-                    <p>֎ 알록달록한 밤의 모습을 보고 싶은 분</p>
-                    <p>֎ 서울 근교로 여행을 가고 싶은 분</p>
+                    <p>֎ 푸른 바다를 즐기고 싶은 분</p>
+                    <p>֎ 여수 여행을 계획하고 계신 분</p>
+                    <p>֎ 보기만 해도 시원한 풍경을 보고 싶은 분</p>
                                 <br>
-                           ⭐ 추천 코스 ⭐
+                           ⭐ 추천 장소 ⭐
                                 <br>
-                    <h4>송도센트럴파크, 수봉공원, 인천시티투어, 트리플스트리트</h4>
+                    <h4>오동도, 향일암, 만성리해수욕장, 돌산공원</h4>
 
                 </section>
                 <br>
                 <br>
                 <br>
                 <section class="container6">
-                    <h4>송도센트럴파크</h4>
+                    <h4>오동도</h4>
                 </section>
 
                 <section class="container7">
                     <section class="container7-1">
-                        <img src="${contextPath}/resources/images/ThemeBoard/nightView/songdo2.jpg" alt="">
+                        <img src="${contextPath}/resources/images/ThemeBoard/Yeosu/odongdo1.jpg" alt="">
                     </section>
                 </section>
 
@@ -97,12 +97,12 @@
                     <section class="container8-1">
                         <table>
                             <ul>
-                                <li>송도센트럴파크는 바닷물을 이용한 해수공원이자 
-                                    한국의 지형적 특성을 살린 도시공원입니다</li>
-                                <li> 밤이 되면 주변 빌딩들의 불빛과 색색깔의 
-                                    빛을 내는 공원 조명이 더해져 아름다운 야경을 감상하고</li>
-                                <li>낮과 다른 매력을 가진 저녁에 선선한 바람을 만끽하며
-                                     도심의 화려한 모습을 담아보세요</li>
+                                <li>오동도는 멀리서 보면 오동잎을 닮아 이름 지어진 섬으로, 
+                                    섬 전체에 동백나무가 빼곡해 동백섬으로 불리기도 합니다.</li>
+                                <li>오동도에 도착을 하면 다양한 선율의 음악 분수, 하얀 등대, 
+                                    거북선·판옥선 모형 등 다양한 볼거리가 있습니다. </li>
+                                <li> 특히 해안을 중심으로 순환산책로가 조성되어 있어 
+                                    다양한 기암절벽과 수려한 해안절경을 마주할 수 있습니다.</li>
                             </ul>
                         </table>
 
@@ -115,10 +115,10 @@
                 <section class="container9">
                     <section class="container9-1">
                         <section class="item3">
-                            <img src="${contextPath}/resources/images/ThemeBoard/nightView/songdo3.jpg">
+                            <img src="${contextPath}/resources/images/ThemeBoard/Yeosu/odongdo2.jpg">
                         </section>
                         <section class="item3">
-                            <img src="${contextPath}/resources/images/ThemeBoard/nightView/subongpark1.jpg">
+                            <img src="${contextPath}/resources/images/ThemeBoard/Yeosu/hangilam1.jpg">
                         </section>
 
                     </section>
@@ -130,11 +130,11 @@
                         <section class="item4">
                             <table>
                                 <ul>
-                                    <li>※송도센트럴파크</li>
-                                    <li>위치 : 인천광역시 연수구 컨벤시아대로 160</li>
+                                    <li>※오동도</li>
+                                    <li>위치 : 전라남도 여수시 수정동 산1-11</li>
                                     <li>운영시간 : 연중무휴</li>
                                     <li>이용요금 : 무료</li>
-                                    <li>문의 : 032-456-2860</li>
+                                    <li>문의 : 061-659-5708</li>
                                    
                                  </ul>
                             </table>
@@ -142,13 +142,12 @@
 
                         <section class="item4">
                             <table>
-                                <ul>
-                                    <li>※수봉공원</li>
-                                    <li>위치 : 인천광역시 미추홀구 수봉안길 84</li>
+                                <ul style="width:450px;">
+                                    <li>※항일암</li>
+                                    <li>위치 : 전라남도 여수시 돌산읍 향일암로 60 종무소</li>
                                     <li>운영시간 : 연중무휴</li>
+                                    <li>이용요금 : 성인 2,500원 / 미취학어린이/만65세이상 무료</li>
                                     <li>주차 : 공영 주차장 이용</li>
-                                    <li>이용요금 : 무료</li>
-                                   
                                 </ul>
                            </table>
                         </section>
@@ -160,10 +159,10 @@
                 <section class="container9">
                     <section class="container9-1">
                         <section class="item3">
-                            <img src="${contextPath}/resources/images/ThemeBoard/nightView/bustour1.jpg">
+                            <img src="${contextPath}/resources/images/ThemeBoard/Yeosu/mansungli1.jpg">
                         </section>
                         <section class="item3">
-                            <img src="${contextPath}/resources/images/ThemeBoard/nightView/triplestreet1.jpg">
+                            <img src="${contextPath}/resources/images/ThemeBoard/Yeosu/dolsanpark1.jpg">
                         </section>
 
                     </section>
@@ -175,12 +174,12 @@
                         <section class="item4">
                             <table>
                                  <ul>
-                                    <li>※인천종합관광안내소</li>
-                                    <li>위치 : 인천광역시 연수구 인천타워대로 234 1층 인천종합관광안내소</li>
-                                    <li>운영시간 : 24시간[연중무휴]</li>
-                                    <li>이용요금 : 성인 10,000원 , 소인&경로 8,000원</li>
-                                    <li>문의 : 1899-0960</li>
-                                    <li>주차 : 공용주차장</li>
+                                    <li>※만성리해수욕장</li>
+                                    <li>위치 : 전라남도 여수시 만흥동</li>
+                                    <li>운영시간 : 연중무휴</li>
+                                    <li>이용요금 : 무료</li>
+                                    <li>문의 : 061-659-5696</li>
+                                    <li>주차 : 자체 주차장 이용</li>
                                  </ul>
                             </table>
                         </section>
@@ -188,11 +187,11 @@
                         <section class="item4">
                             <table>
                                 <ul>
-                                    <li>※트리플스트리트</li>
-                                    <li>위치 : 인천광역시 연수구 송도과학로16번길 33-1</li>
-                                    <li>운영시간 : 10:30~22:00 </li>
-                                    <li>이용요금 : 가게별로 상이</li>
-                                    <li>문의 : 032-310-9400, 032-310-9500</li>
+                                    <li>※돌산공원</li>
+                                    <li>위치 : 전라남도 여수시 돌산읍 우두리 산355-1</li>
+                                    <li>운영시간 : 연중무휴 </li>
+                                    <li>이용요금 : 무료</li>
+                                    <li>문의 : 061-643-1781</li>
                                     <li>주차 : 자체 주차장 이용</li>
                                 </ul>
                            </table>
