@@ -15,12 +15,12 @@
             <c:if test="${!empty loginMember.profileImage}">
                 <img src="${contextPath}${loginMember.profileImage}" id="real-profile-image">
             </c:if>
-            <section>${loginMember.memberNickname}</section>
+            <section>${loginMember.memberNickname} 님</section>
         </section>
         
         <section class="left-section-btn-area">
             <section class="left-section-btn-box">
-                <a href="#">회원 정보 수정</a>
+                <a href="${contextPath}/member/myPage/changeInfo">회원 정보 수정</a>
             </section>
 
             <section class="left-section-btn-box">

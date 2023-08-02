@@ -59,3 +59,10 @@
 
     cursor: pointer;
 }
+
+.left-section-btn button:hover{
+    color: rgb(153, 216, 199);
+    background-color: white;
+
+    transition-duration: 0.5s;
+}

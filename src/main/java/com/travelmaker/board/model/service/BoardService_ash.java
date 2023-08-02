@@ -254,4 +254,36 @@ public class BoardService_ash {
 		return result;
 	}
 
+	/** 마이페이지 - 일대일 문의글 작성 Service
+	 * @param detail
+	 * @param boardCode
+	 * @return boardNo
+	 * @throws Exception
+	 */
+	public int insertBoard(BoardDetail detail, int boardCode) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		int boardNo = dao.nextBoardNo(conn);
+		
+		detail.setBoardNo(boardNo);
+		
+		detail.setBoardTitle( Util.XSSHandling(detail.getBoardTitle()) );
+		detail.setBoardContent( Util.XSSHandling(detail.getBoardContent()) );
+		detail.setBoardContent( Util.newLineHandling(detail.getBoardContent()) );
+		
+		int result = dao.insertBoard(conn, detail, boardCode);
+		
+		if(result > 0) {
+			commit(conn);
+		} else {
+			rollback(conn);
+			boardNo = 0;
+		}
+		
+		close(conn);
+		
+		return boardNo;
+	}
+
 }
