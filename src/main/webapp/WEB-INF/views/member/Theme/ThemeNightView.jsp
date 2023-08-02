@@ -31,7 +31,7 @@
                 </section>
                 <section class="container2">
 
-                    <h4>좋아요 0    조회수 0 </h4>
+                    <h4>조회수 ${detail.readCount}</h4>
                    
                 </section>
                 <br>
@@ -72,17 +72,19 @@
                     <p>֎ 선선한 저녁 여행을 즐기고 싶은 분</p>
                     <p>֎ 알록달록한 밤의 모습을 보고 싶은 분</p>
                     <p>֎ 서울 근교로 여행을 가고 싶은 분</p>
-                                <br>
-                           ⭐ 추천 코스 ⭐
-                                <br>
+                                
+                                <h4>⭐ 추천 코스 ⭐</h4>
+                                
                     <h4>송도센트럴파크, 수봉공원, 인천시티투어, 트리플스트리트</h4>
 
                 </section>
                 <br>
                 <br>
                 <br>
+                <br>
+                <br>
                 <section class="container6">
-                    <h4>송도센트럴파크</h4>
+                    송도센트럴파크
                 </section>
 
                 <section class="container7">
@@ -157,6 +159,8 @@
 
                 </section>
 
+                <br>
+
                 <section class="container9">
                     <section class="container9-1">
                         <section class="item3">
@@ -187,7 +191,7 @@
 
                         <section class="item4">
                             <table>
-                                <ul>
+                                <ul style="width: 450px;">
                                     <li>※트리플스트리트</li>
                                     <li>위치 : 인천광역시 연수구 송도과학로16번길 33-1</li>
                                     <li>운영시간 : 10:30~22:00 </li>

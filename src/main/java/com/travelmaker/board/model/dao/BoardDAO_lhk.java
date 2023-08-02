@@ -188,7 +188,7 @@ public class BoardDAO_lhk {
 	/** 전체 DAO
 	 * @param conn
 	 * @param searchResult
-	 * @return
+	 * @return boardList
 	 * @throws Exception
 	 */
 	public List<Board> travelAll(Connection conn, String searchResult) throws Exception{

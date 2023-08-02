@@ -31,7 +31,7 @@
                 </section>
                 <section class="container2">
 
-                    <h4>좋아요 0    조회수 0 </h4>
+                    <h4>조회수 ${detail.readCount}</h4>
                    
                 </section>
                 <br>
@@ -72,18 +72,18 @@
                     <p>֎ 가까운 곳에서 여행을 즐기고 싶은 분</p>
                     <p>֎ 아이와 함께 가볼 만한 곳을 찾는 분</p>
                     <p>֎ 나들이로 가기 좋은 여행지가 궁금하신 분</p>
-                                <br>
-                           ⭐ 추천 장소 ⭐
-                                <br>
+                         <h4>⭐ 추천 장소 ⭐</h4>
                     <h4>한옥기술전시관, 수원화성, 행궁동 공방거리, 수원 영동시장</h4>
 
                 </section>
                 <br>
                 <br>
                 <br>
+                <br>
+                <br>
                 <section class="container6">
-                    <h4>수원화성
-                    </h4>
+
+                    수원화성
                 </section>
 
                 <section class="container7">
@@ -155,6 +155,8 @@
                     </section>
 
                 </section>
+
+                <br>
 
                 <section class="container9">
                     <section class="container9-1">
