@@ -55,7 +55,7 @@
                 <div>
                     <span class="reply-nickname">${loginMember.memberNickname}</span>
                 </div>
-                <textarea class="reply-textarea" id="replyContent" placeholder="댓글을 남겨보세요"></textarea>
+                <textarea class="reply-textarea" id="replyContent" placeholder="댓글을 남겨보세요" onkeydown="resize(this)" onkeyup="resize(this)"></textarea>
                 <button class="reply-btn" id="addReply">등록</button>
             </div>
         </div>

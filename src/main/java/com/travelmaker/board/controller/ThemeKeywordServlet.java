@@ -71,6 +71,22 @@ public class ThemeKeywordServlet extends HttpServlet{
 				req.getRequestDispatcher(path).forward(req, resp);
 			}
 			
+			if(command.equals("yeosuSea")) {
+				String path = "/WEB-INF/views/member/Theme/ThemeYeosuSea.jsp";
+				req.getRequestDispatcher(path).forward(req, resp);
+			}
+			
+			if(command.equals("hamyang")) {
+				String path = "/WEB-INF/views/member/Theme/ThemeHamyang.jsp";
+				req.getRequestDispatcher(path).forward(req, resp);
+			}
+			
+			if(command.equals("suwon")) {
+				String path = "/WEB-INF/views/member/Theme/ThemeSuwon.jsp";
+				req.getRequestDispatcher(path).forward(req, resp);
+			}
+			
+			
 			
 		}catch(Exception e){
 			e.printStackTrace();

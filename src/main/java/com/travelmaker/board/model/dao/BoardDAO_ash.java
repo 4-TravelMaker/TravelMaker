@@ -16,6 +16,10 @@ import com.travelmaker.board.model.vo.Reply;
 import com.travelmaker.member.model.dao.MemberDAO_ash;
 
 import static com.travelmaker.common.JDBCTemplate.*;
+/**
+ * @author user1
+ *
+ */
 public class BoardDAO_ash {
 	
 	private Statement stmt = null;
@@ -454,6 +458,96 @@ public class BoardDAO_ash {
 			pstmt = conn.prepareStatement(sql);
 			
 			pstmt.setInt(1, boardNo);
+			
+			result = pstmt.executeUpdate();
+			
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
+	/** 마이페이지 - 일대일 문의글 수정 DAO
+	 * @param conn
+	 * @param boardNo
+	 * @param boardTitle
+	 * @param boardContent
+	 * @return result
+	 * @throws Exception
+	 */
+	public int updateOneOnOneInquiryBoard(Connection conn, int boardNo, String boardTitle, String boardContent) throws Exception {
+		
+		int result = 0;
+		
+		try {
+			String sql = prop.getProperty("updateOneOnOneInquiryBoard");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, boardTitle);
+			pstmt.setString(2, boardContent);
+			pstmt.setInt(3, boardNo);
+			
+			result = pstmt.executeUpdate();
+			
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
+	/** 마이페이지 - 일대일 문의 다음 게시글 번호 조회 DAO
+	 * @param conn
+	 * @return boardNo
+	 * @throws Exception
+	 */
+	public int nextBoardNo(Connection conn) throws Exception {
+		
+		int boardNo = 0;
+		
+		try {
+			
+			String sql = prop.getProperty("nextBoardNo");
+			
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery(sql);
+			
+			if(rs.next()) {
+				boardNo = rs.getInt(1);
+			}
+			
+		} finally {
+			close(rs);
+			close(stmt);
+		}
+		
+		return boardNo;
+	}
+
+	/** 마이페이지 - 일대일 문의글 작성 DAO
+	 * @param conn
+	 * @param detail
+	 * @param boardCode
+	 * @return result
+	 * @throws Exception
+	 */
+	public int insertBoard(Connection conn, BoardDetail detail, int boardCode) throws Exception {
+
+		int result = 0;
+		
+		try {
+			
+			String sql = prop.getProperty("insertBoard");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, detail.getBoardNo());
+			pstmt.setString(2, detail.getBoardTitle());
+			pstmt.setString(3, detail.getBoardContent());
+			pstmt.setInt(4, detail.getMemberNo());
+			pstmt.setInt(5, boardCode);
 			
 			result = pstmt.executeUpdate();
 			

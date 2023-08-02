@@ -11,7 +11,7 @@ replyBtn.addEventListener("click", function(){
 // 답변 취소
 const cancelBtn = document.getElementById("cancel-btn");
 
-cancelBtn.addEventListener("click", function(){ // 작성 버튼이 클릭되었을 때
+cancelBtn.addEventListener("click", function(){ // 취소 버튼이 클릭되었을 때
 
     adminReply.style.display = "none";
 

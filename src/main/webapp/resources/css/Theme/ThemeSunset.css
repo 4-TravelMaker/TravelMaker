@@ -267,6 +267,11 @@ nav {
     font-weight: bold;
     
 }
+
+.container6 > h4{
+    margin-left: 110px
+}
+
 .container7{
     width: 100%;
     height: 350px;

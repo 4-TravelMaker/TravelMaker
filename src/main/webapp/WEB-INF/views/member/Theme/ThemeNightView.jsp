@@ -87,7 +87,7 @@
 
                 <section class="container7">
                     <section class="container7-1">
-                        <img src="${contextPath}/resources/images/ThemeBoard/theme1/NodeulIslandSubmain.jpg" alt="">
+                        <img src="${contextPath}/resources/images/ThemeBoard/nightView/songdo2.jpg" alt="">
                     </section>
                 </section>
 
@@ -115,10 +115,10 @@
                 <section class="container9">
                     <section class="container9-1">
                         <section class="item3">
-                            <img src="${contextPath}/resources/images/ThemeBoard/Sunset/nodeul.jpg">
+                            <img src="${contextPath}/resources/images/ThemeBoard/nightView/songdo3.jpg">
                         </section>
                         <section class="item3">
-                            <img src="${contextPath}/resources/images/ThemeBoard/Sunset/namhansansung.jpg">
+                            <img src="${contextPath}/resources/images/ThemeBoard/nightView/subongpark1.jpg">
                         </section>
 
                     </section>
@@ -160,10 +160,10 @@
                 <section class="container9">
                     <section class="container9-1">
                         <section class="item3">
-                            <img src="${contextPath}/resources/images/ThemeBoard/Sunset/hangang.jpg">
+                            <img src="${contextPath}/resources/images/ThemeBoard/nightView/bustour1.jpg">
                         </section>
                         <section class="item3">
-                            <img src="${contextPath}/resources/images/ThemeBoard/Sunset/achasan.jpg">
+                            <img src="${contextPath}/resources/images/ThemeBoard/nightView/triplestreet1.jpg">
                         </section>
 
                     </section>

@@ -83,6 +83,11 @@ public class BoardService_kks {
 		
 		Connection conn = getConnection();
 		
+		int result = dao.plusReadCount(conn, boardNo);
+		
+		if(result > 0)	commit(conn);
+		else			rollback(conn);
+		
 		BoardDetail detail = dao.selectBoardDetail(conn, boardNo);
 		
 		if(detail != null) {
@@ -202,6 +207,107 @@ public class BoardService_kks {
 		close(conn);
 		
 		return boardNo;
+	}
+
+	/** 게시글 수정 Service
+	 * @param detail
+	 * @param imageList
+	 * @param deleteList
+	 * @return result
+	 * @throws Exception
+	 */
+	public int updateBoard(BoardDetail detail, List<BoardImage> imageList, String deleteList) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		detail.setBoardTitle( Util.XSSHandling( detail.getBoardTitle() ) );
+		detail.setBoardContent( Util.XSSHandling( detail.getBoardContent() ) );
+		detail.setBoardContent( Util.newLineHandling( detail.getBoardContent() ) );
+		
+		int result = dao.updateBoard(conn, detail);
+		
+		if(result > 0) {
+			
+			for(BoardImage img : imageList) {
+				
+				img.setBoardNo(detail.getBoardNo());
+				result = dao.updateBoardImage(conn, img);
+				
+				if(result == 0) {
+					result = dao.insertBoardImage(conn, img);
+				}
+			}
+			
+			if(!deleteList.equals("")) { // 삭제된 이미지 레벨이 기록되어 있을 때만 삭제
+				result = dao.deleteBoardImage(conn, deleteList, detail.getBoardNo());
+			}
+		}
+		
+		if(result > 0)	commit(conn);
+		else			rollback(conn);	
+		
+		close(conn);
+		
+		return result;
+	}
+
+	/** 게시글 삭제 Service
+	 * @param boardNo
+	 * @return result
+	 * @throws Exception
+	 */
+	public int deleteBoard(int boardNo) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		int result = dao.deleteBoard(conn, boardNo);
+		
+		if(result > 0)	commit(conn);
+		else			rollback(conn);
+		
+		return result;
+	}
+
+	/** 게시글 검색 Service
+	 * @param type
+	 * @param cp
+	 * @param key
+	 * @param query
+	 * @return map
+	 * @throws Exception
+	 */
+	public Map<String, Object> searchBoardList(int type, int cp, String key, String query) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		String boardName = dao.selectBoardName(conn, type);
+		
+		String condition = null;
+		
+		switch(key) {
+		case "t" : condition = " AND BOARD_TITLE LIKE '%" + query + "%' "; break;
+		case "c" : condition = " AND BOARD_TITLE LIKE '%" + query + "%' "; break;
+		case "tc" : condition = " AND (BOARD_TITLE LIKE '%" + query + "%' OR BOARD_CONTENT LIKE '%" + query + "%') "; break;
+		case "w" : condition = " AND MEMBER_NICK LIKE '%" + query + "%' "; break;
+		}
+		
+		int listCount = dao.searchListCount(conn, type, condition);
+		
+		int limit = 6;
+		
+		Pagination pagination = new Pagination(cp, listCount, limit);
+		
+		List<Board> boardList = dao.searchBoardList(conn, pagination, type, condition);
+		
+		Map<String, Object> map = new HashMap<String, Object>();
+		
+		map.put("boardName", boardName);
+		map.put("pagination", pagination);
+		map.put("boardList", boardList);
+		
+		close(conn);
+		
+		return map;
 	}
 
 }

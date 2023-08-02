@@ -383,3 +383,15 @@ function updateReply(replyNo, btn){
 
     });
 }
+
+// 댓글창 사이즈 자동 조절
+function resize(obj){
+
+    const target = obj.parentElement;
+
+    obj.style.height = 0;
+    obj.style.height = 7 + obj.scrollHeight + 'px';
+    target.style.height = 0;
+    target.style.height = 100 + target.scrollHeight + 'px';
+
+}
