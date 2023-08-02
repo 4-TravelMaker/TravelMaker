@@ -5,6 +5,7 @@ import static com.travelmaker.common.JDBCTemplate.*;
 import java.sql.Connection;
 import java.util.List;
 
+import com.travelmaker.board.model.vo.Board;
 import com.travelmaker.board.model.vo.Reply;
 import com.travelmaker.member.model.dao.MemberDAO_phj;
 import com.travelmaker.member.model.vo.Member;
@@ -47,6 +48,45 @@ public class MemberService_phj {
 		
 		if(result > 0)  commit(conn);
 		else     		rollback(conn);
+		
+		return result;
+	}
+
+
+
+	/** 회원 게시글 목록 조회 service
+	 * @param memberNo
+	 * @return list
+	 * @throws Exception
+	 */
+	public List<Board> selectBoard(int memberNo) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		List<Board> list = dao.selectBoard(conn, memberNo);
+		
+		close(conn);
+		
+		return list;
+	}
+
+
+
+	/** 게시글 삭제 service
+	 * @param boardNo
+	 * @return result
+	 * @throws Exception
+	 */
+	public int deleteBoard(int boardNo) throws Exception{
+		
+		Connection conn = getConnection();
+		
+		int result = dao.deleteBoard(conn, boardNo);
+		
+		if(result>0) commit(conn);
+		else		 rollback(conn);
+		
+		close(conn);
 		
 		return result;
 	}

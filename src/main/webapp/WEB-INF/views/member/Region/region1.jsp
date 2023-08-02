@@ -30,29 +30,35 @@
                   <section class="pic-area">
                     <section class="pic-area1">
                         <section id="pic">
-                            <img src="${contextPath}/resources/images/Region/pet.jpg">
+                            <a href="${contextPath}/Region/ctgr?ctgr=4&name=서울">
+                                <img src="${contextPath}/resources/images/main3.jpg">
+                            </a>
                         </section>
                         <section id="article">
-                            <p>반려동물 동반여행</p>
-                            <p>반려동물과 함께할 수 있는 여행지를 소개합니다!</p>
+                            <p style="color:rgb(202, 73, 95)">추천! 가볼만한 곳 </p>
+                            <p style="color:rgb(105, 38, 49)">가볼만한 여행지를 추천합니다!</p>
                         </section>
                     </section>
                     <section class="pic-area2">
                         <section id="pic">
-                            <img src="${contextPath}/resources/images/Region/star.jpg">
+                            <a href="${contextPath}/Region/ctgr?ctgr=12&name=제주도">
+                                <img src="${contextPath}/resources/images/main2.png">
+                            </a>
                         </section>
                         <section id="article">
-                            <p>한국 관광의 별</p>
-                            <p>한 해 동안 가장 빛난 별을 찾아 소개합니다</p>
+                            <p style="color:rgb(65, 158, 107)">피크닉 하기 좋은 날!</p>
+                            <p style="color:rgb(36, 88, 60)">피크닉 하기 좋은 여행지를 소개합니다!</p>
                         </section>
                     </section>
                     <section class="pic-area3">
                         <section id="pic">
-                            <img src="${contextPath}/resources/images/Region/weekend.jpg">
+                            <a href="${contextPath}/Region/ctgr?ctgr=8&name=강원도">
+                                <img src="${contextPath}/resources/images/main.png">
+                            </a>
                         </section>
                         <section id="article">
-                            <p>여행이 있는 주말</p>
-                            <p>매월 마지막 주말은 일상에서 벗어나 여행을 떠나보세요!</p>
+                            <p style="color:rgb(50, 124, 192)">여행이 있는 주말</p>
+                            <p style="color:rgb(22, 63, 100)">매월 마지막 주말은 일상에서 벗어나 여행을 떠나보세요!</p>
                         </section>
                     </section>
               </section>
