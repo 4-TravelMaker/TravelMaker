@@ -29,17 +29,10 @@
     
                     <p class="reply-content">${reply.replyContent}</p>
     
+                    <div class="reply-btn-area">
+                        <button onclick="deleteReply(${reply.replyNo})">삭제</button>
+                    </div>
 
-
-                    <!-- 로그인 되어야 수정 삭제 버튼 보임 -->
-                    <c:if test="${loginMember.memberNo == reply.memberNo}">
-
-                        <div class="reply-btn-area">
-                            <button onclick="showUpdateReply(${reply.replyNo}, this)">수정</button>
-                            <button onclick="deleteReply(${reply.replyNo})">삭제</button>
-                        </div>
-
-                    </c:if>
     
                 </li>
 
@@ -50,14 +43,7 @@
 
     </div>
 
-    <!-- 댓글 작성 부분 -->
-    <c:if test="${!empty loginMember}">
-
-        <div class="reply-writer-area">
-            <textarea id="replyContent"></textarea>
-            <button id="addReply">등록</button>
-        </div>
-    </c:if>
+    
 
     
 

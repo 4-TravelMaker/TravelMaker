@@ -57,11 +57,7 @@
                             <!-- 썸네일 영역(썸네일이 있을 경우) -->
                             <c:if test="${!empty thumnail}">
 
-                                <div class="img-box">
-                                    <div class="boardImg thumnail">
-                                        <img src="${contextPath}${thumnail.imageReName}">
-                                    </div>
-                                </div>
+                                
 
                             </c:if>
 
@@ -79,6 +75,12 @@
 
                                 <!-- 업로드 이미지 영역 -->
                                 <div class="img-box">
+
+                                    <div class="img-box">
+                                        <div class="boardImg thumnail">
+                                            <img src="${contextPath}${thumnail.imageReName}">
+                                        </div>
+                                    </div>
 
                                     <c:forEach var="i" begin="${start}" end="${fn:length(detail.imageList) -1}">
                                         <div class="boardImg">
@@ -158,7 +160,7 @@
         
         </script>
 
-<script src="${contextPath}/resources/js/Reply/reply.js"></script>
+    <script src="${contextPath}/resources/js/Reply/reply.js"></script>
 
 
 

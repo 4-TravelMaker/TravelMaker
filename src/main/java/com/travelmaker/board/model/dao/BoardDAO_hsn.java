@@ -765,6 +765,28 @@ public class BoardDAO_hsn {
 		
 		return detail;
 	}
+
+	public int plusReadCount(Connection conn, int boardNo) throws Exception{
+
+
+		int result = 0;
+			
+		try {
+			
+			String sql = prop.getProperty("plusReadCount");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, boardNo);
+			
+			result = pstmt.executeUpdate();
+			
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
 	
 	
 

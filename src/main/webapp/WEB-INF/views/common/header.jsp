@@ -72,7 +72,7 @@
                                         <a href="${contextPath}/memeber/logout">로그아웃</a>
                                     </button>
                                     <button class="admin-btn">
-                                        <a href="${contextPath}/admin/selectAll">관리자<br>페이지</a>
+                                        <a href="${contextPath}/admin/selectAll" >관리자<br>페이지</a>
                                     </button>
                                 </c:if>
                             </div>
@@ -101,7 +101,7 @@
                 <a href="${contextPath}/travelReview/list?type=4&cp=1">여행 리뷰</a>
             </section>
             <section class="nav-menu">
-                <a href="${contextPath}/boardNotice/list?type=5">공지사항</a>
+                <a href="${contextPath}/boardNotice/list?type=5&cp=1">공지사항</a>
             </section>
         </section>
     </nav>

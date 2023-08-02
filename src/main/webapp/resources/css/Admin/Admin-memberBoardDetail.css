@@ -31,11 +31,30 @@
     text-align: center;
 }
 
-
-
 .customer-inquiry2{
     margin: 30px 30px 30px;
     text-align: center;
+}
+
+/* 이미지 영역 */
+
+.img-box{
+
+    display: contents;
+    justify-content: center;
+    align-items: center;
+}
+
+.boardImg{
+    
+    /* display: inline-block; */
+    text-align: center;
+}
+
+.boardImg img{
+    /* width: 100%; */
+    max-width: 90%;
+    max-height: 90%;
 }
 
 /* 일대일 문의 상세 조회 제목 */
@@ -257,4 +276,24 @@
     border-bottom-right-radius: 10px;
 
     margin-bottom: 10px;
+}
+
+#delete-btn{
+    margin-top: 10px;
+    margin-left: 7px;
+    height: 30px;
+    width: 85px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ddd;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+#delete-btn:hover{
+    background-color: black;
+    color: white;
+
+    transition-duration: 1s;
 }
