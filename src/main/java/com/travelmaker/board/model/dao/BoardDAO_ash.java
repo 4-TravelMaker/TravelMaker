@@ -122,11 +122,10 @@ public class BoardDAO_ash {
 	/** 일대일 문의 게시글 상세 조회 DAO
 	 * @param conn
 	 * @param boardNo
-	 * @param readCount
 	 * @return detail
 	 * @throws Exception
 	 */
-	public BoardDetail selectOneOnOneInquiryDetail(Connection conn, int boardNo, int ReadCount) throws Exception {
+	public BoardDetail selectOneOnOneInquiryDetail(Connection conn, int boardNo) throws Exception {
 		
 		BoardDetail detail = null;
 		
@@ -549,66 +548,6 @@ public class BoardDAO_ash {
 			pstmt.setString(3, detail.getBoardContent());
 			pstmt.setInt(4, detail.getMemberNo());
 			pstmt.setInt(5, boardCode);
-			
-			result = pstmt.executeUpdate();
-			
-		} finally {
-			close(pstmt);
-		}
-		
-		return result;
-	}
-
-	/** 상세 조회 시 조회수 얻어오기 DAO
-	 * @param conn
-	 * @param boardNo
-	 * @return readCount
-	 * @throws Exception
-	 */
-	public int getReadCount(Connection conn, int boardNo) throws Exception {
-		
-		int readCount = 0;
-		
-		try {
-			
-			String sql = prop.getProperty("getReadCount");
-			
-			pstmt = conn.prepareStatement(sql);
-			
-			pstmt.setInt(1, boardNo);
-			
-			rs = pstmt.executeQuery();
-			
-			if(rs.next()) {
-				readCount = rs.getInt(1);
-			}
-			
-		} finally {
-			close(rs);
-			close(pstmt);
-		}
-		
-		return readCount;
-	}
-
-	/** 상세 조회 시 조회수 증가시키기 DAO
-	 * @param conn
-	 * @param readCount
-	 * @param boardNo
-	 * @return result
-	 * @throws Exception
-	 */
-	public int increaseReadCount(Connection conn, int readCount, int boardNo) throws Exception {
-
-		int result = 0;
-		
-		try {
-			String sql = prop.getProperty("increaseReadCount");
-			
-			pstmt = conn.prepareStatement(sql);
-			
-			pstmt.setInt(1, readCount);
-			pstmt.setInt(2, boardNo);
 			
 			result = pstmt.executeUpdate();
 			

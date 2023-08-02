@@ -147,18 +147,4 @@
 		INSERT INTO BOARD
 		VALUES(?, ?, ?, DEFAULT, DEFAULT, ?, ?, 1, DEFAULT)
 	</entry>
-	
-	<!-- 상세 조회 시 조회수 얻어오기 -->
-	<entry key="getReadCount">
-		SELECT READ_COUNT
-		FROM BOARD
-		WHERE BOARD_NO = ?
-	</entry>
-	
-	<!-- 상세 조회 시 조회수 증가시키기 -->
-	<entry key="increaseReadCount">
-		UPDATE BOARD SET
-		READ_COUNT = ?
-		WHERE BOARD_NO = ?
-	</entry>
 </properties>

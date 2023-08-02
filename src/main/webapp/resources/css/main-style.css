@@ -47,8 +47,7 @@ header {
     height: 100%;
 }
 
-/* .weather-area{
-} */
+
 
 /* header - 검색창 */
 #search-area {
@@ -57,7 +56,8 @@ header {
     display: flex;
     justify-content: center;
     align-items: end;
-    padding-left: 100px;
+    padding-bottom: 30px;
+    padding-left: 120px;
 }
 
 #search-area fieldset {
@@ -209,11 +209,6 @@ footer > section:first-child {
     text-align: center;
     font-weight: bold;
     font-size: 17px;
-}
-
-.footer > a{
-    text-decoration: none;
-    color: black;
 }
 
 

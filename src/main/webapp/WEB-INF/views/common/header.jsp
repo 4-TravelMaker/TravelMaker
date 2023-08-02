@@ -18,15 +18,14 @@
             <section></section>
 
             <section id="search-area">
-                <!-- <div class="weather-area">
-                    현재 날씨는?
-                </div> -->
+                <form action="#" name="search-form">
                     <fieldset>
                         <section>
                             <input type="search" id="query" name="query" autocomplete="off" onkeydown="characterCheck(this)">
                             <button type="button" id="search-btn" class="fa-solid fa-magnifying-glass" onclick="header.search();" ></button>
                         </section>
                     </fieldset>
+                </form>
             </section>
             <section></section>
             
@@ -166,6 +165,12 @@
 
      })
 
+     
+
+     
+	
+	
+	
 	</script>
 	
 	

@@ -57,16 +57,7 @@ public class BoardService_ash {
 		
 		Connection conn = getConnection();
 		
-		// 상세 조회 시 조회수 얻어오기
-		int readCount = dao.getReadCount(conn, boardNo) + 1;
-		
-		// 조회수 증가시키기
-		int result = dao.increaseReadCount(conn, readCount, boardNo);
-		
-		BoardDetail detail = dao.selectOneOnOneInquiryDetail(conn, boardNo, readCount);
-		
-		if(result > 0) commit(conn);
-		else		   rollback(conn);
+		BoardDetail detail = dao.selectOneOnOneInquiryDetail(conn, boardNo);
 		
 		close(conn);
 		
