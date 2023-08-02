@@ -281,4 +281,4 @@ function updateReply(replyNo, btn){
     });
 }
 
-selectReplyList();
+// selectReplyList();

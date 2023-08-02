@@ -222,8 +222,12 @@ nav {
 }
 
 #tr{
-    background-color: lightgray;
+    background-color:  rgb(153, 216, 199);
     
+}
+
+#tr > th{
+    color: white;
 }
 
 .table-1 title{

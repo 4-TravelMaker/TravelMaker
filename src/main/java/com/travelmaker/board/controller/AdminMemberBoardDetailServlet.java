@@ -26,6 +26,8 @@ public class AdminMemberBoardDetailServlet extends HttpServlet{
 			
 			BoardDetail detail = service.adminMemberBoardDetail(boardNo);
 			
+			System.out.println("detail : " + detail);
+			
 			req.setAttribute("detail", detail);
 			
 			String path = "/WEB-INF/views/member/Admin/Admin-memberPostDetail.jsp";

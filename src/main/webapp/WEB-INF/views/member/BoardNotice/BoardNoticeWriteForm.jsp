@@ -61,6 +61,12 @@
             <!-- 썸네일 -->
             <h5>썸네일</h5>
             <div class="img-box">
+                
+            </div>
+
+            <!-- 업로드 이미지 -->
+            <div class="img-box">
+
                 <div class="boardImg thumanail">
                     <label for="img0">
                         <img class="preview" src="${img0}">
@@ -69,23 +75,10 @@
                     <span class="delete-image">&times;</span>
                     <!-- &times; : x 모양의 문자 -->
                 </div>
-            </div>
-
-            <!-- 업로드 이미지 -->
-            <h5>업로드 이미지</h5>
-            <div class="img-box">
-
-                <div class="boardImg">
-                    <label for="img1">
-                        <img class="preview" src="${img1}">
-                    </label>
-                    <input type="file" class="inputImage" id="img1" name="1" accept="image/*">
-                    <span class="delete-image">&times;</span>
-                </div>
 
                 <div class="boardImg">
                     <label for="img2">
-                        <img class="preview" src="${img2}">
+                        <img class="preview" src="${img1}">
                     </label>
                     <input type="file" class="inputImage" id="img2" name="2" accept="image/*">
                     <span class="delete-image">&times;</span>
@@ -93,7 +86,7 @@
 
                 <div class="boardImg">
                     <label for="img3">
-                        <img class="preview" src="${img3}">
+                        <img class="preview" src="${img2}">
                     </label>
                     <input type="file" class="inputImage" id="img3" name="3" accept="image/*">
                     <span class="delete-image">&times;</span>
@@ -101,7 +94,7 @@
 
                 <div class="boardImg">
                     <label for="img4">
-                        <img class="preview" src="${img4}">
+                        <img class="preview" src="${img3}">
                     </label>
                     <input type="file" class="inputImage" id="img4" name="4" accept="image/*">
                     <span class="delete-image">&times;</span>

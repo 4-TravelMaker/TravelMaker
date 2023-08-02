@@ -67,6 +67,11 @@ public class BoardService_hsn {
 		
 		Connection conn = getConnection();
 		
+		int result = dao.plusReadCount(conn, boardNo);
+		
+		if(result > 0)	commit(conn);
+		else			rollback(conn);
+		
 		BoardDetail detail = dao.selectBoardDetail(conn, boardNo);
 		
 		if(detail != null) {
@@ -369,6 +374,15 @@ public class BoardService_hsn {
 		Connection conn = getConnection();
 		
 		BoardDetail detail = dao.adminMemberBoardDetail(conn, boardNo);
+		
+		if(detail != null) {
+			
+			List<BoardImage> imageList = dao.selectImageList(conn, boardNo);
+			
+			detail.setImageList(imageList);
+		}
+		
+		
 		
 		close(conn);
 		
