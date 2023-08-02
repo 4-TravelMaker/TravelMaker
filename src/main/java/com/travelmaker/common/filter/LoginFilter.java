@@ -22,7 +22,7 @@ import javax.servlet.http.HttpSession;
 @WebFilter(filterName = "loginFilter",
 		   urlPatterns = {"/board/write", "/board/delete",
 				   		  "/reply/insert", "/reply/update", "/reply/delete",
-				   		  "/member/myPage/*"})
+				   		  "/member/myPage/*", "/myPage/*"})
 public class LoginFilter extends HttpFilter implements Filter {
        
 	public void init(FilterConfig fConfig) throws ServletException {
