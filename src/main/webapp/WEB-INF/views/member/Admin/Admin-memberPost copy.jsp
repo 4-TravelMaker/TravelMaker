@@ -1,124 +1,33 @@
+<!-- 관리자 화면 - 회원 게시글 관리 -->
+
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<%-- 문자열 관련 함수(메소드) 제공 JSTL (EL 형식으로 작성) --%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>관리자 페이지</title>
-    <link rel="shortcut icon" type="image/x-icon" href="image/small_logo.png">
-    <link rel="stylesheet" href="../../resources/css/Admin/Admin-memberPost-style.css">
-    <link rel="stylesheet" href="../../resources/css/main-style.css">
-    <link rel="stylesheet" href="../../resources/css/Admin/Admin-sideBar-main-style.css">
+    <title>관리자 페이지 - 회원 게시글 관리</title>
+    <link rel="shortcut icon" type="image/x-icon" href="${contextPath}/resources/images/Share/small_logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="${contextPath}/resources/css/main-style.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/Admin/Admin-memberPost-style.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/Admin/Admin-sideBar-main-style.css">
     <script src="https://kit.fontawesome.com/ef988defcf.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 </head>
 <body>
     <main>
-        <header>
-            <section class="head">
-                <section id="logo">
-                    <a href="#">
-                        <img src="image/logo.png" width="100%">
-                    </a>
-                </section>
 
-                <section></section>
+		<jsp:include page="/WEB-INF/views/common/header.jsp"/>
 
-                <section id="search-area">
-                    <form action="#" name="search-form">
-                        <fieldset>
-                            <section>
-                                <input type="search" id="query" name="query" autocomplete="off">
-                                <button type="submit" id="search-btn" class="fa-solid fa-magnifying-glass"></button>
-                            </section>
-                        </fieldset>
-                    </form>
-                </section>
-                <section></section>
-
-                <section class="login-area">
-                    <button class="btn-style">
-                        <a href="#">로그인</a>
-                    </button>
-                    <button class="btn-style">
-                        <a href="#">회원가입</a>
-                    </button>
-                </section>
-            </section>
-        </header>
-
-        <nav>
-            <section id="nav">
-                <section class="nav-menu">
-                    <a href="#">지역</a>
-                </section>
-                <section class="nav-menu">
-                    <a href="#">테마</a>
-                </section>
-                <section class="nav-menu">
-                    <a href="#">여행 계획하기</a>
-                </section>
-                <section class="nav-menu">
-                    <a href="#">여행 리뷰</a>
-                </section>
-            </section>
-        </nav>
-
-        <section id="middle">
-            <section class="left-section">
-                <section class="left-section-head">관리자 페이지</section>
-                <section class="left-section-image">
-                    <img src="image/관리자 프로필 사진.jpg" width="180px" height="auto" id="admin-profile"><br>
-                    관리자 님
-                </section>
-                <!-- 마이 페이지 왼쪽 메뉴 -->
-                <section>
-
-                    <section class="left-section-btn">
-                        <a href="#">
-                            <button>홈 화면 관리</button>
-                        </a>
-                    </section>
-
-                    <section class="left-section-btn">
-                        <a href="#">
-                            <button>회원 관리</button>
-                        </a>
-                    </section>
-
-                    <section class="left-section-btn">
-                        <a href="#">
-                            <button>게시글 관리</button>
-                        </a>
-                    </section>
-
-                    <section class="left-section-btn">
-                        <a href="#">
-                            <button>댓글 관리</button>
-                        </a>
-                    </section>
-
-                    <section class="left-section-btn">
-                        <a href="#">
-                            <button>공지사항 관리</button>
-                        </a>
-                    </section>
-
-                    <section class="left-section-btn">
-                        <a href="#">
-                            <button>1:1 문의</button>
-                        </a>
-                    </section>
-
-                    <section class="left-section-btn">
-                        <a href="#">
-                            <button>게시물 작성</button>
-                        </a>
-                    </section>
-                    
-                </section>
-            </section>
+		<jsp:include page="/WEB-INF/views/common/admin-sideBar.jsp"/>
 
             <section class="right-section">
 
@@ -281,19 +190,16 @@
 
                 </section>
                 <section class="page-btn">
-                    <img src="image/페이지 버튼.png">
+                    <img src="${contextPath}/resources/images/Admin/page.png">
                 </section>
             </section>
             
         </section>
 
-        <footer>
-            <section>Copyright © TravelMaker Corp. All rights reserved.</section>
-            <section class="footer"> 　　이용약관　　 </section>
-            <section class="footer"> 　　운영정책　　 </section>
-            <section class="footer"> 　　1:1문의　　 </section>
-        </footer>
-
     </main>
+
+	<jsp:include page="/WEB-INF/views/common/footer.jsp"/>
+
+    <script src="${contextPath}/resources/js/Admin/Admin-home.js"></script>
 </body>
 </html>

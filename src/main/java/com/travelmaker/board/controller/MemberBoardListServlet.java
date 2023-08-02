@@ -16,7 +16,7 @@ import com.travelmaker.board.model.vo.Board;
 import com.travelmaker.member.model.service.MemberService_ash;
 import com.travelmaker.member.model.vo.Member;
 
-@WebServlet("/admin/memberBoard")
+@WebServlet("/admin/memberBoard/list")
 public class MemberBoardListServlet extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -33,11 +33,21 @@ public class MemberBoardListServlet extends HttpServlet{
 
 			BoardService_hsn service = new BoardService_hsn();
 			
-			Map<String, Object> map = service.memberBoardList(type, cp);
+			Map<String, Object> map = null;
+			
+			if(req.getParameter("query2") == null) {
+				
+				map = service.memberBoardList(type, cp);
+				
+			}else {
+				String query = req.getParameter("query2");
+				
+				map = service.searchMemberBoardList(type, cp, query);
+			}
 			
 			req.setAttribute("map", map);
-			
-			String path = "/WEB-INF/views/member/Admin/Admin-memberPost";
+//			System.out.println("map " + map);
+			String path = "/WEB-INF/views/member/Admin/Admin-memberPost.jsp";
 			
 			RequestDispatcher dispatcher = req.getRequestDispatcher(path);
 			dispatcher.forward(req, resp);

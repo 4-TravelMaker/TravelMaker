@@ -28,7 +28,7 @@
             </section>
 
             <section class="left-section-btn">
-                <a href="${contextPath}/admin/selectPost">
+                <a href="${contextPath}/admin/memberBoard/list?type=4">
                     <button>게시글 관리</button>
                 </a>
             </section>
