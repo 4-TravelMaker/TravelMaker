@@ -105,11 +105,11 @@ main {
 }
 
 .photobox{ /* 사진 + 제목 영역 */
-    width: 850px;
+    width: 1000px;
     height: 240px;
 }
 
-a {
+.photo a {
     text-decoration: none;
     margin-left: 20px;
     margin-right: 20px;
