@@ -17,6 +17,7 @@ import com.travelmaker.board.model.vo.BoardImage;
 import com.travelmaker.board.model.vo.BoardLike;
 import com.travelmaker.board.model.vo.Pagination;
 import com.travelmaker.board.model.vo.Reply;
+import com.travelmaker.board.model.vo.TravelMaker;
 
 
 /**
@@ -758,6 +759,118 @@ public class BoardDAO_kks {
 		}
 		
 		return result;
+	}
+
+	/** 여행 계획 짜기 DAO
+	 * @param conn
+	 * @param tm
+	 * @return result
+	 * @throws Exception
+	 */
+	public int travelMake(Connection conn, TravelMaker tm) throws Exception {
+		
+		int result = 0;
+		
+		try {
+			
+			String sql = prop.getProperty("travelMake");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, tm.getPlanTitle());
+			pstmt.setString(2, tm.getPlanContent());
+			pstmt.setInt(3, tm.getDateLevel());
+			pstmt.setInt(4, tm.getMemberNo());
+			
+			result = pstmt.executeUpdate();
+			
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
+	/** 여행 계획 리스트 조회 DAO
+	 * @param conn
+	 * @param memberNo
+	 * @return planList
+	 * @throws Exception
+	 */
+	public List<TravelMaker> selectPlanList(Connection conn, int memberNo) throws Exception {
+		
+		List<TravelMaker> planList = new ArrayList<>();
+		
+		try {
+			
+			String sql = prop.getProperty("selectPlanList");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, memberNo);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				
+				TravelMaker tm = new TravelMaker();
+				
+				tm.setPlanNo( rs.getInt(1) );
+				tm.setPlanTitle( rs.getString(2) );
+				tm.setPlanContent( rs.getString(3) );
+				tm.setDateLevel( rs.getInt(4) );
+				
+				planList.add(tm);
+				
+			}
+			
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return planList;
+	}
+
+	/** 특정 여행 계획 조회 DAO
+	 * @param conn
+	 * @param planNo
+	 * @param memberNo
+	 * @return plan
+	 * @throws Exception 
+	 */
+	public TravelMaker selectPlan(Connection conn, int planNo, int memberNo) throws Exception {
+		
+		TravelMaker plan = null;
+		
+		try {
+			
+			String sql = prop.getProperty("selectPlan");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, memberNo);
+			pstmt.setInt(2, planNo);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				
+				plan = new TravelMaker();
+				
+				plan.setPlanNo( rs.getInt(1) );
+				plan.setPlanTitle( rs.getString(2) );
+				plan.setPlanContent( rs.getString(3) );
+				plan.setDateLevel( rs.getInt(4) );
+				
+			}
+			
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return plan;
 	}
 
 }

@@ -15,6 +15,7 @@ import com.travelmaker.board.model.vo.BoardImage;
 import com.travelmaker.board.model.vo.BoardLike;
 import com.travelmaker.board.model.vo.Pagination;
 import com.travelmaker.board.model.vo.Reply;
+import com.travelmaker.board.model.vo.TravelMaker;
 import com.travelmaker.common.Util;
 
 public class BoardService_kks {
@@ -308,6 +309,58 @@ public class BoardService_kks {
 		close(conn);
 		
 		return map;
+	}
+
+	/** 여행 계획 짜기 Service
+	 * @param tm
+	 * @return result
+	 * @throws Exception
+	 */
+	public int travelMake(TravelMaker tm) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		int result = dao.travelMake(conn, tm);
+		
+		if(result > 0)	commit(conn);
+		else			rollback(conn);
+		
+		close(conn);
+		
+		return result;
+	}
+
+	/** 내 여행 계획 리스트 조회 Service
+	 * @param memberNo
+	 * @return planList
+	 * @throws Exception
+	 */
+	public List<TravelMaker> selectPlanList(int memberNo) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		List<TravelMaker> planList = dao.selectPlanList(conn, memberNo);
+		
+		close(conn);
+		
+		return planList;
+	}
+
+	/** 특정 여행 계획 조회 Service
+	 * @param planNo
+	 * @param memberNo
+	 * @return plan
+	 * @throws Exception
+	 */
+	public TravelMaker selectPlan(int planNo, int memberNo) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		TravelMaker plan = dao.selectPlan(conn, planNo, memberNo);
+		
+		close(conn);
+		
+		return plan;
 	}
 
 }

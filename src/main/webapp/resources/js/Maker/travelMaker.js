@@ -424,22 +424,24 @@ function searchText4(){
 const plusBtn = document.getElementById("plus");
 const minusBtn = document.getElementById("minus");
 const date = document.getElementById("date");
-let dateValue = +document.getElementById("date-value").value;
+let dateValue = document.getElementById("date-value");
 const column = document.getElementsByClassName("column")[0];
 
 plusBtn.addEventListener("click", function(){
 
-    if(dateValue != 5) {
+    if(dateValue.value != 5) {
         
-        dateValue++;
+        dateValue.value++;
 
-        date.innerText = (dateValue - 1) + "박 " + (dateValue) + "일";
+        date.innerText = (dateValue.value - 1) + "박 " + dateValue.value + "일";
 
         const h1 = document.createElement("h1");
-        h1.innerText = (dateValue) + "일차";
-        h1.classList.add("h1-" + dateValue);
+        h1.innerText = dateValue.value + "일차";
+        h1.classList.add("h1-" + dateValue.value);
 
         column.append(h1);
+
+        console.log(dateValue.value);
 
     }
 
@@ -447,13 +449,13 @@ plusBtn.addEventListener("click", function(){
 
 minusBtn.addEventListener("click", function(){
 
-    if(dateValue != 1) {
+    if(dateValue.value != 1) {
 
-        dateValue--;
+        dateValue.value--;
 
-        date.innerText = (dateValue - 1) + "박 " + dateValue + "일";
+        date.innerText = (dateValue.value - 1) + "박 " + dateValue.value + "일";
 
-        const prevH1 = document.getElementsByClassName("h1-" + (dateValue + 1))[0];
+        const prevH1 = document.getElementsByClassName("h1-" + (parseInt(dateValue.value) + 1))[0];
 
         column.removeChild(prevH1);
 
@@ -505,18 +507,13 @@ for(let i = 0; i < cancelBtn.length; i++) {
 
     cancelBtn[i].addEventListener("click", function(){
 
-        console.log("test");
-
         this.parentElement.remove();
 
     })
 
 }
 
-const saveBtn = document.getElementById("save-btn");
 const resetBtn = document.getElementById("reset-btn");
-const columnContent = document.getElementById("columnContent");
-columnContent.value = column.innerHTML;
 
 // 초기화 버튼 클릭 이벤트
 resetBtn.addEventListener("click", function(){
@@ -526,13 +523,29 @@ resetBtn.addEventListener("click", function(){
     column.innerHTML = "";
 
     dateValue = 1;
-
+    
     date.innerText = (dateValue - 1) + "박 " + (dateValue) + "일";
-
+    
     const h1 = document.createElement("h1");
     h1.innerText = (dateValue) + "일차";
     h1.classList.add("h1-" + dateValue);
-
+    
     column.append(h1);
-
+    
 })
+
+const saveBtn = document.getElementById("save-btn");
+
+function savePlan() {
+
+    const columnContent = document.getElementById("columnContent");
+    columnContent.value = column.innerHTML.trim();
+
+    if(confirm("일정 저장하시겠습니까?")) {
+        return true;
+
+    } else {
+        return false;
+    }
+
+}

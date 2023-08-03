@@ -170,9 +170,33 @@
 		WHERE RNUM BETWEEN ? AND ?
 	</entry>
 	
+	<!-- 조회수 증가 -->
 	<entry key="plusReadCount">
 		UPDATE BOARD SET
 		READ_COUNT = READ_COUNT + 1
 		WHERE BOARD_NO = ?
+	</entry>
+	
+	<!-- 여행 계획하기 -->
+	<entry key="travelMake">
+		INSERT INTO TRAVEL_MAKER
+		VALUES(SEQ_PLAN_NO.NEXTVAL, ?, ?, ?, ?, DEFAULT)
+	</entry>
+	
+	<!-- 내 여행 계획 조회 -->
+	<entry key="selectPlanList">
+		SELECT PLAN_NO, PLAN_TITLE, PLAN_CONTENT, DATE_LEVEL
+		FROM TRAVEL_MAKER
+		WHERE MEMBER_NO = ?
+		AND PLAN_ST = 'N'
+	</entry>
+	
+	<!-- 특정 여행 계획 조회 -->
+	<entry key="selectPlan">
+		SELECT PLAN_NO, PLAN_TITLE, PLAN_CONTENT, DATE_LEVEL
+		FROM TRAVEL_MAKER
+		WHERE MEMBER_NO = ?
+		AND PLAN_NO = ?
+		AND PLAN_ST = 'N'
 	</entry>
 </properties>

@@ -1,0 +1,87 @@
+#middle {
+    height: 1200px;
+}
+
+.title {
+    margin: 50px 0;
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.content {
+    display: grid;
+    justify-items: center;
+    row-gap: 60px;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.planning {
+    width: 400px;
+    height: 250px;
+    border: 1px solid #ddd;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px;
+}
+
+#makePlan {
+    width: 120px;
+    height: 34px;
+    font-size: 12px;
+    font-weight: bold;
+    border: 1px solid black;
+    border-radius: 15px;
+    background-color: white;
+    cursor: pointer;
+}
+
+#makePlan:hover {
+    background-color: black;
+    color: white;
+}
+
+.myPlan {
+    width: 400px;
+    height: 250px;
+    border: 1px solid #ddd;
+}
+
+.planImg {
+    width: 100%;
+    height: 50%;
+}
+
+.thumbnail {
+    width: 100%;
+    height: 100%;
+}
+
+.profile-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.planProfile {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    bottom: 26px;
+    right: 163px;;
+}
+
+.planTitle {
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.planTitle > a {
+    text-decoration: none;
+    color: black;
+}
