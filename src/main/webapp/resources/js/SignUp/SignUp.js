@@ -1,11 +1,3 @@
-const checkObj = {
-    "id"                    : false,
-    "memberName"            : false,
-    "pw"                    : false,
-    "nickname"              : false,
-    "pw2"                   : false
-
-    };
 
 
                      
@@ -15,7 +7,7 @@ const checkObj = {
         /* 아이디 유효성 검사 */
         const id = document.getElementById("id");
         const span = document.querySelector(".idcheckArea");
-         const regExp = /^[a-z][a-z0-9]{5,19}$/;
+        const regExp = /^[a-z][a-z0-9]{5,19}$/;
         
         id.addEventListener("input", function() {
             
@@ -23,32 +15,22 @@ const checkObj = {
                 
                 span.innerHTML = "아이디를 입력해주세요."
                 
-                checkObj.id = false;
-                
-                return;
-                
             }
-            
-            
-            
             
             if(regExp.test(id.value)) {
                 span.innerHTML = "적합한 아이디 입니다."
                 span.style.color = "green";
                 span.style.fontWeight = "bold";
-                checkObj.id = true;
 
             } else {
                 span.innerHTML = "적합하지 않은 아이디입니다."
                 span.style.color = "red";
                 span.style.fontWeight = "bold";
-                checkObj.id = false;
             }
 
             if(id.value.length ==1){
                 span.innerHTML = "아이디는 1글자 이상 입력하세요"
                 span.style.color = "red";
-                checkObj.id = false;
             }
 
             if(id.value.length == 0){
@@ -56,15 +38,16 @@ const checkObj = {
             } else if(id.value.length > 20){
                 span.innerHTML = "아이디는 20자이내로 입력하세요"
                 span.style.color = "red";
-                checkObj.id = false;
             }
 
         })
 
         // 아이디 중복검사
 
+
         const idDupcheck = document.getElementById("id-check");
-        
+        let checkId = false;
+
         idDupcheck.addEventListener("click", function(){
 
             $.ajax({
@@ -80,7 +63,7 @@ const checkObj = {
                 if(result == 1){
 
                     alert("이미 사용중인 아이디 입니다.");
-                    checkObj.id = false;
+                    checkId = false;
 
 
                 
@@ -88,22 +71,19 @@ const checkObj = {
 
                     alert("아이디 입력을 해주세요");
                     id.focus();
-                    checkObj.id = false;
+                    checkId = false;
                  } else if(!regExp.test(id.value)){
 
                     alert("적합하지 않은 아이디 입니다")
-                    checkObj.id = false;
+                    checkId = false;
                  }
                  else{
 
                     alert("사용 가능한 아이디 입니다");
 
-                    checkObj.id = true;
-
+                    checkId = true;
 
                     }
-
-
                 },
 
                 error : function(){
@@ -136,32 +116,23 @@ const checkObj = {
                 
                 span.innerHTML = "이름을 입력해주세요."
                 
-                checkObj.memberName = false;
-                
-                return;
-                
             }
 
             if(regExp.test(memberName.value)) {
                 span.innerHTML = "적합한 이름 입니다."
                 span.style.color = "green";
                 span.style.fontWeight = "bold";
-                
-                checkObj.memberName = true;
 
             } else {
                 span.innerHTML = "적합하지 않은 이름입니다."
                 span.style.color = "red";
                 span.style.fontWeight = "bold";
                 
-                checkObj.memberName = false;
             }
 
             if(memberName.value.length ==1){
                 span.innerHTML = "이름은 1글자 이상 입력하세요"
                 span.style.color = "red";
-
-                checkObj.memberName = false;
             }
 
             if(memberName.value.length == 0){
@@ -171,12 +142,8 @@ const checkObj = {
                 span.innerHTML = "이름은 6자이내로 입력하세요"
                 span.style.color = "red";
 
-                checkObj.memberName = false;
-
             } 
             
-            
-
         })
 
 
@@ -199,13 +166,7 @@ const checkObj = {
                 
                 span.innerHTML = "비밀번호를 입력해주세요."
                 
-                checkObj.pw = false;
-                
-                return;
-                
             }
-
-
 
 
             if(regExp.test(pw.value)) {
@@ -213,22 +174,17 @@ const checkObj = {
                 pwcheck.style.color = "green";
                 pwcheck.style.fontWeight = "bold";
 
-                checkObj.pw = true;
 
             } else {
                 pwcheck.innerHTML = "적합하지 않은 비밀번호입니다."
                 pwcheck.style.color = "red";
                 pwcheck.style.fontWeight = "bold";
 
-                checkObj.pw = false;
             }
-
-            
 
             if(pw.value == "") {
                 pwcheck.innerHTML = "　";
 
-                checkObj.pw = false;
             }
 
         })
@@ -256,20 +212,17 @@ const checkObj = {
                 span.style.color = "green";
                 span.style.fontWeight = "bold";
 
-                checkObj.nickname = true;
                 
             } else {
                 span.innerHTML = "닉네임 형식이 유효하지 않습니다.";
                 span.style.color = "red";
                 span.style.fontWeight = "bold";
 
-                checkObj.nickname = false;
                 
             }
             
             if(nickname.value == "") {
                 span.innerHTML = "　";
-                checkObj.nickname = false;
             }
 
         })
@@ -280,6 +233,7 @@ const checkObj = {
         // 닉네임 중복검사
 
         const memberNickname = document.getElementById("nickname-check");
+        let checkNickname = false;
 
         const regExp6 = /^[가-힣]{2,8}$/;
 
@@ -298,23 +252,23 @@ const checkObj = {
                 if(result == 1){
 
                     alert("이미 사용중인 닉네임 입니다.");
-                    checkObj.nickname = false;
+                    checkNickname = false;
 
                 } else if(nickname.value == ""){ 
                     
                     alert("닉네임을 입력해주세요");
                     nickname.focus();
-                    checkObj.nickname = false;
+                    checkNickname = false;
                 }
                 else if(!regExp6.test(nickname.value)){
 
                     alert("알맞은 닉네임 형식이 아닙니다")
-                    checkObj.nickname = false;
+                    checkNickname = false;
 
                 } else{
 
                     alert("사용 가능한 닉네임 입니다");
-                    checkObj.nickname = true;
+                    checkNickname = true;
                 }
 
 
@@ -400,122 +354,68 @@ const checkObj = {
             }).open();
         })
 
+        /* alert + return false 함수 */
+        function print(el, msg) {
+            alert(msg);
+            el.focus();
+            return false;
+        }   
 
-
+        const regExp1 = /^[A-Za-z0-9`~!@#\$%\^&\*\(\)\{\}\[\]\-_=\+\\|;:'"<>,\./\?]{6,20}$/;
+        const regExp2 = /^[가-힣]{2,6}$/
+        const regExp3 = /^[가-힣]{2,8}$/;
         /* form 제출 시 */
         function validate() {
-
-            // let str;
-
-
-            // for(let key in checkObj){
-
-
-
-            //     if(!checkObj[key]){
-    
-            //         switch(key){
-    
-            //         case "id"         : str="아이디가"; break;                    
-            //         case "memberName" : str="이름이"; break;            
-            //         case "pw"         : str="비밀번호가"; break;                    
-            //         case "nickname"   : str="닉네임이";  break;              
-            //         case "pw2"        : str="전화번호가"; break;
-    
-            //         }
-    
-            //         str += "유효하지 않습니다";
-    
-            //         alert(atr);
-    
-            //         document.getElementById(key).focus();
-    
-            //         return false;
-    
-            //     }
-
-
-            // }
-
-            // return true;
-
-
-
-
+           
 
             //아이디 체크
 
-            const id = document.getElementById("id");
-
             if(id.value.trim().length == 0){
-
-                alert("아이디를 입력해주세요");
-                id.focus();
-                return false;
-
+                return print(id, "아이디를 입력해주세요");
             } 
 
-            const memberName = document.getElementById("memberName");
-
-            if(memberName.value.trim().length == 0){
-
-                alert("이름을 입력해주세요");
-                memberName.focus();
-                return false;
+            if(checkId == false) {
+                return print(id, "아이디 중복 확인을 해주세요.");
             }
 
+            // 이름 체크
+
+            if(memberName.value.trim().length == 0){
+                return print(memberName, "이름을 입력해주세요");
+            }
+
+
             // 비밀번호 체크
-
-            const pw = document.getElementById("pw");
-
             if(pw.value.trim().length == 0){
-
-               alert("비밀번호를 입력해주세요");
-               pw.focus();
-
-               return false;
+               return print(pw, "비밀번호를 입력해주세요");
             }
 
             // 비밀번호 확인 체크
-
-            const pw2 = document.getElementById("pw2");
-
-            if(pw2.value == 0){
-
-               alert("비밀번호를 입력해주세요");
-               pw2.focus();
-
-                return false;
+            if(pw2.value.trim().length == 0){
+                return print(pw2, "비밀번호확인을 입력해주세요"); 
             }
-            
+           
+            if(pw.value != pw2.value) {
+                return print(pw, "비밀번호가 일치하지 않습니다.")
+            }
+
+            if(!regExp1.test(pw.value)) {
+                return print(pw, "비밀번호는 6~20글자로 입력해주세요.");
+            }
+
+            if(!regExp1.test(pw2.value)) {
+                return print(pw2, "비밀번호는 6~20글자로 입력해주세요.");
+            }
+
+
             // 닉네임 입력
-
-            const nickname = document.getElementById("nickname");
-
             if(nickname.value == 0){
-
-                alert("닉네임을 입력해주세요");
-                nickname.focus();
-
-                return false;
+                return print(nickname, "닉네임을 입력해주세요");
             }
 
-            // 주소 입력
-
-            // const address = document.getElementsByClassName("address");
-            
-            // if(address[0].value == 0 | address[1] == 0){
-            //     alert("주소검색 버튼을 눌러 주소를 입력하세요");
-            //     return false;
-
-            // }
-
-            // if(address[2].value == 0){
-
-            //     alert("상세 주소를 입력해주세요");
-            //     address[2].focus();
-            //     return false;
-            // }
+            if(checkNickname == false) {
+                return print(nickname, "닉네임 중복 확인을 해주세요.");
+            }
 
             // 비밀번호 찾기 질문 선택 안했을시 강요
 
@@ -542,20 +442,8 @@ const checkObj = {
             return false;
             }
 
+            return true;
            
-            // 비밀번호 서로 일치 안했을시 가입 못하게 하는구문
-
-            if(pw.value == pw2.value) {
-                return true;
-
-            } else {
-                alert("비밀번호가 서로 일치하지 않습니다.");
-                return false;
-            }
-
-            
-
-
         }
 
 

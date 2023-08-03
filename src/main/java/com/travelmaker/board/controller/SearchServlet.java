@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.travelmaker.board.model.service.BoardService_lhk;
 import com.travelmaker.board.model.vo.Board;
 
-@WebServlet("/searchList")
+@WebServlet("/board/searchList")
 public class SearchServlet extends HttpServlet {
 	
 	@Override
