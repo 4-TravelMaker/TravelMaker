@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TravelMaker</title>
     <link rel="shortcut icon" type="image/x-icon" href="image/small_logo.png">
+    <link rel="stylesheet" href="${contextPath}/resources/css/main-style.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/Maker/travelMaker.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,11 +21,12 @@
 <body>
     <main>
         <jsp:include page="/WEB-INF/views/common/header.jsp"/>
+    </main>
 
         <section id="middle">
             
             <div id="left">
-                <form action="#" method="POST">
+                <form action="#" method="POST" onsubmit="return savePlan()">
 
                     <div id="title-box">
                         <div class="profile-box">
@@ -41,41 +43,39 @@
                                 <span class="nickname-span">${loginMember.memberNickname}</span>
                             </div>
                             <div class="pmBtn-box">
-                                <button type="button" id="minus" class="pmBtn">-</button> <span id="date">0박&nbsp;1일</span> <button type="button" id="plus" class="pmBtn">+</button>
-                                <input type="hidden" id="date-value" name="dateValue" value="1">
+                                <c:if test="${empty plan}">
+                                    <button type="button" id="minus" class="pmBtn">-</button> <span id="date">0박&nbsp;1일</span> <button type="button" id="plus" class="pmBtn">+</button>
+                                    <input type="hidden" id="date-value" name="dateValue" value="1">
+                                </c:if>
+
+                                <c:if test="${!empty plan}">
+                                    <button type="button" id="minus" class="pmBtn">-</button> <span id="date">${plan.dateLevel - 1}박&nbsp;${plan.dateLevel}일</span> <button type="button" id="plus" class="pmBtn">+</button>
+                                    <input type="hidden" id="date-value" name="dateValue" value="${plan.dateLevel}">
+                                </c:if>
                             </div>
                         </div>
                         <div>
-                            <strong>여행 이름</strong><input type="text" id="input-title" name="inputTitle" placeholder="제목을 입력하세요.">
+                            <strong>여행 이름</strong><input type="text" id="input-title" name="inputTitle" placeholder="제목을 입력하세요." value="${plan.planTitle}">
                         </div>
                     </div>
 
-                    <div class="container">
-                        <div class="column">
+                    <div class="column">
                         
+                        <c:if test="${empty plan}">
                             <h1 class="h1-1">1일차</h1>
+                        </c:if>
 
-                            <div class="list-group-item" draggable="true">
+                        <c:if test="${!empty plan}">
+                            ${plan.planContent}
+                            <!-- <div class="list-group-item" draggable="true">
                                 <img src="${contextPath}/resources/images/Admin/admin-profile.jpg" class="place-image">
-                                <h1 class="place-name">테라로사 경포호수점</h1>
+                                <h1 class="place-name">${plan.planTitle}</h1>
                                 <button type="button" class="cancelBtn pmBtn">-</button>
-                            </div>
-
-                            <div class="list-group-item" draggable="true">Take a stroll outside
-                                <button type="button" class="cancelBtn pmBtn">-</button>
-                            </div>
-
-                            <div class="list-group-item" draggable="true">Design Thumbnail
-                                <button type="button" class="cancelBtn pmBtn">-</button>
-                            </div>
-
-                            <div class="list-group-item" draggable="true">Attend Meeting
-                                <button type="button" class="cancelBtn pmBtn">-</button>
-                            </div>
-
-                        </div>
+                            </div> -->
+                        </c:if>
 
                     </div>
+
                     <input type="hidden" name="columnContent" id="columnContent">
                     <div class="save-btn-area">
                         <button class="button-style" id="save-btn">저장</button>
@@ -112,9 +112,9 @@
                 </div>
             </div>
         </section>
+    <main>
+        <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
     </main>
-
-    <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 
     <script>
 
@@ -124,6 +124,5 @@
 
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e99da29f2b6829aa0cab8a9aa4d50a98&libraries=services"></script>
     <script src="${contextPath}/resources/js/Maker/travelMaker.js"></script>
-</main>
 </body>
 </html>

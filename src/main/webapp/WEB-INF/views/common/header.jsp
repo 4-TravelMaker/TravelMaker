@@ -113,7 +113,7 @@
                     테마
                 </section>
             </a>
-            <a href="#">
+            <a href="${contextPath}/planList">
                 <section class="nav-menu">
                     여행 계획하기
                 </section>
