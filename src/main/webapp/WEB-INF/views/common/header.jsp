@@ -17,15 +17,17 @@
 
             <section></section>
 
+            <section class="weather-area">
+                <div id="ww_0e385ca888432" v='1.3' loc='id' a='{"t":"horizontal","lang":"ko","sl_lpl":1,"ids":[],"font":"Arial","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"#FFFFFF00","cl_font":"rgba(172,172,172,1)","cl_cloud":"#d4d4d4","cl_persp":"#2196F3","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722","el_phw":3,"el_whr":3}'>Weather Data Source: <a href="https://wetterlang.de/seoul_wetter_30_tage/" id="ww_0e385ca888432_u" target="_blank">Wetter 30 tage Seoul</a></div><script async src="https://app2.weatherwidget.org/js/?id=ww_0e385ca888432"></script>
+            </section>
+
             <section id="search-area">
-                <form action="#" name="search-form">
-                    <fieldset>
-                        <section>
-                            <input type="search" id="query" name="query" autocomplete="off" onkeydown="characterCheck(this)">
-                            <button type="button" id="search-btn" class="fa-solid fa-magnifying-glass" onclick="header.search();" ></button>
-                        </section>
-                    </fieldset>
-                </form>
+                <fieldset>
+                    <section>
+                        <input type="search" id="query" name="query" autocomplete="off" onkeydown="characterCheck(this)">
+                        <button type="button" id="search-btn" class="fa-solid fa-magnifying-glass" onclick="header.search();" ></button>
+                    </section>
+                </fieldset>
             </section>
             <section></section>
             

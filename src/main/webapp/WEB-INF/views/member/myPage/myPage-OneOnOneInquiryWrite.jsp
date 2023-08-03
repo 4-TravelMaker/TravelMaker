@@ -37,10 +37,15 @@
                     &nbsp;1:1 문의
                 </div>
 
+
             </section>
 
             <section>
                 문의글 작성
+                <div class="write-notice">
+                    접수해 주신 문의는 서비스일 1~2일 내에 답변해 드립니다.<br>
+                    작성하신 내용에 욕설, 성희롱 등의 내용이 포함된 경우 관련 법령에 따라 조치될 수 있습니다.
+                </div>
             </section>
 
             <section class="board-write-area">
