@@ -42,8 +42,6 @@ main {
 .pic-area{ /* 중간 영역 (사진+기사글) */
     display: flex;
     justify-content: space-around;
-
-
 }
 
 #pic{/* 사진 영역(이미지) */
@@ -60,6 +58,10 @@ main {
     margin-top: 10px;
 
     cursor: pointer;
+}
+
+#pic img:hover{
+    transform: translateY(-10px);
 }
 
 #article{ /* 기사글 */
@@ -125,13 +127,12 @@ a{
     left: 852PX;
     cursor: pointer;
     font-size: 16px;
-
+    font-weight: bold;
 }
 
 #SEOUL:hover{
     color: white;
     font-size: 17px;
-
 }
 
 #KKD{
@@ -140,14 +141,12 @@ a{
     top : 990PX;
     left: 860PX;
     cursor: pointer;
-
 }
 
 #KKD:hover{
     color: white;
     font-size: 22px;
 }
-
 
 
 #kW{
@@ -305,7 +304,6 @@ a{
 
     line-height: 100px;
     border-bottom: none;
-
 }
 
 
