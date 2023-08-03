@@ -25,7 +25,8 @@
 
         <section id="middle">
 
-            
+           <br>
+           
            <section class="searchResultArea">
 
               
@@ -127,6 +128,9 @@
 
 
     	var search = {};
+        const travelInfoButton = document.getElementById("travelInfoButton");
+        const allbutton = document.getElementById("allbutton");
+        const travelReviewButton = document.getElementById("travelReviewButton");
     	
     	search.TravelInfo = function (obj){
             debugger
@@ -134,16 +138,29 @@
             var searchParam = $("#hiddenSerchResult").val();
             var travelInfo;
     		if(obj.id == "travelInfoButton") {
+
     			travelInfo = "travelInfo";
+
     		} else if(obj.id == "travelReviewButton") {
+
     			travelInfo = "travelReview";
+               
     		} else {
+
                 travelInfo = "";
+               
             }
+
             location.href="${contextPath}/board/searchLists?searchParam="+ searchParam +"&travelInfo="+ travelInfo;
 
 
     	}
+
+        document.getElementById("button1").onclick = function(){
+            this.style.backgroundColor ="black";
+            document.getElementById("button2").style.backgroundColor ="gray";
+        };
+        
     
     
     </script>

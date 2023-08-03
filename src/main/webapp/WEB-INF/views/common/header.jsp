@@ -140,7 +140,7 @@
 
      } else{
          
-         location.href="${contextPath}/searchList?searchParam="+ searchParam;
+         location.href="${contextPath}/board/searchList?searchParam="+ searchParam;
 
      }
     

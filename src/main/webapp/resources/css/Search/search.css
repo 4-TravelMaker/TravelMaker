@@ -182,11 +182,14 @@ nav {
     border: 0;
     background-color: white;
     cursor: pointer;
+    font-weight: 300;
 }
 
 #allbutton:active{
     font-weight: bold;
 }
+
+
 
 #travelInfoButton{
     /* margin-bottom: 10px; */
@@ -195,10 +198,15 @@ nav {
     border: 0;
     background-color: white;
     cursor: pointer;
+    font-weight: 300;
 }
 
 #travelInfoButton:active{
     font-weight: bold;
+}
+
+#travelInfoButton:after{
+    background-color: aqua;
 }
 
 #travelReviewButton{
@@ -209,12 +217,15 @@ nav {
     border: 0;
     background-color: white;
     cursor: pointer;
+    font-weight: 300;
 
 }
 
 #travelReviewButton:active{
     font-weight: bold;
 }
+
+
 
 
 /* 전체 / 여행정보 / 여행 리뷰 게시판 창 */
