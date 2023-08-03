@@ -4,6 +4,7 @@
 <%-- 문자열 관련 함수(메소드) 제공 JSTL (EL 형식으로 작성) --%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,18 +12,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TravelMaker</title>
     <link rel="shortcut icon" type="image/x-icon" href="image/small_logo.png">
-    <link rel="stylesheet" href="${contextPath}/resources/css/Theme/ThemeMain.css">
+    
+    <!-- <link rel="stylesheet" href="${contextPath}/resources/css/Theme/ThemeMain.css"> -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/embla-carousel/embla-carousel.umd.js"></script>
     <script src="https://unpkg.com/embla-carousel-autoplay/embla-carousel-autoplay.umd.js"></script>
-
 </head>
 <body>
     <main>
+        
         <jsp:include page="/WEB-INF/views/common/header.jsp"/>
-
        
         <section id="middle">
            
