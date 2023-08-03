@@ -107,6 +107,8 @@
 
         const memberName = document.getElementById("memberName");
 
+        let checkNm = false;
+
         memberName.addEventListener("input" , () => {
 
             const regExp = /^[가-힣]{2,6}$/
@@ -115,6 +117,7 @@
             if(memberName.value.trim().length == 0){
                 
                 span.innerHTML = "이름을 입력해주세요."
+                checkNm = false;
                 
             }
 
@@ -122,25 +125,30 @@
                 span.innerHTML = "적합한 이름 입니다."
                 span.style.color = "green";
                 span.style.fontWeight = "bold";
+                checkNm = true;
 
             } else {
                 span.innerHTML = "적합하지 않은 이름입니다."
                 span.style.color = "red";
                 span.style.fontWeight = "bold";
+                checkNm = false;
                 
             }
 
             if(memberName.value.length ==1){
                 span.innerHTML = "이름은 1글자 이상 입력하세요"
                 span.style.color = "red";
+                checkNm = false;
             }
 
             if(memberName.value.length == 0){
                 span.innerHTML = "　";
+                checkNm = false;
                 
             } else if(memberName.value.length > 6){
                 span.innerHTML = "이름은 6자이내로 입력하세요"
                 span.style.color = "red";
+                checkNm = false;
 
             } 
             
@@ -362,8 +370,8 @@
         }   
 
         const regExp1 = /^[A-Za-z0-9`~!@#\$%\^&\*\(\)\{\}\[\]\-_=\+\\|;:'"<>,\./\?]{6,20}$/;
-        const regExp2 = /^[가-힣]{2,6}$/
-        const regExp3 = /^[가-힣]{2,8}$/;
+        const regExp2 = /^[가-힣]{2,6}$/ //이름
+        const regExp3 = /^[가-힣]{2,8}$/; // 닉네임
         /* form 제출 시 */
         function validate() {
            
@@ -382,6 +390,10 @@
 
             if(memberName.value.trim().length == 0){
                 return print(memberName, "이름을 입력해주세요");
+            }
+
+            if(checkNm == false){
+                return print(memberName, "이름 유효성이 맞지 않습니다.");
             }
 
 
