@@ -49,7 +49,7 @@
                         <form action="list" method="get" id="boardSearch" onsubmit="return searchValidate()">
                             <input type="text" placeholder="닉네임 입력" id="member-search" name="query2">
                             <input type="hidden" name="type" value="${param.type}">
-                            <button type="submit">검색</button>
+                            <button type="submit" id="searchBtn">검색</button>
                         </form>
                     </section>
 
@@ -68,8 +68,8 @@
                     <table class="post-table">
                         <thead>
                             <tr class="table-bk">
-                                <th>구분</th>
-                                <th>닉네임</th>
+                                <th>글번호</th>
+                                <th>아이디</th>
                                 <th>제목</th>
                                 <th>작성일</th>
                                 <th>조회수</th>
