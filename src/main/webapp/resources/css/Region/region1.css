@@ -121,17 +121,34 @@ a{
 #SEOUL{
     display: inline-block;
     position: absolute;
-    top : 987PX;
-    left: 870PX;
+    top : 958PX;
+    left: 852PX;
     cursor: pointer;
-    color: rgb(219, 157, 75);
+    font-size: 16px;
+
 }
 
 #SEOUL:hover{
     color: white;
-    font-size: 22px;
+    font-size: 17px;
 
 }
+
+#KKD{
+    display: inline-block;
+    position: absolute;
+    top : 990PX;
+    left: 860PX;
+    cursor: pointer;
+
+}
+
+#KKD:hover{
+    color: white;
+    font-size: 22px;
+}
+
+
 
 #kW{
     display: inline-block;

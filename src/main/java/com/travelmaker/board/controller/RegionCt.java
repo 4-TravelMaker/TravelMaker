@@ -3,6 +3,7 @@ package com.travelmaker.board.controller;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -36,16 +37,9 @@ public class RegionCt extends HttpServlet{
 				
 				BoardService_phj service = new BoardService_phj();
 				
-				// 데이터 담아갈 객체 생성
-				List<Category> cList = new ArrayList<Category>();
+				Map<String, Object> map = service.selectRegion(ctgrNo);
 				
-				cList = service.selectRegion(ctgrNo);
-				
-				// request 범위로 ctgr을 세팅 
-				
-				req.setAttribute("cList", cList);
-				req.setAttribute("name", name);
-				
+				req.setAttribute("map", map);
 				
 				String path = "/WEB-INF/views/member/Region/region2.jsp";
 				
