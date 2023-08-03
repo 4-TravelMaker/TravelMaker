@@ -59,7 +59,6 @@ public class BoardDAO_phj {
 				
 				Category ctgr =  new Category();
 				
-				ctgr.setCategoryName(  rs.getString("CTGR_NM"));
 				ctgr.setBoardTitle( rs.getString("BOARD_TITLE"));
 				ctgr.setImgRename( rs.getString("IMG_RENAME"));
 				ctgr.setImgLevel(rs.getInt("IMG_LEVEL"));
@@ -151,6 +150,46 @@ public class BoardDAO_phj {
 			close(pstmt);
 		}
 		return region;
+	}
+
+	
+
+	/** 카테고리 네임 DAO
+	 * @param conn
+	 * @param ctgrNo
+	 * @return ctgrName
+	 * @throws Exception
+	 */
+	public List<String> selectCtgrName(Connection conn, int ctgrNo) throws Exception{
+		
+		List<String> ctgrName = new ArrayList<>();
+		
+		String name = null;
+
+		
+		try {
+			String sql = prop.getProperty("selectCtgrName");
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, ctgrNo);
+			
+			rs=pstmt.executeQuery();
+			
+			while(rs.next()) {
+				
+				name = rs.getString("CTGR_NM");
+				
+				ctgrName.add(name);
+				
+			}
+			
+			
+		}finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return ctgrName;
 	}
 			
 }

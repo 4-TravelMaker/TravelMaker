@@ -45,19 +45,36 @@
                     <iframe src="${region.imgOriginal}" width="1000" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </section>
                 <section class="map1-1">
-                    <section>
-                        <ul>
-                            <li>문의 및 안내</li>
-                            <li>주소</li>
-                            <li>주차</li>
-                            <li>취급메뉴</li>
-                        </ul>
+
+                    <p><mark style="background-color: rgb(247, 247, 216); color: gray;">이런 테마 여행지는 어떠세요?</mark></p>
+
+                    <section class="hashtag">
+                        <a href="${contextPath}/theme/activity?type=2" style="color: gray;">
+                            <div>#액티비티</div>
+                        </a>
+                        <a href="${contextPath}/theme/famousRestaurant?type=2"style="color: gray;">
+                            <div>#맛집</div>
+                        </a>
+                        <a href="${contextPath}/theme/cafe?type=2"style="color: gray;">
+                            <div>#카페</div>
+                        </a>
+                        <a href="${contextPath}/theme/coupleTrip?type=2"style="color: gray;">
+                            <div>#커플 여행</div>
+                        </a>
                     </section>
-                    <section>
-                        <ul>
-                            <li>홈페이지</li>
-                            <li>영업시간</li>
-                        </ul>
+                    <section class="hashtag">
+                        <a href="${contextPath}/theme/camPing?type=2" style="color: gray;">
+                            <div>#캠핑</div>
+                        </a>
+                        <a href="${contextPath}/theme/pet?type=2"style="color: gray;">
+                            <div>#반려견 동반</div>
+                        </a>
+                        <a href="${contextPath}/theme/trainTrip?type=2"style="color: gray;">
+                            <div>#기차 여행</div>
+                        </a>
+                        <a href="${contextPath}/theme/familyTrip?type=2"style="color: gray;">
+                            <div>#가족 여행</div>
+                        </a>
                     </section>
                 </section>
             </section>

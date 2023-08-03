@@ -15,7 +15,7 @@ main {
 }
 
 #middle1 {
-    height: 1450px;
+    height: 1550px;
 }
 
 
@@ -101,25 +101,60 @@ mark{
 }
 
 
-
 .map>section:nth-child(2){
     height: 200px;
-
-
 }
 
 .map1-1{
-    display: flex;
-    justify-content: space-between;
     margin-top: 20px;
 }
 
-.map1-1>section:nth-child(1){
-    width: 800px;
+.map1-1>section:nth-child(2){
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    cursor: pointer;
+
 }
 
-.map1-1>section:nth-child(2){
-    width: 600px;
+.map1-1>section:nth-child(3){
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    cursor: pointer;
+
+}
+
+.hashtag {
+    margin-bottom: 10px;
+}
+
+.hashtag div{
+    border: 2px solid rgb(153, 216, 199);
+    text-align: center;
+    width: 100px;
+    color: gray;
+    border-radius: 10px;
+    padding: 5px;
+    font-weight: bold;
+}
+
+.hashtag div:hover{
+    background-color: rgb(153, 216, 199);
+    color: white;
+
+}
+
+.hashtag > a {
+    text-decoration: none;
+}
+
+.map1-1 > p {
+    margin-top: 80px;
+    margin-bottom: 40px;
+    font-size: 30px;
+    font-weight: bold;
+    color: gray;
 }
 
 
