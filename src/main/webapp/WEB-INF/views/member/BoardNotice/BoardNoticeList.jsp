@@ -27,8 +27,8 @@
 
         <section id="middle">
 
-            <div id="title-notice">
-                <h1>공지사항</h1>
+            <div id="title-notice" class="title-area">
+                공지사항
             </div>
            
             <div style="width: 1100px; padding-left: 100px;">

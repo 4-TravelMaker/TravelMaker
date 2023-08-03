@@ -40,7 +40,7 @@
                     </div>
                 </div>
 
-                <div style="border-top: 2px solid lightgray;">
+                <div>
                     <div class="container">
                         <div id="content-area">
 

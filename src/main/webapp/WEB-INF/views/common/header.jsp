@@ -32,18 +32,22 @@
             <section></section>
             
         
-        <!-- <section class="ass"> -->
             <c:choose>
                 <c:when test="${empty sessionScope.loginMember}">
                     <section class="login-area2">
-                        <button class="btn-style">
-                            <a href="${contextPath}/member/login">로그인</a>
-                        </button>
-                        <button class="btn-style">
-                            <a href="${contextPath}/member/signUp">회원가입</a>
-                        </button>
+                        <a href="${contextPath}/member/login">
+                            <button class="btn-style">
+                                로그인
+                            </button>
+                        </a>
+                        <a href="${contextPath}/member/signUp">
+                            <button class="btn-style">
+                                회원가입
+                            </button>
+                        </a>
                     </section>
                 </c:when>
+
                 <c:otherwise>
                     <section class="login-area">
                     
@@ -58,24 +62,34 @@
 
                             <!-- 프로필 이미지가 있을 경우 -->
                             <c:if test="${!empty loginMember.profileImage}">
-                                <a href="${contextPath}/myPage/changeInfo"><img src="${contextPath}${loginMember.profileImage}">
+                                <a href="${contextPath}/myPage/changeInfo">
+                                    <img src="${contextPath}${loginMember.profileImage}">
                                 </a>
                             </c:if>
                             <span id="nickname-member">${loginMember.memberNickname} 님, 환영합니다!</span>
-                            <c:if test="${loginMember.adminFlag != 'Y'}">
-                                <button class="logout-btn-style">                    
-                                    <a href="${contextPath}/memeber/logout">로그아웃</a>
-                                </button>
-                            </c:if>
 
+                            <!-- 관리자 계정이 아닐 경우 로그아웃 버튼 활성화 -->
+                            <c:if test="${loginMember.adminFlag != 'Y'}">
+                                <a href="${contextPath}/memeber/logout">   
+                                    <button class="logout-btn">                    
+                                        로그아웃
+                                    </button>
+                                </a> 
+                            </c:if>
+                            
+                            <!-- 관리자 계정일 경우 로그아웃, 관리자 페이지 버튼 활성화-->
                             <div class="logout-admin-btn-area">
                                 <c:if test="${loginMember.adminFlag == 'Y'}">
-                                    <button class="logout-btn">                    
-                                        <a href="${contextPath}/memeber/logout">로그아웃</a>
-                                    </button>
-                                    <button class="admin-btn">
-                                        <a href="${contextPath}/admin/selectAll" >관리자<br>페이지</a>
-                                    </button>
+                                    <a href="${contextPath}/memeber/logout">
+                                        <button class="logout-btn">                    
+                                            로그아웃
+                                        </button>
+                                    </a>
+                                    <a href="${contextPath}/admin/selectAll">
+                                        <button class="admin-btn">
+                                            관리자<br>페이지
+                                        </button>
+                                    </a>
                                 </c:if>
                             </div>
 
@@ -83,28 +97,37 @@
                     </section>
                 </c:otherwise>
             </c:choose>
-        <!-- </section> -->
        
     </section>
     </header>
 
     <nav>
         <section id="nav">
-            <section class="nav-menu">
-                <a href="${contextPath}/Region/main">지역</a>
-            </section>
-            <section class="nav-menu">
-                <a href="${contextPath}/theme/list?type=2">테마</a>
-            </section>
-            <section class="nav-menu">
-                <a href="#">여행 계획하기</a>
-            </section>
-            <section class="nav-menu">
-                <a href="${contextPath}/travelReview/list?type=4&cp=1">여행 리뷰</a>
-            </section>
-            <section class="nav-menu">
-                <a href="${contextPath}/boardNotice/list?type=5&cp=1">공지사항</a>
-            </section>
+            <a href="${contextPath}/Region/main">
+                <section class="nav-menu">
+                    지역
+                </section>
+            </a>
+            <a href="${contextPath}/theme/list?type=2">
+                <section class="nav-menu">
+                    테마
+                </section>
+            </a>
+            <a href="#">
+                <section class="nav-menu">
+                    여행 계획하기
+                </section>
+            </a>
+            <a href="${contextPath}/travelReview/list?type=4&cp=1">
+                <section class="nav-menu">
+                    여행 리뷰
+                </section>
+            </a>
+            <a href="${contextPath}/boardNotice/list?type=5&cp=1">
+                <section class="nav-menu">
+                    공지사항
+                </section>
+            </a>
         </section>
     </nav>
     
