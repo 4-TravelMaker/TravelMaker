@@ -20,7 +20,7 @@
         
         <section class="left-section-btn-area">
             <section class="left-section-btn-box">
-                <a href="${contextPath}/member/myPage/changeInfo">회원 정보 수정</a>
+                <a href="${contextPath}/myPage/changeInfo">회원 정보 수정</a>
             </section>
 
             <section class="left-section-btn-box">

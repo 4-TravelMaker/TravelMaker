@@ -18,7 +18,7 @@ import com.travelmaker.member.model.service.MemberService_kks;
 import com.travelmaker.member.model.vo.Member;
 
 
-@WebServlet("/member/myPage/changeInfo")
+@WebServlet("/myPage/changeInfo")
 public class MyPageChangeInfo extends HttpServlet {
 	
 	@Override

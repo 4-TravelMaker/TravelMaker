@@ -312,10 +312,14 @@ nav {
 
 /* 현재 페이지 번호 */
 .pagination .current {
+    width: 27px;
+    height: 27px;
     background-color: rgb(153, 216, 199);
+    border-radius: 50%;
     color: white;
     font-weight: bold;
     padding-bottom: 2px;
+    text-align: center;
 }
 
 #boardSearch {
