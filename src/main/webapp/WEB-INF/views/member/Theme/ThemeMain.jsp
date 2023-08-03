@@ -13,12 +13,13 @@
     <title>TravelMaker</title>
     <link rel="shortcut icon" type="image/x-icon" href="image/small_logo.png">
     
-    <!-- <link rel="stylesheet" href="${contextPath}/resources/css/Theme/ThemeMain.css"> -->
+    <link rel="stylesheet" href="${contextPath}/resources/css/Theme/ThemeMain.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/embla-carousel/embla-carousel.umd.js"></script>
     <script src="https://unpkg.com/embla-carousel-autoplay/embla-carousel-autoplay.umd.js"></script>
+    <script src="https://kit.fontawesome.com/ef988defcf.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <main>
@@ -62,26 +63,26 @@
                 <br><br>
                 <section class="container5">
                     <section class="flex-container1">
-                        <div class="item" id="photo">
+                        <div class="item photo">
                             <a href="http://localhost:8080/TravelMaker/theme/pet?type=2">
                                 <img src="${contextPath}/resources/images/ThemeBoard/main/petMain.jpg">
                                 <strong><h2>반려견과 함께!</h2></strong>
                             </a>
                         </div>
-                        <div class="item" id="photo">
+                        <div class="item photo">
                            <a href="http://localhost:8080/TravelMaker/theme/coupleTrip?type=2">
                             <img src="${contextPath}/resources/images/ThemeBoard/main/coupleTrip.jpg">
                             <strong><h2>연인과 함께!</h2></strong>
                         </a>
                                 
                         </div>
-                        <div class="item" id="photo">
+                        <div class="item photo">
                             <a href="http://localhost:8080/TravelMaker/theme/trainTrip?type=2">
                                 <img src="${contextPath}/resources/images/ThemeBoard/main/TrainTripMain.jpg">
                                 <strong><h2>칙칙폭폭! 기차여행!</h2></strong>
                             </a>
                         </div>
-                        <div class="item" id="photo">
+                        <div class="item photo">
                             <a href="http://localhost:8080/TravelMaker/theme/familyTrip?type=2">
                                 <img src="${contextPath}/resources/images/ThemeBoard/main/FamilyTripMain.jpg">
                                 <strong><h2>가족과 함께!</h2></strong>
