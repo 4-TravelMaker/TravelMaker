@@ -52,7 +52,7 @@
     border: none;
     border-radius: 5px;
 
-    background-color: rgb(153, 216, 199);
+    background-color: #ddd;
     color: white;
     font-size: 15px;
 
@@ -60,7 +60,7 @@
 }
 
 .search-btn:hover{
-    background-color: #ddd;
+    background-color: #000000;
     color: white;
 
     transition-duration: 1s;

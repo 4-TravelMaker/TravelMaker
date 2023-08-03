@@ -77,8 +77,16 @@
                 </div>
 
                 <div class="boardImg">
-                    <label for="img2">
+                    <label for="img1">
                         <img class="preview" src="${img1}">
+                    </label>
+                    <input type="file" class="inputImage" id="img1" name="1" accept="image/*">
+                    <span class="delete-image">&times;</span>
+                </div>
+
+                <div class="boardImg">
+                    <label for="img2">
+                        <img class="preview" src="${img2}">
                     </label>
                     <input type="file" class="inputImage" id="img2" name="2" accept="image/*">
                     <span class="delete-image">&times;</span>
@@ -86,17 +94,9 @@
 
                 <div class="boardImg">
                     <label for="img3">
-                        <img class="preview" src="${img2}">
-                    </label>
-                    <input type="file" class="inputImage" id="img3" name="3" accept="image/*">
-                    <span class="delete-image">&times;</span>
-                </div>
-
-                <div class="boardImg">
-                    <label for="img4">
                         <img class="preview" src="${img3}">
                     </label>
-                    <input type="file" class="inputImage" id="img4" name="4" accept="image/*">
+                    <input type="file" class="inputImage" id="img3" name="3" accept="image/*">
                     <span class="delete-image">&times;</span>
                 </div>
 
