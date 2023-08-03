@@ -43,7 +43,7 @@
                 <button id="travelInfoButton" onclick="search.TravelInfo(this);">여행정보</button>  
                 <span>|</span>
                 <button id="travelReviewButton" onclick="search.TravelInfo(this);">여행 리뷰 게시판</button>
-
+                
            </section>
 
            <section style="height: 55px;"></section>
@@ -153,14 +153,15 @@
 
             location.href="${contextPath}/board/searchLists?searchParam="+ searchParam +"&travelInfo="+ travelInfo;
 
+            var params = ${param}
+
+            console.log(params)
+
 
     	}
 
-        document.getElementById("button1").onclick = function(){
-            this.style.backgroundColor ="black";
-            document.getElementById("button2").style.backgroundColor ="gray";
-        };
-        
+       
+      
     
     
     </script>
