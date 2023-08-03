@@ -6,14 +6,6 @@ body {
     font-family: 'Noto Sans KR', sans-serif;
 }
 
-/* section {
-    border: 1px solid black;
-}
-
-article {
-    border: 1px solid black;
-} */
-
 main {
     width: 1200px;
     height: auto;
@@ -70,7 +62,7 @@ header {
 #search-area fieldset {
     width: 230px;
     height: 40px;
-    border: 2px solid rgb(153, 216, 199);
+    border: 1px solid rgb(153, 216, 199);
     border-radius: 10px;
     padding-top: 10px;
     display: flex;
@@ -142,22 +134,23 @@ header {
     transition-duration: 1s;
 }
 
-.login-area a {
+.login-area button {
     color: white;
-    text-decoration: none;
 }
 
-.login-area2 a {
+.login-area2 button {
     color: white;
-    text-decoration: none;
 }
 
 
 /* navigation */
 nav {
+    border-top: 1px solid rgb(153, 216, 199);
+    border-bottom: 1px solid rgb(153, 216, 199);
+
     width: 100%;
     height: 50px;
-    background-color: rgb(153, 216, 199);
+    background-color: white;
     display: flex;
     justify-content: center;
     position: -webkit-sticky;
@@ -171,25 +164,27 @@ nav {
     width: 80%;
     height: 50px;
     display: flex;
-    justify-content: center;
-    
+    justify-content: space-around;
 }
 
 .nav-menu {
-    width: 25%;
+    width: 192px;
     height: 50px;
-    text-align: center;
     padding: 11px;
-    border-radius: 15px;
+
+    text-align: center;
 }
 
-.nav-menu > a {
-    color: white;
+.nav-menu:hover{
+    color: rgb(153, 216, 199);
+}
+
+#nav > a {
+    color: black;
     font-weight: bold;
     font-size: 19px;
     text-decoration: none;
 }
-
 
 /* footer */
 footer {
@@ -231,16 +226,16 @@ footer > section:first-child {
     flex-direction: column;
     padding: 0;
     
+    width: 200px;
 }
 
 .loginArea5 img{
-    width: 110px;
-    height: 110px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
 }
 
 .logout-btn-style {
-
     width: 100px;
     height: 35px;
 
@@ -269,7 +264,7 @@ footer > section:first-child {
     display: flex;
 }
 
-.logout-admin-btn-area > button{
+.logout-btn{
     width: 80px;
     height: 33px;
     margin: 5px;
@@ -284,7 +279,27 @@ footer > section:first-child {
     cursor: pointer;
 }
 
-.logout-admin-btn-area > button:hover{
+.logout-btn:hover{
+    background-color: #ddd;
+    transition-duration: 1s;
+}
+
+.admin-btn{
+    width: 80px;
+    height: 33px;
+    margin: 5px;
+
+    border: 1px solid transparent;
+    border-radius: 10px;
+
+    background-color: rgb(153, 216, 199);
+    font-size: 11px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.admin-btn:hover{
     background-color: #ddd;
     transition-duration: 1s;
 }
