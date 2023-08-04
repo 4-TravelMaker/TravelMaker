@@ -14,6 +14,7 @@ import java.util.Properties;
 import com.travelmaker.board.model.vo.Board;
 import com.travelmaker.board.model.vo.BoardDetail;
 import com.travelmaker.board.model.vo.Pagination;
+import com.travelmaker.board.model.vo.Reply;
 import com.travelmaker.member.model.vo.Member;
 
 public class MemberDAO_phj {
@@ -220,6 +221,7 @@ public class MemberDAO_phj {
 				detail.setCreateDate( rs.getString("CREATE_DT") );
 				detail.setMemberNickname( rs.getString("MEMBER_NICK") );
 				detail.setMemberId( rs.getString("MEMBER_ID") );
+				detail.setMemberNo( rs.getInt("MEMBER_NO"));
 			}
 			
 		}finally {
@@ -286,5 +288,41 @@ public class MemberDAO_phj {
 			close(pstmt);
 		}
 		return result;
+	}
+
+
+	public List<Reply> selectReplyList(Connection conn, int boardNo) throws Exception {
+		
+		List<Reply> rList = new ArrayList<>();
+		
+		try {
+				String sql = prop.getProperty("selectReply");
+				
+				pstmt = conn.prepareStatement(sql);
+				
+				pstmt.setInt(1, boardNo);
+				
+				rs = pstmt.executeQuery();
+				
+				while(rs.next()) {
+					
+					Reply reply = new Reply();
+					
+					reply.setReplyNo( rs.getInt("REPLY_NO") );
+					reply.setReplyContent(rs.getString("REPLY_CONTENT"));
+					reply.setMemberNo(rs.getInt("MEMBER_NO"));
+					reply.setMemberNickName(rs.getString("MEMBER_NICK"));
+					reply.setCreateDate(rs.getString("CREATE_DT"));
+					
+					rList.add(reply);
+				}
+				
+			}finally {
+				
+				close(pstmt);
+				close(rs);
+			}
+		
+		return rList;
 	}
 }

@@ -39,8 +39,10 @@ findButton.addEventListener("click", function(){
 
 })
 
+let count = 0;
 
-document.getElementById("confrim").addEventListener("click", function(){
+
+document.getElementById("confirm").addEventListener("click", function(){
 
     const newPw = document.getElementById("edit-input1"); /* 수정할 비밀번호 */
     const pwConfirm = document.getElementById("edit-input"); /* 비밀번호 확인 */
@@ -55,6 +57,10 @@ document.getElementById("confrim").addEventListener("click", function(){
         confirmArea.innerHTML = "비밀번호가 일치합니다. 수정 가능합니다."
         confirmArea.style.color = 'green';
     }
+
+
+    count = 1;
+
 })
 
 cancelBtn.addEventListener("click", function(){
@@ -65,8 +71,19 @@ cancelBtn.addEventListener("click", function(){
         location.href = "/TravelMaker/index.jsp";
 
     }
-
 })
+
+const confrim = document.getElementById("confirm");
+
+function changePwValidate(){
+
+    if(count == 0){
+        alert("비밀번호 확인을 먼저 해주세요");
+        return false;
+    }
+    return true;
+}
+
 
 
 

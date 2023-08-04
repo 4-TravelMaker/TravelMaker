@@ -1,6 +1,7 @@
 package com.travelmaker.member.controller;
 
 import java.io.IOException;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -22,9 +23,9 @@ public class myPageBoardDetail extends HttpServlet{
 			
 			MemberService_phj service = new MemberService_phj();
 			
-			BoardDetail detail = service.selectBoardDetail(boardNo);
+			Map<String, Object> map = service.selectBoardDetail(boardNo);
 			
-			req.setAttribute("detail", detail);
+			req.setAttribute("map", map);
 			
 			String path = "/WEB-INF/views/member/myPage/myPage-boardDetail.jsp";
 			

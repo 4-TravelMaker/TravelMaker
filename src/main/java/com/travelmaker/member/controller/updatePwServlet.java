@@ -32,11 +32,11 @@ public class updatePwServlet extends HttpServlet{
 			
 			if(result>0) { // 성공
 				message = "비밀번호가 수정되었습니다.";
-				path = "login";
+				path = req.getContextPath() + "/member/login";
 				
 			}else {  // 실패
 				message = "비밀번호 수정에 실패했습니다.";
-				path = req.getHeader("referer");;
+				path = req.getHeader("referer");
 			}
 			
 			session.setAttribute("message", message);
