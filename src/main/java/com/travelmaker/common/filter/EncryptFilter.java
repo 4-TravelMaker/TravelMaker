@@ -18,7 +18,7 @@ import com.travelmaker.common.wrapper.EncryptWrapper;
 urlPatterns = {"/member/login",
 			   "/member/signUp",
 			   "/member/myPage/changePw",
-			   "/myPage/pwCheck","/member/findPw"
+			   "/myPage/pwCheck","/member/updatePw"
 			   })
 public class EncryptFilter extends HttpFilter implements Filter {
 
