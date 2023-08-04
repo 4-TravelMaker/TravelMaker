@@ -1,5 +1,4 @@
 
-
 const updateArea = document.getElementsByClassName("customer-inquiry")[0];
 const updateTitle = document.getElementsByClassName("updateContent-title")[0];
 const updateContent = document.getElementsByClassName("updateContent-content")[0];
@@ -10,7 +9,7 @@ const replyBtn = document.getElementById("reply-btn");
 let beforeContent;
 
 replyBtn.addEventListener("click", function(){
-
+    console.log("test");
     let beforeTitle = updateTitle.innerText;
     updateTitle.innerHTML = "";
     const textarea1 = document.createElement("textarea");
@@ -84,9 +83,7 @@ deleteBtn.addEventListener("click", function(){
                 console.log(req.responseText);
             }
         });
-
     }
-
 })
 
 function updateBoard(boardNo, btn){
@@ -96,7 +93,7 @@ const updateContentValue = document.getElementsByClassName("content-style")[0].v
 
     $.ajax({
 
-        url : contextPath + "/myPage/OneOnOneInquiry/update",
+        url : contextPath + "/myPage/board-detail/update",
         data : {"boardNo" : boardNo,
                 "boardTitle" : updateTitleValue,
                 "boardContent" : updateContentValue},

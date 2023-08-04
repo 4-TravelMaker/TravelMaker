@@ -51,6 +51,7 @@ public class MyPageBoard extends HttpServlet {
 			RequestDispatcher dispatcher = req.getRequestDispatcher(path);
 			dispatcher.forward(req, resp);
 			
+			
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
