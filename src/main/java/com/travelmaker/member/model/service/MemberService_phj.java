@@ -92,22 +92,6 @@ public class MemberService_phj {
 
 
 
-	/** 게시글 상세 조회 Service
-	 * @param boardNo
-	 * @return detail
-	 * @throws Exception
-	 */
-	public BoardDetail selectBoardDetail(int boardNo) throws Exception {
-		
-		Connection conn = getConnection();
-		
-		BoardDetail detail = dao.selectBoardDetail(conn, boardNo);
-		
-		close(conn);
-		
-		return detail;
-	}
-
 
 
 	/** 게시글 삭제 service
@@ -154,5 +138,30 @@ public class MemberService_phj {
 		close(conn);
 		
 		return result;
+	}
+
+
+
+	/** 게시글/댓글 상세 조회 service
+	 * @param boardNo
+	 * @return map
+	 * @throws Exception
+	 */
+	public Map<String, Object> selectBoardDetail(int boardNo) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		BoardDetail detail = dao.selectBoardDetail(conn, boardNo);
+		
+		List<Reply> rList = dao.selectReplyList(conn, boardNo);
+		
+		Map<String, Object> map = new HashMap<>();
+		
+		map.put("detail", detail);
+		map.put("rList", rList);
+		
+		close(conn);
+		
+		return map;
 	}
 }
