@@ -149,7 +149,7 @@ public class MemberDAO_phj {
 	 * @param memberNo
 	 * @return boardList
 	 */
-	public List<Board> selectBoard(Connection conn, Pagination pagination, int type, int memberNo) throws Exception {
+	public List<Board> selectBoard(Connection conn, Pagination pagination, int memberNo) throws Exception {
 		
 		List<Board> boardList = new ArrayList<>();
 		
@@ -159,12 +159,12 @@ public class MemberDAO_phj {
 			
 			int start = ( pagination.getCurrentPage() - 1 ) * pagination.getLimit() + 1;
 			int end = start + pagination.getLimit() - 1;
+			
 			pstmt = conn.prepareStatement(sql);
 			
 			pstmt.setInt(1, memberNo);
-			pstmt.setInt(2, type);
-			pstmt.setInt(3, start);
-			pstmt.setInt(4, end);
+			pstmt.setInt(2, start);
+			pstmt.setInt(3, end);
 			
 			rs = pstmt.executeQuery();
 			
@@ -185,6 +185,8 @@ public class MemberDAO_phj {
 			close(rs);
 			close(pstmt);
 		}
+		
+		System.out.println("리스트 : " + boardList);
 		
 		return boardList;
 	}

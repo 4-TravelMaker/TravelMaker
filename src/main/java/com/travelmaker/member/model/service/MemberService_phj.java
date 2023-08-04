@@ -78,12 +78,14 @@ public class MemberService_phj {
 		Pagination pagination = new Pagination(cp, listCount);
 		
 		// 게시글 목록 조회
-		List<Board> boardList = dao.selectBoard(conn, pagination, type, memberNo);
+		List<Board> boardList = dao.selectBoard(conn, pagination, memberNo);
 		
 		Map<String, Object> map = new HashMap<String, Object>();
 		
 		map.put("pagination", pagination);
 		map.put("board", boardList);
+		
+		System.out.println(boardList);
 		
 		close(conn);
 		

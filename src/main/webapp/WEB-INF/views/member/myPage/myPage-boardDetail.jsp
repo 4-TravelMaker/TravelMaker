@@ -20,7 +20,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="${contextPath}/resources/css/main-style.css">
-    <link rel="stylesheet" href="${contextPath}/resources/css/myPage/myPage-boardDetail.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/myPage/myPage-boardDetail.css"> 
 
     <script src="https://kit.fontawesome.com/ef988defcf.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
@@ -33,7 +33,7 @@
         <jsp:include page="/WEB-INF/views/common/myPage-sideBar.jsp"/>
 
         <section class="right-section">
-
+            
             <section>
                 <div class="title">
                     <i class="fa-solid fa-circle-question" style="color: #000000;"></i>
@@ -66,9 +66,9 @@
 
             <!-- 댓글 영역 -->
             <section class="customer-inquiry2">
-                <c:forEach var="rList" items="${rList}">
-                    <section class="memberNick">${rList.memberNickName}<span id="cd">(  ${rList.createDate} )</span></section>
-                    <section class="updateContent-content2"> ${rList.replyContent}</section>
+                <c:forEach var="reply" items="${rList}">
+                    <section class="memberNick">${reply.memberNickName}<span id="cd">(  ${reply.createDate} )</span></section>
+                    <section class="updateContent-content2"> ${reply.replyContent}</section>
                 </c:forEach>
             </section>
 
