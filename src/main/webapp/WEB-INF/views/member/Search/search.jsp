@@ -70,13 +70,39 @@
                         
                             <li style="height: 150px; list-style: none;" >
                                 <section style="float: left;">
+
+
+                                  <c:if test= "${board.boardCode == 1}">
+                                    <a href="${contextPath}/Region/regionDetail?ctgr=${board.boardCategory}&board=${board.boardNo}">
+
+                                        <c:if test="${empty board.boardImage}">
+                                            <img src="${contextPath}/resources/images/logo.png">
+                                        </c:if>
+
+                                        <c:if test="${!empty board.boardImage}">
+											<img src="${contextPath}${board.boardImage}">                                   	
+                                    	</c:if>
+                                    	
+                                    </a>
+                               	  </c:if>
+
                                 
                                 
                                	  <c:if test= "${board.boardCode == 4}">
                                     <a href="${contextPath}/travelReview/detail?no=${board.boardNo}&cp=1&type=4">
-                                    	<img src="${contextPath}/resources/images/logo.png">
+
+                                        <c:if test="${empty board.boardImage}">
+                                            <img src="${contextPath}/resources/images/logo.png">
+                                        </c:if>
+
+                                        <c:if test="${!empty board.boardImage}">
+											<img src="${contextPath}${board.boardImage}">                                   	
+                                    	</c:if>
+                                    	
                                     </a>
                                	  </c:if>
+
+                              
                                	  
                                	   <c:if test= "${board.boardCode == 5}">
                                     <a href="${contextPath}/boardNotice/detail?no=${board.boardNo}&cp=1&type=5">
@@ -94,6 +120,10 @@
                                     
                                 </section>
                                 <section style="font-weight: bold; font-size:23px; margin-left: 130px;">
+
+                                    <c:if test= "${board.boardCode == 1 }">
+                                        <a href="${contextPath}/Region/regionDetail?ctgr=${board.boardCategory}&board=${board.boardNo}">${board.boardTitle}</a>
+                                   </c:if>
                                 
 	                                <c:if test= "${board.boardCode == 4}">
 	                                    <a href="${contextPath}/travelReview/detail?no=${board.boardNo}&cp=1&type=4">${board.boardTitle}</a>
@@ -102,6 +132,8 @@
                                 	<c:if test= "${board.boardCode == 5 }">
                                 		 <a href="${contextPath}/boardNotice/detail?no=${board.boardNo}&cp=1&type=5">${board.boardTitle}</a>
                                 	</c:if>
+                                	
+                                	
                                 
                                 </section>
                                 <p class="categoryName">${board.categoryName}</p>
@@ -124,16 +156,37 @@
     
     <script>
 
-    
-
-
-    	var search = {};
         const travelInfoButton = document.getElementById("travelInfoButton");
         const allbutton = document.getElementById("allbutton");
         const travelReviewButton = document.getElementById("travelReviewButton");
+
+    $(document).ready(function(){
+        
+        var travelInfo = "${travelInfo}";
+
+        if(travelInfo != null && travelInfo != ''){
+            if(travelInfo == "travelInfo") {
+
+                travelInfoButton.style.fontWeight = "bold";
+
+            } else if(travelInfo == "travelReview") {
+
+                travelReviewButton.style.fontWeight = "bold";
+
+            }
+        } else {
+
+            allbutton.style.fontWeight = "bold";
+        } 
+
+    });
+    	var search = {};
+    
+
+
+       
     	
     	search.TravelInfo = function (obj){
-            debugger
     		
             var searchParam = $("#hiddenSerchResult").val();
             var travelInfo;
@@ -153,9 +206,7 @@
 
             location.href="${contextPath}/board/searchLists?searchParam="+ searchParam +"&travelInfo="+ travelInfo;
 
-            var params = ${param}
-
-            console.log(params)
+        
 
 
     	}

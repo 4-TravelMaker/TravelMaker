@@ -185,11 +185,6 @@ nav {
     font-weight: 300;
 }
 
-#allbutton:active{
-    font-weight: bold;
-}
-
-
 
 #travelInfoButton{
     /* margin-bottom: 10px; */
@@ -201,13 +196,7 @@ nav {
     font-weight: 300;
 }
 
-#travelInfoButton:active{
-    font-weight: bold;
-}
 
-#travelInfoButton:after{
-    background-color: aqua;
-}
 
 #travelReviewButton{
     margin-right: 750px;
@@ -221,9 +210,7 @@ nav {
 
 }
 
-#travelReviewButton:active{
-    font-weight: bold;
-}
+
 
 
 

@@ -99,73 +99,73 @@
                                 <div class="embla__container1">
                                     
                                     <div class="embla__slide1">
-                                        <a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=79ac09d6-364a-4762-b3d0-e7ee835b0063&big_category=A02&mid_category=A0205&big_area=1" style="text-decoration:none">
+                                        <a href="${contextPath}/Region/regionDetail?ctgr=8&board=25" style="text-decoration:none">
                                             <div class="photo item">
-                                                <img src="resources/images/mainHome/top10/han-river.jpg">
+                                                <img src="resources/images/Region/Gangwon/phoenix.jpg">
                                                 <strong>
-                                                    반포대교 달빛무지개 분수
+                                                   휘닉스 블루캐니언
                                                 </strong>
                                             </div>
                                         </a>
                                     </div>
 
                                     <div class="embla__slide1">
-                                        <a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=96166686-8e42-41c0-a9f0-a0d505c0643f&big_category=A01&mid_category=A0101&big_area=35" style="text-decoration:none">
+                                        <a href="${contextPath}/Region/regionDetail?ctgr=11&board=44" style="text-decoration:none">
                                             <div class="photo item">
-                                                <img src="resources/images/mainHome/top10/bomunjeong.jpg" >
+                                                <img src="resources/images/Region/Gyeongsang/sacheon.jpg" >
                                                 <strong>
-                                                    보문정 (경주)
+                                                    서천아이
                                                 </strong>
                                             </div>
                                         </a>
                                     </div>
 
                                     <div class="embla__slide1">
-                                        <a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=424cf626-55e1-444c-a3c7-1a7ae37138ee&big_category=A02&mid_category=A0205&big_area=6" style="text-decoration:none">
+                                        <a href="${contextPath}/Region/regionDetail?ctgr=8&board=23" style="text-decoration:none">
                                             <div class="photo item">
-                                                <img src="resources/images/mainHome/top10/young-do.jpg" >
+                                                <img src="resources/images/Region/Gangwon/sokcho.jpg" >
                                                 <strong>
-                                                    영도 청학배수지 전망대
+                                                    속초 얼라이브 하트
                                                 </strong>
                                             </div>
                                         </a>
                                     </div>
 
                                     <div class="embla__slide1">
-                                        <a href="https://korean.visitkorea.or.kr/detail/rem_detail.do?cotid=8fba2de6-87b3-4dad-9066-471d2e8f520f&con_type=12100" style="text-decoration:none">
+                                        <a href="${contextPath}/Region/regionDetail?ctgr=5&board=8" style="text-decoration:none">
                                             <div class="photo item">
-                                                <img src="resources/images/mainHome/top10/nam-i.JPG" >
+                                                <img src="resources/images/Region/Busan/busanNamGu.jpg" >
                                                 <strong>
-                                                    남이섬
+                                                    오륙도 스카이워크
                                                 </strong>
                                             </div>
                                         </a>
                                     </div>
 
                                     <div class="embla__slide1">
-                                        <a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=f5da2334-1c8c-4049-8e06-4db38333a57f&big_category=A01&mid_category=A0101&big_area=39" style="text-decoration:none">
+                                        <a href="${contextPath}/Region/regionDetail?ctgr=9&board=50" style="text-decoration:none">
                                             <div class="photo item">
-                                                <img src="resources/images/mainHome/top10/sungsanilchulbong.PNG" >
+                                                <img src="resources/images/Region/Chungcheong/jecheon.jpg" >
                                                 <strong>
-                                                  성산일출봉
+                                                  제천 용추폭포 유리전망대
                                                 </strong>
                                             </div>
                                         </a>
                                     </div>
 
                                     <div class="embla__slide1">
-                                        <a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=66dba60b-a623-4753-a3b4-76a62fcbbe05&big_category=A02&mid_category=A0201&big_area=37" style="text-decoration:none">
+                                        <a href="${contextPath}/Region/regionDetail?ctgr=9&board=62" style="text-decoration:none">
                                             <div class="photo item">
-                                                <img src="resources/images/mainHome/top10/JEONJU.PNG" >
+                                                <img src="resources/images/Region/Chungcheong/jijoonghaeMaeul.jpg" >
                                                 <strong>
-                                                    전북 전주 한옥마을 [슬로시티]
+                                                    지중해마을
                                                 </strong>
                                             </div>
                                         </a>
                                     </div>
 
                                     <div class="embla__slide1">
-                                        <a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=1fb3cc64-aabd-495f-ae45-52b76c162a9f&big_category=A02&mid_category=A0205&big_area=33" style="text-decoration:none">
+                                        <a href="${contextPath}/Region/regionDetail?ctgr=9&board=49" style="text-decoration:none">
                                             <div class="photo item">
                                                 <img src="resources/images/mainHome/top10/danyang.PNG" >
                                                 <strong>
@@ -176,29 +176,29 @@
                                     </div>
 
                                     <div class="embla__slide1">
-                                        <a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=0c70bb97-5ea0-4f1c-99e8-9a8cad34a596&big_category=A01&mid_category=A0101&big_area=36" style="text-decoration:none">
+                                        <a href="${contextPath}/Region/regionDetail?ctgr=8&board=22" style="text-decoration:none">
                                             <div class="photo item">
-                                                <img src="resources/images/mainHome/top10/sangdo.jpg" >
+                                                <img src="resources/images/Region/Gangwon/jumunjin.jpg" >
                                                 <strong>
-                                                    상주은모래비치
+                                                    주문진 해변
                                                 </strong>
                                             </div>
                                         </a>
                                     </div>
 
                                     <div class="embla__slide1">
-                                        <a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=f8357c6d-5185-4c55-b3c0-363c043b3462&big_category=A02&mid_category=A0205&big_area=38" style="text-decoration:none">
+                                        <a href="${contextPath}/Region/regionDetail?ctgr=11&board=43" style="text-decoration:none">
                                             <div class="photo item">
-                                                <img src="resources/images/mainHome/top10/dolsan.PNG" >
+                                                <img src="resources/images/Region/Gyeongsang/gyeongju.jpg" >
                                                 <strong>
-                                                    돌산대교
+                                                    월정교
                                                 </strong>
                                             </div>
                                         </a>
                                     </div>
 
                                     <div class="embla__slide1">
-                                        <a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=7f215512-d70e-4616-96c2-57b6c2d7789f&big_category=A01&mid_category=A0101&big_area=32" style="text-decoration:none">
+                                        <a href="${contextPath}/Region/regionDetail?ctgr=8&board=21" style="text-decoration:none">
                                             <div class="photo item">
                                                 <img src="resources/images/mainHome/top10/haniranderpam.PNG" >
                                                 <strong>

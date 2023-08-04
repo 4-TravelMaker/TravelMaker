@@ -43,6 +43,7 @@ public class SearchListServlet extends HttpServlet{
 			}
 			
 			req.setAttribute("boardList", boardList);
+			req.setAttribute("travelInfo", travelInfo);
 			
 			String path = "/WEB-INF/views/member/Search/search.jsp";
 			
