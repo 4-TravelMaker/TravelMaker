@@ -147,7 +147,7 @@ public class MyPageChangeInfo extends HttpServlet {
 			}
 			
 			session.setAttribute("message", message);
-			resp.sendRedirect( req.getContextPath() + "/member/myPage/changeInfo" );
+			resp.sendRedirect( req.getContextPath() + "/myPage/changeInfo" );
 				
 		} catch(Exception e) {
 			e.printStackTrace();

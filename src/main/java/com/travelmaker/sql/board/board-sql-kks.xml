@@ -180,12 +180,12 @@
 	<!-- 여행 계획하기 -->
 	<entry key="travelMake">
 		INSERT INTO TRAVEL_MAKER
-		VALUES(SEQ_PLAN_NO.NEXTVAL, ?, ?, ?, ?, DEFAULT)
+		VALUES(SEQ_PLAN_NO.NEXTVAL, ?, ?, ?, ?, ?, DEFAULT)
 	</entry>
 	
 	<!-- 내 여행 계획 조회 -->
 	<entry key="selectPlanList">
-		SELECT PLAN_NO, PLAN_TITLE, PLAN_CONTENT, DATE_LEVEL
+		SELECT PLAN_NO, PLAN_TITLE, PLAN_CONTENT, THUMBNAIL, DATE_LEVEL
 		FROM TRAVEL_MAKER
 		WHERE MEMBER_NO = ?
 		AND PLAN_ST = 'N'
@@ -193,10 +193,28 @@
 	
 	<!-- 특정 여행 계획 조회 -->
 	<entry key="selectPlan">
-		SELECT PLAN_NO, PLAN_TITLE, PLAN_CONTENT, DATE_LEVEL
+		SELECT PLAN_NO, PLAN_TITLE, PLAN_CONTENT, THUMBNAIL, DATE_LEVEL
 		FROM TRAVEL_MAKER
 		WHERE MEMBER_NO = ?
 		AND PLAN_NO = ?
 		AND PLAN_ST = 'N'
+	</entry>
+	
+	<!-- 여행 계획 업데이트 -->
+	<entry key="updatePlan">
+		UPDATE TRAVEL_MAKER SET
+		PLAN_TITLE = ?,
+		PLAN_CONTENT = ?,
+		THUMBNAIL = ?,
+		DATE_LEVEL = ?
+		WHERE PLAN_NO = ?
+		AND PLAN_ST = 'N'
+	</entry>
+	
+	<!-- 여행 계획 삭제 -->
+	<entry key="deletePlan">
+		UPDATE TRAVEL_MAKER SET
+		PLAN_ST = 'Y'
+		WHERE PLAN_NO = ?
 	</entry>
 </properties>

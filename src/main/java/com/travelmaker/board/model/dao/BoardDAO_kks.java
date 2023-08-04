@@ -20,10 +20,6 @@ import com.travelmaker.board.model.vo.Reply;
 import com.travelmaker.board.model.vo.TravelMaker;
 
 
-/**
- * @author KWANG8
- *
- */
 public class BoardDAO_kks {
 
 	private Statement stmt;
@@ -779,8 +775,9 @@ public class BoardDAO_kks {
 			
 			pstmt.setString(1, tm.getPlanTitle());
 			pstmt.setString(2, tm.getPlanContent());
-			pstmt.setInt(3, tm.getDateLevel());
-			pstmt.setInt(4, tm.getMemberNo());
+			pstmt.setString(3, tm.getThumbnail());
+			pstmt.setInt(4, tm.getDateLevel());
+			pstmt.setInt(5, tm.getMemberNo());
 			
 			result = pstmt.executeUpdate();
 			
@@ -818,7 +815,8 @@ public class BoardDAO_kks {
 				tm.setPlanNo( rs.getInt(1) );
 				tm.setPlanTitle( rs.getString(2) );
 				tm.setPlanContent( rs.getString(3) );
-				tm.setDateLevel( rs.getInt(4) );
+				tm.setThumbnail( rs.getString(4) );
+				tm.setDateLevel( rs.getInt(5) );
 				
 				planList.add(tm);
 				
@@ -861,7 +859,8 @@ public class BoardDAO_kks {
 				plan.setPlanNo( rs.getInt(1) );
 				plan.setPlanTitle( rs.getString(2) );
 				plan.setPlanContent( rs.getString(3) );
-				plan.setDateLevel( rs.getInt(4) );
+				plan.setThumbnail( rs.getString(4) );
+				plan.setDateLevel( rs.getInt(5) );
 				
 			}
 			
@@ -871,6 +870,64 @@ public class BoardDAO_kks {
 		}
 		
 		return plan;
+	}
+
+	/** 여행 계획 수정 DAO
+	 * @param conn
+	 * @param tm
+	 * @return result
+	 * @throws Exception
+	 */
+	public int travelUpdate(Connection conn, TravelMaker tm) throws Exception {
+		
+		int result = 0;
+		
+		try {
+			
+			String sql = prop.getProperty("updatePlan");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, tm.getPlanTitle());
+			pstmt.setString(2, tm.getPlanContent());
+			pstmt.setString(3, tm.getThumbnail());
+			pstmt.setInt(4, tm.getDateLevel());
+			pstmt.setInt(5, tm.getPlanNo());
+			
+			result = pstmt.executeUpdate();
+			
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
+	/** 여행 계획 삭제 DAO
+	 * @param conn
+	 * @param planNo
+	 * @return result
+	 * @throws Exception
+	 */
+	public int deletePlan(Connection conn, int planNo) throws Exception {
+		
+		int result = 0;
+		
+		try {
+			
+			String sql = prop.getProperty("deletePlan");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, planNo);
+			
+			result = pstmt.executeUpdate();
+			
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
 	}
 
 }

@@ -539,7 +539,22 @@ const saveBtn = document.getElementById("save-btn");
 function savePlan() {
 
     const columnContent = document.getElementById("columnContent");
+    const thumbnail = document.getElementById("thumbnail");
+    const placeImage = document.getElementsByClassName("place-image")[0].getAttribute("src");
+    const inputTitle = document.getElementById("input-title");
+
     columnContent.value = column.innerHTML.trim();
+    thumbnail.value = placeImage;
+
+    if(inputTitle.value == '') {
+        alert("제목을 입력해주세요.");
+        inputTitle.focus();
+        return false;
+    }
+
+    if(document.getElementsByClassName("list-group-item").length == 0) {
+        alert("일정을 추가해주세요.");
+    }
 
     if(confirm("일정 저장하시겠습니까?")) {
         return true;
