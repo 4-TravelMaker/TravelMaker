@@ -192,5 +192,37 @@ public class BoardDAO_phj {
 		return ctgrName;
 	}
 			
+
+	/** 북마크 상태 조회 DAO
+	 * @param conn
+	 * @param boardNo
+	 * @param memberNo
+	 * @return bookmarkCount
+	 * @throws Exception
+	 */
+	public int countBookmark(Connection conn, int boardNo, int memberNo) throws Exception {
+		
+		int bookmarkCount = 0;
+		
+		try {
+			
+			String sql = prop.getProperty("countBookmark");
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, memberNo);
+			pstmt.setInt(2, boardNo);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				bookmarkCount = rs.getInt(1);
+			}
+			
+		} finally {
+			close(pstmt);
+		}
+		
+		return bookmarkCount;
+	}
 }
 	

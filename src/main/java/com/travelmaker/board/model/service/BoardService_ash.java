@@ -295,4 +295,26 @@ public class BoardService_ash {
 		return boardNo;
 	}
 
+	
+	/** 북마크 체크 Service
+	 * @param boardNo
+	 * @param memberNo
+	 * @return result
+	 * @throws Exception
+	 */
+	public int checkedBookmark(int boardNo, int memberNo) throws Exception {
+
+		Connection conn = getConnection();
+		
+		int result = dao.checkedBookmark(conn, boardNo, memberNo);
+		
+		if(result > 0) commit(conn);
+		else		   rollback(conn);
+		
+		close(conn);
+		
+		return result;
+	}
+
+
 }

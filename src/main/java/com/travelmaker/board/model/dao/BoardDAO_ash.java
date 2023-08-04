@@ -616,4 +616,33 @@ public class BoardDAO_ash {
 		return result;
 	}
 
+	/** 북마크 체크 DAO
+	 * @param conn
+	 * @param boardNo
+	 * @param memberNo
+	 * @return result
+	 * @throws Exception
+	 */
+	public int checkedBookmark(Connection conn, int boardNo, int memberNo) throws Exception {
+		
+		int result = 0;
+		
+		try {
+
+			String sql = prop.getProperty("checkedBookmark");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, boardNo);
+			pstmt.setInt(2, memberNo);
+			
+			result = pstmt.executeUpdate();
+			
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
 }

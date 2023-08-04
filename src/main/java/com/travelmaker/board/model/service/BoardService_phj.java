@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.travelmaker.board.model.dao.BoardDAO_phj;
+import com.travelmaker.board.model.vo.Board;
 import com.travelmaker.board.model.vo.Category;
 import com.travelmaker.board.model.vo.Region;
 import com.travelmaker.board.model.vo.Reply;
@@ -64,4 +65,21 @@ public class BoardService_phj {
 		return map;
 	}
 	
+
+	/** 북마크 상태 조회 Service
+	 * @param boardNo
+	 * @param memberNo
+	 * @return bookmarkCount
+	 * @throws Exception
+	 */
+	public int countBookmark(int boardNo, int memberNo) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		int bookmarkCount = dao.countBookmark(conn, boardNo, memberNo);
+		
+		close(conn);
+		
+		return bookmarkCount;
+	}
 }

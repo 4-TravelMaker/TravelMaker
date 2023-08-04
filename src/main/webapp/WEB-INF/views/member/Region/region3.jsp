@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+<c:set var="bookmarkState" value="${bookmarkState}" />
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,10 +31,21 @@
                 <p><mark>${region.boardTitle}</mark></p>
                 <p>${region.categoryName}</p>
                 <hr>
+
+                <div class="bookmark-area">
+                    <c:if test="${bookmarkState == 'N'}">
+                        <i class="fa-regular fa-bookmark fa-2xl" id="bookmark-btn" style="color: #000000;"></i>
+                    </c:if>
+
+                    <c:if test="${bookmarkState == 'Y'}">
+                        <i class="fa-solid fa-bookmark fa-2xl" id="bookmark-btn2" style="color: #99d8c7;"></i>
+                    </c:if>
+                </div>
+                
             </section>
             <section class="like">
                 <section>
-                     <img src="${contextPath}${region.imgRename}" width="550px" height="370px">
+                    <img src="${contextPath}${region.imgRename}" width="550px" height="370px">
                 </section>
             </section>
             <section class="article">
@@ -81,7 +94,16 @@
 
         </section>
 
-      <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
+    <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
+
+    <script>
+        const contextPath = "${contextPath}";
+        const boardNo = "${param.board}";
+        const bookmarkState = "${bookmarkState}";
+    </script>
+
+
+      <script src="${contextPath}/resources/js/Region/region3.js"></script>
     </main>
 </body>
 </html>

@@ -161,4 +161,11 @@
 		READ_COUNT = ?
 		WHERE BOARD_NO = ?
 	</entry>
+	
+	<!-- 북마크 체크 -->
+	<entry key="checkedBookmark">
+		INSERT INTO BOARD_LIKE
+		VALUES(?, ?)
+	</entry>
+
 </properties>
