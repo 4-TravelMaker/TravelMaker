@@ -100,10 +100,11 @@
         const contextPath = "${contextPath}";
         const boardNo = "${param.board}";
         const bookmarkState = "${bookmarkState}";
+        const loginMember = "${loginMember}";
     </script>
 
-
-      <script src="${contextPath}/resources/js/Region/region3.js"></script>
+    <script src="${contextPath}/resources/js/Region/region3.js"></script>
+    
     </main>
 </body>
 </html>

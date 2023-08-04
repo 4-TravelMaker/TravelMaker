@@ -26,11 +26,18 @@
             <section class="left-section-btn-box">
                 <a href="${contextPath}/myPage/board?type=5">내 게시글/댓글 관리</a>
             </section>
+
+            <section class="left-section-btn-box">
+                <a href="${contextPath}/myPage/bookmark">북마크 리스트</a>
+            </section>
+
             <section class="left-section-btn-box">
                 <a href="${contextPath}/myPage/OneOnOneInquiry/list?type=6">1:1 문의</a>
             </section>
+
             <section class="left-section-btn-box">
                 <a href="${contextPath}/myPage/secession">회원 탈퇴</a>
             </section>
+
         </section>
     </section>

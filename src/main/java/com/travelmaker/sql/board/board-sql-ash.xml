@@ -168,4 +168,11 @@
 		VALUES(?, ?)
 	</entry>
 
+	<!-- 북마크 체크 해제 -->
+	<entry key="uncheckedBookmark">
+		DELETE FROM BOARD_LIKE
+		WHERE BOARD_NO = ?
+		AND MEMBER_NO = ?
+	</entry>
+	
 </properties>

@@ -35,42 +35,28 @@ public class RegionBookmarkServlet extends HttpServlet{
 
 			// 북마크 체크
 			if(command.equals("checkedBookmark")) {
-				
-				if(loginMember == null) {
-					
-					String message = "로그인 후 이용해 주세요.";
-					session.setAttribute("message", message);
-					
-					String path = contextPath + "/Region/regionDetail";
-					
-					req.getRequestDispatcher(path).forward(req, resp);
-					
-				} else {
-					
+
 					// 회원 번호와 게시글 번호 얻어오기
 					int memberNo = loginMember.getMemberNo();
 					int boardNo = Integer.parseInt(req.getParameter("boardNo"));
-
-//					// 북마크 수 조회 후 북마크 체크 여부 검사
-//					int bookmarkCount = service.countBookmark(boardNo, memberNo);
-//
-//					// 북마크 체크 여부 검사 변수 선언
-//					String bookmarkState = null;
-//					
-//					if(bookmarkCount > 0) {
-//						bookmarkState = "Y";
-//						
-//					} else {
-//						bookmarkState = "N";
-//					}
-//					
-//					req.setAttribute("bookmarkState", bookmarkState);
 					
 					// 북마크 체크
 					int result = service.checkedBookmark(boardNo, memberNo);
 
 					resp.getWriter().print(result);
 				}
+			
+			// 북마크 체크 해제
+			if(command.equals("uncheckedBookmark")) {
+				
+				// 회원 번호와 게시글 번호 얻어오기
+				int memberNo = loginMember.getMemberNo();
+				int boardNo = Integer.parseInt(req.getParameter("boardNo"));
+				
+				// 북마크 체크
+				int result = service.uncheckedBookmark(boardNo, memberNo);
+
+				resp.getWriter().print(result);
 			}
 		
 		} catch (Exception e) {
