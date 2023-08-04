@@ -28,14 +28,24 @@
 
             <div class="content">
                 <div class="planning">
-                    <button type="button" id="makePlan" onclick="location.href='${contextPath}/makePlan'">여행 계획하기</button>
+                    <button type="button" id="makePlan" onclick="location.href='${contextPath}/makePlan?mode=insert'">여행 계획하기</button>
                 </div>
-
 
                 <c:forEach var="plan" items="${planList}">
                     <div class="myPlan">
                         <div class="planImg">
-                            <img src="${contextPath}/resources/images/Region/jeju/SaebeulOreum.jpg" class="thumbnail">
+                            <c:if test="${!empty plan.thumbnail}">
+                                <a href="${contextPath}/makePlan?mode=update&no=${plan.planNo}">
+                                    <img src="${plan.thumbnail}" class="place-image2">
+                                </a>
+                            </c:if>
+                            <c:if test="${empty plan.thumbnail}">
+                                <a href="${contextPath}/makePlan?mode=update&no=${plan.planNo}">
+                                    <img src="${contextPath}/resources/images/logo.png">
+                                </a>
+                            </c:if>
+                            <span class="delete-image">&times;</span>
+                            <input type="hidden" class="planNoValue" value="${plan.planNo}">
                         </div>
                         <div class="planProfile">
                             <c:if test="${empty loginMember.profileImage}">
@@ -47,7 +57,7 @@
                             </c:if>
                         </div>
                         <div class="planTitle">
-                            <a href="${contextPath}/makePlan?no=${plan.planNo}">${plan.planTitle}</a>
+                            <a href="${contextPath}/makePlan?mode=update&no=${plan.planNo}">${plan.planTitle}</a>
                         </div>
                     </div>
                 </c:forEach>
@@ -58,5 +68,14 @@
 
     </main>
 </main>
+
+<script>
+
+    const contextPath = "${contextPath}";
+
+</script>
+
+<script src="${contextPath}/resources/js/Maker/planList.js"></script>
+
 </body>
 </html>

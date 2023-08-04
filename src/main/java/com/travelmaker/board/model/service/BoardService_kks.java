@@ -363,4 +363,42 @@ public class BoardService_kks {
 		return plan;
 	}
 
+	/** 여행 계획 수정 Service
+	 * @param tm
+	 * @return result
+	 * @throws Exception
+	 */
+	public int travelUpdate(TravelMaker tm) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		int result = dao.travelUpdate(conn, tm);
+		
+		if(result > 0)	commit(conn);
+		else			rollback(conn);
+		
+		close(conn);
+		
+		return result;
+	}
+
+	/** 여행 계획 삭제 Service
+	 * @param planNo
+	 * @return result
+	 * @throws Exception
+	 */
+	public int deletePlan(int planNo) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		int result = dao.deletePlan(conn, planNo);
+		
+		if(result > 0)	commit(conn);
+		else			rollback(conn);
+		
+		close(conn);
+		
+		return result;
+	}
+
 }

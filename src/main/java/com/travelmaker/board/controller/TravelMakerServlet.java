@@ -48,8 +48,11 @@ public class TravelMakerServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
+		String mode = req.getParameter("mode");
+		
 		String planTitle = req.getParameter("inputTitle");
 		String planContent = req.getParameter("columnContent");
+		String thumbnail = req.getParameter("thumbnail");
 		int dateLevel = Integer.parseInt(req.getParameter("dateValue"));
 		
 		HttpSession session = req.getSession();
@@ -60,25 +63,49 @@ public class TravelMakerServlet extends HttpServlet {
 		
 		tm.setPlanTitle(planTitle);
 		tm.setPlanContent(planContent);
+		tm.setThumbnail(thumbnail);
 		tm.setDateLevel(dateLevel);
 		tm.setMemberNo(memberNo);
 		
 		try {
 			
-			int result = new BoardService_kks().travelMake(tm);
-			
 			String message = null;
 			String path = null;
 			
-			if(result > 0) {
+			if(mode.equals("insert")) {
 				
-				message = "여행 계획을 저장했습니다.";
-				path = req.getContextPath();
+				int result = new BoardService_kks().travelMake(tm);
 				
-			} else {
+				if(result > 0) {
+					
+					message = "여행 계획을 저장했습니다.";
+					path = req.getContextPath() + "/planList";
+					
+				} else {
+					
+					message = "여행 계획 저장에 실패했습니다.";
+					path = req.getHeader("referer");
+				}
+
+			}
+			
+			if(mode.equals("update")) {
 				
-				message = "여행 계획 저장에 실패했습니다.";
-				path = req.getHeader("referer");
+				int planNo = Integer.parseInt(req.getParameter("no"));
+				tm.setPlanNo(planNo);
+				
+				int result = new BoardService_kks().travelUpdate(tm);
+				
+				if(result > 0) {
+					
+					message = "여행 계획을 저장했습니다.";
+					path = req.getContextPath() + "/planList";
+					
+				} else {
+					
+					message = "여행 계획 저장에 실패했습니다.";
+					path = req.getHeader("referer");
+				}
 			}
 			
 			session.setAttribute("message", message);

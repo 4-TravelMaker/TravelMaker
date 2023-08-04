@@ -26,7 +26,7 @@
         <section id="middle">
             
             <div id="left">
-                <form action="#" method="POST" onsubmit="return savePlan()">
+                <form action="makePlan" method="POST" onsubmit="return savePlan()">
 
                     <div id="title-box">
                         <div class="profile-box">
@@ -67,16 +67,15 @@
 
                         <c:if test="${!empty plan}">
                             ${plan.planContent}
-                            <!-- <div class="list-group-item" draggable="true">
-                                <img src="${contextPath}/resources/images/Admin/admin-profile.jpg" class="place-image">
-                                <h1 class="place-name">${plan.planTitle}</h1>
-                                <button type="button" class="cancelBtn pmBtn">-</button>
-                            </div> -->
                         </c:if>
 
                     </div>
 
+                    <input type="hidden" name="thumbnail" id="thumbnail">
                     <input type="hidden" name="columnContent" id="columnContent">
+                    <input type="hidden" name="mode" value="${param.mode}">
+                    <input type="hidden" name="no" value="${param.no}">
+
                     <div class="save-btn-area">
                         <button class="button-style" id="save-btn">저장</button>
                         <button type="button" class="button-style" id="reset-btn">초기화</button>
