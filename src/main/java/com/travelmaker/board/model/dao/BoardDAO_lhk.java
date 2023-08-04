@@ -66,6 +66,9 @@ public class BoardDAO_lhk {
 				board.setReadCount(rs.getInt(4));
 				board.setCategoryName(rs.getString(5));
 				board.setBoardCode(rs.getInt(6));
+				board.setBoardCategory(rs.getInt(7));
+				board.setBoardImage(rs.getString(8));
+				board.setImageLevel(rs.getInt(9));
 				
 				boardList.add(board);
 				
@@ -115,6 +118,9 @@ public class BoardDAO_lhk {
 				board.setReadCount(rs.getInt(4));
 				board.setCategoryName(rs.getString(5));
 				board.setBoardCode(rs.getInt(6));
+				board.setBoardCategory(rs.getInt(7));
+				board.setBoardImage(rs.getString(8));
+				board.setImageLevel(rs.getInt(9));
 				
 				boardList.add(board);
 				
@@ -167,6 +173,9 @@ public class BoardDAO_lhk {
 					board.setReadCount(rs.getInt(4));
 					board.setCategoryName(rs.getString(5));
 					board.setBoardCode(rs.getInt(6));
+					board.setBoardCategory(rs.getInt(7));
+					board.setBoardImage(rs.getString(8));
+					board.setImageLevel(rs.getInt(9));
 					
 					boardList.add(board);
 					
@@ -215,6 +224,9 @@ public class BoardDAO_lhk {
 				board.setReadCount(rs.getInt(4));
 				board.setCategoryName(rs.getString(5));
 				board.setBoardCode(rs.getInt(6));
+				board.setBoardCategory(rs.getInt(7));
+				board.setBoardImage(rs.getString(8));
+				board.setImageLevel(rs.getInt(9));
 				
 				boardList.add(board);
 				
