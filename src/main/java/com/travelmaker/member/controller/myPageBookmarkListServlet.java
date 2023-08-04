@@ -25,6 +25,7 @@ public class myPageBookmarkListServlet extends HttpServlet {
 		try {
 			MemberService_ash service = new MemberService_ash();
 			
+			// 북마크 리스트 조회를 위해 로그인 회원 정보 얻어오기
 			HttpSession session = req.getSession();
 			
 			Member loginMember = (Member)session.getAttribute("loginMember");
