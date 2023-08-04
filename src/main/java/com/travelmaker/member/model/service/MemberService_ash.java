@@ -4,7 +4,9 @@ import static com.travelmaker.common.JDBCTemplate.*;
 
 import java.sql.Connection;
 import java.util.List;
+import java.util.Map;
 
+import com.travelmaker.board.model.vo.Board;
 import com.travelmaker.member.model.dao.MemberDAO_ash;
 import com.travelmaker.member.model.vo.Member;
 
@@ -60,6 +62,22 @@ public class MemberService_ash {
 		close(conn);
 		
 		return result;
+	}
+
+	/** 마이페이지 - 북마크 리스트 조회 Service
+	 * @param memberNo
+	 * @return bookMarkList
+	 * @throws Exception
+	 */
+	public List<Board> selectBookmarkList(int memberNo) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		List<Board> bookMarkList = dao.selectBookmarkList(conn, memberNo);
+		
+		close(conn);
+		
+		return bookMarkList;
 	}
 	
 }

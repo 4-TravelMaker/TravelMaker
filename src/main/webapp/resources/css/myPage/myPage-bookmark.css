@@ -58,7 +58,7 @@
     font-size: 18px;
 }
 
-/* 오른쪽 영역 - 일대일 문의 조회 */
+/* 오른쪽 영역 - 북마크 리스트 조회 */
 .right-section{
     width: 900px;
 }
@@ -82,11 +82,13 @@
 /* 내용 조회 영역 */
 .bookmark-select-area{
     height: 900px;
-    border: 1px solid black;
+    margin-top: 50px;
+
     overflow: auto;
+    
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    margin-top: 50px;
+    row-gap: 130px;
 }
 
 .bookmark-area{
@@ -94,7 +96,17 @@
     height: 160px;
 
     margin-left: 50px;
-    margin-bottom: 10px;
+}
+
+.bookmark-area > a{
+    text-decoration: none;
+    color: black;
+}
+
+.bookmark-area i{
+    position: relative;
+    top: 26px;
+    left: 10px;
 }
 
 .thumbnail{
@@ -109,12 +121,23 @@
     border-radius: 10px;
 }
 
+.thumbnail > img:hover{
+    transform: translateY(-5px);
+}
+
 .bookmarkTitle{
     width: 200px;
     text-align: center;
     font-size: 20px;
     font-weight: bold;
+
+    margin-top: 10px;
 }
+
+.bookmarkTitle > span{
+    background: linear-gradient(to top, lemonchiffon 50%, transparent 50%);
+}
+
 
 /* 비밀번호 확인 프롬프트 */
 .pw-prompt {

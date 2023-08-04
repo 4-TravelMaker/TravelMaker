@@ -2,9 +2,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
-<c:set var="pagination" value="${map.pagination}"/>
-<c:set var="boardList" value="${map.boardList}"/>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,69 +34,23 @@
                 </section>
             </section>
 
+            <!-- 북마크 조회 영역 -->
             <section class="bookmark-select-area">
-                <div class="bookmark-area">
-                    <div class="thumbnail">
-                        <img src="${contextPath}/resources/images/Region/jeju/cafeTheSeason.jpg">
-                    </div>
-                    <div class="bookmarkTitle">카페 그계절</div>
-                </div>
 
-                <div class="bookmark-area">
-                    <div class="thumbnail">
-                        <img src="${contextPath}/resources/images/Region/jeju/cafeTheSeason.jpg">
+                <c:forEach var="bookmark" items="${bookMarkList}">
+                    <div class="bookmark-area">
+                        <a href="${contextPath}/Region/regionDetail?ctgr=${bookmark.parentCategoryNo}&board=${bookmark.boardNo}">
+                            <div>
+                                <i class="fa-solid fa-bookmark fa-2xl" style="color: #99d8c7;"></i>
+                            </div>
+                            <div class="thumbnail">
+                                <img src="${contextPath}${bookmark.boardImage}">
+                            </div>
+                            <div class="bookmarkTitle"><span>${bookmark.boardTitle}</span></div>
+                        </a>
                     </div>
-                    <div class="bookmarkTitle">카페 그계절</div>
-                </div>
+                </c:forEach>
 
-                <div class="bookmark-area">
-                    <div class="thumbnail">
-                        <img src="${contextPath}/resources/images/Region/jeju/cafeTheSeason.jpg">
-                    </div>
-                    <div class="bookmarkTitle">카페 그계절</div>
-                </div>
-
-                <div class="bookmark-area">
-                    <div class="thumbnail">
-                        <img src="${contextPath}/resources/images/Region/jeju/cafeTheSeason.jpg">
-                    </div>
-                    <div class="bookmarkTitle">카페 그계절</div>
-                </div>
-
-                <div class="bookmark-area">
-                    <div class="thumbnail">
-                        <img src="${contextPath}/resources/images/Region/jeju/cafeTheSeason.jpg">
-                    </div>
-                    <div class="bookmarkTitle">카페 그계절</div>
-                </div>
-
-                <div class="bookmark-area">
-                    <div class="thumbnail">
-                        <img src="${contextPath}/resources/images/Region/jeju/cafeTheSeason.jpg">
-                    </div>
-                    <div class="bookmarkTitle">카페 그계절</div>
-                </div>                
-                
-                <div class="bookmark-area">
-                    <div class="thumbnail">
-                        <img src="${contextPath}/resources/images/Region/jeju/cafeTheSeason.jpg">
-                    </div>
-                    <div class="bookmarkTitle">카페 그계절</div>
-                </div>
-
-                <div class="bookmark-area">
-                    <div class="thumbnail">
-                        <img src="${contextPath}/resources/images/Region/jeju/cafeTheSeason.jpg">
-                    </div>
-                    <div class="bookmarkTitle">카페 그계절</div>
-                </div>
-
-                <div class="bookmark-area">
-                    <div class="thumbnail">
-                        <img src="${contextPath}/resources/images/Region/jeju/cafeTheSeason.jpg">
-                    </div>
-                    <div class="bookmarkTitle">카페 그계절</div>
-                </div>
             </section>
 
         </section>
