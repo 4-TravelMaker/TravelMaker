@@ -33,5 +33,6 @@ public class Board {
 	private String categoryName; // 카테고리 이름
 	private String boardImage; // 게시글 이미지
 	private int imageLevel; // 이미지레벨
+	private int parentCategoryNo; // 부모 카테고리 번호
 	
 }
