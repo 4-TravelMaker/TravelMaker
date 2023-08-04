@@ -645,4 +645,33 @@ public class BoardDAO_ash {
 		return result;
 	}
 
+	/** 북마크 체크 해제 DAO
+	 * @param conn
+	 * @param boardNo
+	 * @param memberNo
+	 * @return result
+	 * @throws Exception
+	 */
+	public int uncheckedBookmark(Connection conn, int boardNo, int memberNo) throws Exception {
+
+		int result = 0;
+		
+		try {
+
+			String sql = prop.getProperty("uncheckedBookmark");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, boardNo);
+			pstmt.setInt(2, memberNo);
+			
+			result = pstmt.executeUpdate();
+			
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
 }

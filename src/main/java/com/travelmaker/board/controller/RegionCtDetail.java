@@ -39,24 +39,27 @@ protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws Se
 		// 북마크 기능을 위해 로그인 멤버 정보 얻어오기
 		HttpSession session = req.getSession();
 		Member loginMember = (Member)session.getAttribute("loginMember");
-		
-		// 회원 번호얻어오기
-		int memberNo = loginMember.getMemberNo();
 
-		// 북마크 수 조회 후 북마크 체크 여부 검사
-		int bookmarkCount = service.countBookmark(boardNo, memberNo);
-
-		// 북마크 체크 여부 검사 변수 선언
-		String bookmarkState = null;
-		
-		if(bookmarkCount > 0) {
-			bookmarkState = "Y";
+		if(loginMember != null) {
 			
-		} else {
-			bookmarkState = "N";
+			// 회원 번호 얻어오기
+			int memberNo = loginMember.getMemberNo();
+			
+			// 북마크 수 조회 후 북마크 체크 여부 검사
+			int bookmarkCount = service.countBookmark(boardNo, memberNo);
+			
+			// 북마크 체크 여부 검사 변수 선언
+			String bookmarkState = null;
+			
+			if(bookmarkCount > 0) {
+				bookmarkState = "Y";
+				
+			} else {
+				bookmarkState = "N";
+			}
+			
+			req.setAttribute("bookmarkState", bookmarkState);
 		}
-		
-		req.setAttribute("bookmarkState", bookmarkState);
 		
 		String path = "/WEB-INF/views/member/Region/region3.jsp";
 		
@@ -66,5 +69,10 @@ protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws Se
 	}catch(Exception e) {
 		e.printStackTrace();
 		}
+	}
+
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		doGet(req, resp);
 	}
 }

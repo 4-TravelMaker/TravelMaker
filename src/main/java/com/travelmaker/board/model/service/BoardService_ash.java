@@ -316,5 +316,25 @@ public class BoardService_ash {
 		return result;
 	}
 
+	/** 북마크 체크 해제 Service
+	 * @param boardNo
+	 * @param memberNo
+	 * @return result
+	 * @throws Exception
+	 */
+	public int uncheckedBookmark(int boardNo, int memberNo) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		int result = dao.uncheckedBookmark(conn, boardNo, memberNo);
+		
+		if(result > 0) commit(conn);
+		else		   rollback(conn);
+		
+		close(conn);
+		
+		return result;
+	}
+
 
 }
