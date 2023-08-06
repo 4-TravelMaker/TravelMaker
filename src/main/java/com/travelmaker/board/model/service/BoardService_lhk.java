@@ -1,10 +1,14 @@
 package com.travelmaker.board.model.service;
 
 import java.sql.Connection;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import com.travelmaker.board.model.dao.BoardDAO_lhk;
 import com.travelmaker.board.model.vo.Board;
+import com.travelmaker.board.model.vo.Pagination;
+
 import static com.travelmaker.common.JDBCTemplate.*;
 
 public class BoardService_lhk {
@@ -17,18 +21,29 @@ public class BoardService_lhk {
 	 * @return boardList
 	 * @throws Exception
 	 */
-	public List<Board> searchList(String searchparam) throws Exception {
+	public Map<String, Object> searchList(String searchparam, int cp) throws Exception {
 		
 		Connection conn = getConnection();
 		
-		List<Board> boardList = dao.searchList(conn,searchparam);
+		int listCount = dao.searchListCount(conn, searchparam);
+		
+		int limit = 6;
+		
+		Pagination pagination = new Pagination(cp, listCount, limit);
+		List<Board> boardList = dao.searchList(conn,searchparam , pagination );
+		
+		Map<String, Object> map = new HashMap<String, Object>();
+		
+		map.put("pagination", pagination);
+		map.put("boardList", boardList);
+		
 		
 		close(conn);
 		
 		
 		
 		
-		return boardList;
+		return map;
 	}
 
 
@@ -37,13 +52,24 @@ public class BoardService_lhk {
 	 * @throws Exception
 	 * @return boardList
 	 */
-	public List<Board> travelInfos(String searchResult) throws Exception {
+	public Map<String, Object> travelInfos(String searchparam , int cp) throws Exception {
 		
 		Connection conn = getConnection();
 		
-		List<Board> boardList = dao.travelInfos(conn,searchResult);
+		int listCount = dao.searchListCount1(conn, searchparam);
 		
-		return boardList;
+		int limit = 6;
+		
+		Pagination pagination = new Pagination(cp, listCount, limit);
+		
+		List<Board> boardList = dao.travelInfos(conn , searchparam , pagination);
+		
+		Map<String, Object> map = new HashMap<String, Object>();
+		
+		map.put("pagination", pagination);
+		map.put("boardList", boardList);
+		
+		return map;
 	}
 
 
@@ -52,13 +78,24 @@ public class BoardService_lhk {
 	 * @return boardList
 	 * @throws Exception
 	 */
-	public List<Board> travelReview(String searchResult) throws Exception {
+	public Map<String, Object> travelReview(String searchparam , int cp) throws Exception {
 		
 		Connection conn = getConnection();
 		
-		List<Board> boardList = dao.travelReview(conn,searchResult);
+		int listCount = dao.searchListCount2(conn, searchparam);
 		
-		return boardList;
+		int limit = 6;
+		
+		Pagination pagination = new Pagination(cp, listCount, limit);
+		
+		List<Board> boardList = dao.travelReview(conn,searchparam, pagination );
+		
+		Map<String, Object> map = new HashMap<String, Object>();
+		
+		map.put("pagination", pagination);
+		map.put("boardList", boardList);
+		
+		return map;
 	}
 
 
@@ -67,13 +104,24 @@ public class BoardService_lhk {
 	 * @return boardList
 	 * @throws Exception
 	 */
-	public List<Board> travelAll(String searchResult) throws Exception {
+	public Map<String, Object> travelAll(String searchparam , int cp) throws Exception {
 		
 		Connection conn = getConnection();
 		
-		List<Board> boardList = dao.travelAll(conn,searchResult);
+		int listCount = dao.searchListCount3(conn, searchparam);
 		
-		return boardList;
+		int limit = 6;
+		
+		Pagination pagination = new Pagination(cp, listCount, limit);
+		
+		List<Board> boardList = dao.travelAll(conn,searchparam,pagination);
+		
+		Map<String, Object> map = new HashMap<String, Object>();
+		
+		map.put("pagination", pagination);
+		map.put("boardList", boardList);
+		
+		return map;
 	}
 
 }

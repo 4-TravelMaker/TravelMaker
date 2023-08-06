@@ -6,6 +6,7 @@ document.getElementById("findIdButton").onclick = function(){
         memberA : $("#answer-Input").val()
     };
 
+    const span = document.getElementById("spanId");
     const nameInput = document.getElementById("nameInput");
     const numberQ = document.getElementById("ism-Select");
     const memberA = document.getElementById("answer-Input");
@@ -27,6 +28,8 @@ document.getElementById("findIdButton").onclick = function(){
             if(nameInput.value == "" || memberA.value == "" || pwQuestionNunber == '0' ){
 
                 alert("빈칸에 공란이 있으면 안됩니다");
+                span.innerText = ""
+                
 
              }  else if(result != "null"){
 

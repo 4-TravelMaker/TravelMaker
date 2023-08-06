@@ -31,7 +31,7 @@
                 </section>
                 <section class="container2">
 
-                    <h4>조회수 ${detail.readCount}</h4>
+                    <h4>조회수 ${board.readCount}</h4>
                    
                 </section>
                 <br>

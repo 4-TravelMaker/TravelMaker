@@ -6,6 +6,13 @@
 <%-- 문자열 관련 함수(메소드) 제공 JSTL (EL 형식으로 작성) --%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
+<c:set var="boardName" value="${map.boardName}" />
+<c:set var="pagination" value="${map.pagination}" />
+<c:set var="boardList" value="${map.boardList}" />
+<c:set var="imageList" value="${map.imageList}" />
+<c:set var="boardLikeList" value="${map.boardLikeList}" />
+<c:set var="replyCountList" value="${map.replyCountList}" />
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,7 +53,9 @@
                 
            </section>
 
-           <section style="height: 55px;"></section>
+           <section style="height: 11px;"></section>
+
+           <section class="allList"><strong>총<span>${pagination.listCount}</span>건</strong></section>
 
            <section class="resultArea">
 
@@ -68,8 +77,8 @@
                         
                         	
                         
-                            <li style="height: 150px; list-style: none;" >
-                                <section style="float: left;">
+                            <li style="height: 150px; list-style: none;" class="searchLists" >
+                                <section style="float: left;" class="imgSection">
 
 
                                   <c:if test= "${board.boardCode == 1}">
@@ -119,7 +128,7 @@
                                	  </c:if>
                                     
                                 </section>
-                                <section style="font-weight: bold; font-size:23px; margin-left: 130px;">
+                                <section  class="textSection">
 
                                     <c:if test= "${board.boardCode == 1 }">
                                         <a href="${contextPath}/Region/regionDetail?ctgr=${board.boardCategory}&board=${board.boardNo}">${board.boardTitle}</a>
@@ -136,6 +145,7 @@
                                 	
                                 
                                 </section>
+                                <br>
                                 <p class="categoryName">${board.categoryName}</p>
                                 <p class="readCount">조회수 : ${board.readCount}</p>                    
                             </li>
@@ -148,6 +158,37 @@
                
             
            </section>
+
+                
+              <c:if test="${!empty boardList}">
+
+
+                <section class="paginationList">
+                    <c:set var="url" value="searchList?searchParam=${param.searchParam}&travelInfo=${param.travelInfo}&cp="/>
+                    <ul class="pagination">
+                        <li><a href="${url}1">&lt;&lt;</a></li>
+                        <li><a href="${url}${pagination.prevPage}">&lt;</a></li>
+
+                        <c:forEach var="i" begin="${pagination.startPage}" end="${pagination.endPage}" step="1">
+                            
+                            <c:choose>
+                                <c:when test="${i == pagination.currentPage}">
+                                    <li><a class="current">${i}</a></li>
+                                </c:when>
+
+                                <c:otherwise>
+                                    <li><a href=${url}${i}>${i}</a></li>
+                                </c:otherwise>
+                            </c:choose>
+
+                        </c:forEach>
+
+                        <li><a href="${url}${pagination.nextPage}">&gt;</a></li>
+                        <li><a href="${url}${pagination.maxPage}">&gt;&gt;</a></li>
+                    </ul>
+                </section>
+
+            </c:if>
            
         </section>
 
@@ -163,7 +204,7 @@
     $(document).ready(function(){
         
         var travelInfo = "${travelInfo}";
-
+debugger
         if(travelInfo != null && travelInfo != ''){
             if(travelInfo == "travelInfo") {
 
@@ -204,7 +245,7 @@
                
             }
 
-            location.href="${contextPath}/board/searchLists?searchParam="+ searchParam +"&travelInfo="+ travelInfo;
+            location.href="${contextPath}/board/searchList?searchParam="+ searchParam +"&travelInfo="+ travelInfo;
 
         
 

@@ -12,6 +12,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import javax.mail.Message;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.google.gson.Gson;
+
 import com.oreilly.servlet.MultipartRequest;
 import com.travelmaker.common.MyRenamePolicy;
 import com.travelmaker.member.model.service.MemberService_lhk;
@@ -127,12 +141,8 @@ public class SignUpServlet extends HttpServlet{
     	
 		
 		
-		
-		
-		
-		
-		
-		
 	}
+	
+	
 
 }
