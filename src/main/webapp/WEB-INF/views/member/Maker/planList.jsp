@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TravelMaker</title>
-    <link rel="shortcut icon" type="image/x-icon" href="image/small_logo.png">
+    <link rel="shortcut icon" type="image/x-icon" href="${contextPath}/resources/images/Share/small_logo.png">
     <link rel="stylesheet" href="${contextPath}/resources/css/main-style.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/Maker/planList.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -72,6 +72,10 @@
 <script>
 
     const contextPath = "${contextPath}";
+
+    const loginMemberNo = "${loginMember.memberNo}";
+
+    const loginMemberProfile = "${loginMember.profileImage}";
 
 </script>
 

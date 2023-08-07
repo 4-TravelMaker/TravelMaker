@@ -261,35 +261,37 @@ columns.forEach((column) => {
 // ---------------------------------------------------------
 
 function searchText(){
-
+    
     const result = document.getElementById("result-box");
-
+    
     result.innerHTML = "";
     
     /* 이미지 영역 */
     const resultBox = document.createElement("div");
     resultBox.classList.add("result-box");
-
+    
     /* 이미지 태그 */
     const searchImg = document.createElement("img");
     searchImg.setAttribute("src", contextPath + "/resources/images/Region/jeju/aquaPlanet.jpg")
     searchImg.classList.add("place-image2");
-
+    
     /* 이미지 태그 하위로 넣기 */
     resultBox.append(searchImg);
-
+    
     const resultBox1 = document.createElement("div");
     resultBox1.classList.add("result-box1");
-
+    
     const h1Tag = document.createElement("h1");
     h1Tag.innerText = "아쿠아플라넷";
-
+    
     const h4Tag = document.createElement("h4");
     h4Tag.innerText = "한화그룹에서 운영하는 아쿠아리움. 제주특별자치도에 있는 유일한 수족관이며, 대한민국에서 가장 큰 아쿠아리움이다. 국내 최대의 수족관인 만큼 상당한 규모를 자랑하며, 지하 1층부터 지상 2층까지 총 3층 규모다. 아쿠아플라넷 제주는 해양생물 보존의 가치를 공유하며, 인간과 자연이 공생하며 느낄 수 있는 최고의 즐거움을 제공한다.";
-
+    
     resultBox1.append(h1Tag, h4Tag);
-
+    
     result.append(resultBox, resultBox1);
+
+    infowindow.setContent(result);
 }
 
 function searchText1(){
@@ -503,15 +505,11 @@ addBtn.addEventListener("click", function(){
 // 장소 제거 버튼
 const cancelBtn = document.getElementsByClassName("cancelBtn");
 
-for(let i = 0; i < cancelBtn.length; i++) {
+$(document).on("click", ".cancelBtn", function(e){
 
-    cancelBtn[i].addEventListener("click", function(){
+    this.parentElement.remove();
 
-        this.parentElement.remove();
-
-    })
-
-}
+})
 
 const resetBtn = document.getElementById("reset-btn");
 
