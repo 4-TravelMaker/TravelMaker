@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
+import com.travelmaker.board.model.vo.Board;
 import com.travelmaker.board.model.vo.Category;
 import com.travelmaker.board.model.vo.Region;
 import com.travelmaker.board.model.vo.Reply;
@@ -154,43 +155,43 @@ public class BoardDAO_phj {
 
 	
 
-	/** 카테고리 네임 DAO
-	 * @param conn
-	 * @param ctgrNo
-	 * @return ctgrName
-	 * @throws Exception
-	 */
-	public List<String> selectCtgrName(Connection conn, int ctgrNo) throws Exception{
-		
-		List<String> ctgrName = new ArrayList<>();
-		
-		String name = null;
-
-		
-		try {
-			String sql = prop.getProperty("selectCtgrName");
-			
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, ctgrNo);
-			
-			rs=pstmt.executeQuery();
-			
-			while(rs.next()) {
-				
-				name = rs.getString("CTGR_NM");
-				
-				ctgrName.add(name);
-				
-			}
-			
-			
-		}finally {
-			close(rs);
-			close(pstmt);
-		}
-		
-		return ctgrName;
-	}
+//	/** 카테고리 네임 DAO
+//	 * @param conn
+//	 * @param ctgrNo
+//	 * @return ctgrName
+//	 * @throws Exception
+//	 */
+//	public List<String> selectCtgrName(Connection conn, int ctgrNo) throws Exception{
+//		
+//		List<String> ctgrName = new ArrayList<>();
+//		
+//		String name = null;
+//
+//		
+//		try {
+//			String sql = prop.getProperty("selectCtgrName");
+//			
+//			pstmt = conn.prepareStatement(sql);
+//			pstmt.setInt(1, ctgrNo);
+//			
+//			rs=pstmt.executeQuery();
+//			
+//			while(rs.next()) {
+//				
+//				name = rs.getString("CTGR_NM");
+//				
+//				ctgrName.add(name);
+//				
+//			}
+//			
+//			
+//		}finally {
+//			close(rs);
+//			close(pstmt);
+//		}
+//		
+//		return ctgrName;
+//	}
 			
 
 	/** 북마크 상태 조회 DAO
@@ -223,6 +224,43 @@ public class BoardDAO_phj {
 		}
 		
 		return bookmarkCount;
+	}
+
+
+	/** 카테고리 이름, 게시판 번호
+	 * @param conn
+	 * @param ctgrNo
+	 * @return bList
+	 * @throws Exception
+	 */
+	public List<Board> selectCtgrName(Connection conn, int ctgrNo) throws Exception{
+		
+		List<Board> bList = new ArrayList<>();
+
+		try {
+			String sql = prop.getProperty("selectCtgrName");
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, ctgrNo);
+			
+			rs=pstmt.executeQuery();
+			
+			while(rs.next()) {
+				
+				Board board = new Board();
+				
+				board.setCategoryName(rs.getString("CTGR_NM"));
+				board.setBoardNo(rs.getInt("BOARD_NO"));
+				
+				bList.add(board);
+			}
+			
+		}finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return bList;
 	}
 }
 	

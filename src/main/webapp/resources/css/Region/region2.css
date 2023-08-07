@@ -29,11 +29,12 @@ main {
     margin-bottom: 5px;
 }
 
-.middle1-1 > section:nth-child(1){ /* 여행정보 */
+.middle1-1 > a{ /* 여행정보 */
     font-size: 30px;
     font-weight: bold;
     width: 15%;
     text-align: end;
+    text-decoration: none;
 }
 
 .middle1-1 > section:nth-child(2){ /* 서울 */
@@ -50,7 +51,7 @@ main {
     height: 55px;
 }
 
-.middle1-2>section{
+.middle1-2 section{
     border: 2px solid #ddd;
     border-radius: 10px;
     width: 70px;
@@ -59,11 +60,17 @@ main {
     height: 30px;
     font-weight: bold;
     margin-top: 12px;
+    text-decoration: none;
 }
 
-.middle1-2>section:hover{
+.middle1-2 section:hover{
     background-color: rgb(153, 216, 199);
     color: white;
+}
+
+.middle1-2 a {
+    text-decoration: none;
+    color: gray;
 }
 
 #middle-area{

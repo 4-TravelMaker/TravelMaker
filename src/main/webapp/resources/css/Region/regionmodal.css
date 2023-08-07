@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+
+.modal-area{
+    border: 1px solid gray;
+    width: 400px;
+    height: 500px;
+    border-radius: 10px;
+}
+
+#img1{
+    width: 150px;
+    height: 150px;
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+
+.title>div:nth-child(1){
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(111, 189, 111);
+}
+
+.title>div:nth-child(2){
+    margin-top: 70px;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(136, 175, 136);
+}
+.title>div:nth-child(3){
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(136, 175, 136);
+}
+
+.row1{
+    display: flex;
+}
+
+
+.row2{
+    background-color: rgba(233, 227, 227, 0.288);
+    margin-top: 10px;
+    height: 130px;
+    padding: 10px;
+}
+
+
+.row2>div:nth-child(1){
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: pink;
+}
+.row2>div:nth-child(2){
+    font-size: 13px;
+}
+
+.row3{
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.row3 img{
+    margin-top: 15px;
+    width: 120px;
+    height: 130px;
+    border-radius: 5px;
+}

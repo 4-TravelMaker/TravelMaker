@@ -29,35 +29,29 @@
                   <section class="pic-area">
                     <section class="pic-area1">
                         <section id="pic">
-                            <a href="${contextPath}/Region/ctgr?ctgr=4&name=서울">
-                                <img src="${contextPath}/resources/images/main4.png">
-                            </a>
+                                <img class="list-thumbnail" src="${contextPath}/resources/images/main4.png">
                         </section>
                         <section id="article">
-                            <p style="color:rgb(202, 73, 95)">추천! 가볼만한 곳 </p>
+                            <p style="color:rgb(202, 73, 95)">추천! 가볼만한 곳 🍨 </p>
                             <p style="color:rgb(105, 38, 49)">가볼만한 맛집을 추천합니다!</p>
                         </section>
                     </section>
                     <section class="pic-area2">
                         <section id="pic">
-                            <a href="${contextPath}/Region/ctgr?ctgr=10&name=전라도">
-                                <img src="${contextPath}/resources/images/main2.png">
-                            </a>
+                                <img class="list-thumbnail" src="${contextPath}/resources/images/main2.png">
                         </section>
                         <section id="article">
-                            <p style="color:rgb(65, 158, 107)">피크닉 하기 좋은 날!</p>
+                            <p style="color:rgb(65, 158, 107)">피크닉 하기 좋은 날! 🌷</p>
                             <p style="color:rgb(36, 88, 60)">피크닉 하기 좋은 여행지를 소개합니다!</p>
                         </section>
                     </section>
                     <section class="pic-area3">
                         <section id="pic">
-                            <a href="${contextPath}/Region/ctgr?ctgr=8&name=강원도">
-                                <img src="${contextPath}/resources/images/main6.png">
-                            </a>
+                                <img class="list-thumbnail" src="${contextPath}/resources/images/main6.png">
                         </section>
                         <section id="article">
-                            <p style="color:rgb(50, 124, 192)">여행이 있는 주말</p>
-                            <p style="color:rgb(22, 63, 100)">매월 마지막 주말은 일상에서 벗어나 여행을 떠나보세요!</p>
+                            <p style="color:rgb(50, 124, 192)">여행이 있는 주말 🌊</p>
+                            <p style="color:rgb(22, 63, 100)">매월 마지막 주말은 일상에서 벗어나 여행을 떠나보세요! </p>
                         </section>
                     </section>
               </section>
@@ -87,6 +81,11 @@
         </section>   
         
     </main>
+
+    <div class="modal">
+        <span id="modal-close">&times;</span>
+        <img id="modal-image" src="${contextPath}/resources/images/Region/picnic.PNG">
+    </div>
     
     <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 

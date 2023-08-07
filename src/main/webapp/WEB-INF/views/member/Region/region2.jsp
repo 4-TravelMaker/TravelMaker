@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<c:set var="ctgrName" value="${map.ctgrName}" />
+<c:set var="bList" value="${map.bList}" />
 <c:set var="cList" value="${map.cList}" />
 
 <!DOCTYPE html>
@@ -54,18 +54,17 @@
 
         <section id="middle5">
             <section class="middle1-1">
-                <section>여행 정보 | </section>
+               <a href="${contextPath}/Region/main" style="color: black;"><section> 여행정보 | </section></a>
                         <section>${param.name}</section>
             </section>
             <section class="middle1-2">
-                <c:forEach var="i" items="${ctgrName}">
-                        <section>${i}</section>
+                <c:forEach var="i" items="${bList}">
+                    <a href="regionDetail?ctgr=${param.ctgr}&board=${i.boardNo}">
+                        <section>${i.categoryName}</section>
                 </c:forEach>
             </section>
 
-            <hr>
-
-            
+            <hr style="color: beige;">
       
             <section id="middle-area">
 

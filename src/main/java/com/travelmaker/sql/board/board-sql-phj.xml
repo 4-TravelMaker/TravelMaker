@@ -27,8 +27,9 @@
 	
 	<!-- 카테고리 이름 조회 -->
 	<entry key="selectCtgrName">
-		SELECT DISTINCT CTGR_NM
+		SELECT DISTINCT CTGR_NM, BOARD_NO
         FROM CATEGORY
+        JOIN BOARD USING (CTGR_NO)
         WHERE PARENT_CTGR_NO = ?
 	</entry>
 	
