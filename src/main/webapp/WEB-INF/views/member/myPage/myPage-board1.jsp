@@ -32,7 +32,7 @@
             <!-- 관리자 페이지 상단 우측 제목 -->
             <section>
                 <section class="title">
-                    <i class="fa-solid fa-circle-question" style="color: #000000;"></i>
+                    <i class="fa-solid fa-user"></i>
                     &nbsp;내 게시글 관리
                 </section>
             </section>

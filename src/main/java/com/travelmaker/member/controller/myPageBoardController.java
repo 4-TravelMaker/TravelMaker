@@ -45,6 +45,17 @@ public class myPageBoardController extends HttpServlet {
 			resp.getWriter().print(result);
 			}
 			
+			
+			
+			if(command.equals("replydelete")) {
+				int replyNo = Integer.parseInt( req.getParameter("replyNo"));
+				
+				int result = service.deleteReply(replyNo);
+				
+				resp.getWriter().print(result);
+				
+			}
+			
 		}catch (Exception e) {
 			e.printStackTrace();
 		}

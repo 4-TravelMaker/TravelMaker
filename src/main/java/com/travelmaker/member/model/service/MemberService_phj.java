@@ -85,7 +85,6 @@ public class MemberService_phj {
 		map.put("pagination", pagination);
 		map.put("board", boardList);
 		
-		System.out.println(boardList);
 		
 		close(conn);
 		
@@ -165,5 +164,25 @@ public class MemberService_phj {
 		close(conn);
 		
 		return map;
+	}
+
+
+
+	/** 댓글 삭제 service
+	 * @param replyNo
+	 * @return result
+	 * @throws Exception
+	 */
+	public int deleteReply(int replyNo) throws Exception{
+		
+		Connection conn = getConnection();
+		
+		int result = dao.deleteReply(conn, replyNo);
+		
+		if(result > 0 ) commit(conn);
+		else  			rollback(conn);
+		
+		
+		return result;
 	}
 }
