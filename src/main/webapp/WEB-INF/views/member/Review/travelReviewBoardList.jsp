@@ -29,8 +29,9 @@
 
         <section id="middle">
         
-            <span class="title">여행 리뷰 게시판 <c:if test="${!empty param.key}"><span class="query-result"> - "${param.query}" 검색 결과</span></c:if></span>
-
+            <span class="title">
+                여행 리뷰 게시판<c:if test="${!empty param.key}"><span class="query-result"> - "${param.query}" 검색 결과</span></c:if>
+            </span>
             <div class="container">
 
                 <c:if test="${!empty loginMember}">
