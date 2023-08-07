@@ -23,13 +23,9 @@ import com.travelmaker.common.SHA256;
 public class authenticationServlet extends HttpServlet{
 	
 	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 		try {
-			
-			String memberEmail = req.getParameter("inputEmail");
-			
-			System.out.println(memberEmail);
 			
 			int ranCode = new SHA256().getSHA256();
 			
@@ -38,8 +34,8 @@ public class authenticationServlet extends HttpServlet{
 			String host = "http://localhost:8080/TravelMaker/";
             String from = "gksrb4000@gmail.com";
             String to = req.getParameter("inputEmail");
-            String subject = "ANIVERSE 이메일 인증 메일입니다";
-            String content = "해당 코드를 입력하여 이메일 확인을 진행하세요." +
+            String subject = "(주)TravelMaker 인증 메일 입니다.";
+            String content = "해당 코드를 입력하여 본인확인을 진행하세요." +
                           "<br>" + ranCode;
             
             
@@ -72,13 +68,12 @@ public class authenticationServlet extends HttpServlet{
             msg.setContent(content, "text/html;charset=UTF8");
             Transport.send(msg);
          
-            System.out.println("인증번호 난수 전 " + ranCode);
+            System.out.println("인증번호 난수 : " + ranCode);
             
             ranConfirm = ranCode;
             
-            System.out.println("인증번호 난수 후 " + ranCode);
             
-            
+            resp.getWriter().print(ranConfirm);
             
 			
 			

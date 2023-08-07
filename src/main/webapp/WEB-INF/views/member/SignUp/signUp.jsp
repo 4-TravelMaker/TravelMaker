@@ -48,16 +48,24 @@
                             </tr>
 
                             <tr>
-                                <td><label for="id">본인인증</label></td>
+                                <td><label for="inputEmail">본인인증</label></td>
                                 <td><input type="email" id="inputEmail" name="inputEmail" placeholder="이메일입력" autocomplete='off'></td>
-                                <td><button type="button" id="personalAuthentication" name="personalAuthentication">본인인증</button></td>
+                                <td><button type="button" id="personalAuthentication" name="personalAuthentication">인증번호 발송</button></td>
+                            </tr>
+
+                            <tr class="idcheck">
+                                <td></td>
+                                <td><span id="emailArea"></span></td>
+                                <td></td>
                             </tr>
 
                             <tr>
-                                <td><label for="id">인증번호입력</label></td>
-                                <td><input type="text" id="personalAuthenticationKey" name="personalAuthenticationKey" placeholder="인증키입력" autocomplete='off'></td>
-                                <td><button type="button" id="personalAuthentication1" name="personalAuthentication1">인증키확인</button></td>
+                                <td><label for="personalAuthenticationKey">인증번호입력</label></td>
+                                <td><input type="text" id="personalAuthenticationKey" name="personalAuthenticationKey" placeholder="인증키입력 숫자6자리" autocomplete='off' maxlength="6"></td>
+                                <td><button type="button" id="personalAuthentication1" name="personalAuthentication1">인증번호 확인</button></td>
                             </tr>
+
+
 
                             <tr>
                                 <td><label for="memberName">이름</label></td>
