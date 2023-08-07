@@ -21,7 +21,7 @@
         <jsp:include page="/WEB-INF/views/common/myPage-sideBar.jsp"/>
     
         <section class="right-section">
-            <section class="right-section-head">회원 탈퇴<hr></section>
+            <section class="right-section-head"><i class="fa-solid fa-face-sad-tear" style="color: #000000;"></i> &nbsp;회원 탈퇴<hr></section>
         
             <section class="right-section-area">
                 <div>
@@ -31,7 +31,7 @@
                 </div>
                         
                 <div>
-                    <span style="font-weight: bold;">- 사용하고 계신 아이디( ${loginMember.memberNickname} )는 탈퇴할 경우 재사용 및 복구가 불가능합니다.</span>
+                    <span style="font-weight: bold;">- 사용하고 계신 아이디( ${loginMember.memberId} )는 탈퇴할 경우 재사용 및 복구가 불가능합니다.</span>
                     <br><br>
                     <span>탈퇴한 아이디는 본인과 타인 모두 재사용 및 복구가 불가능하오니 신중하게 선택하시기 바랍니다.</span>
                     <br><br><br>

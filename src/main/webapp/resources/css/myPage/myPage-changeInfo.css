@@ -162,7 +162,7 @@ input[type="checkbox"] { /* input(checkbox 타입) 스타일 */
     width: 152px;
     height: 152px;
     margin-top: 20px;
-    border: 1px solid black;
+    border: 1px solid grey;
     border-radius: 50%;
     position: relative;
 }
