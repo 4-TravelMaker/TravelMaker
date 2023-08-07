@@ -10,7 +10,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>마이 페이지 - 내 게시글 관리</title>
+    <title>마이 페이지 - 내 게시글/댓글 관리</title>
     <link rel="shortcut icon" type="image/x-icon" href="${contextPath}/resources/images/Share/small_logo.png">
     <link rel="stylesheet" href="${contextPath}/resources/css/myPage/myPage-OneOnOneInquirySelect.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,7 +33,7 @@
             <section>
                 <section class="title">
                     <i class="fa-solid fa-user"></i>
-                    &nbsp;내 게시글 관리
+                    &nbsp;내 게시글/댓글 관리
                 </section>
             </section>
 

@@ -37,7 +37,7 @@
             <section>
                 <div class="title">
                     <i class="fa-solid fa-user"></i>
-                    &nbsp;내 게시글 관리
+                    &nbsp;내 게시글/댓글 관리
                 </div>
             </section>
 

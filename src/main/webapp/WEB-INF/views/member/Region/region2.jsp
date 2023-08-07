@@ -57,12 +57,6 @@
                <a href="${contextPath}/Region/main" style="color: black;"><section> 여행정보 | </section></a>
                         <section>${param.name}</section>
             </section>
-            <section class="middle1-2">
-                <c:forEach var="i" items="${bList}">
-                    <a href="regionDetail?ctgr=${param.ctgr}&board=${i.boardNo}">
-                        <section>${i.categoryName}</section>
-                </c:forEach>
-            </section>
 
             <hr style="color: beige;">
       
