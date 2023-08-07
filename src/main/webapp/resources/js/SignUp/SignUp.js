@@ -42,6 +42,28 @@
 
         })
 
+        // 이메일 유효성 검사
+
+        const email = document.getElementById("inputEmail");
+        const span2 = document.getElementById("emailArea");
+        const regExp4 = /^[\w-\_]{4,}@[\w-\_]+(\.\w+){1,3}/;
+
+        email.addEventListener("input",function(){
+
+            if(regExp4.test(email.value)) {
+                span2.innerHTML = "적합한 이메일 입니다."
+                span2.style.color = "green";
+                span2.style.fontWeight = "bold";
+
+            } else{
+                span2.innerHTML = "적합하지 않은 이메일입니다."
+                span2.style.color = "red";
+                span2.style.fontWeight = "bold";
+            }
+
+
+        })
+
         // 아이디 중복검사
 
 
@@ -362,6 +384,8 @@
             }).open();
         })
 
+        // 이메일 인증번호 발송
+
         const sendEmail = document.getElementById("personalAuthentication");
         const inputEmail = document.getElementById("inputEmail");
 
@@ -369,15 +393,19 @@
         const checkKey = document.getElementById("personalAuthentication1");
 
         let ranCode;
+        let checkEmail = false;
 
         sendEmail.addEventListener("click", function(){
 
-            debugger
+            
             if(inputEmail.value.trim().length == 0){
                 alert("이메일을 입력해주세요.");
                 inputEmail.focus();
-
-            }else{
+                checkEmail = false;
+            } else if(!regExp4.test(email.value)){
+                alert("이메일 유효성이 맞지않습니다");
+            }
+            else{
                 $.ajax({
                     url : "authentication",
                     data : {"inputEmail" : inputEmail.value
@@ -386,10 +414,10 @@
         
                     success : function(res){
                        
-                        if(res != 0){
+                        if(!res == 0){
                             alert("해당 이메일로 인증번호를 전송했습니다.");
                             ranCode = res;
-                           
+                            checkEmail = true;
                         }
                         
                         
@@ -398,9 +426,63 @@
                     error : function(){
                         console.log("에러발생");
                     }
+                });
+            }
+        });
+
+
+
+
+        // 인증번호 확인
+
+        let count = 0;
+
+        let checkAtNum = false;
+        
+        const email2Btn = document.getElementById("personalAuthentication1");
+
+        email2Btn.addEventListener("click", function(){
+
+            debugger
+            if(inputKey.value.trim().length == 0 ){
+                alert("인증번호를 입력해주세요");
+                inputKey.focus();
+                checkAtNum = false;
+            } else if(ranCode == null || ranCode == ''){
+                alert("이메일 인증부터 해주세요")
+                checkAtNum = false;
+            }
+            else{
+
+                $.ajax({
+                    url : "authenticationCheck",
+                    data : {"personalAuthenticationKey" : inputKey.value,
+                            "ranCode" : ranCode},
+                    type : "Post",
+                    success : function(res){
+
+                        if(res > 0){
+                            alert("인증이 완료되었습니다.");
+                            count = 1;
+                            checkAtNum = true;
+                        }else{
+                            alert("인증번호가 일치하지 않습니다.");
+                            inputKey.value = "";
+                            inputKey.focus();
+                            count = 0;
+                            checkAtNum = false;
+                        }
+                    },
+                    error : function(){
+                        console.log("에러 발생");
+                    }
                 })
             }
         })
+
+
+
+
 
         /* alert + return false 함수 */
         function print(el, msg) {
@@ -424,6 +506,19 @@
 
             if(checkId == false) {
                 return print(id, "아이디 중복 확인을 해주세요.");
+            }
+
+
+            //이메일 본인인증 체크 
+            if(checkEmail == false){
+                return print(inputEmail,"이메일 본인인증을 해주세요");
+            }
+
+            // 인증번호 체크
+
+            if(checkAtNum == false){
+                return print(inputKey,"인증번호 인증을 해주세요");
+
             }
 
             // 이름 체크
@@ -489,10 +584,13 @@
             if(pwAnswer.value == 0){
 
             alert("비밀번호 찾기 답변을 입력해주세요");
-            pwAnswer.focus();
+                pwAnswer.focus();
 
-            return false;
+                return false;
             }
+
+            
+           
 
             return true;
            
