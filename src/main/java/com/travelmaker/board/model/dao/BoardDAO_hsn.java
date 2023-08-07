@@ -142,6 +142,7 @@ public class BoardDAO_hsn {
 				board.setBoardTitle(rs.getString("BOARD_TITLE"));
 				board.setCreateDate(rs.getString("CREATE_DT"));
 				board.setReadCount(rs.getInt("READ_COUNT"));
+				board.setThumbnail(rs.getString("THUMBNAIL"));
 				
 				
 				boardList.add(board);

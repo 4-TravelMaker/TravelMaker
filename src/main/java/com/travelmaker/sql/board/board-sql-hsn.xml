@@ -21,7 +21,10 @@
 		SELECT * FROM(
 		    SELECT ROWNUM RNUM, A.* FROM(
 		        SELECT BOARD_NO, BOARD_TITLE, TO_CHAR(CREATE_DT, 'YYYY-MM-DD')AS CREATE_DT,
-		               READ_COUNT
+		               READ_COUNT,
+		               (SELECT IMG_RENAME FROM BOARD_IMG
+		               WHERE IMG_LEVEL = 0
+		               AND BOARD_IMG.BOARD_NO = BOARD.BOARD_NO) THUMBNAIL
 		        FROM BOARD
 		        WHERE BOARD_CD = ?
 		        AND BOARD_ST = 'N'
