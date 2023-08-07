@@ -34,7 +34,6 @@ public class findPwServlet extends HttpServlet{
 			
 			Member member = service.selectPw(inputId);
 			
-			
 			new Gson().toJson(member, resp.getWriter());
 			
 			
