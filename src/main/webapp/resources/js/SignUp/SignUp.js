@@ -362,6 +362,46 @@
             }).open();
         })
 
+        const sendEmail = document.getElementById("personalAuthentication");
+        const inputEmail = document.getElementById("inputEmail");
+
+        const inputKey = document.getElementById("personalAuthenticationKey");
+        const checkKey = document.getElementById("personalAuthentication1");
+
+        let ranCode;
+
+        sendEmail.addEventListener("click", function(){
+
+            debugger
+            if(inputEmail.value.trim().length == 0){
+                alert("이메일을 입력해주세요.");
+                inputEmail.focus();
+
+            }else{
+                $.ajax({
+                    url : "authentication",
+                    data : {"inputEmail" : inputEmail.value
+                           },
+                    type : "POST",
+        
+                    success : function(res){
+                       
+                        if(res != 0){
+                            alert("해당 이메일로 인증번호를 전송했습니다.");
+                            ranCode = res;
+                           
+                        }
+                        
+                        
+                    },
+        
+                    error : function(){
+                        console.log("에러발생");
+                    }
+                })
+            }
+        })
+
         /* alert + return false 함수 */
         function print(el, msg) {
             alert(msg);
@@ -457,7 +497,6 @@
             return true;
            
         }
-
 
         
 

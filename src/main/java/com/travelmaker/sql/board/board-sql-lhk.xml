@@ -107,7 +107,7 @@
 	
 	</entry>
 	
-	<!-- 지역검색카운트 -->
+	<!-- 지역 게시판 카운트 -->
 	
 	<entry key="getListCount1">
 		SELECT COUNT(A.BOARD_NO)
@@ -125,7 +125,7 @@
 	
 	</entry>
 	
-	<!-- 지역 리뷰 카운트 -->
+	<!-- 여행 리뷰 카운트 -->
 	
 	<entry key="getListCount2">
 		SELECT COUNT(A.BOARD_NO)
@@ -141,6 +141,8 @@
 				AND BOARD_CD IN (4)
 			    AND BOARD_ST = 'N') A
 	</entry>
+	
+	<!-- 전체 검색 카운트 -->
 	
 	<entry key="getListCount3">
 		SELECT COUNT(A.BOARD_NO)

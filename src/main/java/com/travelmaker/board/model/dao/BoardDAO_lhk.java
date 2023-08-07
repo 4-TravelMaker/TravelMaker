@@ -265,7 +265,7 @@ public class BoardDAO_lhk {
 		return boardList;
 	}
 
-	/** 검색어 조건수 뽑아오기
+	/** 검색어 카운트 DAO
 	 * @param conn
 	 * @param searchparam
 	 * @return listCount
@@ -306,7 +306,7 @@ public class BoardDAO_lhk {
 	}
 
 	
-	/** 여행 카운트
+	/** 여행 카운트 DAO
 	 * @param conn
 	 * @param searchparam
 	 * @return listCount
@@ -345,7 +345,7 @@ public class BoardDAO_lhk {
 		
 	}
 
-	/** 여행 리뷰 카운트
+	/** 여행 리뷰 카운트 DAO
 	 * @param conn
 	 * @param searchparam
 	 * @return listCount
