@@ -62,7 +62,14 @@
             }
 
 
-        })
+        });
+
+        // 인증번호 유효성 검사
+
+        const paInput = document.getElementById("personalAuthenticationKey");
+        const regExp5 = /^[0-9]{1,6}/;
+
+        
 
         // 아이디 중복검사
 
@@ -440,6 +447,7 @@
         let checkAtNum = false;
         
         const email2Btn = document.getElementById("personalAuthentication1");
+        
 
         email2Btn.addEventListener("click", function(){
 
@@ -451,8 +459,12 @@
             } else if(ranCode == null || ranCode == ''){
                 alert("이메일 인증부터 해주세요")
                 checkAtNum = false;
-            }
-            else{
+            } else if(!regExp5.test(paInput.value)){
+                alert("숫자로만 입력해주세요")
+                paInput.focus();
+                checkAtNum = false;
+                
+            }else{
 
                 $.ajax({
                     url : "authenticationCheck",
