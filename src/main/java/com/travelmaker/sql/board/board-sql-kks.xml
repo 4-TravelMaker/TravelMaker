@@ -217,4 +217,5 @@
 		PLAN_ST = 'Y'
 		WHERE PLAN_NO = ?
 	</entry>
+	
 </properties>
