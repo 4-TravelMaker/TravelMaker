@@ -140,15 +140,15 @@
 
         </section>
 
-        <div class="modal">
-            <span id="modal-close">&times;</span>
-            <img id="modal-image" src="${contextPath}/resources/images/user.png">
-        </div>
-
-        <script src="${contextPath}/resources/js/boardNotice/board.js"></script>
+        
         <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
     </main>
-
     
+    <div class="modal">
+        <span id="modal-close">&times;</span>
+        <img id="modal-image" src="${contextPath}/resources/images/logo.png">
+    </div>
+    
+    <script src="${contextPath}/resources/js/boardNotice/board.js"></script>
 </body>
 </html>

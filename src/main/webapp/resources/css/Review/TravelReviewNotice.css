@@ -175,7 +175,7 @@
 /* ------------------------------------------------------------------------------------------------------- */
 /* modal 화면 */
 .modal{
-    background-color: rgba(0, 0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
 
     position: fixed;
     top: 0;
@@ -190,6 +190,13 @@
 }
 
 .modal.show{
+    display: flex;
+
+    animation: show;
+    animation-duration: 0.5s;
+}
+
+.modal.hide{
     animation-name: hide;
     animation-duration: 0.5s;
 }
