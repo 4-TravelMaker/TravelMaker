@@ -102,15 +102,23 @@
                         <div id="pagination"></div>
                     </div>
                 </div>
-
-                <div id="result-area">
-                    <div id="result-box"></div>
-                    <div id="right-button">
-                        <button type="button" id="add-place">장소 추가</button>
-                    </div>
-                </div>
             </div>
         </section>
+
+        <div id="result-area">
+            <!-- <div class="result-box">
+                <img src="${contextPath}/resources/images/Region/jeju/aquaPlanet.jpg" class="place-image2">
+            </div>
+            <div class="result-box1">
+                <h1>아쿠아플라넷</h1>
+                <h4>한화그룹에서 운영하는 아쿠아리움. 제주특별자치도에 있는 유일한 수족관이며, 대한민국에서 가장 큰 아쿠아리움이다. 국내 최대의 수족관인 만큼 상당한 규모를 자랑하며, 지하 1층부터 지상 2층까지 총 3층 규모다. 아쿠아플라넷 제주는 해양생물 보존의 가치를 공유하며, 인간과 자연이 공생하며 느낄 수 있는 최고의 즐거움을 제공한다.</h4>
+                <div id="right-button">
+                    <button type="button" id="add-place" class="placeBtn">장소 추가</button>
+                    <button type="button" id="cancel-place" class="placeBtn">취소</button>
+                </div>
+            </div> -->
+        </div>
+
     <main>
         <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
     </main>

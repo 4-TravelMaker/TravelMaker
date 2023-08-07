@@ -87,13 +87,13 @@ function displayPlaces(places) {
         // 해당 장소에 인포윈도우에 장소명을 표시합니다
         // mouseout 했을 때는 인포윈도우를 닫습니다
         (function(marker, title) {
-            kakao.maps.event.addListener(marker, 'mouseover', function() {
+            /* kakao.maps.event.addListener(marker, 'mouseover', function() {
                 displayInfowindow(marker, title);
-            });
+            }); */
 
-            kakao.maps.event.addListener(marker, 'mouseout', function() {
+            /* kakao.maps.event.addListener(marker, 'mouseout', function() {
                 infowindow.close();
-            });
+            }); */
 
             kakao.maps.event.addListener(marker, 'onclick', function() {
                 test(marker, title);
@@ -103,13 +103,13 @@ function displayPlaces(places) {
                 test(marker, title);
             };
 
-            itemEl.onmouseover =  function () {
+            /* itemEl.onmouseover =  function () {
                 displayInfowindow(marker, title);
-            };
+            }; */
 
-            itemEl.onmouseout =  function () {
+            /* itemEl.onmouseout =  function () {
                 infowindow.close();
-            };
+            }; */
         })(marker, places[i].place_name);
 
         fragment.appendChild(itemEl);
@@ -217,29 +217,7 @@ function displayInfowindow(marker, title) {
 }
 
 function test(marker, title) {
-    const info = document.getElementsByClassName("info");
-    const result = document.getElementById("result-box");
-    
-    if(title == "아쿠아플라넷 제주") {
-        searchText();
-    }
-    
-    if(title == "협재해수욕장") {
-        searchText1();
-    }
-
-    if(title == "그계절") {
-        searchText2();
-    }
-
-    if(title == "아르떼뮤지엄 제주") {
-        searchText3();
-    }
-
-    if(title == "목장카페드르쿰다") {
-        searchText4();
-    }
-    
+    searchText(title);
 }
 
 // 검색결과 목록의 자식 Element를 제거하는 함수입니다
@@ -260,11 +238,10 @@ columns.forEach((column) => {
 });
 // ---------------------------------------------------------
 
-function searchText(){
+function searchText(title){
     
-    const result = document.getElementById("result-box");
-    
-    result.innerHTML = "";
+    const resultArea = document.getElementById("result-area");
+    resultArea.innerHTML = "";
     
     /* 이미지 영역 */
     const resultBox = document.createElement("div");
@@ -272,7 +249,21 @@ function searchText(){
     
     /* 이미지 태그 */
     const searchImg = document.createElement("img");
-    searchImg.setAttribute("src", contextPath + "/resources/images/Region/jeju/aquaPlanet.jpg")
+    if(title == "아쿠아플라넷 제주") {
+        searchImg.setAttribute("src", contextPath + "/resources/images/Region/jeju/aquaPlanet.jpg");
+    }
+    if(title == "협재해수욕장") {
+        searchImg.setAttribute("src", contextPath + "/resources/images/Region/jeju/han.jpg");
+    }
+    if(title == "그계절") {
+        searchImg.setAttribute("src", contextPath + "/resources/images/Region/jeju/cafeTheSeason.jpg");
+    }
+    if(title == "아르떼뮤지엄 제주") {
+        searchImg.setAttribute("src", contextPath + "/resources/images/Region/jeju/ArteMuseum.jpg");
+    }
+    if(title == "목장카페드르쿰다") {
+        searchImg.setAttribute("src", contextPath + "/resources/images/Region/jeju/delekoomada.jpg");
+    }
     searchImg.classList.add("place-image2");
     
     /* 이미지 태그 하위로 넣기 */
@@ -282,145 +273,64 @@ function searchText(){
     resultBox1.classList.add("result-box1");
     
     const h1Tag = document.createElement("h1");
-    h1Tag.innerText = "아쿠아플라넷";
-    
-    const h4Tag = document.createElement("h4");
-    h4Tag.innerText = "한화그룹에서 운영하는 아쿠아리움. 제주특별자치도에 있는 유일한 수족관이며, 대한민국에서 가장 큰 아쿠아리움이다. 국내 최대의 수족관인 만큼 상당한 규모를 자랑하며, 지하 1층부터 지상 2층까지 총 3층 규모다. 아쿠아플라넷 제주는 해양생물 보존의 가치를 공유하며, 인간과 자연이 공생하며 느낄 수 있는 최고의 즐거움을 제공한다.";
-    
-    resultBox1.append(h1Tag, h4Tag);
-    
-    result.append(resultBox, resultBox1);
-
-    infowindow.setContent(result);
-}
-
-function searchText1(){
-
-    const result = document.getElementById("result-box");
-
-    result.innerHTML = "";
-    
-    /* 이미지 영역 */
-    const resultBox = document.createElement("div");
-    resultBox.classList.add("result-box");
-
-    /* 이미지 태그 */
-    const searchImg = document.createElement("img");
-    searchImg.setAttribute("src", contextPath + "/resources/images/Region/jeju/han.jpg")
-    searchImg.classList.add("place-image2");
-
-    /* 이미지 태그 하위로 넣기 */
-    resultBox.append(searchImg);
-
-    const resultBox1 = document.createElement("div");
-    resultBox1.classList.add("result-box1");
-
-    const h1Tag = document.createElement("h1");
-    h1Tag.innerText = "협재해수욕장";
+    if(title == "아쿠아플라넷 제주") {
+        h1Tag.innerText = "아쿠아플라넷";
+    }
+    if(title == "협재해수욕장") {
+        h1Tag.innerText = "협재해수욕장";
+    }
+    if(title == "그계절") {
+        h1Tag.innerText = "그계절";
+    }
+    if(title == "아르떼뮤지엄 제주") {
+        h1Tag.innerText = "아르떼뮤지엄 제주";
+    }
+    if(title == "목장카페드르쿰다") {
+        h1Tag.innerText = "목장카페드르쿰다";
+    }
 
     const h4Tag = document.createElement("h4");
-    h4Tag.innerText = "협재해수욕장은 제주시 서쪽 32km 거리의 한림공원에 인접해 있다. 조개껍질 가루가 많이 섞인 백사장과 앞 바다에 떠 있는 비양도, 코발트 빛깔의 아름다운 바다와 울창한 소나무 숲이 한데 어우러진 풍광이 매우 아름답다. 백사장의 길이 약 200m, 폭은 60m, 평균수심 1.2m, 경사도 3~8도로서 수심이 얕고 경사가 완만하여 가족 단위의 해수욕장으로 적합하다. 또한 각종 편의시설이 잘 갖추어져 있으며 소나무 숲에서는 야영도 가능하다. 이 해수욕장의 남서쪽 해안은 금릉해수욕장과 이어져 있는데, 주민들은 두 해변을 합쳐 협재해수욕장이라고도 부른다.";
+    if(title == "아쿠아플라넷 제주") {
+        h4Tag.innerText = "한화그룹에서 운영하는 아쿠아리움. 제주특별자치도에 있는 유일한 수족관이며, 대한민국에서 가장 큰 아쿠아리움이다. 국내 최대의 수족관인 만큼 상당한 규모를 자랑하며, 지하 1층부터 지상 2층까지 총 3층 규모다. 아쿠아플라넷 제주는 해양생물 보존의 가치를 공유하며, 인간과 자연이 공생하며 느낄 수 있는 최고의 즐거움을 제공한다.";
+    }
+    if(title == "협재해수욕장") {
+        h4Tag.innerText = "협재해수욕장은 제주시 서쪽 32km 거리의 한림공원에 인접해 있다. 조개껍질 가루가 많이 섞인 백사장과 앞 바다에 떠 있는 비양도, 코발트 빛깔의 아름다운 바다와 울창한 소나무 숲이 한데 어우러진 풍광이 매우 아름답다. 또한 수심이 얕고 경사가 완만하여 가족 단위의 해수욕장으로 적합하다.";
+        h4Tag.style.marginBottom = "30px";
+    }
+    if(title == "그계절") {
+        h4Tag.innerText = "제주 동쪽 구좌읍에 위치한 카페 ‘그계절’, 카페에 들어서면 수많은 초록 식물들이 싱그러움을 뽐내며 반겨준다. 창문 틈새로 햇빛이 들어오면 마치 숲 속에 있는 듯한 느낌을 받아서 괜히 기분이 상쾌해지고 좋아진다. 무화과 토스트의 맛이 일품이니 꼭 한번 맛보기를 추천한다.";
+        h4Tag.style.marginBottom = "30px";
+    }
+    if(title == "아르떼뮤지엄 제주") {
+        h4Tag.innerText = "아르떼 뮤지엄은 디스트릭트가 2020년 9월말 제주 애월에서 선보인 첫 번째 몰입형 미디어아트 전시관이다. 과거 스피커 제조 공장으로 사용되던 바닥 면적 1,400평, 최대 10M 높이에 육박하는 웅장한 공간을 업사이클링하여 선보인 아르떼뮤지엄 제주에서는 섬을 컨셉으로 빛과 소리로 만들어진 11개의 다채로운 미디어아트 전시가 펼쳐진다.";
+    }
+    if(title == "목장카페드르쿰다") {
+        h4Tag.innerText = "목장 카페 드르쿰다는 제주도의 넓은 들판을 바라보며 커피를 마실 수 있는 탁 트인 실내공간과 승마와 카트, 동물 먹이 주기 체험 등을 모두 한 곳에서 할 수 있는 올인원 카페이다. 실외에는 넓고 푸른 초원 위에 다양한 소품들이 있어서 구석구석이 포토존으로, 어디서 사진을 찍던 멋진 인생 사진을 찍을 수 있다.";
+    }
 
-    resultBox1.append(h1Tag, h4Tag);
-
-    result.append(resultBox, resultBox1);
-}
-
-function searchText2(){
-
-    const result = document.getElementById("result-box");
-
-    result.innerHTML = "";
+    const rightButton = document.createElement("div");
+    rightButton.setAttribute("id", "right-button");
     
-    /* 이미지 영역 */
-    const resultBox = document.createElement("div");
-    resultBox.classList.add("result-box");
+    const addPlace = document.createElement("button");
+    addPlace.setAttribute("type" , "button");
+    addPlace.setAttribute("id", "add-place");
+    addPlace.classList.add("placeBtn");
+    addPlace.innerHTML = "장소 추가";
 
-    /* 이미지 태그 */
-    const searchImg = document.createElement("img");
-    searchImg.setAttribute("src", contextPath + "/resources/images/Region/jeju/cafeTheSeason.jpg")
-    searchImg.classList.add("place-image2");
-
-    /* 이미지 태그 하위로 넣기 */
-    resultBox.append(searchImg);
-
-    const resultBox1 = document.createElement("div");
-    resultBox1.classList.add("result-box1");
-
-    const h1Tag = document.createElement("h1");
-    h1Tag.innerText = "그계절";
-
-    const h4Tag = document.createElement("h4");
-    h4Tag.innerText = "제주 동쪽 구좌읍에 위치한 카페 ‘그계절’, 카페에 들어서면 수많은 초록 식물들이 싱그러움을 뽐내며 반겨준다. 창문 틈새로 햇빛이 들어오면 마치 숲 속에 있는 듯한 느낌을 받아서 괜히 기분이 상쾌해지고 좋아진다. 무화과 토스트의 맛이 일품이니 꼭 한번 맛보기를 추천한다.";
-
-    resultBox1.append(h1Tag, h4Tag);
-
-    result.append(resultBox, resultBox1);
-}
-
-function searchText3(){
-
-    const result = document.getElementById("result-box");
-
-    result.innerHTML = "";
+    const cancelBtn = document.createElement("button");
+    cancelBtn.setAttribute("type", "button");
+    cancelBtn.setAttribute("id", "cancel-place");
+    cancelBtn.classList.add("placeBtn");
+    cancelBtn.innerHTML = "취소";
     
-    /* 이미지 영역 */
-    const resultBox = document.createElement("div");
-    resultBox.classList.add("result-box");
-
-    /* 이미지 태그 */
-    const searchImg = document.createElement("img");
-    searchImg.setAttribute("src", contextPath + "/resources/images/Region/jeju/ArteMuseum.jpg")
-    searchImg.classList.add("place-image2");
-
-    /* 이미지 태그 하위로 넣기 */
-    resultBox.append(searchImg);
-
-    const resultBox1 = document.createElement("div");
-    resultBox1.classList.add("result-box1");
-
-    const h1Tag = document.createElement("h1");
-    h1Tag.innerText = "아르떼뮤지엄";
-
-    const h4Tag = document.createElement("h4");
-    h4Tag.innerText = "아르떼 뮤지엄은 디스트릭트가 2020년 9월말 제주 애월에서 선보인 첫 번째 몰입형 미디어아트 전시관이다. 과거 스피커 제조 공장으로 사용되던 바닥 면적 1,400평, 최대 10M 높이에 육박하는 웅장한 공간을 업사이클링하여 선보인 아르떼뮤지엄 제주에서는 섬을 컨셉으로 빛과 소리로 만들어진 11개의 다채로운 미디어아트 전시가 펼쳐진다.";
-
-    resultBox1.append(h1Tag, h4Tag);
-
-    result.append(resultBox, resultBox1);
-}
-
-function searchText4(){
-
-    const result = document.getElementById("result-box");
-
-    result.innerHTML = "";
+    rightButton.append(addPlace, cancelBtn);
     
-    /* 이미지 영역 */
-    const resultBox = document.createElement("div");
-    resultBox.classList.add("result-box");
+    resultBox1.append(h1Tag, h4Tag, rightButton);
 
-    /* 이미지 태그 */
-    const searchImg = document.createElement("img");
-    searchImg.setAttribute("src", contextPath + "/resources/images/Region/jeju/delekoomada.jpg")
-    searchImg.classList.add("place-image2");
-
-    /* 이미지 태그 하위로 넣기 */
-    resultBox.append(searchImg);
-
-    const resultBox1 = document.createElement("div");
-    resultBox1.classList.add("result-box1");
-
-    const h1Tag = document.createElement("h1");
-    h1Tag.innerText = "목장카페드르쿰다";
-
-    const h4Tag = document.createElement("h4");
-    h4Tag.innerText = "제주 속의 또 다른 제주를 느낄 수 있는 목장 카페 드르쿰다는 제주도의 넓은 들판을 바라보며 커피를 마실 수 있는 탁 트인 실내공간과 승마와 카트, 동물 먹이 주기 체험 등을 모두 한 곳에서 할 수 있는 올인원 카페이다. 실외에는 넓고 푸른 초원 위에 다양한 소품들이 있어서 구석구석이 포토존으로, 어디서 사진을 찍던 멋진 인생 사진을 찍을 수 있다. 또한 세상에 하나뿐인 자전거를 마음껏 탈 수 있는 공간도 마련되어 있다. 36개월 아이가 탈 수 있는 체험 승마부터 성인을 위한 장거리 승마까지 준비되어 있어 남녀노소 즐길 거리, 먹을거리가 가득하다.";
-
-    resultBox1.append(h1Tag, h4Tag);
-
-    result.append(resultBox, resultBox1);
+    resultArea.append(resultBox, resultBox1);
+    resultArea.style.display = "flex";
 }
+
 
 // 일수 추가 버튼
 const plusBtn = document.getElementById("plus");
@@ -466,23 +376,15 @@ minusBtn.addEventListener("click", function(){
 })
 
 // 장소 추가 버튼 이벤트
-const addBtn = document.getElementById("add-place");
-addBtn.addEventListener("click", function(){
-    
-    const resultBox = document.getElementById("result-box");
-    
-    if(resultBox.innerHTML == '') {
-        alert("장소를 선택 후 버튼을 클릭해주세요.");
-        return;
-    }
+$(document).on("click", "#add-place", function(e){
     
     const column = document.getElementsByClassName("column")[0];
     const div = document.createElement("div");
     div.classList.add("list-group-item");
     div.setAttribute("draggable", "true");
     
-    const img = document.getElementById("result-box").children[0].children[0];
-    const placeName = document.getElementById("result-box").children[1].children[0];
+    const img = document.getElementsByClassName("result-box")[0].children[0];
+    const placeName = document.getElementsByClassName("result-box1")[0].children[0];
     
     const button = document.createElement("button");
     button.setAttribute("type", "button");
@@ -498,13 +400,23 @@ addBtn.addEventListener("click", function(){
     
     column.append(div);
     
-    resultBox.innerHTML = "";
+    const resultArea = document.getElementById("result-area");
+    resultArea.innerHTML = "";
+    resultArea.style.display = "none";
 
 })
 
-// 장소 제거 버튼
-const cancelBtn = document.getElementsByClassName("cancelBtn");
+// 취소 버튼
+$(document).on("click", "#cancel-place", function(e){
 
+    const resultArea = document.getElementById("result-area");
+    resultArea.innerHTML = "";
+    resultArea.style.display = "none";
+
+})
+
+
+// 장소 제거 버튼
 $(document).on("click", ".cancelBtn", function(e){
 
     this.parentElement.remove();
