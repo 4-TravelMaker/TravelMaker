@@ -12,7 +12,11 @@ function selectReplyList() {
             const replyArea = document.getElementById("reply-area");
 
             replyArea.innerHTML = "";
-
+            
+            const replyCount = document.getElementsByClassName("reply-name")[0];
+            replyCount.innerHTML = "";
+            replyCount.innerHTML = "댓글 " + replyList.length;
+            
             for(let reply of replyList) {
 
                 // <div id=reply></div>

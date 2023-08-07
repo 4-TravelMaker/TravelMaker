@@ -110,16 +110,18 @@ public class TravelReviewBoardWriteController extends HttpServlet {
 				
 				int boardNo = service.insertBoard(detail, imageList, boardCode);
 				
+				int cp = Integer.parseInt( mpReq.getParameter("cp") );
+				
 				String path = null;
 				
 				if(boardNo > 0) { // 성공
 					session.setAttribute("message", "게시글이 등록되었습니다.");
 					// detail?no=2000&type=2
-					path = "detail?no=" + boardNo + "&type=" + boardCode;
+					path = "detail?no=" + boardNo + "&type=" + boardCode + "&cp=" + cp;
 					
 				} else { // 실패
 					session.setAttribute("message", "게시글 등록 실패");
-					path = "write?mode=" + mode + "&type=" + boardCode;
+					path = "write?mode=" + mode + "&type=" + boardCode + "&cp=" + cp;
 				}
 				
 				resp.sendRedirect(path);

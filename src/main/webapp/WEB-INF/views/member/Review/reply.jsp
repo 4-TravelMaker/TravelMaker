@@ -9,7 +9,6 @@
         <div class="reply-name">댓글 ${replyList.size()}</div>
     </div>
 
-    <c:if test="${!empty replyList}">
         <div id="reply-area">
         <c:forEach var="reply" items="${replyList}">
             <div class="reply">
@@ -41,7 +40,6 @@
             </div>
         </c:forEach>
         </div>
-    </c:if>
     <c:if test="${!empty loginMember}">
         <div class="reply textarea">
             <div class="reply-textarea-style">
