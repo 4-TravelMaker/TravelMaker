@@ -49,8 +49,14 @@
 
                             <tr>
                                 <td><label for="id">본인인증</label></td>
-                                <td><input type="email" id="email" name="emial" placeholder="이메일입력" autocomplete='off'></td>
-                                <td><button type="button" id="id-check" name="idDubcheck" >본인인증</button></td>
+                                <td><input type="email" id="inputEmail" name="inputEmail" placeholder="이메일입력" autocomplete='off'></td>
+                                <td><button type="button" id="personalAuthentication" name="personalAuthentication">본인인증</button></td>
+                            </tr>
+
+                            <tr>
+                                <td><label for="id">인증번호입력</label></td>
+                                <td><input type="text" id="personalAuthenticationKey" name="personalAuthenticationKey" placeholder="인증키입력" autocomplete='off'></td>
+                                <td><button type="button" id="personalAuthentication1" name="personalAuthentication1">인증키확인</button></td>
                             </tr>
 
                             <tr>
