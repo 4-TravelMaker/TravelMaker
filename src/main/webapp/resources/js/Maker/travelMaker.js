@@ -339,7 +339,7 @@ const date = document.getElementById("date");
 let dateValue = document.getElementById("date-value");
 const column = document.getElementsByClassName("column")[0];
 
-plusBtn.addEventListener("click", function(){
+$(document).on("click", "#plus" ,function(){
 
     if(dateValue.value != 5) {
         
@@ -428,17 +428,15 @@ const resetBtn = document.getElementById("reset-btn");
 // 초기화 버튼 클릭 이벤트
 resetBtn.addEventListener("click", function(){
 
-    console.log("test");
-
     column.innerHTML = "";
 
-    dateValue = 1;
+    dateValue.value = 1;
     
-    date.innerText = (dateValue - 1) + "박 " + (dateValue) + "일";
+    date.innerText = (dateValue.value - 1) + "박 " + (dateValue.value) + "일";
     
     const h1 = document.createElement("h1");
-    h1.innerText = (dateValue) + "일차";
-    h1.classList.add("h1-" + dateValue);
+    h1.innerText = (dateValue.value) + "일차";
+    h1.classList.add("h1-" + dateValue.value);
     
     column.append(h1);
     
