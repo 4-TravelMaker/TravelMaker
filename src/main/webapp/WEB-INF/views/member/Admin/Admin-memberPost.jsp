@@ -47,7 +47,7 @@
                 <section>
                     <section class="search-area">
                         <form action="list" method="get" id="boardSearch" onsubmit="return searchValidate()">
-                            <input type="text" placeholder="닉네임 입력" id="member-search" name="query2">
+                            <input type="text" placeholder="아이디 입력" id="member-search" name="query2">
                             <input type="hidden" name="type" value="${param.type}">
                             <button type="submit" id="searchBtn">검색</button>
                         </form>
