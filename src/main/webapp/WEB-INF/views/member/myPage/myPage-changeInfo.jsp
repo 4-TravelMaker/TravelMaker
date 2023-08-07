@@ -24,7 +24,7 @@
     <jsp:include page="/WEB-INF/views/common/myPage-sideBar.jsp"/>
 
     <section class="right-section">
-        <section class="right-section-head">회원 정보 수정<hr></section>
+        <section class="right-section-head"><i class="fa-solid fa-face-smile" style="color: #000000;"></i>&nbsp; 회원 정보 수정<hr></section>
         <section class="right-section-area">
             <form action="changeInfo" enctype="multipart/form-data" method="POST" onsubmit="return validate()">
                 <table>
