@@ -121,3 +121,32 @@ const updateContentValue = document.getElementsByClassName("content-style")[0].v
         } 
     });
 }
+
+function deleteReply(replyNo, btn){
+
+    if( confirm("정말로 삭제 하시겠습니까?") ){
+
+        $.ajax({
+            url : contextPath + "/myPage/board-detail/replydelete",
+            data : {"replyNo" : replyNo},
+            type : "GET",
+            success : function(result){
+
+                if(result > 0){ 
+                    alert("삭제 되었습니다.");
+                    location.reload();                
+    
+                } else{ // 실패
+                    alert("댓글 삭제에 실패했습니다..");
+                }
+
+            },
+            error : function(req, status, error){
+                console.log("댓글 삭제 실패");
+                console.log(req.responseText);
+            }
+        });
+    }
+}
+
+

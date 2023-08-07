@@ -36,7 +36,7 @@
             
             <section>
                 <div class="title">
-                    <i class="fa-solid fa-circle-question" style="color: #000000;"></i>
+                    <i class="fa-solid fa-user"></i>
                     &nbsp;내 게시글 관리
                 </div>
             </section>
@@ -68,7 +68,7 @@
             <section class="customer-inquiry2">
                 <c:forEach var="reply" items="${rList}">
                     <section class="memberNick">${reply.memberNickName}<span id="cd">(  ${reply.createDate} )</span></section>
-                    <section class="updateContent-content2"> ${reply.replyContent}</section>
+                    <section class="updateContent-content2"><i class="fa-regular fa-comment-dots" id="reply"></i><span> ${reply.replyContent}</span><span><button onclick="deleteReply(${reply.replyNo})" id="deleteBtn2">삭제</button></span></section>
                 </c:forEach>
             </section>
 

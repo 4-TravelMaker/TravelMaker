@@ -74,6 +74,14 @@
 		FROM REPLY
 		JOIN MEMBER USING(MEMBER_NO)
 		WHERE BOARD_NO = ?
+		AND REPLY_ST = 'N'
+	</entry>
+	
+	<!-- 댓글 삭제 -->
+	<entry key="deleteReply">
+		UPDATE REPLY SET
+		REPLY_ST = 'Y'
+		WHERE REPLY_NO = ?
 	</entry>
 
 

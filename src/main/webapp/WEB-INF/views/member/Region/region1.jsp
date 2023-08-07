@@ -71,7 +71,7 @@
            <section class="middle2">
             <section class="map-area">
                 <img src="${contextPath}/resources/images/Region/map2.PNG">
-                <span id="SEOUL" class="region"><a href="ctgr?ctgr=4&name=서울" style = "color:rgba(93, 68, 233, 0.5)" >서울</a></span>
+                <span id="SEOUL" class="region"><a href="ctgr?ctgr=4&name=서울" style = "color:rgba(55, 42, 134, 0.74)" >서울</a></span>
                 <span id="KKD" class="region"><a href="ctgr?ctgr=7&name=경기도" style = "color:rgb(223, 161, 28)">경기도</a></span>
                 <span id="kW" class="region"><a href="ctgr?ctgr=8&name=강원도" style = "color:rgb(202, 73, 95)">강원도</a></span>
                 <span id="JB" class="region"><a href="ctgr?ctgr=10&name=전라도" style = "color: rgb(136, 17, 136)">전라북도</a></span>

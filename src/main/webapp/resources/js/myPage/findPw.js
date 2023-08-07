@@ -31,7 +31,7 @@ findButton.addEventListener("click", function(){
                 inpuutAnswer.focus();
             }
         },
-        error : function(req, status, error){
+        error : function(req){
             console.log("에러발생");
             console.log(req.responseText);
         }
@@ -44,6 +44,8 @@ let count = 0;
 
 document.getElementById("confirm").addEventListener("click", function(){
 
+    count = 1;
+
     const newPw = document.getElementById("edit-input1"); /* 수정할 비밀번호 */
     const pwConfirm = document.getElementById("edit-input"); /* 비밀번호 확인 */
 
@@ -53,15 +55,16 @@ document.getElementById("confirm").addEventListener("click", function(){
     if(newPw.value != pwConfirm.value){
         confirmArea.innerHTML = "비밀번호가 일치하지 않습니다. <br> 다시 확인해주세요"
         confirmArea.style.color = 'red';
+        return false;
+
     }else{
         confirmArea.innerHTML = "비밀번호가 일치합니다. 수정 가능합니다."
         confirmArea.style.color = 'green';
+        return true;
+
     }
-
-
-    count = 1;
-
 })
+
 
 cancelBtn.addEventListener("click", function(){
 
@@ -81,7 +84,6 @@ function changePwValidate(){
         alert("비밀번호 확인을 먼저 해주세요");
         return false;
     }
-    return true;
 }
 
 

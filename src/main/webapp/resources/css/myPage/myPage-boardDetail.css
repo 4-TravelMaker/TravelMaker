@@ -320,9 +320,16 @@
     border-left: 1px solid #ddd;
     border-right: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
-
 }
 
+.updateContent-content2>span:nth-child(2){
+    width: 90%;
+    text-align:left;
+}
+
+.updateContent-content2>span:nth-child(3){
+    width: 15%;
+}
 .memberNick{
     height: 35px;
     padding-left: 20px;
@@ -339,5 +346,30 @@
     margin-left: 15px;
     font-size: 10px;
     color: gray;
+}
 
+#reply{
+    margin-right: 5px;
+}
+
+#deleteBtn2{
+    margin-left: 10px;
+    height: 25px;
+    width: 80px;
+
+    border: none;
+    border-radius: 5px;
+
+    background-color: #ddd;
+    color: white;
+    font-size: 15px;
+
+    cursor: pointer;
+}
+
+#deleteBtn2:hover{
+    background-color: black;
+    color: white;
+
+    transition-duration: 1s;  
 }

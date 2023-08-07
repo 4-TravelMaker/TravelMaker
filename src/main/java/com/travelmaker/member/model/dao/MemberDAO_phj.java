@@ -133,6 +133,7 @@ public class MemberDAO_phj {
 				listCount = rs.getInt(1);
 			}
 			
+			
 		}finally {
 			close(rs);
 			close(pstmt);
@@ -186,7 +187,6 @@ public class MemberDAO_phj {
 			close(pstmt);
 		}
 		
-		System.out.println("리스트 : " + boardList);
 		
 		return boardList;
 	}
@@ -326,5 +326,33 @@ public class MemberDAO_phj {
 			}
 		
 		return rList;
+	}
+
+
+	/** 댓글 삭제 DAO
+	 * @param conn
+	 * @param replyNo
+	 * @return result
+	 * @throws Exception
+	 */
+	public int deleteReply(Connection conn, int replyNo) throws Exception{
+		
+		int result = 0;
+		
+		try {
+			
+			String sql = prop.getProperty("deleteReply");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, replyNo);
+			
+			result = pstmt.executeUpdate();
+			
+			
+		}finally {
+			close(pstmt);
+		}
+		return result;
 	}
 }
