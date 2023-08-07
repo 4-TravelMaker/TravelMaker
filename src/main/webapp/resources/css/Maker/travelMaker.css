@@ -50,7 +50,7 @@
 }
 
 .pmBtn {
-    width: 23px;
+    width: 29px;
     height: 29px;
     background-color: black;
     border-radius: 15%;
@@ -104,13 +104,6 @@
     margin-right: 10px;
 }
 
-.result-box {
-    width: 50%;
-    height: 50%;
-    border-radius: 15px;
-    text-align: start;
-}
-
 #right-button {
     height: 10%;
     display: flex;
@@ -120,28 +113,28 @@
 }
 
 #add-place {
-    background-color: rgb(153, 216, 199);
+    background-color: #ddd;
     border: 0;
-    color: white;
     width: 120px;
     height: 50px;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 18px;
     border-radius: 15px;
     cursor: pointer;
 }
 
 .save-btn-area {
     height: 10%;
-    margin: 20px 10px;
+    margin-top: 24px;
+    padding-bottom: 20px;
     display: flex;
     justify-content: center;
+    border-bottom: 1px solid #ddd;
 }
 
 .button-style {
-    background-color: rgb(153, 216, 199);
+    background-color: #ddd;
     border: 0;
-    color: white;
     width: 120px;
     height: 50px;
     font-weight: bold;
@@ -198,20 +191,22 @@
 .column {
     width: 100%;
     height: 950px;
-    background: rgb(153, 216, 199);
     padding: 5px;
     overflow-y: auto;
-    border-radius: 15px;
+    border-top: 1px solid #ddd;
 }
 
 .column > h1 {
     text-align: center;
     font-size: 22px;
-    color: white;
+    border-radius: 5px;
+    margin: 10px 20px;
+    padding: 5px 0;
+    background: #ddd;
 }
 
 .list-group-item {
-    background: #fff;
+    background: #eee;
     margin: 20px;
     padding: 20px;
     border-radius: 5px;

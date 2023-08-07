@@ -66,6 +66,17 @@
     bottom: 180px;
     left: 378px;
     cursor: pointer;
+    background-color: black;
+    color: white;
+    height: 16px;
+    width: 16px;
+    margin-top: 4px;
+    font-weight: bold;
+    font-size: 15px;
+    border-radius: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .profile-img {

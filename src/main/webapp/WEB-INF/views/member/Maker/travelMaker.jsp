@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TravelMaker</title>
-    <link rel="shortcut icon" type="image/x-icon" href="image/small_logo.png">
+    <link rel="shortcut icon" type="image/x-icon" href="${contextPath}/resources/images/Share/small_logo.png">
     <link rel="stylesheet" href="${contextPath}/resources/css/main-style.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/Maker/travelMaker.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -105,9 +105,9 @@
 
                 <div id="result-area">
                     <div id="result-box"></div>
-                </div>
-                <div id="right-button">
-                    <button type="button" id="add-place">장소 추가</button>
+                    <div id="right-button">
+                        <button type="button" id="add-place">장소 추가</button>
+                    </div>
                 </div>
             </div>
         </section>
