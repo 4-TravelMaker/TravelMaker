@@ -51,13 +51,15 @@ public class BoardService_phj {
 		Connection conn = getConnection();
 		
 		
-		List<String> ctgrName = dao.selectCtgrName(conn,ctgrNo); 
+//		List<String> ctgrName = dao.selectCtgrName(conn,ctgrNo); 
+		
+		List<Board> bList = dao.selectCtgrName(conn, ctgrNo);
 		
 		List<Category> cList = dao.selectRegion(conn,ctgrNo);
 		
 		Map<String, Object> map = new HashMap<>();
 		
-		map.put("ctgrName", ctgrName);
+		map.put("bList", bList);
 		map.put("cList", cList);
 		
 		close(conn);

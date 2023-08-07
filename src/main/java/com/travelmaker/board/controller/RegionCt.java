@@ -32,6 +32,7 @@ public class RegionCt extends HttpServlet{
 		try {
 			
 			if(command.equals("ctgr")) { 
+				
 				int ctgrNo = Integer.parseInt(req.getParameter("ctgr"));
 				String name = req.getParameter("name");
 				
