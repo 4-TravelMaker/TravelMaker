@@ -458,6 +458,7 @@
                 checkAtNum = false;
             } else if(ranCode == null || ranCode == ''){
                 alert("이메일 인증부터 해주세요")
+                inputEmail.focus();
                 checkAtNum = false;
             } else if(!regExp5.test(paInput.value)){
                 alert("숫자로만 입력해주세요")
