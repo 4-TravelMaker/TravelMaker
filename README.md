@@ -33,12 +33,12 @@
   ## 🧑‍💻 팀원 소개
   <a name="팀원-소개"></a>
   
-  <li>안수현 (조장)</li>
-  <li>김광수 (부조장)</li>
-  <li>강신욱</li>
-  <li>박현주</li>
-  <li>이한규</li>
-  <li>홍승남</li>
+  <li>안수현 (조장) <a href="https://github.com/ansoohyeon"><img src="https://img.shields.io/badge/github-181717?style=flat&logo=github&logoColor=white"/></a> </li>
+  <li>김광수 (부조장) <a href="https://github.com/KIMKWANG8"><img src="https://img.shields.io/badge/github-181717?style=flat&logo=github&logoColor=white"/></a> </li>
+  <li>강신욱 <a href="https://github.com/anzkanzk87"><img src="https://img.shields.io/badge/github-181717?style=flat&logo=github&logoColor=white"/></a> </li>
+  <li>박현주 <a href="https://github.com/hunny9512"><img src="https://img.shields.io/badge/github-181717?style=flat&logo=github&logoColor=white"/></a> </li>
+  <li>이한규 <a href="https://github.com/hankyu9820"><img src="https://img.shields.io/badge/github-181717?style=flat&logo=github&logoColor=white"/></a> </li>
+  <li>홍승남 <a href="https://github.com/hongseungnam"><img src="https://img.shields.io/badge/github-181717?style=flat&logo=github&logoColor=white"/></a> </li>
 
   <br><br>
   
