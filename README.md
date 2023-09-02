@@ -21,7 +21,11 @@
   <h2>팀원 소개</h2>
 
   <br><br>
+  
   <h2>개발 기간</h2>
+
+  <br><br>
+  
   <h2>개발 환경 및 언어</h2>
     <img src="https://img.shields.io/badge/javascript-F7DF1E?style=flat&logo=javascript&logoColor=white"/>
     <img src="https://img.shields.io/badge/jquery-0769AD?style=flat&logo=jquery&logoColor=white"/>
@@ -36,7 +40,11 @@
     <img src="https://img.shields.io/badge/windows10-0078D6?style=flat&logo=windows10&logoColor=white"/>
     <img src="https://img.shields.io/badge/apachetomcat-F8DC75?style=flat&logo=apachetomcat&logoColor=white"/>
     <img src="https://img.shields.io/badge/github-181717?style=flat&logo=github&logoColor=white"/>
+
+  <br><br>
+  
   <h2>주요 기능</h2>
+  
 </div>
 
 ![footer](https://capsule-render.vercel.app/api?type=slice&color=84D9C1&height=100&section=footer&fontSize=60)
